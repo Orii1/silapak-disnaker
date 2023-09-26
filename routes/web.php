@@ -30,8 +30,4 @@ Route::get('/register', function () {
 });
 
 Route::post('/register', [UserController::class, 'store']);
-Route::post('/', [LoginController::class, 'authenticating']);
-
-Route::post('/login', function () {
-    return view('/dashboard/home');
-});
+Route::post('/login', [LoginController::class, 'authenticating']);

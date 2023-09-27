@@ -31,3 +31,10 @@ Route::get('/register', function () {
 
 Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
+Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dashboard', function () {
+    return view('/perusahaan/dashboard');
+});
+
+

@@ -49,17 +49,22 @@
                         <div class="form-check mb-4">
                             <input class="form-check-input" type="checkbox" value="" name="cek" id="cek" required>
                             <label class="form-check-label" for="cek">
-                            Dengan ini saya menyetujui <a href="">Peraturan dan Ketentuan</a> Perizinan Online.
+                                Dengan ini saya menyetujui <a href="">Peraturan dan Ketentuan</a> Perizinan Online.
                             </label>
                         </div>
 
                         <div class="row">
                             <div class="col-md-3 pt-1 mb-4">
-                              <button type="submit" class="btn btn-warning btn-lg btn-block" type="submit"><label style="color: #ffffff;">Daftar</label></button>
+                                <a href="/register" style="color: rgb(255, 255, 255); text-decoration: none;">
+                                    <button type="submit" class="btn btn-warning btn-lg btn-block" type="submit"><a style="color: #ffffff">Daftar</a></label></button>
+                                </a>
                             </div>
 
                             <div class="col-md-3 pt-1 mb-4">
-                                <button type="button" class="btn btn-outline-warning btn-lg"><a href="/" style="color: rgb(235, 219, 1); text-decoration: none;">Kembali</a></button>
+                                <a href="/login" style="color: rgb(255, 255, 255); text-decoration: none;">
+                                    <button type="button" class="btn btn-outline-warning btn-lg">Kembali</button>
+                                </a>
+
                             </div>
 
                         </div>

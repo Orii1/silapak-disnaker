@@ -29,9 +29,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                <li><a class="getstarted scrollto" href="#cta">Home</a></li>
-                <li><a class="getstarted scrollto" href="#">Buat Permohonan</a></li>
-                <li><a class="getstarted scrollto" href="#">Cek Permohonan</a></li>
+                <li><a class="getstarted scrollto" href="#cta">Beranda</a></li>
+                <li><a class="getstarted scrollto" href="#about">Layanan Kami</a></li>
                 <li><a class="getstarted scrollto border border-white rounded-5" href="/login">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -70,7 +69,7 @@
                         <p class="text-center">
                             <b>Penyimpanan</b>
                         </p>
-                        <p class="text-center">Menyimpan data persayaratan untuk setiap pengguna</p>
+                        <p class="text-center">Menyimpan data persayaratan pengguna</p>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -79,7 +78,7 @@
                         <p class="text-center">
                             <b>Info dan Perbaikan</b>
                         </p>
-                        <p class="text-center">Menyampaikan apabila berkas mengalami kesahalan</p>
+                        <p class="text-center">Menyampaikan apabila berkas kesahalan</p>
                     </div>
                 </div>
                 <div class="col-lg-3">

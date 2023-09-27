@@ -33,6 +33,19 @@ h6 {
   font-family: "Jost", sans-serif;
 }
 
+.box {
+    background-color: #f3f3f3;
+    height: 1920px;
+}
+
+.box .card-input {
+    background-color: #f3f3f3;
+    height: 1920px;
+}
+
+.box .card-select:hover {
+    color: #F4BC4B;
+}
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -95,7 +108,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #6bc1e9;
+background: #000000;
   color: #fff;
 }
 
@@ -108,15 +121,20 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  transition: all 0.5s;
+transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
 }
 
+#header.header-dashboard-perusahaan {
+    background: #ffffff;
+    box-shadow: #0c3c53;
+}
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(0, 0, 0, 0.500);
+    background: #fff;
 }
+
 
 #header .logo {
   font-size: 25px;
@@ -135,6 +153,22 @@ h6 {
     margin-left: 10px;
 }
 
+#header .logoo {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#header .logoo a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 10px;
+}
 #header .logo img {
   max-height: 40px;
 }
@@ -149,6 +183,9 @@ h6 {
   padding: 0;
 }
 
+.navbar .dash {
+    color: #000000;
+}
 .navbar ul {
   margin: 0;
   padding: 0;
@@ -174,6 +211,18 @@ h6 {
   transition: 0.3s;
 }
 
+.navbar .dash-per a,
+.navbar .dash-per a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000000;
+    white-space: nowrap;
+    transition: 0.3s;
+}
 .navbar a i,
 .navbar a:focus i {
   font-size: 12px;

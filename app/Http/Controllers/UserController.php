@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function store(Request $request){
-        User::create([
+        User::create(['role_id' => '2',
             'name' => $request->name,
             'address' => $request->address,
             'email' => $request->email,

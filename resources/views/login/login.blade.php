@@ -48,9 +48,10 @@
                             </div>
 
                             <div class="col-md-2 pt-1 mb-4">
-                              <button class="btn btn-light btn-lg btn-block" type="button"><a href="/register" style="color: black; text-decoration: none;">Daftar</a>
-                              </button>
-                          </div>
+                                <a href="/register" style="color: black; text-decoration: none;">
+                                    <button class="btn btn-light btn-lg btn-block" type="button">Daftar</button>
+                                </a>
+                            </div>
                         </div>
                       </form>
 

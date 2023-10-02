@@ -9,7 +9,7 @@
 </head>
 <body>
     <section class="vh-100" style="background-color: #f3f3f3;">
-        <div class="container py-5 h-100">
+        <div class="container py-1 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">
               <div class="card" style="border-radius: 1rem;">
@@ -32,6 +32,10 @@
 
                         <div class="form-outline mb-4">
                             <input type="text" name="name" id="name" placeholder="Nama Perusahaan" class="form-control form-control-lg" required/>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" name="owner" id="owner" placeholder="Pemilik Perusahaan" class="form-control form-control-lg" required/>
                         </div>
 
                         <div class="form-outline mb-4">

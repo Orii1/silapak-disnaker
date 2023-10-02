@@ -29,7 +29,11 @@
                         </div>
 
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; color: #9b9b9b"> Masukkan Email dan Password</h5>
-
+                        @if (Session('error'))
+                        <div class="alert alert-danger">
+                            {{Session('error')}}
+                        </div>
+                        @endif
                         <div class="form-outline mb-4">
                           <input type="email" name="email" id="email" placeholder="Email" class="form-control form-control-lg" />
                         </div>

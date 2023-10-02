@@ -25,7 +25,7 @@
             <h1 class="logoo me-auto"><img src="assets/img/banjarbaru.png" style="width: 40px;" alt="banjarbaru"><a href="#">SILAPAK</a></h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                <li><a class="dash" href="#cta">Profile</a></li>
+                <li><a class="dash" href="/profile-perusahaan/{{$user->id}}">Profile</a></li>
                 <li><a class="dash" href="#about">Buat Permohonan</a></li>
                 <li><a class="dash" href="#about">Cek Permohonan</a></li>
                 <li><a class="dash border border-white rounded-5" href="/logout">Keluar</a></li>
@@ -46,10 +46,71 @@
                     <div class="mt-4 text-center">
                         <label style="font-size: 25px;">Ajukan Permohonan Anda</label>
                     </div>
-                    <div class="card card-select" style="border-radius: 1rem; width: 400px; height:150px;">
 
-                    </div>
-                    </div>
+                    <section class="services">
+                        <div class="row">
+                            <div class="col-4 ps-5">
+                                <a href="/perjanjian-kerja-sama">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Pendaftaran Perjanjian Kerja Sama</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-4">
+                                <a href="">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Kartu tanda Pencari Kerja</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-1">
+                                <a href="">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Pengesahan Peraturan Perusahaan</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-5 mt-5">
+                                <a href="">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Pencataan Lembaga Kerja Sama</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-4 mt-5">
+                                <a href="">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Pencatatan Serikat Kerja Buruh</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-1 mt-5">
+                                <a href="">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 16px; color: black;">Pencatatan Perjanjian Kerja Waktu Tertentu</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>

@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="col-4 ps-4">
-                                <a href="">
+                                <a href="/kartu-pencari-kerja">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Kartu tanda Pencari Kerja</p>
@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="col-4 ps-1">
-                                <a href="">
+                                <a href="/pengesahan-peraturan-perusahaan">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Pengesahan Peraturan Perusahaan</p>
@@ -80,7 +80,7 @@
                             </div>
 
                             <div class="col-4 ps-5 mt-5">
-                                <a href="">
+                                <a href="/pencatatan-lembaga-kerja-sama">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Pencataan Lembaga Kerja Sama</p>
@@ -90,7 +90,7 @@
                             </div>
 
                             <div class="col-4 ps-4 mt-5">
-                                <a href="">
+                                <a href="/pencatatan-serikat-kerja-buruh">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Pencatatan Serikat Kerja Buruh</p>
@@ -100,7 +100,7 @@
                             </div>
 
                             <div class="col-4 ps-1 mt-5">
-                                <a href="">
+                                <a href="/pencatatan-pkb">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 16px; color: black;">Pencatatan Perjanjian Kerja Waktu Tertentu</p>

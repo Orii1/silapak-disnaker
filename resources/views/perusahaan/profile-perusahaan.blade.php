@@ -76,7 +76,7 @@
                             <input type="text" name="number_letter" id="number_letter" class="form-control" placeholder="Nomor Surat" value="{{$user->number_letter}}">
                         </div>
                         <div class="mb-4">
-                            <input type="date" name="date_letter" id="date_latter" class="form-control" placeholder="Tanggal Surat" value="{{$user->date_letter}}">
+                            <input type="date" name="date_latter" id="date_latter" class="form-control" placeholder="Tanggal Surat" value="{{$user->date_latter}}">
                         </div>
 
                         <div class="mb-4">

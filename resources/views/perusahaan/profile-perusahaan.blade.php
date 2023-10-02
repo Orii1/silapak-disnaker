@@ -36,7 +36,10 @@
     </header> --}}
 
     <section class="box">
-        <form action="" method="PUT">
+        <form action="/dashboard/profile-perusahaan/{{$user->id}}" method="POST">
+            @method("PUT")
+            @csrf
+            <input type="hidden" name="id" id="id" value="{{$user->id}}"/>
             <div class="p-5">
                 <div class="card">
                     <div class="p-5">
@@ -73,7 +76,7 @@
                             <input type="text" name="number_letter" id="number_letter" class="form-control" placeholder="Nomor Surat" value="{{$user->number_letter}}">
                         </div>
                         <div class="mb-4">
-                            <input type="date" name="date_letter" id="date_letter" class="form-control" placeholder="Tanggal Surat" value="{{$user->date_letter}}">
+                            <input type="date" name="date_letter" id="date_latter" class="form-control" placeholder="Tanggal Surat" value="{{$user->date_letter}}">
                         </div>
 
                         <div class="mb-4">
@@ -113,7 +116,7 @@
                         </div>
 
                         <div class="mt-5">
-                            <button class="btn btn-warning btn-lg btn-block" type="submit"><label style="color: #ffffff;">Simpan</label></button>
+                            <button class="btn btn-warning btn-lg btn-block" type="submit"><i class="fa-solid fa-floppy-disk"></i><b style="color: #ffffff;">Simpan</b></button>
                         </div>
                     </div>
                 </div>

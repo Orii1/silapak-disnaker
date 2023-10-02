@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,6 +22,8 @@ class CompanyController extends Controller
 
     public function index()
     {
+        $user = Auth::user();
+        return view('perusahaan.dashboard', compact('user'));
     }
 
     /**
@@ -74,7 +77,10 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = User::findOrFail($id);
+
+        $data->update($request->all());
+        return redirect('/dashboard');
     }
 
     /**

@@ -28,7 +28,7 @@ class User extends Authenticatable
         'sector',
         'status',
         'number_letter',
-        'date_letter',
+        'date_latter',
         'men',
         'woman',
         'pkwt',

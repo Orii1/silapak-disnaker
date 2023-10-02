@@ -37,7 +37,7 @@
 
     <section class="box">
         <section>
-            <h1 style="padding: 30px;">Selamat Datang, {{$user_name}}</h1>
+            <h1 style="padding: 30px;">Selamat Datang, {{$user->name}}</h1>
         </section>
 
         <section class="align-items-center d-flex justify-content-center">

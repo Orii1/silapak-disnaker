@@ -34,14 +34,10 @@ Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', function () {
-    return view('/perusahaan/dashboard');
-});
-
+Route::get('/dashboard', [CompanyController::class, 'index']);
 Route::get('/profile-perusahaan/{id}', [CompanyController::class, 'profile']);
 
-Route::get('/header', function () {
-    return view('/layout/header');
-});
+Route::put('/dashboard/profile-perusahaan/{id}', [CompanyController::class, 'update']);
+
 
 

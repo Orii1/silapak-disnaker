@@ -14,7 +14,7 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function profile(Request $request, $id)
+    public function profile($id)
     {
         $user = Auth::user();
         return view('/perusahaan/profile-perusahaan', compact('user'));

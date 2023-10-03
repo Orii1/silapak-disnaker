@@ -12,10 +12,13 @@ class LoginController extends Controller
     public function authenticating(Request $request)
     {
         if (Auth::attempt($request->only('email','password'))){
-            $user = Auth::user();
-            $user_name = Auth::user()->name;
-            $id = Auth::user()->id;
-            return view('/perusahaan/dashboard', compact('user', 'user_name', 'id'));
+            $user_role = Auth::user()->role_id;
+            if ($user_role == '1') {
+                return view('/admin/dashboard');
+            } else if ($user_role == '2') {
+                $user = Auth::user();
+                return view('/perusahaan/dashboard', compact('user'));
+            }
         } else {
             Session::flash('error', 'Email atau Password salah!');
             return redirect('/login');

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('type')->nullable();
+            $table->string('modal')->nullable();
             $table->string('sector')->nullable();
             $table->string('status')->nullable();
             $table->string('number_letter')->nullable();

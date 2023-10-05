@@ -17,13 +17,13 @@ class CompanyController extends Controller
     public function profile($id)
     {
         $user = Auth::user();
-        return view('/perusahaan/profile-perusahaan', compact('user'));
+        return view('/perusahaan/profileperusahaan', compact('user'));
     }
 
     public function index()
     {
         $user = Auth::user();
-        return view('perusahaan.dashboard', compact('user'));
+        return view('/perusahaan/dashboard', compact('user'));
     }
 
     /**

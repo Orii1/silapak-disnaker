@@ -25,7 +25,7 @@
             <h1 class="logoo me-auto"><img src="assets/img/banjarbaru.png" style="width: 40px;" alt="banjarbaru"><a href="#">SILAPAK</a></h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                <li><a class="dash" href="/profile-perusahaan/{{$user->id}}">Profile</a></li>
+                <li><a class="dash" href="/profileperusahaan/{{$user->id}}">Profile</a></li>
                 <li><a class="dash" href="#about">Buat Permohonan</a></li>
                 <li><a class="dash" href="#about">Cek Permohonan</a></li>
                 <li><a class="dash border border-white rounded-5" href="/logout">Keluar</a></li>
@@ -50,27 +50,7 @@
                     <section class="services">
                         <div class="row">
                             <div class="col-4 ps-5">
-                                <a href="/perjanjian-kerja-sama">
-                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
-                                        <div class="icon">
-                                            <p style="font-size: 20px; color: black;">Pendaftaran Perjanjian Kerja Sama</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-4 ps-4">
-                                <a href="/kartu-pencari-kerja">
-                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
-                                        <div class="icon">
-                                            <p style="font-size: 20px; color: black;">Kartu tanda Pencari Kerja</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-4 ps-1">
-                                <a href="/pengesahan-peraturan-perusahaan">
+                                <a href="/permohonan/pengesahan-peraturan-perusahaan">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Pengesahan Peraturan Perusahaan</p>
@@ -79,35 +59,77 @@
                                 </a>
                             </div>
 
-                            <div class="col-4 ps-5 mt-5">
-                                <a href="/pencatatan-lembaga-kerja-sama">
+                            <div class="col-4 ps-4">
+                                <a href="/permohonan/pendaftaran-pkb">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
-                                            <p style="font-size: 20px; color: black;">Pencataan Lembaga Kerja Sama</p>
+                                            <p style="font-size: 20px; color: black;">Pendaftaran Perjanjian Kerja Bersama</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-1">
+                                <a href="/permohonan/pencatatan-perjanjian-kerja-waktu-tertentu">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Pencatatan Perjanjian Kerja Waktu Tertentu</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-5 mt-5">
+                                <a href="/permohonan/pencatatan-serikat-kerja">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Pencatatan Serikat Pekerja/Serikat Buruh</p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
                             <div class="col-4 ps-4 mt-5">
-                                <a href="/pencatatan-serikat-kerja-buruh">
+                                <a href="/pendaftaran-lks">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
-                                            <p style="font-size: 20px; color: black;">Pencatatan Serikat Kerja Buruh</p>
+                                            <p style="font-size: 20px; color: black;">Pendaftaran LKS Bipartit</p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
                             <div class="col-4 ps-1 mt-5">
-                                <a href="/pencatatan-pkb">
+                                <a href="/pencatatan-perselisihan-internal">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
-                                            <p style="font-size: 16px; color: black;">Pencatatan Perjanjian Kerja Waktu Tertentu</p>
+                                            <p style="font-size: 16px; color: black;">Pencatatan Perselisihan Hubungan Internal</p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
+
+                            <div class="col-4 ps-5 mt-5">
+                                <a href="/pelaporan-phk">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 20px; color: black;">Pelaporan Pemutusan Hubungan Kerja</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-4 ps-4 mt-5">
+                                <a href="/pendaftaran-alih-daya">
+                                    <div class="icon-box" style="border-radius: 1rem; width: 400px;">
+                                        <div class="icon">
+                                            <p style="font-size: 16px; color: black;">Pendaftaran Perjanjian Alih Daya</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+
 
                         </div>
                     </section>

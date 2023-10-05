@@ -44,7 +44,9 @@
 
                         <div class="row">
                             <div class="col-md-3 pt-1 mb-4">
-                              <button class="btn btn-warning btn-lg btn-block" type="submit"><label style="color: #ffffff;">Masuk</label></button>
+                              <a href="/login" style="color: rgb(255, 255, 255); text-decoration: none;">
+                                <button class="btn btn-warning btn-lg btn-block" type="submit"><a style="color: #ffffff">Masuk</a></label></button>
+                              </a>
                             </div>
 
                             <div class="col-md-5 pt-1 mb-4">

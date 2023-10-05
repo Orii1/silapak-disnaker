@@ -186,6 +186,7 @@ transition: all 0.5s;
 .navbar .dash {
     color: #000000;
 }
+
 .navbar ul {
   margin: 0;
   padding: 0;
@@ -234,7 +235,7 @@ transition: all 0.5s;
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #47b2e4;
+color: #F4BC4B;
 }
 
 .navbar .getstarted,

@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('submission', function (Blueprint $table) {
+        Schema::create('pencatatan_sp_sb', function (Blueprint $table) {
             $table->id();
-            $table->string('company_id');
-            $table->string('pkb_id');
-            $table->string('ktpk_id');
-            $table->string('syarat3');
+            $table->foreignId('user_id')->constrained('Users');
+            $table->string('surat_permohonan');
+            $table->string('ad_art');
+            $table->string('nama_pembentuk');
+            $table->string('nama_pengurus');
+            $table->string('ba_pembentukan');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('submission');
+        Schema::dropIfExists('pencatatan_sp_sb');
     }
 };

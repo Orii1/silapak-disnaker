@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pencatatanspsb;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -14,7 +15,8 @@ class LoginController extends Controller
         if (Auth::attempt($request->only('email','password'))){
             $user_role = Auth::user()->role_id;
             if ($user_role == '1') {
-                return view('/admin/dashboard');
+                $gambar = Pencatatanspsb::all();
+                return view('/admin/dashboard', compact('gambar'));
             } else if ($user_role == '2') {
                 $user = Auth::user();
                 return view('/perusahaan/dashboard', compact('user'));
@@ -32,5 +34,5 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    
+
 }

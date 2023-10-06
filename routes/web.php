@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
@@ -35,9 +36,12 @@ Route::post('/login', [LoginController::class, 'authenticating']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', [CompanyController::class, 'index']);
-Route::get('/profile-perusahaan/{id}', [CompanyController::class, 'profile']);
+Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);
 
-Route::put('/dashboard/profile-perusahaan/{id}', [CompanyController::class, 'update']);
+Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
+
+Route::get('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja']);
+Route::post('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja_store']);
 
 
 

@@ -1,9 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+const btn = document.getElmentById('btn');
+btn.addEventListener('click', function () {
     Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Login Berhasil',
+            title: 'Pengajuan Anda Berhasil Terkirim',
         showConfirmButton: false,
         timer: 1500
         })
-});
+    })

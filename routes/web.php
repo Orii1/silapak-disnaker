@@ -43,5 +43,7 @@ Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'upda
 Route::get('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja']);
 Route::post('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja_store']);
 
+Route::get('/permohonan/pengesahan-peraturan-perusahaan', [SubmissionController::class, 'pengesahan_pp']);
+
 
 

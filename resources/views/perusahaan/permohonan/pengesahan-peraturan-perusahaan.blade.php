@@ -4,14 +4,14 @@
 
 <section class="box">
     <section>
-        <h1 style="padding: 30px;">Pencatatan Serikat Pekerja/Serikat Buruh</h1>
+        <h1 style="padding: 30px;">Pengesahan Peraturan Perusahaan</h1>
     </section>
 
 
 
         <div class="mt-0 mx-3">
             <table class="table table-bordered align-middle mb-0 bg-white">
-                <form action="/permohonan/pencatatan-serikat-kerja" method="POST" enctype="multipart/form-data">
+                <form action="/permohonan/pengesahan-peraturan-perusahaan" method="POST" enctype="multipart/form-data">
                 @csrf
                 <thead class="bg-light">
                 <tr>
@@ -33,7 +33,6 @@
                 </tr>
                 </thead>
 
-                @php($no=1)
                 <tbody>
                     <tr>
                         <td>
@@ -43,7 +42,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Surat Permohonan Pencatatan SP/SB</label><br>
+                                <label for="">Fotocopy WLKP yang masih berlaku</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -62,7 +61,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Fotocopy AD/ART Serikat Pekerja/Serikat Buruh</label><br>
+                                <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -81,7 +80,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Daftar Nama Anggota Pembentuk SP/SB</label><br>
+                                <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -100,7 +99,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Daftar Nama Susunan Pengurus SP/SB</label><br>
+                                <label for="">Permohonan Pengesahan PP</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -119,7 +118,83 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Berita Acara Pembentukan SP/SB</label><br>
+                                <label for="">Surat Pernyataan bahwa PP sudah dimintakan saran dan pertimbangan dari wakil pekerja, SP/SB</label><br>
+                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <input type="file" name="ba_pembentukan" id="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                6
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Surat Pernyataan bahwa di Perusahaan belum terbentuk SP/SB</label><br>
+                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <input type="file" name="ba_pembentukan" id="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                7
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Surat pernyataan sudah / belum memiliki struktur upah dan skala upah dan sudah dilaksanakan</label><br>
+                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <input type="file" name="ba_pembentukan" id="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                8
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Struktur upah dan skala upah asli untuk ditunjuk ke pegawai / petugas pengoreksi PP</label><br>
+                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <input type="file" name="ba_pembentukan" id="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                9
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Draft PP sebanyak 3 eksemplar yang sudah di paraf oleh pimpinan Perusahaan</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -138,4 +213,5 @@
         </form>
         </div>
 </section>
+
 @endsection

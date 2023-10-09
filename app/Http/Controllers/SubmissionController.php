@@ -61,4 +61,10 @@ class SubmissionController extends Controller
 
         return redirect('/dashboard');
     }
+
+    public function pengesahan_pp()
+    {
+        $user = Auth::user();
+        return view('/perusahaan/permohonan/pengesahan-peraturan-perusahaan', compact('user'));
+    }
 }

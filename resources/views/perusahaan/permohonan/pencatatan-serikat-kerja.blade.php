@@ -10,8 +10,13 @@
 
 
         <div class="mt-0 mx-3">
+            @if (Session('error'))
+                <div class="alert alert-danger">
+                    {{Session('error')}}
+                </div>
+            @endif
             <table class="table table-bordered align-middle mb-0 bg-white">
-                <form action="" method="POST">
+                <form action="/permohonan/pencatatan-serikat-kerja" method="POST" enctype="multipart/form-data">
                 @csrf
                 <thead class="bg-light">
                 <tr>

@@ -46,4 +46,16 @@ Route::post('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class
 Route::get('/permohonan/pengesahan-peraturan-perusahaan', [SubmissionController::class, 'pengesahan_pp']);
 
 
+Route::get('/permohonan/pendaftaran-pkb', [SubmissionController::class, 'pendaftaran_pkb']);
 
+
+Route::get('/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', [SubmissionController::class, 'perjanjian_pkwt']);
+
+
+Route::get('/permohonan/pendaftaran-lks-bipartit', [SubmissionController::class, 'pendaftaran_lks']);
+
+
+Route::get('/permohonan/pencatatan-penyelesaian-perselisihan-internal', [SubmissionController::class, 'pencatatan_perselisihan_internal']);
+
+
+Route::get('/permohonan/pelaporan-pemutusan-hubungan-kerja', [SubmissionController::class, 'pelaporan_phk']);

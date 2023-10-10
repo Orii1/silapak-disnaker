@@ -23,7 +23,7 @@
       <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><img src="assets/img/banjarbaru.png" alt="banjarbaru"><a href="#">SILAPAK</a></h1>
+            <h1 class="logo me-auto"><img src="assets/img/banjarbaru.png" alt="banjarbaru"><a href="#">SILAKHI</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -40,8 +40,8 @@
 
     <section id="cta" class="cta">
         <div class="container text-center">
-            <h1>Selamat Datang di Website SILAPAK</h1>
-            <h1>Sistem Informasi Layanan Perindustrian dan Ketenagakerjaan</h1>
+            <h1>Selamat Datang di Website SILAKHI</h1>
+            <h1>Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</h1>
             <h2>Mencetak Perizinan Anda Secara Mandiri</h2>
             <h2>Dinas Koperasi Usaha Kecil Menengah dan Tenaga Kerja Banjarbaru</h2>
         </div>

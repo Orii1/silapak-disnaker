@@ -4,7 +4,7 @@
 
 <section class="box">
     <section>
-        <h1 style="padding: 30px;">Pengesahan Peraturan Perusahaan</h1>
+        <h1 style="padding: 30px;">Pengesahan Peraturan Perusahaan, {{$user->name}}</h1>
     </section>
 
 
@@ -80,7 +80,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
+                                <label for="">Fotocopy sertifikat kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan dan/atau bukti pembayaran iuran terakhir</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -99,7 +99,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Permohonan Pengesahan PP</label><br>
+                                <label for="">Permohonan Pendaftaran PP</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -118,7 +118,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Surat Pernyataan bahwa PP sudah dimintakan saran dan pertimbangan dari wakil pekerja, SP/SB</label><br>
+                                <label for="">Surat pernyataan bahwa PP sudah dimintakan saran dan pertimbangan dari wakil pekerja, SP/SB.</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -137,7 +137,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Surat Pernyataan bahwa di Perusahaan belum terbentuk SP/SB</label><br>
+                                <label for="">Surat pernyataan bahwa di Perusahaan belum terbentuk SP/SB</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -156,7 +156,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Surat pernyataan sudah / belum memiliki struktur upah dan skala upah dan sudah dilaksanakan</label><br>
+                                <label for=""> Surat pernyataan sudah / belum memiliki struktur upah dan skala upah dan sudah dilaksanakan</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>

@@ -10,6 +10,7 @@ use Illuminate\Validation\Rules\File;
 
 class SubmissionController extends Controller
 {
+    // Pencatatan Serikat Pekerja / Serikat Buruh
     public function serikat_kerja()
     {
 
@@ -62,9 +63,46 @@ class SubmissionController extends Controller
         return redirect('/dashboard');
     }
 
+    // Pengesahan Peraturan Perusahaan
     public function pengesahan_pp()
     {
         $user = Auth::user();
         return view('/perusahaan/permohonan/pengesahan-peraturan-perusahaan', compact('user'));
     }
+
+    // Pendaftaran Perjanjian Kerja Bersama
+    public function pendaftaran_pkb()
+    {
+        $user = Auth::user();
+        return view('/perusahaan/permohonan/pendaftaran-pkb', compact('user'));
+    }
+
+    // Pendaftaran Perjanjian Kerja Waktu Tertentu
+    public function perjanjian_pkwt()
+    {
+        $user = Auth::user();
+        return view('/perusahaan/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', compact('user'));
+    }
+
+    // Pendaftaran LKS Bipartit
+    public function pendaftaran_lks()
+    {
+        $user = Auth::user();
+        return view('/perusahaan/permohonan/pendaftaran-lks-bipartit', compact('user'));
+    }
+
+    //Pencatatan Penyelesaian Perselisihan Internal
+    public function pencatatan_perselisihan_internal()
+    {
+        $user = Auth::user();
+        return view('/perusahaan/permohonan/pencatatan-penyelesaian-perselisihan-internal', compact('user'));
+    }
+
+
+    public function pelaporan_phk()
+    {
+        $user = Auth::user();
+        return view('/perusahaan/permohonan/pelaporan-pemutusan-hubungan-kerja', compact('user'));
+    }
+
 }

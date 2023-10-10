@@ -3,7 +3,7 @@
 @section('content')
 <section class="box">
     <section>
-        <h1 style="padding: 30px;">Pendaftaran Perjanjian Kerja Bersama, {{$user->name}}</h1>
+        <h1 style="padding: 30px;">Pendaftaran LKS Bipartit, {{$user->name}}</h1>
     </section>
 
 
@@ -41,7 +41,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Fotocopy WLKP yang masih berlaku</label><br>
+                                <label for="">Permohonan pencatatan LKS Bipartit</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -60,7 +60,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
+                                <label for="">Daftar nama susunan pengurus LKS Bipartit</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -79,7 +79,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
+                                <label for="">Berita acara pembentukan LKS Bipartit</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
@@ -98,70 +98,13 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <label for="">Permohonan pendaftaran PKB</label><br>
+                                <label for="">Fotocopy WLKP yang masih berlaku</label><br>
                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                             </div>
                         </td>
                         <td>
                             <div class="text-center">
                                 <input type="file" name="nama_pengurus" id="">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="text-center">
-                                5
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center">
-                                <label for=""> Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
-                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="text-center">
-                                6
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center">
-                                <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PP</label><br>
-                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="text-center">
-                                7
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center">
-                                <label for="">Draft PKB sebanyak 3 eksemplar yang sudah diparaf oleh pimpinan dan ketua SP /SB</label><br>
-                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
                             </div>
                         </td>
                     </tr>
@@ -174,5 +117,4 @@
             </form>
     </div>
 </section>
-
 @endsection

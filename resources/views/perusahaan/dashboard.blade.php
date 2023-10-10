@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="col-4 ps-1">
-                                <a href="/permohonan/pencatatan-perjanjian-kerja-waktu-tertentu">
+                                <a href="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Pencatatan Perjanjian Kerja Waktu Tertentu</p>
@@ -90,7 +90,7 @@
                             </div>
 
                             <div class="col-4 ps-4 mt-5">
-                                <a href="/pendaftaran-lks">
+                                <a href="/permohonan/pendaftaran-lks-bipartit">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Pendaftaran LKS Bipartit</p>
@@ -100,17 +100,17 @@
                             </div>
 
                             <div class="col-4 ps-1 mt-5">
-                                <a href="/pencatatan-perselisihan-internal">
+                                <a href="/permohonan/pencatatan-penyelesaian-perselisihan-internal">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
-                                            <p style="font-size: 16px; color: black;">Pencatatan Perselisihan Hubungan Internal</p>
+                                            <p style="font-size: 16px; color: black;">Pencatatan Penyelesaian Perselisihan Hubungan Internal</p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
                             <div class="col-4 ps-5 mt-5">
-                                <a href="/pelaporan-phk">
+                                <a href="/permohonan/pelaporan-pemutusan-hubungan-kerja">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
                                             <p style="font-size: 20px; color: black;">Pelaporan Pemutusan Hubungan Kerja</p>

@@ -18,5 +18,6 @@ class Pencatatanspsb extends Model
         'nama_pembentuk',
         'nama_pengurus',
         'ba_pembentukan',
+        'status'
     ];
 }

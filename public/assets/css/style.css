@@ -38,6 +38,10 @@ h6 {
     height: 1080px;
 }
 
+.box-profile {
+    background-color: #F8F9FA;
+    height: 1550px;
+}
 .box .card-input {
     background-color: #F8F9FA;
     height: 1920px;

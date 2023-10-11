@@ -44,7 +44,7 @@ Route::get('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class,
 Route::post('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja_store']);
 
 Route::get('/permohonan/pengesahan-peraturan-perusahaan', [SubmissionController::class, 'pengesahan_pp']);
-
+Route::post('/permohonan/pengesahan-peraturan-perusahaan', [SubmissionController::class, 'pengesahan_pp_store']);
 
 Route::get('/permohonan/pendaftaran-pkb', [SubmissionController::class, 'pendaftaran_pkb']);
 

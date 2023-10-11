@@ -48,7 +48,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="surat_permohonan" id="">
+                                <input type="file" name="fc_wlkp" id="">
                             </div>
                         </td>
                     </tr>
@@ -67,7 +67,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ad_art" id="">
+                                <input type="file" name="fc_akta_pendirian_perusahaan" id="">
                             </div>
                         </td>
                     </tr>
@@ -86,7 +86,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pembentuk" id="">
+                                <input type="file" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" id="">
                             </div>
                         </td>
                     </tr>
@@ -105,7 +105,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pengurus" id="">
+                                <input type="file" name="permohonan_pengesahan_pp" id="">
                             </div>
                         </td>
                     </tr>
@@ -124,7 +124,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
+                                <input type="file" name="surat_pernyataan_saran_spsb" id="">
                             </div>
                         </td>
                     </tr>
@@ -143,7 +143,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
+                                <input type="file" name="surat_pernyataan_belum_terbentuk_spsb" id="">
                             </div>
                         </td>
                     </tr>
@@ -162,7 +162,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
+                                <input type="file" name="surat_pernyataan_struktur_skala_upah" id="">
                             </div>
                         </td>
                     </tr>
@@ -181,7 +181,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
+                                <input type="file" name="struktur_skala_upah_asli" id="">
                             </div>
                         </td>
                     </tr>
@@ -200,7 +200,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
+                                <input type="file" name="draf_pp" id="">
                             </div>
                         </td>
                     </tr>

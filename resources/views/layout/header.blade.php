@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Sistem Informasi Layanan Perindustrian dan Ketenagakerjaan</title>
+    <title>Sistem Informasi Layanan Ketenagakerjaan dan Hubungan Industrial</title>
     <link rel="icon" href="../assets/img/banjarbaru.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -21,7 +21,7 @@
 <body>
     <header id="header" class="fixed-top header-dashboard-perusahaan">
         <div class="container d-flex align-items-center">
-            <h1 class="logoo me-auto"><img src="../assets/img/banjarbaru.png" style="width: 40px;" alt="banjarbaru"><a href="/dashboard">SILAPAK</a></h1>
+            <h1 class="logoo me-auto"><img src="../assets/img/banjarbaru.png" style="width: 40px;" alt="banjarbaru"><a href="/dashboard">SILAKHI</a></h1>
             <nav id="navbar" class="navbar">
                 <ul>
                 <li><a class="dash" href="/profileperusahaan/{id}">Profile</a></li>

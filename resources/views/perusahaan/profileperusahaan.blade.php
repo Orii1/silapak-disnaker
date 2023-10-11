@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section('content')
-    <section class="box">
+    <section class="box-profile">
         <form action="/dashboard/profileperusahaan/{{$user->id}}" method="POST">
             @method("PUT")
             @csrf

@@ -12,7 +12,7 @@
 
     <div class="mt-0 mx-3">
         <table class="table table-bordered align-middle mb-0 bg-white">
-            <form action="/permohonan/pencatatan-serikat-kerja" method="POST" enctype="multipart/form-data">
+            <form action="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu" method="POST" enctype="multipart/form-data">
             @csrf
             <thead class="bg-light">
             <tr>
@@ -50,7 +50,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <input type="file" name="surat_permohonan" id="">
+                            <input type="file" name="srt_permohonan_pencatatan_pkwt" id="">
                         </div>
                     </td>
                 </tr>
@@ -69,7 +69,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <input type="file" name="ad_art" id="">
+                            <input type="file" name="daftar_nama_pekerja_pkwt" id="">
                         </div>
                     </td>
                 </tr>
@@ -88,7 +88,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <input type="file" name="nama_pembentuk" id="">
+                            <input type="file" name="pkwt_asli" id="">
                         </div>
                     </td>
                 </tr>
@@ -107,7 +107,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <input type="file" name="nama_pengurus" id="">
+                            <input type="file" name="fc_wlkp" id="">
                         </div>
                     </td>
                 </tr>
@@ -126,7 +126,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <input type="file" name="ba_pembentukan" id="">
+                            <input type="file" name="fc_akta_pendirian_perusahaan" id="">
                         </div>
                     </td>
                 </tr>

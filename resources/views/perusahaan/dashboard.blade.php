@@ -73,7 +73,7 @@
                                 <a href="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
-                                            <p style="font-size: 20px; color: black;">Pencatatan Perjanjian Kerja Waktu Tertentu</p>
+                                            <p style="font-size: 20px; color: black;">Pendaftaran Perjanjian Kerja Waktu Tertentu</p>
                                         </div>
                                     </div>
                                 </a>

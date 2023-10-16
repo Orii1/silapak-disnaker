@@ -9,7 +9,7 @@
 
 
     <div class="mt-0 mx-3">
-        <form action="/permohonan/pendaftaran-pkb" method="POST" enctype="multipart/form-data">
+        <form action="/permohonan/pencatatan-penyelesaian-perselisihan-internal" method="POST" enctype="multipart/form-data">
         @csrf
         <table class="table table-bordered align-middle mb-0 bg-white">
                 <thead class="bg-light">
@@ -47,7 +47,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="surat_permohonan" id="">
+                                <input type="file" name="permohonan_pencatatan_pphi" id="">
                             </div>
                         </td>
                     </tr>
@@ -66,7 +66,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ad_art" id="">
+                                <input type="file" name="surat_permintaan_perundingan_bipartit" id="">
                             </div>
                         </td>
                     </tr>
@@ -85,7 +85,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pembentuk" id="">
+                                <input type="file" name="daftar_hadir_perundingan_bipartit" id="">
                             </div>
                         </td>
                     </tr>
@@ -104,17 +104,17 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pengurus" id="">
+                                <input type="file" name="risalah_perundingan_bipartit" id="">
                             </div>
                         </td>
                     </tr>
                 </tbody>
         </table>
 
-                <div class="col-md-4 pt-1 mt-4">
-                        <button class="btn btn-warning btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff">Simpan</a></label></button>
-                </div>
-            </form>
+        <div class="col-md-4 pt-1 mt-4">
+            <button class="btn btn-warning btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff">Simpan</a></label></button>
+        </div>
+        </form>
     </div>
 </section>
 

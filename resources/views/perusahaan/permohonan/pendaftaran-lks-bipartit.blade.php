@@ -9,7 +9,7 @@
 
 
     <div class="mt-0 mx-3">
-        <form action="/permohonan/pendaftaran-pkb" method="POST" enctype="multipart/form-data">
+        <form action="/permohonan/pendaftaran-lks-bipartit" method="POST" enctype="multipart/form-data">
         @csrf
         <table class="table table-bordered align-middle mb-0 bg-white">
                 <thead class="bg-light">
@@ -47,7 +47,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="surat_permohonan" id="">
+                                <input type="file" name="permohonan_pencatatan_lks_bipartit" id="">
                             </div>
                         </td>
                     </tr>
@@ -66,7 +66,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ad_art" id="">
+                                <input type="file" name="daftar_susunan_pengurus_lks_bipartit" id="">
                             </div>
                         </td>
                     </tr>
@@ -85,7 +85,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pembentuk" id="">
+                                <input type="file" name="berita_acara_pembentukan_lks_bipartit" id="">
                             </div>
                         </td>
                     </tr>
@@ -104,7 +104,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pengurus" id="">
+                                <input type="file" name="fc_wlkp" id="">
                             </div>
                         </td>
                     </tr>

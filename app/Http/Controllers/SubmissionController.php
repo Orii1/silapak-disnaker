@@ -10,8 +10,10 @@ use App\Models\Pendaftaranpkb;
 use App\Models\Pendaftaranpkwt;
 use App\Models\Pengesahanpp;
 use App\Models\User;
+use Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\File;
 
@@ -29,45 +31,51 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // Validator::validate($request, [
-        //     'attachment' => [
-        //         'required',
-        //         File::types(['pdf', 'png', 'jpg'])
-        //     ],
-        // ]);
-
-        $extension1 = $request->file('surat_permohonan')->getClientOriginalExtension();
-        $file1 = $user->id . 'surat_permohonan' . '-' . 'spsb' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_permohonan')->storeAs('spsb', $file1);
-
-
-        $extension2 = $request->file('ad_art')->getClientOriginalExtension();
-        $file2 = $user->id . 'ad_art' . '-' . 'spsb' . now()->timestamp . '.' . $extension2;
-        $request->file('ad_art')->storeAs('spsb', $file2);
-
-        $extension3 = $request->file('nama_pembentuk')->getClientOriginalExtension();
-        $file3 = $user->id . 'nama_pembentuk' . '-' . 'spsb' . now()->timestamp . '.' . $extension3;
-        $request->file('nama_pembentuk')->storeAs('spsb', $file3);
-
-        $extension4 = $request->file('nama_pengurus')->getClientOriginalExtension();
-        $file4 = $user->id . 'nama_pengurus' . '-' . 'spsb' . now()->timestamp . '.' . $extension4;
-        $request->file('nama_pengurus')->storeAs('spsb', $file4);
-
-        $extension5 = $request->file('ba_pembentukan')->getClientOriginalExtension();
-        $file5 = $user->id . 'ba_pembentukan' . '-' . 'spsb' . now()->timestamp . '.' . $extension5;
-        $request->file('ba_pembentukan')->storeAs('spsb', $file5);
-
-
-        Pencatatanspsb::create([
-            'user_id' => $user->id,
-            'surat_permohonan' => $file1,
-            'ad_art' => $file2,
-            'nama_pembentuk' => $file3,
-            'nama_pengurus' => $file4,
-            'ba_pembentukan' => $file5
+        $validatedata = $request->validate([
+            'surat_permohonan' => 'mimes:png,jpg,pdf|file|',
+            'ad_art' => 'mimes:png,jpg,pdf|file|',
+            'nama_pembentuk' => 'mimes:png,jpg,pdf|file|',
+            'nama_pengurus' => 'mimes:png,jpg,pdf|file|',
+            'ba_pembentukan' => 'mimes:png,jpg,pdf|file|',
         ]);
 
-        return redirect('/dashboard');
+        if ($validatedata) {
+            $extension1 = $request->file('surat_permohonan')->getClientOriginalExtension();
+            $file1 = $user->id . 'surat_permohonan' . '-' . 'spsb' . now()->timestamp . '.' . $extension1;
+            $request->file('surat_permohonan')->storeAs('spsb', $file1);
+
+
+            $extension2 = $request->file('ad_art')->getClientOriginalExtension();
+            $file2 = $user->id . 'ad_art' . '-' . 'spsb' . now()->timestamp . '.' . $extension2;
+            $request->file('ad_art')->storeAs('spsb', $file2);
+
+            $extension3 = $request->file('nama_pembentuk')->getClientOriginalExtension();
+            $file3 = $user->id . 'nama_pembentuk' . '-' . 'spsb' . now()->timestamp . '.' . $extension3;
+            $request->file('nama_pembentuk')->storeAs('spsb', $file3);
+
+            $extension4 = $request->file('nama_pengurus')->getClientOriginalExtension();
+            $file4 = $user->id . 'nama_pengurus' . '-' . 'spsb' . now()->timestamp . '.' . $extension4;
+            $request->file('nama_pengurus')->storeAs('spsb', $file4);
+
+            $extension5 = $request->file('ba_pembentukan')->getClientOriginalExtension();
+            $file5 = $user->id . 'ba_pembentukan' . '-' . 'spsb' . now()->timestamp . '.' . $extension5;
+            $request->file('ba_pembentukan')->storeAs('spsb', $file5);
+
+
+            Pencatatanspsb::create([
+                'user_id' => $user->id,
+                'surat_permohonan' => $file1,
+                'ad_art' => $file2,
+                'nama_pembentuk' => $file3,
+                'nama_pengurus' => $file4,
+                'ba_pembentukan' => $file5
+            ]);
+            // Alert::success('Succes Title', 'Success Message');
+            return redirect('/dashboard');
+        } else {
+
+            return redirect('/permohonan/pencatatan-serikat-kerja');
+        }
     }
 
     // Pengesahan Peraturan Perusahaan

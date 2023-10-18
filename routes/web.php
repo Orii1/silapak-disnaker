@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SubmissionController;
@@ -31,6 +32,9 @@ Route::get('/register', function () {
     return view('/login/register');
 });
 
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+
+
 Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
 Route::get('/logout', [LoginController::class, 'logout']);
@@ -40,14 +44,18 @@ Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);
 
 Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
 
+
 Route::get('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja']);
 Route::post('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja_store']);
+
 
 Route::get('/permohonan/pengesahan-peraturan-perusahaan', [SubmissionController::class, 'pengesahan_pp']);
 Route::post('/permohonan/pengesahan-peraturan-perusahaan', [SubmissionController::class, 'pengesahan_pp_store']);
 
+
 Route::get('/permohonan/pendaftaran-pkb', [SubmissionController::class, 'pendaftaran_pkb']);
 Route::post('/permohonan/pendaftaran-pkb', [SubmissionController::class, 'pendaftaran_pkb_store']);
+
 
 Route::get('/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', [SubmissionController::class, 'perjanjian_pkwt']);
 Route::post('/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', [SubmissionController::class, 'perjanjian_pkwt_store']);
@@ -63,3 +71,7 @@ Route::post('/permohonan/pencatatan-penyelesaian-perselisihan-internal', [Submis
 
 Route::get('/permohonan/pelaporan-pemutusan-hubungan-kerja', [SubmissionController::class, 'pelaporan_phk']);
 Route::post('/permohonan/pelaporan-pemutusan-hubungan-kerja', [SubmissionController::class, 'pelaporan_phk_store']);
+
+
+Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);
+Route::get('/detail/pemohonan-pp/{$id}', [AdminController::class, 'permohonan_pp']);

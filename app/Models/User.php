@@ -57,4 +57,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function user_pp()
+    {
+        return $this->hasOne(Pengesahanpp::class);
+    }
 }

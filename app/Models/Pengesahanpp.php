@@ -24,4 +24,9 @@ class Pengesahanpp extends Model
         'draf_pp',
         'status',
     ];
+
+    public function pp_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

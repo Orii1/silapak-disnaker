@@ -2,13 +2,13 @@
 
 @section('content')
 
+
 <section class="box">
     <section>
         <h1 style="padding: 30px;">Pencatatan Serikat Pekerja/Serikat Buruh</h1>
     </section>
 
-
-
+    @include('sweetalert::alert')
         <div class="mt-0 mx-3">
             <table class="table table-bordered align-middle mb-0 bg-white">
                 <form action="/permohonan/pencatatan-serikat-kerja" method="POST" enctype="multipart/form-data">
@@ -49,7 +49,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="surat_permohonan" id="">
+                                <input type="file" name="surat_permohonan" class="@error('surat_permohonan') is invalid @enderror">
                             </div>
                         </td>
                     </tr>

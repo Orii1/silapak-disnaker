@@ -35,6 +35,7 @@
         </div>
     </header>
 
+
     <section class="box">
         <section>
             <h1 style="padding: 30px;">Selamat Datang, {{$user->name}}</h1>
@@ -140,6 +141,7 @@
 
 
     </section>
-
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 </html>

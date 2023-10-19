@@ -15,10 +15,11 @@
 
     <div class="mt-4">
         @foreach ($pp as $item)
-            <a href="/detail/pemohonan-pp/{{$item->id}}">
+            <a href="/permohonan-pengesahan-pp/{{$item->id}}">
                 <div class="card" style="height: 60px; display: flex; align-items: center;">
-                    <div class="mx-3">
-                        {{$item->pp_user->name}}
+                    <div class="mt-2 text-center">
+                        {{$item->pp_user->name}} <br>
+                        Selengkapnya
                     </div>
                 </div>
             </a>

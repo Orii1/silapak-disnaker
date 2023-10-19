@@ -33,7 +33,17 @@ class AdminController extends Controller
         return view('/admin/permohonan-pengesahan-pp', compact('pp'));
     }
 
-    public function permohonan_pp_set_status()
+    public function permohonan_pp_show($id)
     {
+        $data = Pengesahanpp::find($id);
+        return view('/admin/detail', compact('data'));
+    }
+
+    public function permohonan_pp_terima($id)
+    {
+        $permohonanpp = Pengesahanpp::find($id);
+        $permohonanpp->status = '1';
+        $permohonanpp->save();
+        return redirect('/admin/permohonan-pengesahan-pp');
     }
 }

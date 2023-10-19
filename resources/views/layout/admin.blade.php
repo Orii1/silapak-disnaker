@@ -137,13 +137,6 @@
             </a>
         </li>
     </ul>
-      </li>
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="/permohonan">
-          <i class="bi bi-envelope"></i>
-          <span>Permohonan</span>
-        </a>
-      </li> --}}
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-register.html">

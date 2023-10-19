@@ -7,8 +7,6 @@
         <h1 style="padding: 30px;">Pengesahan Peraturan Perusahaan, {{$user->name}}</h1>
     </section>
 
-
-
         <div class="mt-0 mx-3">
             <table class="table table-bordered align-middle mb-0 bg-white">
                 <form action="/permohonan/pengesahan-peraturan-perusahaan" method="POST" enctype="multipart/form-data">

@@ -74,4 +74,5 @@ Route::post('/permohonan/pelaporan-pemutusan-hubungan-kerja', [SubmissionControl
 
 
 Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);
-Route::get('/detail/pemohonan-pp/{$id}', [AdminController::class, 'permohonan_pp']);
+Route::get('/permohonan-pengesahan-pp/{id}', [AdminController::class, 'permohonan_pp_show']);
+Route::get('/permohonan-pp/terima/{id}', [AdminController::class, 'permohonan_pp_terima']);

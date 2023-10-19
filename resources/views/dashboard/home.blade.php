@@ -21,17 +21,17 @@
 </head>
 <body>
       <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
+    <header id="header" class="header fixed-top">
         <div class="container d-flex align-items-center">
             <h1 class="logo me-auto"><img src="assets/img/banjarbaru.png" alt="banjarbaru"><a href="#">SILAKHI</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <nav id="navbar" class="navbar">
+            <nav id="navbar" class="navbar" >
                 <ul>
-                <li><a class="getstarted scrollto" href="#cta">Beranda</a></li>
-                <li><a class="getstarted scrollto" href="#about">Layanan Kami</a></li>
-                <li><a class="getstarted scrollto border border-white rounded-5" href="/login">Masuk</a></li>
+                <li><a class="header-scrolled getstarted scrollto" href="#cta">Beranda</a></li>
+                <li><a class="header-scrolled getstarted scrollto" href="#about">Layanan Kami</a></li>
+                <li><a class="header-scrolled getstarted scrollto border border-white rounded-5" href="/login">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

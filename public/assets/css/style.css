@@ -134,9 +134,13 @@ transition: all 0.5s;
     background: #ffffff;
     box-shadow: #0c3c53;
 }
-#header.header-scrolled,
+#header.header-scrolled{
+    background: #ffffff;
+        color: #eeff00;
+}
 #header.header-inner-pages {
-    background: #fff;
+    background: #ffffff;
+        color: #000000;
 }
 
 
@@ -248,7 +252,7 @@ color: #F4BC4B;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 50px;
-  color: #ffffff;
+    color: #ffffff;
   font-size: 14px;
   border: 2px solid (rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9));
   font-weight: 600;
@@ -957,6 +961,7 @@ color: rgb(255, 242, 1);
 background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../img/disnaker.jpg") fixed center center;
   background-size: cover;
   padding: 290px 0;
+z-index: 99;
 }
 
 .cta h1 {

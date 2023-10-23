@@ -90,7 +90,7 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="/admin/data-perusahaan">
             <i class="bi bi-building"></i>
           <span>Perusahaan</span>
         </a>

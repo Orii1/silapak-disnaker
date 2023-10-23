@@ -13,6 +13,12 @@
   scroll-behavior: smooth;
 }
 
+th,
+thead {
+    position: sticky;
+    top: 0;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;

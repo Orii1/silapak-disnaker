@@ -73,6 +73,9 @@ Route::get('/permohonan/pelaporan-pemutusan-hubungan-kerja', [SubmissionControll
 Route::post('/permohonan/pelaporan-pemutusan-hubungan-kerja', [SubmissionController::class, 'pelaporan_phk_store']);
 
 
+Route::get('/admin/data-perusahaan', [AdminController::class, 'company']);
+
 Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);
 Route::get('/permohonan-pengesahan-pp/{id}', [AdminController::class, 'permohonan_pp_show']);
 Route::get('/permohonan-pp/terima/{id}', [AdminController::class, 'permohonan_pp_terima']);
+Route::get('/permohonan-pp/tolak/{id}', [AdminController::class, 'permohonan_pp_tolak']);

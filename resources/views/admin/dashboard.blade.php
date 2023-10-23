@@ -12,7 +12,7 @@
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </nav>
-  </div>
+</div>
 
 <div class="row">
     <div class="col-xxl-4 col-md-6">
@@ -23,7 +23,7 @@
                 <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <div class="ps-3">
-                            <h6><b>Permohonan Disetujui {{$total}}</b></h6>
+                            <h6><b>Permohonan Disetujui {{$total_terima}}</b></h6>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 
                     </div>
                     <div class="ps-3">
-                        <h6><b>Permohonan Ditolak {{$total}}</b></h6>
+                        <h6><b>Permohonan Ditolak {{$total_tolak}}</b></h6>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
 
                 </div>
                 <div class="ps-3">
-                    <h6><b>Permohonan Menunggu</b></h6>
+                    <h6><b>Permohonan Menunggu {{$total}}</b></h6>
                 </div>
                 </div>
             </div>

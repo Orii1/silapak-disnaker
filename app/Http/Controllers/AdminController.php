@@ -54,6 +54,18 @@ class AdminController extends Controller
         return view('/admin/perusahaan/data-perusahaan', compact('perusahaan'));
     }
 
+    public function profile()
+    {
+        $profile = User::where('id', '2')->get();
+        return view('/admin/profile/profileadmin', compact('profile'));
+    }
+
+    public function detail_perusahaan($id)
+    {
+        $detail = User::find($id);
+        return view('/admin/perusahaan/detail-perusahaan', compact('detail'));
+    }
+
     public function permohonan_pp()
     {
         $pp = Pengesahanpp::where('status', '0')->get();
@@ -80,5 +92,33 @@ class AdminController extends Controller
         $permohonanpp->status = '2';
         $permohonanpp->save();
         return redirect('/admin/permohonan-pengesahan-pp');
+    }
+
+    public function pendaftaran_pkb()
+    {
+        $pkb = Pendaftaranpkb::where('status', '0')->get();
+        return view('/admin/pendaftaran-pkb/permohonan-pendaftaran-pkb', compact('pkb'));
+    }
+
+    public function pendaftaran_pkb_show($id)
+    {
+        $data = Pendaftaranpkb::find($id);
+        return view('/admin/pendaftaran-pkb/detail', compact('data'));
+    }
+
+    public function pendaftaran_pkb_terima($id)
+    {
+        $pendaftaranpkb = Pendaftaranpkb::find($id);
+        $pendaftaranpkb->status = '1';
+        $pendaftaranpkb->save();
+        return redirect('/admin/pendaftaran-pkb');
+    }
+
+    public function pendaftaran_pkb_tolak($id)
+    {
+        $pendaftaranpkb = Pendaftaranpkb::find($id);
+        $pendaftaranpkb->status = '2';
+        $pendaftaranpkb->save();
+        return redirect('/admin/pendaftaran-pkb');
     }
 }

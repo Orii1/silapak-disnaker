@@ -27,7 +27,7 @@
                 </th>
                 <th class="col-1">
                     <div class="text-center">
-                        status
+                        Alamat
                     </div>
                 </th>
                 <th class="col-2">
@@ -60,19 +60,23 @@
                         </div>
                     </td>
                     <td>
-                        <div class="text-center">
-                            {{$item->status}}
+                        <div style="font-size: 13px;">
+                            {{$item->address}}
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="#detail/{{$item->id}}" class="btn btn-success"><i class="bi bi-info-circle-fill"></i></a>
-                            <a href="#delate/{{$item->id}}" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                            <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-primary"><i class="bi bi-info-circle-fill"></i></a>
+                            <a title="Hapus" href="delete-perusahaan/{{$item->id}}" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                         </div>
                     </td>
                 </tr>
             </tbody>
         @endforeach
     </table>
+
+    {{-- MODAL --}}
+
+    {{-- END MODAL --}}
 </div>
 @endsection

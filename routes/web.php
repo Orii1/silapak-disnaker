@@ -99,3 +99,13 @@ Route::get('/admin/permohonan-pencatatan-spsb', [AdminController::class, 'pencat
 Route::get('/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pencatatan_spsb_show']);
 Route::get('/permohonan-spsb/terima/{id}', [AdminController::class, 'pencatatan_spsb_terima']);
 Route::get('/permohonan-spsb/tolak/{id}', [AdminController::class, 'pencatatan_spsb_tolak']);
+
+Route::get('/admin/permohonan-pendaftaran-lks', [AdminController::class, 'pendaftaran_lks']);
+Route::get('/permohonan-pendaftaran-lks/{id}', [AdminController::class, 'pendaftaran_lks_show']);
+Route::get('/permohonan-lks/terima/{id}', [AdminController::class, 'pendaftaran_lks_terima']);
+Route::get('/permohonan-lks/tolak/{id}', [AdminController::class, 'pendaftaran_lks_tolak']);
+
+Route::get('/admin/permohonan-pencatatan-hi', [AdminController::class, 'pencatatan_hi']);
+Route::get('/permohonan-penyelesaian-hi/{id}', [AdminController::class, 'pencatatan_hi_show']);
+Route::get('/permohonan-hi/terima/{id}', [AdminController::class, 'pencatatan_hi_terima']);
+Route::get('/permohonan-hi/tolak/{id}', [AdminController::class, 'pencatatan_hi_tolak']);

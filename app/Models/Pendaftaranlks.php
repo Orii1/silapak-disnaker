@@ -19,4 +19,9 @@ class Pendaftaranlks extends Model
         'fc_wlkp',
         'status'
     ];
+
+    public function lks_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

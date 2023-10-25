@@ -8,7 +8,6 @@
         <h1 style="padding: 30px;">Pencatatan Serikat Pekerja/Serikat Buruh</h1>
     </section>
 
-    @include('sweetalert::alert')
         <div class="mt-0 mx-3">
             <table class="table table-bordered align-middle mb-0 bg-white">
                 <form action="/permohonan/pencatatan-serikat-kerja" method="POST" enctype="multipart/form-data">

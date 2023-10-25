@@ -28,14 +28,6 @@
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/styleadmin.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -62,7 +54,7 @@
       <ul class="d-flex align-items-center">
         <div class="mx-5">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                <img src="../assets/img/adminprofile.png" alt="Profile" class="rounded-circle mx-2">
+                <img src="../../assets/img/adminprofile.png" alt="Profile" class="rounded-circle mx-2">
                 <span class="d-none d-md-block">Admin</span>
               </a>
         </div>
@@ -123,12 +115,12 @@
             </a>
           </li>
           <li>
-            <a href="components-buttons.html">
+            <a href="/admin/permohonan-pendaftaran-lks">
               <i class="bi bi-circle"></i><span>Pendaftaran LKS Bipartit</span>
             </a>
           </li>
           <li>
-            <a href="components-cards.html">
+            <a href="/admin/permohonan-pencatatan-hi">
               <i class="bi bi-circle"></i><span>Pencatatan Penyelesaian Perselisihan Hubungan Internal</span>
             </a>
           </li>
@@ -161,11 +153,9 @@
 
     @yield('content')
 
-  </main><!-- End #main -->
+  </main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
   <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/vendor/chart.js/chart.umd.js"></script>
@@ -175,17 +165,9 @@
   <script src="../../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../../assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="../../assets/js/mainadmin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  @if (Session::has('message'))
-
-  <script>
-    toastr.success("{{Session::get('message')}}");
-  </script>
-
-  @endif
 </body>
 
 </html>

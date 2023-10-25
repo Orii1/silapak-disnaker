@@ -1,5 +1,7 @@
 @extends('layout.admin')
 
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @section('content')
     <div class="pagetitle">
       <h1>Profile</h1>
@@ -49,34 +51,31 @@
                   <p class="small">Admin merupakan seorang yang mengelola website serta melakukan pemantauan dari aktivitas yang dilakukan pada website yang dikelola. Serta memberikan <i>Feedback</i> (umpan balik) bagi pengguna website atau pengaju permohonan.</p>
 
                   <h5 class="card-title">Detail Profile</h5>
-                  @foreach ($profile as $item)
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Nama</div>
-                    <div class="col-lg-9 col-md-8">{{$item->name}}</div>
+                    <div class="col-lg-9 col-md-8">{{$profile->name}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Alamat</div>
-                    <div class="col-lg-9 col-md-8">{{$item->address}}</div>
+                    <div class="col-lg-9 col-md-8">{{$profile->address}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Dari</div>
-                    <div class="col-lg-9 col-md-8">{{$item->owner}}</div>
+                    <div class="col-lg-9 col-md-8">{{$profile->owner}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">{{$item->email}}</div>
+                    <div class="col-lg-9 col-md-8">{{$profile->email}}</div>
                   </div>
-                  @endforeach
 
                 </div>
 
-                @foreach ($profile as $p)
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form action="/admin/change-password/{{$p->id}}" method="POST">
+                  <form action="/admin/change-password/{{$profile->id}}" method="POST">
                     @csrf
                     @if (Session('error'))
                         <div class="alert alert-danger">
@@ -118,7 +117,6 @@
                   </form><!-- End Change Password Form -->
 
                 </div>
-                @endforeach
               </div><!-- End Bordered Tabs -->
 
             </div>
@@ -127,4 +125,10 @@
         </div>
       </div>
     </section>
+
+    @if (Session::has('message'))
+    <script>
+        toastr.success("{{Session::get('message')}}");
+    </script>
+  @endif
 @endsection

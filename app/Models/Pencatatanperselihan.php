@@ -19,4 +19,9 @@ class Pencatatanperselihan extends Model
         'risalah_perundingan_bipartit',
         'status'
     ];
+
+    public function hi_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

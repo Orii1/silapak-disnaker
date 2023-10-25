@@ -80,6 +80,7 @@ class CompanyController extends Controller
         $data = User::findOrFail($id);
 
         $data->update($request->all());
+        toastr()->success('Data Berhasil Disimpan!');
         return redirect('/dashboard');
     }
 

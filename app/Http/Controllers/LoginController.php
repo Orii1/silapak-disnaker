@@ -20,7 +20,6 @@ class LoginController extends Controller
                 return redirect('/admin/dashboard');
             } else if ($user_role == '2') {
                 $user = Auth::user();
-
                 return view('/perusahaan/dashboard', compact('user'));
             }
         } else {

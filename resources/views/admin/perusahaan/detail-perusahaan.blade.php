@@ -32,7 +32,11 @@
           <div class="card-body">
             <div class="tab-pane fade show active profile-overview" id="profile-overview">
                 <div class="mx-5">
-                    <h5 class="card-title mx-5 mb-4">Detail Perusahaan</h5>
+                    <div class="mx-5">
+                        <div class="mx-5">
+                            <h5 class="card-title mx-5 mb-4">Detail Perusahaan</h5>
+                        </div>
+                    </div>
                 </div>
                     <div class="row">
                         <div class="col-lg-5 col-md-5 label ">Nama</div>

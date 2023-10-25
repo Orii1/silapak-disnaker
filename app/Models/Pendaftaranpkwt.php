@@ -20,4 +20,10 @@ class Pendaftaranpkwt extends Model
         'fc_akta_pendirian_perusahaan',
         'status'
     ];
+
+    public function pkwt_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
 }

@@ -24,6 +24,7 @@
   <link href="../../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/styleadmin.css" rel="stylesheet">
@@ -112,12 +113,12 @@
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="/admin/permohonan-pendaftaran-pkwt">
               <i class="bi bi-circle"></i><span>Pendaftaran Perjanjian Kerja Waktu Tertentu</span>
             </a>
           </li>
           <li>
-            <a href="components-breadcrumbs.html">
+            <a href="/admin/permohonan-pencatatan-spsb">
               <i class="bi bi-circle"></i><span>Pencatatan Serikat Pekerja/Serikat Buruh</span>
             </a>
           </li>
@@ -176,7 +177,15 @@
 
   <!-- Template Main JS File -->
   <script src="../../assets/js/mainadmin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  @if (Session::has('message'))
+
+  <script>
+    toastr.success("{{Session::get('message')}}");
+  </script>
+
+  @endif
 </body>
 
 </html>

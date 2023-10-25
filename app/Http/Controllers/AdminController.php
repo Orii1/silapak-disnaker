@@ -10,7 +10,14 @@ use App\Models\Pendaftaranpkb;
 use App\Models\Pendaftaranpkwt;
 use App\Models\Pengesahanpp;
 use App\Models\User;
+use Brian2694\Toastr\Facades\Toastr;
+use Brian2694\Toastr\Toastr as ToastrToastr;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Toaster;
 
 class AdminController extends Controller
 {
@@ -60,10 +67,39 @@ class AdminController extends Controller
         return view('/admin/profile/profileadmin', compact('profile'));
     }
 
+    public function change_password(Request $request, $id)
+    {
+        $password = $request->password;
+
+        $hashedpass = Auth::user()->password;
+
+        if (Hash::check($password, $hashedpass)) {
+            if ($request->newpassword == $request->renewpassword) {
+                $curpass = User::find($id);
+                $curpass->password = Hash::make($request->newpassword);
+                $curpass->save();
+                return redirect()->back()->with('message', 'The post has been added!');
+            } else {
+                Session::flash('error', 'Password tidak sesuai!');
+                return redirect()->back();
+            }
+        } else {
+            Session::flash('invalid', 'Password saat ini salah!');
+            return redirect()->back();
+        }
+    }
+
     public function detail_perusahaan($id)
     {
         $detail = User::find($id);
         return view('/admin/perusahaan/detail-perusahaan', compact('detail'));
+    }
+
+    public function delete_perusahaan($id)
+    {
+        $detail = User::find($id);
+        $detail->delete();
+        return redirect('/admin/data-perusahaan');
     }
 
     public function permohonan_pp()
@@ -111,7 +147,7 @@ class AdminController extends Controller
         $pendaftaranpkb = Pendaftaranpkb::find($id);
         $pendaftaranpkb->status = '1';
         $pendaftaranpkb->save();
-        return redirect('/admin/pendaftaran-pkb');
+        return redirect('/admin/permohonan-pendaftaran-pkb');
     }
 
     public function pendaftaran_pkb_tolak($id)
@@ -119,6 +155,65 @@ class AdminController extends Controller
         $pendaftaranpkb = Pendaftaranpkb::find($id);
         $pendaftaranpkb->status = '2';
         $pendaftaranpkb->save();
-        return redirect('/admin/pendaftaran-pkb');
+        return redirect('/admin/permohonan-pendaftaran-pkb');
     }
+
+
+    public function pendaftaran_pkwt()
+    {
+        $pkwt = Pendaftaranpkwt::where('status', '0')->get();
+        return view('/admin/pendaftaran-pkwt/permohonan-pendaftaran-pkwt', compact('pkwt'));
+    }
+
+    public function pendaftaran_pkwt_show($id)
+    {
+        $data = Pendaftaranpkwt::find($id);
+        return view('/admin/pendaftaran-pkwt/detail', compact('data'));
+    }
+
+    public function pendaftaran_pkwt_terima($id)
+    {
+        $pendaftaranpkwt = Pendaftaranpkwt::find($id);
+        $pendaftaranpkwt->status = '1';
+        $pendaftaranpkwt->save();
+        return redirect('/admin/permohonan-pendaftaran-pkwt');
+    }
+
+    public function pendaftaran_pkwt_tolak($id)
+    {
+        $pendaftaranpkwt = Pendaftaranpkwt::find($id);
+        $pendaftaranpkwt->status = '2';
+        $pendaftaranpkwt->save();
+        return redirect('/admin/permohonan-pendaftaran-pkwt');
+    }
+
+
+    public function pencatatan_spsb()
+    {
+        $spsb = Pencatatanspsb::where('status', '0')->get();
+        return view('/admin/pencatatan-spsb/permohonan-pencatatan-spsb', compact('spsb'));
+    }
+
+    public function pencatatan_spsb_show($id)
+    {
+        $data = Pencatatanspsb::find($id);
+        return view('/admin/pencatatan-spsb/detail', compact('data'));
+    }
+
+    public function pencatatan_spsb_terima($id)
+    {
+        $pencatatanspsb = Pencatatanspsb::find($id);
+        $pencatatanspsb->status = '1';
+        $pencatatanspsb->save();
+        return redirect('/admin/permohonan-pencatatan-spsb');
+    }
+
+    public function pencatatan_spsb_tolak($id)
+    {
+        $pencatatanspsb = Pencatatanspsb::find($id);
+        $pencatatanspsb->status = '2';
+        $pencatatanspsb->save();
+        return redirect('/admin/permohonan-pencatatan-spsb');
+    }
+
 }

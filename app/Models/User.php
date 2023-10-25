@@ -63,4 +63,34 @@ class User extends Authenticatable
     {
         return $this->hasOne(Pengesahanpp::class);
     }
+
+    public function user_pkb()
+    {
+        return $this->hasOne(Pendaftaranpkb::class);
+    }
+
+    public function user_pkwt()
+    {
+        return $this->hasOne(Pendaftaranpkwt::class);
+    }
+
+    public function user_spsb()
+    {
+        return $this->hasOne(Pencatatanspsb::class);
+    }
+
+    public function user_lks()
+    {
+        return $this->hasOne(Pendaftaranlks::class);
+    }
+
+    public function user_hi()
+    {
+        return $this->hasOne(Pencatatanperselihan::class);
+    }
+
+    public function user_phk()
+    {
+        return $this->hasOne(Pelaporanphk::class);
+    }
 }

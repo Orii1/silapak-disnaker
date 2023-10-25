@@ -6,14 +6,14 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Permohonan Pendaftaran Kerja Bersama</li>
+            <li class="breadcrumb-item active">Permohonan Pendaftaran Perjanjian Kerja Waktu Tertentu</li>
         </ol>
     </nav>
 </div>
 
 <div class="mt-4">
-    @foreach ($pkb as $item)
-        <a href="/permohonan-pendaftaran-pkb/{{$item->id}}">
+    @foreach ($pkwt as $item)
+        <a href="/permohonan-pendaftaran-pkwt/{{$item->id}}">
             <div class="card" style="height: 60px; display: flex; align-items: center;">
                 <div class="mt-3 text-center justify-text-center">
                     <ol class="breadcrumb">

@@ -17,9 +17,15 @@
         @foreach ($pp as $item)
             <a href="/permohonan-pengesahan-pp/{{$item->id}}">
                 <div class="card" style="height: 60px; display: flex; align-items: center;">
-                    <div class="mt-2 text-center">
-                        {{$item->pp_user->name}} <br>
-                        Selengkapnya
+                    <div class="mt-3 text-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" style="font-size: 20px;">
+                               <b>{{$item->spsb_user->name}}</b>
+                            </li>
+                            <li class="breadcrumb-item" style="font-size: 19px;">
+                                Selengkapnya
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </a>

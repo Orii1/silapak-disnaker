@@ -75,8 +75,9 @@ Route::post('/permohonan/pelaporan-pemutusan-hubungan-kerja', [SubmissionControl
 
 Route::get('/admin/data-perusahaan', [AdminController::class, 'company']);
 Route::get('/admin/profile', [AdminController::class, 'profile']);
+Route::post('/admin/change-password/{id}', [AdminController::class, 'change_password']);
 Route::get('/admin/detail-perusahaan/{id}', [AdminController::class, 'detail_perusahaan']);
-
+Route::get('/admin/delete-perusahaan/{id}', [AdminController::class, 'delete_perusahaan']);
 
 
 Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);
@@ -85,3 +86,16 @@ Route::get('/permohonan-pp/terima/{id}', [AdminController::class, 'permohonan_pp
 Route::get('/permohonan-pp/tolak/{id}', [AdminController::class, 'permohonan_pp_tolak']);
 
 Route::get('/admin/permohonan-pendaftaran-pkb', [AdminController::class, 'pendaftaran_pkb']);
+Route::get('/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pendaftaran_pkb_show']);
+Route::get('/permohonan-pkb/terima/{id}', [AdminController::class, 'pendaftaran_pkb_terima']);
+Route::get('/permohonan-pkb/tolak/{id}', [AdminController::class, 'pendaftaran_pkb_tolak']);
+
+Route::get('/admin/permohonan-pendaftaran-pkwt', [AdminController::class, 'pendaftaran_pkwt']);
+Route::get('/permohonan-pendaftaran-pkwt/{id}', [AdminController::class, 'pendaftaran_pkwt_show']);
+Route::get('/permohonan-pkwt/terima/{id}', [AdminController::class, 'pendaftaran_pkwt_terima']);
+Route::get('/permohonan-pkwt/tolak/{id}', [AdminController::class, 'pendaftaran_pkwt_tolak']);
+
+Route::get('/admin/permohonan-pencatatan-spsb', [AdminController::class, 'pencatatan_spsb']);
+Route::get('/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pencatatan_spsb_show']);
+Route::get('/permohonan-spsb/terima/{id}', [AdminController::class, 'pencatatan_spsb_terima']);
+Route::get('/permohonan-spsb/tolak/{id}', [AdminController::class, 'pencatatan_spsb_tolak']);

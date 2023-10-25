@@ -20,4 +20,9 @@ class Pencatatanspsb extends Model
         'ba_pembentukan',
         'status'
     ];
+
+    public function spsb_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

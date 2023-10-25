@@ -46,7 +46,7 @@
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                   <h5 class="card-title">Tentang</h5>
-                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+                  <p class="small">Admin merupakan seorang yang mengelola website serta melakukan pemantauan dari aktivitas yang dilakukan pada website yang dikelola. Serta memberikan <i>Feedback</i> (umpan balik) bagi pengguna website atau pengaju permohonan.</p>
 
                   <h5 class="card-title">Detail Profile</h5>
                   @foreach ($profile as $item)
@@ -73,10 +73,22 @@
 
                 </div>
 
+                @foreach ($profile as $p)
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form action="/admin/change-password/{{$p->id}}" method="POST">
+                    @csrf
+                    @if (Session('error'))
+                        <div class="alert alert-danger">
+                            {{Session('error')}}
+                        </div>
+                    @endif
 
+                    @if (Session('invalid'))
+                        <div class="alert alert-danger">
+                            {{Session('invalid')}}
+                        </div>
+                    @endif
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-5 col-form-label">Password Sekarang</label>
                       <div class="col-md-8 col-lg-7">
@@ -85,9 +97,9 @@
                     </div>
 
                     <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-5 col-form-label">Password Baru</label>
+                      <label for="newpassword" class="col-md-4 col-lg-5 col-form-label">Password Baru</label>
                       <div class="col-md-8 col-lg-7">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                        <input name="newpassword" type="password" class="form-control" id="newpassword">
                       </div>
                     </div>
 
@@ -106,7 +118,7 @@
                   </form><!-- End Change Password Form -->
 
                 </div>
-
+                @endforeach
               </div><!-- End Bordered Tabs -->
 
             </div>

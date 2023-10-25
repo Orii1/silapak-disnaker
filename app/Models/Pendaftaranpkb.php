@@ -22,4 +22,9 @@ class Pendaftaranpkb extends Model
         'draft_pkb',
         'status'
     ];
+
+    public function pkb_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

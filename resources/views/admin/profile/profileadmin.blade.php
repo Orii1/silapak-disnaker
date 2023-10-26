@@ -49,33 +49,31 @@
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                   <h5 class="card-title">Tentang</h5>
                   <p class="small">Admin merupakan seorang yang mengelola website serta melakukan pemantauan dari aktivitas yang dilakukan pada website yang dikelola. Serta memberikan <i>Feedback</i> (umpan balik) bagi pengguna website atau pengaju permohonan.</p>
+                   @foreach ($profile as $p )
+                   <h5 class="card-title">Detail Profile</h5>
+                   <div class="row">
+                     <div class="col-lg-3 col-md-4 label ">Nama</div>
+                     <div class="col-lg-9 col-md-8">{{$p->name}}</div>
+                   </div>
 
-                  <h5 class="card-title">Detail Profile</h5>
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Nama</div>
-                    <div class="col-lg-9 col-md-8">{{$profile->name}}</div>
-                  </div>
+                   <div class="row">
+                     <div class="col-lg-3 col-md-4 label">Alamat</div>
+                     <div class="col-lg-9 col-md-8">{{$p->address}}</div>
+                   </div>
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Alamat</div>
-                    <div class="col-lg-9 col-md-8">{{$profile->address}}</div>
-                  </div>
+                   <div class="row">
+                     <div class="col-lg-3 col-md-4 label">Dari</div>
+                     <div class="col-lg-9 col-md-8">{{$p->owner}}</div>
+                   </div>
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Dari</div>
-                    <div class="col-lg-9 col-md-8">{{$profile->owner}}</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">{{$profile->email}}</div>
-                  </div>
-
+                   <div class="row">
+                     <div class="col-lg-3 col-md-4 label">Email</div>
+                     <div class="col-lg-9 col-md-8">{{$p->email}}</div>
+                   </div>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <!-- Change Password Form -->
-                  <form action="/admin/change-password/{{$profile->id}}" method="POST">
+                  <form action="/admin/change-password/{{$p->id}}" method="POST">
                     @csrf
                     @if (Session('error'))
                         <div class="alert alert-danger">
@@ -114,10 +112,11 @@
                             <button type="submit" class="btn btn-primary">Ganti Password</button>
                         </div>
                     </div>
-                  </form><!-- End Change Password Form -->
+                  </form>
 
                 </div>
-              </div><!-- End Bordered Tabs -->
+                @endforeach
+              </div>
 
             </div>
           </div>

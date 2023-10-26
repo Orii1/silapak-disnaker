@@ -114,3 +114,6 @@ Route::get('/admin/permohonan-pelaporan-phk', [AdminController::class, 'pelapora
 Route::get('/permohonan-pelaporan-phk/{id}', [AdminController::class, 'pelaporan_phk_show']);
 Route::get('/permohonan-phk/terima/{id}', [AdminController::class, 'pelaporan_phk_terima']);
 Route::get('/permohonan-phk/tolak/{id}', [AdminController::class, 'pelaporan_phk_tolak']);
+
+
+Route::get('/admin/asset', [AdminController::class, 'asset']);

@@ -53,14 +53,14 @@ class AdminController extends Controller
 
     public function company()
     {
-        $perusahaan = User::where('id', '!=', 2)->get();
+        $perusahaan = User::where('id', '!=', 1)->get();
         return view('/admin/perusahaan/data-perusahaan', compact('perusahaan'));
     }
 
     public function profile()
     {
 
-        $profile = Auth::user();
+        $profile = User::where('id', '1')->get();
         return view('/admin/profile/profileadmin', compact('profile'));
     }
 
@@ -315,4 +315,9 @@ class AdminController extends Controller
         return redirect('/admin/permohonan-pelaporan-phk');
     }
 
+
+    public function asset()
+    {
+        return view('/admin/asset/asset');
+    }
 }

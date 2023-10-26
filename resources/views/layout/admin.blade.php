@@ -127,9 +127,9 @@
     </ul>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="/admin/asset">
           <i class="bi bi-card-list"></i>
-          <span>Asset</span>
+          <span>Asset & Template</span>
         </a>
       </li>
 

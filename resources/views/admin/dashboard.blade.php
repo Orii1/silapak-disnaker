@@ -23,7 +23,7 @@
                 <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <div class="ps-3">
-                            <h6><b>Permohonan Disetujui {{$total_terima}}</b></h6>
+                            <h6><b>Permohonan Diterima {{$total_terima}}</b></h6>
                         </div>
                     </div>
                 </div>

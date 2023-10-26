@@ -19,4 +19,9 @@ class Pelaporanphk extends Model
         'pb_bipartit',
         'status'
     ];
+
+    public function phk_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

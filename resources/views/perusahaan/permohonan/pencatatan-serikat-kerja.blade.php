@@ -48,7 +48,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="surat_permohonan" class="@error('surat_permohonan') is invalid @enderror">
+                                <input type="file" name="surat_permohonan" required>
                             </div>
                         </td>
                     </tr>
@@ -67,7 +67,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ad_art" id="">
+                                <input type="file" name="ad_art" id="" required>
                             </div>
                         </td>
                     </tr>
@@ -86,7 +86,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pembentuk" id="">
+                                <input type="file" name="nama_pembentuk" id="" required>
                             </div>
                         </td>
                     </tr>
@@ -105,7 +105,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pengurus" id="">
+                                <input type="file" name="nama_pengurus" required>
                             </div>
                         </td>
                     </tr>
@@ -124,7 +124,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
+                                <input type="file" name="ba_pembentukan" required>
                             </div>
                         </td>
                     </tr>

@@ -109,3 +109,8 @@ Route::get('/admin/permohonan-pencatatan-hi', [AdminController::class, 'pencatat
 Route::get('/permohonan-penyelesaian-hi/{id}', [AdminController::class, 'pencatatan_hi_show']);
 Route::get('/permohonan-hi/terima/{id}', [AdminController::class, 'pencatatan_hi_terima']);
 Route::get('/permohonan-hi/tolak/{id}', [AdminController::class, 'pencatatan_hi_tolak']);
+
+Route::get('/admin/permohonan-pelaporan-phk', [AdminController::class, 'pelaporan_phk']);
+Route::get('/permohonan-pelaporan-phk/{id}', [AdminController::class, 'pelaporan_phk_show']);
+Route::get('/permohonan-phk/terima/{id}', [AdminController::class, 'pelaporan_phk_terima']);
+Route::get('/permohonan-phk/tolak/{id}', [AdminController::class, 'pelaporan_phk_tolak']);

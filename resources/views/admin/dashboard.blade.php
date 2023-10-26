@@ -41,7 +41,7 @@
 
                     </div>
                     <div class="ps-3">
-                        <h6><b>Permohonan Ditolak {{$total_tolak}}</b></h6>
+                        <h6><b>Permohonan Dikembalikan {{$total_tolak}}</b></h6>
                     </div>
                 </div>
             </div>

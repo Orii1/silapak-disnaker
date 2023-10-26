@@ -36,19 +36,14 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">SILAKHI</span>
-      </a>
+        <div class="ms-2">
+            <a href="/admin/dashboard" class="logo d-flex align-items-center">
+                <img src="../../assets/img/banjarbaru.png" alt="">
+                <div class="ms-2"><span class="d-none d-lg-block">SILAKHI</span></div>
+            </a>
+        </div>
       <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-    {{-- <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar --> --}}
+    </div>
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -59,9 +54,9 @@
               </a>
         </div>
       </ul>
-    </nav><!-- End Icons Navigation -->
+    </nav>
 
-  </header><!-- End Header -->
+  </header>
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -73,21 +68,21 @@
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/admin/profile">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/admin/data-perusahaan">
             <i class="bi bi-building"></i>
           <span>Perusahaan</span>
         </a>
-      </li><!-- End F.A.Q Page Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -125,7 +120,7 @@
             </a>
           </li>
           <li>
-            <a href="components-carousel.html">
+            <a href="/admin/permohonan-pelaporan-phk">
               <i class="bi bi-circle"></i><span>Pelaporan Pemutusan Hubungan Kerja</span>
             </a>
         </li>
@@ -134,9 +129,9 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-register.html">
           <i class="bi bi-card-list"></i>
-          <span>Template</span>
+          <span>Asset</span>
         </a>
-      </li><!-- End Register Page Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed " href="/logout">
@@ -147,7 +142,7 @@
 
     </ul>
 
-  </aside><!-- End Sidebar-->
+  </aside>
 
   <main id="main" class="main">
 

@@ -70,13 +70,12 @@ class SubmissionController extends Controller
                 'nama_pengurus' => $file4,
                 'ba_pembentukan' => $file5
             ]);
-            // Alert::success('Succes Title', 'Success Message');
+            toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('/dashboard');
-        } else {
-
-            return redirect('/permohonan/pencatatan-serikat-kerja');
         }
+
     }
+
 
     // Pengesahan Peraturan Perusahaan
     public function pengesahan_pp()

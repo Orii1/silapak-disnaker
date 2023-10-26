@@ -126,7 +126,7 @@ class AdminController extends Controller
         $permohonanpp = Pengesahanpp::find($id);
         $permohonanpp->status = '2';
         $permohonanpp->save();
-        toastr()->success('Permohonan Berhasil Ditolak!');
+        toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pengesahan-pp');
     }
 
@@ -156,7 +156,7 @@ class AdminController extends Controller
         $pendaftaranpkb = Pendaftaranpkb::find($id);
         $pendaftaranpkb->status = '2';
         $pendaftaranpkb->save();
-        toastr()->success('Permohonan Berhasil Ditolak!');
+        toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pendaftaran-pkb');
     }
 
@@ -187,7 +187,7 @@ class AdminController extends Controller
         $pendaftaranpkwt = Pendaftaranpkwt::find($id);
         $pendaftaranpkwt->status = '2';
         $pendaftaranpkwt->save();
-        toastr()->success('Permohonan Berhasil Ditolak!');
+        toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pendaftaran-pkwt');
     }
 
@@ -218,7 +218,7 @@ class AdminController extends Controller
         $pencatatanspsb = Pencatatanspsb::find($id);
         $pencatatanspsb->status = '2';
         $pencatatanspsb->save();
-        toastr()->success('Permohonan Berhasil Ditolak!');
+        toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pencatatan-spsb');
     }
 
@@ -249,7 +249,7 @@ class AdminController extends Controller
         $pendaftaranlks = Pendaftaranlks::find($id);
         $pendaftaranlks->status = '2';
         $pendaftaranlks->save();
-        toastr()->success('Permohonan Berhasil Ditolak!');
+        toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pendaftaran-lks');
     }
 
@@ -280,8 +280,39 @@ class AdminController extends Controller
         $penyelesaianhi = Pencatatanperselihan::find($id);
         $penyelesaianhi->status = '2';
         $penyelesaianhi->save();
-        toastr()->success('Permohonan Berhasil Ditolak!');
+        toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pencatatan-hi');
+    }
+
+
+    public function pelaporan_phk()
+    {
+        $phk = Pelaporanphk::where('status', '0')->get();
+        return view('/admin/pelaporan-phk/permohonan-pelaporan-phk', compact('phk'));
+    }
+
+    public function pelaporan_phk_show($id)
+    {
+        $data = Pelaporanphk::find($id);
+        return view('/admin/pelaporan-phk/detail', compact('data'));
+    }
+
+    public function pelaporan_phk_terima($id)
+    {
+        $pelaporanphk = Pelaporanphk::find($id);
+        $pelaporanphk->status = '1';
+        $pelaporanphk->save();
+        toastr()->success('Permohonan Berhasil Diterima!');
+        return redirect('/admin/permohonan-pelaporan-phk');
+    }
+
+    public function pelaporan_phk_tolak($id)
+    {
+        $pelaporanphk = Pelaporanphk::find($id);
+        $pelaporanphk->status = '2';
+        $pelaporanphk->save();
+        toastr()->success('Permohonan Berhasil Dikembalikan!');
+        return redirect('/admin/permohonan-pelaporan-phk');
     }
 
 }

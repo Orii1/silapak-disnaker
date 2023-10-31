@@ -2,16 +2,15 @@
 
 @section('content')
 
+
 <section class="box">
     <section>
         <h1 style="padding: 30px;">Pencatatan Serikat Pekerja/Serikat Buruh</h1>
     </section>
 
-
-
         <div class="mt-0 mx-3">
             <table class="table table-bordered align-middle mb-0 bg-white">
-                <form action="" method="POST">
+                <form action="/permohonan/pencatatan-serikat-kerja" method="POST" enctype="multipart/form-data">
                 @csrf
                 <thead class="bg-light">
                 <tr>
@@ -49,7 +48,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="surat_permohonan" id="">
+                                <input type="file" name="surat_permohonan" required>
                             </div>
                         </td>
                     </tr>
@@ -68,7 +67,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ad_art" id="">
+                                <input type="file" name="ad_art" id="" required>
                             </div>
                         </td>
                     </tr>
@@ -87,7 +86,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pembentuk" id="">
+                                <input type="file" name="nama_pembentuk" id="" required>
                             </div>
                         </td>
                     </tr>
@@ -106,7 +105,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="nama_pengurus" id="">
+                                <input type="file" name="nama_pengurus" required>
                             </div>
                         </td>
                     </tr>
@@ -125,7 +124,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <input type="file" name="ba_pembentukan" id="">
+                                <input type="file" name="ba_pembentukan" required>
                             </div>
                         </td>
                     </tr>
@@ -133,7 +132,7 @@
             </table>
 
             <div class="col-md-4 pt-1 mt-4">
-                  <button class="btn btn-warning btn-lg btn-block" type="submit"><a style="color: #ffffff">Simpan</a></label></button>
+                  <button class="btn btn-warning btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff">Simpan</a></label></button>
             </div>
         </form>
         </div>

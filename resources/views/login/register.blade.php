@@ -14,8 +14,8 @@
             <div class="col col-xl-10">
               <div class="card" style="border-radius: 1rem;">
                 <div class="row g-0">
-                  <div class="col-md-6 col-lg-5 d-none d-md-block ">
-                    <div class="mt-5 text-center justify-content-center">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <div class="mt-5 text-center">
                       <img src="assets/img/banjarbaru.png" alt="banjarbaru" class="w-50 mt-5" style="border-radius: 1rem 0 0 1rem;" />
                     </div>
                   </div>

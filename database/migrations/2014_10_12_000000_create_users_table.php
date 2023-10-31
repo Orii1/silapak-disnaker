@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('role_id', 1);
             $table->string('name', 100);
             $table->string('address', 255);
-            $table->string('owner', 50);
+            $table->string('owner', 70);
             $table->string('email')->unique();
             $table->string('password');
             $table->string('type')->nullable();

@@ -18,5 +18,11 @@ class Pencatatanspsb extends Model
         'nama_pembentuk',
         'nama_pengurus',
         'ba_pembentukan',
+        'status'
     ];
+
+    public function spsb_user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

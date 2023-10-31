@@ -53,6 +53,11 @@ h6 {
   transition: all 0.3s;
 }
 
+#main-company {
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
 @media (max-width: 1199px) {
   #main {
     padding: 20px;
@@ -77,6 +82,17 @@ h6 {
   color: #012970;
 }
 
+.pagetitle-company {
+    margin-top: 70px;
+    padding: 10px 40px;
+}
+
+.pagetitle-company h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #012970;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -253,12 +269,19 @@ h6 {
 
 .card-title span {
   color: #899bbd;
-  font-size: 14px;
+font-size: 12px;
   font-weight: 400;
 }
 
+.card-menu {
+    padding: 20px 0 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
 .card-body {
-  padding: 0 20px 20px 20px;
+padding: 0 20px 0 20px;
 }
 
 .card-img-overlay {

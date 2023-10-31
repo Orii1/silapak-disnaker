@@ -1,44 +1,195 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Sistem Informasi Layanan Perindustrian dan Ketenagakerjaan</title>
-    <link rel="icon" href="assets/img/banjarbaru.png">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@extends('layout.header2')
 
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+@section('content')
+<div class="pagetitle-company">
+    <h1>Dashboard</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </nav>
+</div>
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body>
-    <header id="header" class="fixed-top header-dashboard-perusahaan">
-        <div class="container d-flex align-items-center">
-            <h1 class="logoo me-auto"><img src="assets/img/banjarbaru.png" style="width: 40px;" alt="banjarbaru"><a href="#">SILAPAK</a></h1>
-            <nav id="navbar" class="navbar">
-                <ul>
-                <li><a class="dash" href="/profileperusahaan/{{$user->id}}">Profile</a></li>
-                <li><a class="dash" href="#about">Buat Permohonan</a></li>
-                <li><a class="dash" href="#about">Cek Permohonan</a></li>
-                <li><a class="dash border border-white rounded-5" href="/logout">Keluar</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+<div class="mx-4">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                        Selamat datang, {{$user->name}}
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                       {{$dayname}}, {{$datestring}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                                Profile Perusahaan Anda <br>
+                                <span><i>(Informasi Lengkap mengenai Profile Perusahaan Anda)</i></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="align-center">
+                                <div class="my-4">
+                                    <a href="/profileperusahaan/{{$user->id}}" class="btn btn-primary btn-lg"><i class="bi bi-building-fill-exclamation"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                                Cek Permohonan Perusahaan Anda <br>
+                                <span><i>(Informasi Status Permohonan Perusahaan Anda yang telah diajukan sebelumnya)</i></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="align-center">
+                                <div class="my-4">
+                                    <a href="" class="btn btn-primary btn-lg"><i class="bi bi-hourglass-split"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="me-4">
+                    <div class="text-center">
+                        <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                            <div class="mb-3">
+                                Ajukan Permohonan Anda
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 ps-5">
+                            <a href="/permohonan/pengesahan-peraturan-perusahaan">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                Pengesahan Peraturan Perusahaan
+                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 ps-5">
+                            <a href="/permohonan/pendaftaran-pkb">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                Pendaftaran Perjanjian Kerja Bersama
+                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 ps-5">
+                            <a href="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                Pendaftaran Perjanjian Kerja Waktu Tertentu
+                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 ps-5">
+                            <a href="/permohonan/pencatatan-serikat-kerja">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                Pencatatan Serikat Pekerja/Serikat Buruh
+                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 ps-5">
+                            <a href="/permohonan/pendaftaran-lks-bipartit">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                Pendaftaran LKS Bipartit
+                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 ps-5">
+                            <a href="/permohonan/pencatatan-penyelesaian-perselisihan-internal">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                Pencatatan Penyelesaian Perselisihan Hubungan Internal
+                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 ps-5">
+                            <a href="/permohonan/pelaporan-pemutusan-hubungan-kerja">
+                                <div class="card">
+                                    <div class="card-body">
+                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                Pelaporan Pemutusan Hubungan Kerja
+                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-    <section class="box">
+
+
+    {{-- <section class="box">
         <section>
-            <h1 style="padding: 30px;">Selamat Datang, {{$user->name}}</h1>
+            <h1 style="padding: 0px;">Selamat Datang, {{$user->name}}</h1>
         </section>
 
         <section class="align-items-center d-flex justify-content-center">
@@ -129,19 +280,10 @@
                                     </div>
                                 </a>
                             </div>
-
-
-
                         </div>
                     </section>
                 </div>
             </div>
         </section>
-
-
-
-    </section>
-    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-</body>
-</html>
+    </section> --}}
+@endsection

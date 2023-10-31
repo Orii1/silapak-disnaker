@@ -21,7 +21,7 @@ class LoginController extends Controller
             } else if ($user_role == '2') {
                 $user = Auth::user();
                 toastr()->success('Berhasil Login, Selamat Datang ' . $user->name . '!');
-                return view('/perusahaan/dashboard', compact('user'));
+                return redirect('/perusahaan/dashboard');
             }
         } else {
             Session::flash('error', 'Email atau Password salah!');

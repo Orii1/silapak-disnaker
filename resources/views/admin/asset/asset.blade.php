@@ -21,7 +21,7 @@
                 <div class="row mb-3">
                   <label for="inputEmail3" class="col-sm-2 col-form-label">Upload</label>
                   <div class="col-sm-10">
-                    <input type="file" class="form-control" id="inputText">
+                    <input type="file" class="form-control" name="alur_perizinan" id="alur_perizinan">
                   </div>
                 </div>
                 <div class="text-center">
@@ -40,7 +40,7 @@
                 <div class="row mb-3">
                   <label for="inputEmail3" class="col-sm-2 col-form-label">Upload</label>
                   <div class="col-sm-10">
-                    <input type="file" class="form-control" id="inputText">
+                    <input type="file" class="form-control" id="dasar_hukum" name="dasar_hukum">
                   </div>
                 </div>
                 <div class="text-center">

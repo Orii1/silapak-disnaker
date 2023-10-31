@@ -39,7 +39,7 @@ Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', [CompanyController::class, 'index']);
+Route::get('/perusahaan/dashboard', [CompanyController::class, 'index']);
 Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);
 
 Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);

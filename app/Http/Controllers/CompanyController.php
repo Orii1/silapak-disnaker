@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,12 @@ class CompanyController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('/perusahaan/dashboard', compact('user'));
+
+        $now = Carbon::now();
+        $now->setLocale('id');
+        $datestring = $now->isoFormat('D MMMM Y');
+        $dayname = $now->translatedFormat('l');
+        return view('/perusahaan/dashboard', compact('user', 'dayname', 'datestring'));
     }
 
     /**
@@ -81,7 +87,7 @@ class CompanyController extends Controller
 
         $data->update($request->all());
         toastr()->success('Data Berhasil Disimpan!');
-        return redirect('/dashboard');
+        return redirect('/perusahaan/dashboard');
     }
 
     /**

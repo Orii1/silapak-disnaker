@@ -66,8 +66,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-primary"><i class="bi bi-info-circle-fill"></i></a>
-                            <a title="Hapus" href="delete-perusahaan/{{$item->id}}" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                            <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-primary" id=""><i class="bi bi-info-circle-fill"></i></a>
                         </div>
                     </td>
                 </tr>

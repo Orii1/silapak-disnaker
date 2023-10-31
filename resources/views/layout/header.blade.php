@@ -18,6 +18,7 @@
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+    @yield('css')
 <body>
     <header id="header" class="fixed-top header-dashboard-perusahaan">
         <div class="container d-flex align-items-center">
@@ -39,5 +40,6 @@
             @yield('content')
         </div>
     </main>
+
 </body>
 </html>

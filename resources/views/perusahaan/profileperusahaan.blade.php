@@ -116,7 +116,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
-                                                            <input type="text" name="men" id="men" class="form-control" placeholder="Laki laki" value="{{$user->men}}" required>
+                                                            <input type="text" name="men" id="men" class="form-control" value="{{$user->men}}" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -130,7 +130,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
-                                                            <input type="text" name="woman" id="woman" class="form-control" placeholder="Perempuan" value="{{$user->woman}}" required>
+                                                            <input type="text" name="woman" id="woman" class="form-control" value="{{$user->woman}}" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -152,7 +152,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
-                                                            <input type="text" name="pkwt" id="pkwt" class="form-control" placeholder="PKWT" value="{{$user->pkwt}}" required>
+                                                            <input type="text" name="pkwt" id="pkwt" class="form-control"  value="{{$user->pkwt}}" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -166,7 +166,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
-                                                            <input type="text" name="outsourcing" id="outsourcing" class="form-control" placeholder="Outsourcing" value="{{$user->outsourcing}}" required>
+                                                            <input type="text" name="outsourcing" id="outsourcing" class="form-control" value="{{$user->outsourcing}}" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -180,7 +180,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
-                                                            <input type="text" name="wna" id="wna" class="form-control" placeholder="WNA" value="{{$user->wna}}" required>
+                                                            <input type="text" name="wna" id="wna" class="form-control" value="{{$user->wna}}" required>
                                                         </div>
                                                     </div>
                                                 </div>

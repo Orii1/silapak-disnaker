@@ -217,9 +217,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fc_wlkp" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -240,9 +240,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -264,9 +264,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fc_sertifikat_peserta_bpjs_ketenagakerjaan" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -282,15 +282,15 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Permohonan Pendaftaran PP</label><br>
+                            <label for="">Permohonan Pengesahan PP</label><br>
 
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#permohonan_pengesahan_pp" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -312,9 +312,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#surat_pernyataan_saran_spsb" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -336,9 +336,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#surat_pernyataan_belum_terbentuk_spsb" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -360,9 +360,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#surat_pernyataan_struktur_skala_upah" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -384,9 +384,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#struktur_skala_upah_asli" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -408,9 +408,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#draf_pp" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pp/{{$data->draf_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>

@@ -20,7 +20,7 @@
                     <div class="mt-3 text-center">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item active" style="font-size: 20px;">
-                               <b>{{$item->spsb_user->name}}</b>
+                               <b>{{$item->pp_user->name}}</b>
                             </li>
                             <li class="breadcrumb-item" style="font-size: 19px;">
                                 Selengkapnya

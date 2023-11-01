@@ -71,7 +71,7 @@ class SubmissionController extends Controller
                 'ba_pembentukan' => $file5
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
-            return redirect('/dashboard');
+            return redirect('perusahaan/dashboard');
         }
 
     }
@@ -137,7 +137,8 @@ class SubmissionController extends Controller
             'draf_pp' => $file9
         ]);
 
-        return redirect('/dashboard');
+        toastr()->success('Permohonan Berhasil Dikirim!');
+        return redirect('perusahaan/dashboard');
     }
 
 
@@ -191,7 +192,7 @@ class SubmissionController extends Controller
             'draft_pkb' => $file7,
         ]);
 
-        return redirect('/dashboard');
+        return redirect('perusahaan/dashboard');
     }
 
     // Pendaftaran Perjanjian Kerja Waktu Tertentu
@@ -234,7 +235,7 @@ class SubmissionController extends Controller
             'fc_akta_pendirian_perusahaan' => $file5,
         ]);
 
-        return redirect('/dashboard');
+        return redirect('perusahaan/dashboard');
     }
 
     // Pendaftaran LKS Bipartit
@@ -272,7 +273,7 @@ class SubmissionController extends Controller
             'fc_wlkp' => $file4,
         ]);
 
-        return redirect('/dashboard');
+        return redirect('perusahaan/dashboard');
     }
 
     //Pencatatan Penyelesaian Perselisihan Internal
@@ -310,7 +311,7 @@ class SubmissionController extends Controller
             'risalah_perundingan_bipartit' => $file4,
         ]);
 
-        return redirect('/dashboard');
+        return redirect('perusahaan/dashboard');
     }
 
     //Pelaporan PHK
@@ -348,6 +349,6 @@ class SubmissionController extends Controller
             'pb_bipartit' => $file4,
         ]);
 
-        return redirect('/dashboard');
+        return redirect('perusahaan/dashboard');
     }
 }

@@ -53,10 +53,10 @@
             </a>
         </div>
         <div class="mx-4">
-            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="/logout">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="/logout" title="Log out">
                 <span class="d-none d-md-block">
-                    <div class="btn btn-outline-primary">
-                        <i class="bi bi-box-arrow-left"></i> Logout
+                    <div class="btn btn-primary">
+                        <i class="bi bi-door-closed-fill"></i>
                     </div>
                 </span>
             </a>

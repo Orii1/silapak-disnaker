@@ -25,7 +25,7 @@
                       <form method="POST">
                         @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
-                          <label class="fs-3"><b>Sistem Informasi Layanan Perindustrian dan Ketenagakerjaan</b></label>
+                          <label class="fs-3"><b>Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</b></label>
                         </div>
 
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; color: #9b9b9b"> Masukkan Email dan Password</h5>

@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/map', function () {
+    return view('/map');
+});
+
 Route::get('/', function () {
     return view('/dashboard/home');
 });
@@ -41,6 +45,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/perusahaan/dashboard', [CompanyController::class, 'index']);
 Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);
+Route::get('/cek-permohonan/{id}', [CompanyController::class, 'submission_check']);
 
 Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
 
@@ -82,7 +87,7 @@ Route::get('/admin/delete-perusahaan/{id}', [AdminController::class, 'delete_per
 
 Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);
 Route::get('/permohonan-pengesahan-pp/{id}', [AdminController::class, 'permohonan_pp_show']);
-Route::get('/permohonan-pp/terima/{id}', [AdminController::class, 'permohonan_pp_terima']);
+Route::post('/permohonan-pp/terima/{id}', [AdminController::class, 'permohonan_pp_terima']);
 Route::get('/permohonan-pp/tolak/{id}', [AdminController::class, 'permohonan_pp_tolak']);
 
 Route::get('/admin/permohonan-pendaftaran-pkb', [AdminController::class, 'pendaftaran_pkb']);

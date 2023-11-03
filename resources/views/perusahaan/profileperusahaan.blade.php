@@ -36,7 +36,7 @@
                 <div class="p-0">
                         <div class="p-5">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <div class="mb-4">
                                         <label for="name"><b>Nama Perusahaan</b></label>
                                         <input type="text" name="name" id="name" class="form-control" placeholder="Nama Perusahaan" value="{{$user->name}}" disabled>
@@ -75,8 +75,7 @@
                                             <option value="Kantor Cabang">Kantor Cabang</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-6">
+
                                     <div class="mb-4">
                                         <label for="type"><b>Status Penanaman Modal</b></label>
                                         <select class="form-select" name="modal" required>
@@ -89,6 +88,8 @@
                                             <option value="PMDN">PMDN</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
 
                                     <div class="mb-4">
                                         <label for=""><b>Surat Keputusan Izin Usaha (Nomor dan Tanggal Surat)</b></label>
@@ -108,7 +109,7 @@
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-md-6">
                                                             <div class="text-center">
                                                                 <div class="mt-2">
                                                                     Laki laki
@@ -122,7 +123,7 @@
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-md-6">
                                                             <div class="text-center">
                                                                 <div class="mt-2">
                                                                     Wanita
@@ -144,7 +145,7 @@
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-md-6">
                                                             <div class="text-center">
                                                                 <div class="mt-2">
                                                                     PKWT
@@ -158,7 +159,7 @@
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="row">
-                                                        <div class="col-7">
+                                                        <div class="col-md-7">
                                                             <div class="text-center">
                                                                 <div class="mt-2">
                                                                     Outsourcing
@@ -172,7 +173,7 @@
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-md-6">
                                                             <div class="text-center">
                                                                 <div class="mt-2">
                                                                     WNA
@@ -195,6 +196,12 @@
                                     <div class="mb-4">
                                         <label for=""><b>Nomor Kepesertaan BPJS Kesehatan</b></label>
                                         <input type="text" name="number_kesehatan" id="number_kesehatan" class="form-control"  value="{{$user->number_kesehatan}}" required>
+                                    </div>
+
+                                    <div class="d-flex align-content-center flex-wrap">
+                                        <iframe src="/map" frameborder="0" style="border:0; width: 100%; height: 230px;" allowfullscreen>
+
+                                        </iframe>
                                     </div>
                                 </div>
                             </div>

@@ -112,10 +112,15 @@ class AdminController extends Controller
         return view('/admin/pengesahan-pp/detail', compact('data'));
     }
 
-    public function permohonan_pp_terima($id)
+    public function permohonan_pp_terima(Request $request, $id)
     {
+        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
+        $file1 = $id . 'surat_keputusan' . '-' . 'pp' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('pp/sk', $file1);
+
         $permohonanpp = Pengesahanpp::find($id);
         $permohonanpp->status = '1';
+        $permohonanpp->sk = $request->$file1;
         $permohonanpp->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pengesahan-pp');

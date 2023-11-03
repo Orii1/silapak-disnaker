@@ -13,7 +13,7 @@
 
 <div class="mx-4">
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
@@ -34,7 +34,7 @@
     </div>
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -68,7 +68,7 @@
                         <div class="col-3">
                             <div class="align-center">
                                 <div class="my-4">
-                                    <a href="" class="btn btn-primary btn-lg"><i class="bi bi-hourglass-split"></i></a>
+                                    <a href="/cek-permohonan/{{$user->id}}" class="btn btn-primary btn-lg"><i class="bi bi-hourglass-split"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4 ps-5">
+                        <div class="col-md-4 ps-5">
                             <a href="/permohonan/pengesahan-peraturan-perusahaan">
                                 <div class="card">
                                     <div class="card-body">
@@ -104,7 +104,7 @@
                             </a>
                         </div>
 
-                        <div class="col-4 ps-5">
+                        <div class="col-md-4 ps-5">
                             <a href="/permohonan/pendaftaran-pkb">
                                 <div class="card">
                                     <div class="card-body">
@@ -116,7 +116,7 @@
                             </a>
                         </div>
 
-                        <div class="col-4 ps-5">
+                        <div class="col-md-4 ps-5">
                             <a href="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu">
                                 <div class="card">
                                     <div class="card-body">
@@ -128,7 +128,7 @@
                             </a>
                         </div>
 
-                        <div class="col-4 ps-5">
+                        <div class="col-md-4 ps-5">
                             <a href="/permohonan/pencatatan-serikat-kerja">
                                 <div class="card">
                                     <div class="card-body">
@@ -140,7 +140,7 @@
                             </a>
                         </div>
 
-                        <div class="col-4 ps-5">
+                        <div class="col-md-4 ps-5">
                             <a href="/permohonan/pendaftaran-lks-bipartit">
                                 <div class="card">
                                     <div class="card-body">
@@ -152,7 +152,7 @@
                             </a>
                         </div>
 
-                        <div class="col-4 ps-5">
+                        <div class="col-md-4 ps-5">
                             <a href="/permohonan/pencatatan-penyelesaian-perselisihan-internal">
                                 <div class="card">
                                     <div class="card-body">
@@ -164,7 +164,7 @@
                             </a>
                         </div>
 
-                        <div class="col-4 ps-5">
+                        <div class="col-md-4 ps-5">
                             <a href="/permohonan/pelaporan-pemutusan-hubungan-kerja">
                                 <div class="card">
                                     <div class="card-body">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengesahanpp;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,6 +20,13 @@ class CompanyController extends Controller
     {
         $user = Auth::user();
         return view('/perusahaan/profileperusahaan', compact('user'));
+    }
+
+    public function submission_check($id)
+    {
+        $pp_submission = Pengesahanpp::where('user_id', $id)->get();
+        $user = Auth::user();
+        return view('/perusahaan/cek-permohonan/cek-permohonan', compact('pp_submission', 'user'));
     }
 
     public function index()

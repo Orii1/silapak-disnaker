@@ -101,7 +101,7 @@ Route::get('/permohonan-pkwt/terima/{id}', [AdminController::class, 'pendaftaran
 Route::get('/permohonan-pkwt/tolak/{id}', [AdminController::class, 'pendaftaran_pkwt_tolak']);
 
 Route::get('/admin/permohonan-pencatatan-spsb', [AdminController::class, 'pencatatan_spsb']);
-Route::get('/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pencatatan_spsb_show']);
+Route::get('/permohonan-pencatatan-spsb/{id}', [AdminController::class, 'pencatatan_spsb_show']);
 Route::get('/permohonan-spsb/terima/{id}', [AdminController::class, 'pencatatan_spsb_terima']);
 Route::get('/permohonan-spsb/tolak/{id}', [AdminController::class, 'pencatatan_spsb_tolak']);
 

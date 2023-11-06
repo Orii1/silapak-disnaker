@@ -68,7 +68,6 @@
         function errorCallback(error) {
             if(error.code == 1) {
                 alert("You've decided not to share your position, but it's OK. We won't ask you again whyyy.");
-
             } else if(error.code == 2) {
                 alert("The network is down or the positioning service can't be reached.");
             } else if(error.code == 3) {
@@ -100,9 +99,9 @@
             L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
                     maxZoom: 25,
-                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                        'Imagery � <a href="https://www.mapbox.com/">Mapbox</a>',
+                    // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                    //     '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    //     'Imagery � <a href="https://www.mapbox.com/">Mapbox</a>',
                     id: "mapbox/streets-v11",
                     tileSize: 512,
                     zoomOffset: -1,

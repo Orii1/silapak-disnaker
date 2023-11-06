@@ -126,9 +126,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fc_wlkp" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pkb/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>

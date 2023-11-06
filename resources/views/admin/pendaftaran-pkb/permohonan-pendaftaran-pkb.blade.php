@@ -18,7 +18,7 @@
                 <div class="mt-3 text-center justify-text-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" style="font-size: 20px;">
-                           <b>{{$item->pkwt_user->name}}</b>
+                           <b>{{$item->pkb_user->name}}</b>
                         </li>
                         <li class="breadcrumb-item" style="font-size: 19px;">
                             Selengkapnya

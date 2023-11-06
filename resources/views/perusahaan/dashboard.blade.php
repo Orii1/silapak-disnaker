@@ -5,7 +5,7 @@
     <h1>Dashboard</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/perusahaan/dashboard">Home</a></li>
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
     </nav>
@@ -96,9 +96,16 @@
                             <a href="/permohonan/pengesahan-peraturan-perusahaan">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                Pengesahan Peraturan Perusahaan
+                                        <div class="row">
+                                            <div class="col-3 d-flex align-items-center">
+                                                <img src="/assets/img/permohonan.png" class="img-fluid" style="width: 100px;" alt="">
                                             </div>
+                                            <div class="col-9">
+                                                <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                    Pengesahan Peraturan Perusahaan
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -108,9 +115,16 @@
                             <a href="/permohonan/pendaftaran-pkb">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                Pendaftaran Perjanjian Kerja Bersama
+                                        <div class="row">
+                                            <div class="col-3 d-flex align-items-center">
+                                                <img src="/assets/img/pkb.png" class="img-fluid" style="width: 100px;" alt="">
                                             </div>
+                                            <div class="col-9">
+                                                <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                    Pendaftaran Perjanjian Kerja Bersama
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -120,9 +134,16 @@
                             <a href="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                Pendaftaran Perjanjian Kerja Waktu Tertentu
+                                        <div class="row">
+                                            <div class="col-3 d-flex align-items-center">
+                                                <img src="/assets/img/pkwt.png" class="img-fluid" style="width: 100px;" alt="">
                                             </div>
+                                            <div class="col-9">
+                                                <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                    Pendaftaran Perjanjian Kerja Waktu Tertentu
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -132,9 +153,16 @@
                             <a href="/permohonan/pencatatan-serikat-kerja">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                Pencatatan Serikat Pekerja/Serikat Buruh
+                                        <div class="row">
+                                            <div class="col-3 d-flex align-items-center">
+                                                <img src="/assets/img/spsb.png" class="img-fluid" style="width: 100px;" alt="">
                                             </div>
+                                            <div class="col-9">
+                                                <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                    Pencatatan Serikat Pekerja/Serikat Buruh
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -144,9 +172,16 @@
                             <a href="/permohonan/pendaftaran-lks-bipartit">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                Pendaftaran LKS Bipartit
+                                        <div class="row">
+                                            <div class="col-3 d-flex align-items-center">
+                                                <img src="/assets/img/lks.png" class="img-fluid" style="width: 100px;" alt="">
                                             </div>
+                                            <div class="col-9">
+                                                <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                    Pendaftaran Lembaga Kerja Sama Bipartit
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -156,9 +191,16 @@
                             <a href="/permohonan/pencatatan-penyelesaian-perselisihan-internal">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                Pencatatan Penyelesaian Perselisihan Hubungan Internal
+                                        <div class="row">
+                                            <div class="col-3 d-flex align-items-center">
+                                                <img src="/assets/img/hi.png" class="img-fluid" style="width: 100px;" alt="">
                                             </div>
+                                            <div class="col-9">
+                                                <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                    Pencatatan Penyelesaian Perselisihan Hubungan Internal
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -168,9 +210,16 @@
                             <a href="/permohonan/pelaporan-pemutusan-hubungan-kerja">
                                 <div class="card">
                                     <div class="card-body">
-                                            <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                Pelaporan Pemutusan Hubungan Kerja
+                                        <div class="row">
+                                            <div class="col-3 d-flex align-items-center">
+                                                <img src="/assets/img/phk.png" class="img-fluid" style="width: 100px;" alt="">
                                             </div>
+                                            <div class="col-9">
+                                                <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
+                                                    Pelaporan Pemutusan Hubungan Kerja
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>

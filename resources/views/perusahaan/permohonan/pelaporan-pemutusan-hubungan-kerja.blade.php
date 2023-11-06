@@ -6,7 +6,7 @@
     <h1>Ajuan Permohonan</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/perusahaan/dashboard">Home</a></li>
             <li class="breadcrumb-item active">Permohonan Pelaporan Pemutusan Hubungan Kerja</li>
         </ol>
     </nav>
@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-md-1">
                             <div class="text-center my-2">
-                                <img src="../../assets/img/permohonan.png" width="50px;" alt="icon">
+                                <img src="../../assets/img/phk.png" width="50px;" alt="icon">
                             </div>
                         </div>
                         <div class="col-md-11">

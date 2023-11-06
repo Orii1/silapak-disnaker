@@ -126,9 +126,10 @@ class AdminController extends Controller
         return redirect('/admin/permohonan-pengesahan-pp');
     }
 
-    public function permohonan_pp_tolak($id)
+    public function permohonan_pp_tolak(Request $request, $id)
     {
         $permohonanpp = Pengesahanpp::find($id);
+        $permohonanpp->pesan = $request->pesan;
         $permohonanpp->status = '2';
         $permohonanpp->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -147,18 +148,24 @@ class AdminController extends Controller
         return view('/admin/pendaftaran-pkb/detail', compact('data'));
     }
 
-    public function pendaftaran_pkb_terima($id)
+    public function pendaftaran_pkb_terima(Request $request, $id)
     {
-        $pendaftaranpkb = Pendaftaranpkb::find($id);
-        $pendaftaranpkb->status = '1';
-        $pendaftaranpkb->save();
+        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
+        $file1 = $id . 'surat_keputusan' . '-' . 'pkb' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('pkb/sk', $file1);
+
+        $permohonanpkb = Pendaftaranpkb::find($id);
+        $permohonanpkb->status = '1';
+        $permohonanpkb->sk = $request->$file1;
+        $permohonanpkb->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-pkb');
     }
 
-    public function pendaftaran_pkb_tolak($id)
+    public function pendaftaran_pkb_tolak(Request $request, $id)
     {
         $pendaftaranpkb = Pendaftaranpkb::find($id);
+        $pendaftaranpkb->pesan = $request->pesan;
         $pendaftaranpkb->status = '2';
         $pendaftaranpkb->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -178,18 +185,24 @@ class AdminController extends Controller
         return view('/admin/pendaftaran-pkwt/detail', compact('data'));
     }
 
-    public function pendaftaran_pkwt_terima($id)
+    public function pendaftaran_pkwt_terima(Request $request, $id)
     {
+        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
+        $file1 = $id . 'surat_keputusan' . '-' . 'pkwt' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('pkwt/sk', $file1);
+
         $pendaftaranpkwt = Pendaftaranpkwt::find($id);
         $pendaftaranpkwt->status = '1';
+        $pendaftaranpkwt->sk = $request->$file1;
         $pendaftaranpkwt->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-pkwt');
     }
 
-    public function pendaftaran_pkwt_tolak($id)
+    public function pendaftaran_pkwt_tolak(Request $request, $id)
     {
         $pendaftaranpkwt = Pendaftaranpkwt::find($id);
+        $pendaftaranpkwt->pesan = $request->pesan;
         $pendaftaranpkwt->status = '2';
         $pendaftaranpkwt->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -209,18 +222,24 @@ class AdminController extends Controller
         return view('/admin/pencatatan-spsb/detail', compact('data'));
     }
 
-    public function pencatatan_spsb_terima($id)
+    public function pencatatan_spsb_terima(Request $request, $id)
     {
+        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
+        $file1 = $id . 'surat_keputusan' . '-' . 'spsb' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('spsb/sk', $file1);
+
         $pencatatanspsb = Pencatatanspsb::find($id);
         $pencatatanspsb->status = '1';
+        $pencatatanspsb->sk = $request->$file1;
         $pencatatanspsb->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pencatatan-spsb');
     }
 
-    public function pencatatan_spsb_tolak($id)
+    public function pencatatan_spsb_tolak(Request $request, $id)
     {
         $pencatatanspsb = Pencatatanspsb::find($id);
+        $pencatatanspsb->pesan = $request->pesan;
         $pencatatanspsb->status = '2';
         $pencatatanspsb->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -240,18 +259,24 @@ class AdminController extends Controller
         return view('/admin/pendaftaran-lks-bipartit/detail', compact('data'));
     }
 
-    public function pendaftaran_lks_terima($id)
+    public function pendaftaran_lks_terima(Request $request, $id)
     {
+        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
+        $file1 = $id . 'surat_keputusan' . '-' . 'lks' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('lks/sk', $file1);
+
         $pendaftaranlks = Pendaftaranlks::find($id);
         $pendaftaranlks->status = '1';
+        $pendaftaranlks->sk = $request->$file1;
         $pendaftaranlks->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-lks');
     }
 
-    public function pendaftaran_lks_tolak($id)
+    public function pendaftaran_lks_tolak(Request $request, $id)
     {
         $pendaftaranlks = Pendaftaranlks::find($id);
+        $pendaftaranlks->pesan = $request->pesan;
         $pendaftaranlks->status = '2';
         $pendaftaranlks->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -271,18 +296,24 @@ class AdminController extends Controller
         return view('/admin/pencatatan-penyelesaian-hi/detail', compact('data'));
     }
 
-    public function pencatatan_hi_terima($id)
+    public function pencatatan_hi_terima(Request $request, $id)
     {
+        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
+        $file1 = $id . 'surat_keputusan' . '-' . 'perselisihan_hi' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('perselisihan_hi/sk', $file1);
+
         $penyelesaianhi = Pencatatanperselihan::find($id);
         $penyelesaianhi->status = '1';
+        $penyelesaianhi->sk = $request->$file1;
         $penyelesaianhi->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pencatatan-hi');
     }
 
-    public function pencatatan_hi_tolak($id)
+    public function pencatatan_hi_tolak(Request $request, $id)
     {
         $penyelesaianhi = Pencatatanperselihan::find($id);
+        $penyelesaianhi->pesan = $request->pesan;
         $penyelesaianhi->status = '2';
         $penyelesaianhi->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -302,8 +333,12 @@ class AdminController extends Controller
         return view('/admin/pelaporan-phk/detail', compact('data'));
     }
 
-    public function pelaporan_phk_terima($id)
+    public function pelaporan_phk_terima(Request $request, $id)
     {
+        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
+        $file1 = $id . 'surat_keputusan' . '-' . 'perselisihan_hi' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('perselisihan_hi/sk', $file1);
+
         $pelaporanphk = Pelaporanphk::find($id);
         $pelaporanphk->status = '1';
         $pelaporanphk->save();
@@ -311,9 +346,10 @@ class AdminController extends Controller
         return redirect('/admin/permohonan-pelaporan-phk');
     }
 
-    public function pelaporan_phk_tolak($id)
+    public function pelaporan_phk_tolak(Request $request, $id)
     {
         $pelaporanphk = Pelaporanphk::find($id);
+        $pelaporanphk->pesan = $request->pesan;
         $pelaporanphk->status = '2';
         $pelaporanphk->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');

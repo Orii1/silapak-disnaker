@@ -6,7 +6,7 @@
     <h1>Ajuan Permohonan</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/perusahaan/dashboard">Home</a></li>
             <li class="breadcrumb-item active">Permohonan Pencatatan Serikat Pekerja/Serikat Buruh</li>
         </ol>
     </nav>
@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-1">
                             <div class="ms-5 my-2">
-                                <img src="../../assets/img/permohonan.png" class="img-fluid" alt="icon">
+                                <img src="../../assets/img/spsb.png" class="img-fluid" alt="icon">
                             </div>
                         </div>
                         <div class="col-11">

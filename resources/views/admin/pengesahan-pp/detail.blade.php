@@ -443,12 +443,34 @@
     </div>
 </div>
 
+<div class="modal fade" id="tolak" tabindex="-1" aria-labelledby="tolakLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="tolakLabel">Pesan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/permohonan-pp/tolak/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <label class="mb-3">Masukkan Pesan</label>
+                <textarea class="form-control" id="pesan" name="pesan" style="height: 150px"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+
 <div class="mt-4">
     <div class="text-center">
         <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->pp_user->name}} :</b></label><br>
         <div class="mt-2">
             <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
-            <a href="/permohonan-pp/tolak/{{$data->id}}" class="btn btn-danger"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Tolak</a>
+            <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
         </div>
     </div>
 </div>

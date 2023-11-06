@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('daftar_hadir_perundingan_bipartit');
             $table->string('risalah_perundingan_bipartit');
             $table->string('status', 1)->default('0');
+            $table->string('sk', 255)->nullable();
             $table->timestamps();
         });
     }

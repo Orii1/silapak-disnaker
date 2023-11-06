@@ -129,11 +129,33 @@
         </tbody>
     </table>
 
+    <div class="modal fade" id="terima" tabindex="-1" aria-labelledby="terimaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="terimaLabel">Upload Surat Keputusan</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/permohonan-lks/terima/{{$data->id}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <label class="mb-3">Surat Keputusan</label>
+                    <input type="file" name="surat_keputusan" class="form-control">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
     <div class="mt-4">
         <div class="text-center">
             <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->lks_user->name}} :</b></label><br>
             <div class="mt-2">
-                <a href="/permohonan-lks/terima/{{$data->id}}" class="btn btn-success"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
+                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
                 <a href="/permohonan-lks/tolak/{{$data->id}}" class="btn btn-danger"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Tolak</a>
             </div>
         </div>

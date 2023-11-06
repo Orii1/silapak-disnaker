@@ -13,7 +13,7 @@
 
 <div class="mt-4">
     @foreach ($spsb as $item)
-        <a href="/permohonan-pendaftaran-pkb/{{$item->id}}">
+        <a href="/permohonan-pencatatan-spsb/{{$item->id}}">
             <div class="card" style="height: 60px; display: flex; align-items: center;">
                 <div class="mt-3 text-center">
                     <ol class="breadcrumb">

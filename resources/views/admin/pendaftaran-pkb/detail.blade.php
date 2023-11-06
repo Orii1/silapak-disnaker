@@ -1,81 +1,6 @@
 @extends('layout.admin')
 
 @section('content')
-{{-- MODAL --}}
-
-    {{-- Fotocopy WLKP yang masih berlaku --}}
-    <div class="modal modal-xl fade" id="fc_wlkp" tabindex="-1" aria-labelledby="fc_wlkpLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="fc_wlkpLabel">Fotocopy WLKP yang masih berlaku - {{$data->pkb_user->name}}</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{asset('storage/pkb/'.$data->fc_wlkp)}}" style="width:1100px;">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Fotocopy Akta Pendirian Perusahaan --}}
-    <div class="modal modal-xl fade" id="fc_akta_pendirian_perusahaan" tabindex="-1" aria-labelledby="fc_akta_pendirian_perusahaanLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="fc_akta_pendirian_perusahaanLabel">Fotocopy Akta Pendirian Perusahaan - {{$data->pkb_user->name}}</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{asset('storage/pkb/'.$data->fc_akta_pendirian_perusahaan)}}" style="width:1100px;">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir --}}
-    <div class="modal modal-xl fade" id="fc_setifikat_peserta_bpjs_ketenagakerjaan" tabindex="-1" aria-labelledby="fc_setifikat_peserta_bpjs_ketenagakerjaanLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="fc_setifikat_peserta_bpjs_ketenagakerjaanLabel">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir - {{$data->pkb_user->name}}</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{asset('storage/pkb/'.$data->fc_setifikat_peserta_bpjs_ketenagakerjaan)}}" style="width:1100px;">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir --}}
-    <div class="modal modal-xl fade" id="permohonan_pendaftaran_pkb" tabindex="-1" aria-labelledby="permohonan_pendaftaran_pkbLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="permohonan_pendaftaran_pkbLabel">Permohonan pendaftaran PKB - {{$data->pkb_user->name}}</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{asset('storage/pkb/'.$data->permohonan_pendaftaran_pkb)}}" style="width:1100px;">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-{{-- END MODAL --}}
 
 {{-- MAIN --}}
 <div class="pagetitle">
@@ -149,9 +74,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pkb/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -173,9 +98,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fc_setifikat_peserta_bpjs_ketenagakerjaan" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pkb/{{$data->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -197,9 +122,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#permohonan_pendaftaran_pkb" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pkb/{{$data->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -221,9 +146,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#surat_pernyataan_saran_spsb" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pkb/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -245,9 +170,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#surat_pernyataan_belum_terbentuk_spsb" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pkb/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -269,9 +194,9 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#surat_pernyataan_struktur_skala_upah" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/pkb/{{$data->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-download" style="height:100px;color: white;"></i>
                             </button>
@@ -282,11 +207,33 @@
     </table>
 </div>
 
+<div class="modal fade" id="terima" tabindex="-1" aria-labelledby="terimaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="terimaLabel">Upload Surat Keputusan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/permohonan-pkb/terima/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <label class="mb-3">Surat Keputusan</label>
+                <input type="file" name="surat_keputusan" class="form-control">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+
 <div class="mt-4">
     <div class="text-center">
         <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->pkb_user->name}} :</b></label><br>
         <div class="mt-2">
-            <a href="/permohonan-pkb/terima/{{$data->id}}" class="btn btn-success"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
+            <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
             <a href="/permohonan-pkb/tolak/{{$data->id}}" class="btn btn-danger"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Tolak</a>
         </div>
     </div>

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('fc_wlkp');
             $table->string('fc_akta_pendirian_perusahaan');
             $table->string('status', 1)->default('0');
+            $table->string('sk', 255)->nullable();
             $table->timestamps();
         });
     }

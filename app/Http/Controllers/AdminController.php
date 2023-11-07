@@ -120,7 +120,7 @@ class AdminController extends Controller
 
         $permohonanpp = Pengesahanpp::find($id);
         $permohonanpp->status = '1';
-        $permohonanpp->sk = $request->$file1;
+        $permohonanpp->sk = $file1;
         $permohonanpp->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pengesahan-pp');
@@ -156,7 +156,7 @@ class AdminController extends Controller
 
         $permohonanpkb = Pendaftaranpkb::find($id);
         $permohonanpkb->status = '1';
-        $permohonanpkb->sk = $request->$file1;
+        $permohonanpkb->sk = $file1;
         $permohonanpkb->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-pkb');
@@ -193,7 +193,7 @@ class AdminController extends Controller
 
         $pendaftaranpkwt = Pendaftaranpkwt::find($id);
         $pendaftaranpkwt->status = '1';
-        $pendaftaranpkwt->sk = $request->$file1;
+        $pendaftaranpkwt->sk = $file1;
         $pendaftaranpkwt->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-pkwt');
@@ -230,7 +230,7 @@ class AdminController extends Controller
 
         $pencatatanspsb = Pencatatanspsb::find($id);
         $pencatatanspsb->status = '1';
-        $pencatatanspsb->sk = $request->$file1;
+        $pencatatanspsb->sk = $file1;
         $pencatatanspsb->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pencatatan-spsb');
@@ -267,7 +267,7 @@ class AdminController extends Controller
 
         $pendaftaranlks = Pendaftaranlks::find($id);
         $pendaftaranlks->status = '1';
-        $pendaftaranlks->sk = $request->$file1;
+        $pendaftaranlks->sk = $file1;
         $pendaftaranlks->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-lks');
@@ -304,7 +304,7 @@ class AdminController extends Controller
 
         $penyelesaianhi = Pencatatanperselihan::find($id);
         $penyelesaianhi->status = '1';
-        $penyelesaianhi->sk = $request->$file1;
+        $penyelesaianhi->sk = $file1;
         $penyelesaianhi->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pencatatan-hi');
@@ -341,6 +341,7 @@ class AdminController extends Controller
 
         $pelaporanphk = Pelaporanphk::find($id);
         $pelaporanphk->status = '1';
+        $pelaporanphk->sk = $file1;
         $pelaporanphk->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pelaporan-phk');

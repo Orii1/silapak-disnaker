@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelaporanphk;
+use App\Models\Pencatatanperselihan;
+use App\Models\Pencatatanspsb;
+use App\Models\Pendaftaranlks;
+use App\Models\Pendaftaranpkb;
+use App\Models\Pendaftaranpkwt;
 use App\Models\Pengesahanpp;
 use App\Models\User;
 use Carbon\Carbon;
@@ -18,15 +24,30 @@ class CompanyController extends Controller
 
     public function profile($id)
     {
-        $user = Auth::user();
+        $user = User::find($id);
         return view('/perusahaan/profileperusahaan', compact('user'));
     }
 
     public function submission_check($id)
     {
+        $user = User::find($id);
         $pp_submission = Pengesahanpp::where('user_id', $id)->get();
-        $user = Auth::user();
-        return view('/perusahaan/cek-permohonan/cek-permohonan', compact('pp_submission', 'user'));
+        $pkb_submission = Pendaftaranpkb::where('user_id', $id)->get();
+        $pkwt_submission = Pendaftaranpkwt::where('user_id', $id)->get();
+        $spsb_submission = Pencatatanspsb::where('user_id', $id)->get();
+        $lks_submission = Pendaftaranlks::where('user_id', $id)->get();
+        $hi_submission = Pencatatanperselihan::where('user_id', $id)->get();
+        $phk_submission = Pelaporanphk::where('user_id', $id)->get();
+        return view('/perusahaan/cek-permohonan/cek-permohonan', compact(
+            'pp_submission',
+            'pkb_submission',
+            'pkwt_submission',
+            'spsb_submission',
+            'lks_submission',   
+            'hi_submission',
+            'phk_submission',
+            'user'
+        ));
     }
 
     public function index()

@@ -7,7 +7,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/perusahaan/dashboard">Home</a></li>
-            <li class="breadcrumb-item active">Permohonan Pendaftaran LKS Bipartit</li>
+            <li class="breadcrumb-item active">Permohonan Pendaftaran Lembaga Kerja Sama Bipartit</li>
         </ol>
     </nav>
 </div>
@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-11">
                             <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                                Permohonan Pendaftaran LKS Bipartit, {{$user->name}}
+                                Permohonan Pendaftaran Lembaga Kerja Sama Bipartit, {{$user->name}}
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,9 @@
 
                 <div class="tab-pane fade pt-3" id="alur-perizinan">
                     <div class="text-center">
-                        <img src="../../assets/img/ppnaker.png" class="img-fluid" alt="">
+                        <div class="mb-4">
+                            <img src="../../assets/img/ppnaker.png" class="img-fluid" alt="">
+                        </div>
                     </div>
                 </div>
 

@@ -20,7 +20,7 @@
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
             <img src="../../assets/img/company-icon.png" alt="Profile" class="rounded-circle" style="width: 500px;">
             <h2 class="mb-1">{{$detail->name}}</h2>
-            <h3 class="mb-2 text-muted text-center">{{$detail->email}}</h3>
+            <h3 class="mb-4 text-muted text-center">{{$detail->email}}</h3>
           </div>
         </div>
 

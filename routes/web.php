@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\UserController;
@@ -122,3 +123,17 @@ Route::post('/permohonan-phk/tolak/{id}', [AdminController::class, 'pelaporan_ph
 
 
 Route::get('/admin/asset', [AdminController::class, 'asset']);
+
+Route::get('/download/sk/pp/{id}', [FileController::class, 'download_sk_pp'])->name('sk-pp-download');
+
+Route::get('/download/sk/pkb/{id}', [FileController::class, 'download_sk_pkb'])->name('sk-pkb-download');
+
+Route::get('/download/sk/pkwt/{id}', [FileController::class, 'download_sk_pkwt'])->name('sk-pkwt-download');
+
+Route::get('/download/sk/spsb/{id}', [FileController::class, 'download_sk_spsb'])->name('sk-spsb-download');
+
+Route::get('/download/sk/lks/{id}', [FileController::class, 'download_sk_lks'])->name('sk-lks-download');
+
+Route::get('/download/sk/hi/{id}', [FileController::class, 'download_sk_hi'])->name('sk-hi-download');
+
+Route::get('/download/sk/phk/{id}', [FileController::class, 'download_sk_phk'])->name('sk-phk-download');

@@ -171,7 +171,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Permohonan Pendaftaran PP</label><br>
+                                                <label for="">Permohonan Pengesahan PP</label>
+                                                    <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
@@ -190,7 +191,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Surat pernyataan bahwa PP sudah dimintakan saran dan pertimbangan dari wakil pekerja, SP/SB.</label><br>
+                                                <label for="">Surat pernyataan bahwa PP sudah dimintakan saran dan pertimbangan dari wakil pekerja, SP/SB</label>
+                                                    <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
@@ -209,7 +211,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Surat pernyataan bahwa di Perusahaan belum terbentuk SP/SB</label><br>
+                                                <label for="">Surat pernyataan bahwa di Perusahaan belum terbentuk SP/SB</label>
+                                                    <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>

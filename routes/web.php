@@ -47,6 +47,16 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/perusahaan/dashboard', [CompanyController::class, 'index']);
 Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);
 Route::get('/cek-permohonan/{id}', [CompanyController::class, 'submission_check']);
+Route::get('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);
+Route::put('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);
+
+Route::get('/edit-permohonan-pkb/{id}', [CompanyController::class, 'edit_pkb_submission']);
+Route::get('/edit-permohonan-pkwt/{id}', [CompanyController::class, 'edit_pkwt_submission']);
+Route::get('/edit-permohonan-spsb/{id}', [CompanyController::class, 'edit_spsb_submission']);
+Route::get('/edit-permohonan-lks/{id}', [CompanyController::class, 'edit_lks_submission']);
+Route::get('/edit-permohonan-hi/{id}', [CompanyController::class, 'edit_hi_submission']);
+Route::get('/edit-permohonan-phk/{id}', [CompanyController::class, 'edit_phk_submission']);
+
 
 Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
 

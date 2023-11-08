@@ -18,7 +18,9 @@ class Pendaftaranpkwt extends Model
         'pkwt_asli',
         'fc_wlkp',
         'fc_akta_pendirian_perusahaan',
-        'status'
+        'status',
+        'pesan',
+        'sk',
     ];
 
     public function pkwt_user()

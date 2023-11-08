@@ -111,7 +111,7 @@
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                             </div></td>
-                                                <td><div class="text-center"><a href="" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/edit-permohonan-pp/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>
                                             @endif

@@ -43,11 +43,27 @@ class CompanyController extends Controller
             'pkb_submission',
             'pkwt_submission',
             'spsb_submission',
-            'lks_submission',   
+            'lks_submission',
             'hi_submission',
             'phk_submission',
             'user'
         ));
+    }
+
+    public function edit_pp_submission($id)
+    {
+
+        $pengesahanpp = Pengesahanpp::find($id);
+        $user = $pengesahanpp->pp_user;
+        return view('perusahaan/cek-permohonan/edit-permohonan', compact('pengesahanpp', 'user'));
+    }
+
+    public function FunctionName(Request $request, $id)
+    {
+        $pp = Pengesahanpp::find($id);
+        $pp->update([
+            
+        ]);
     }
 
     public function index()

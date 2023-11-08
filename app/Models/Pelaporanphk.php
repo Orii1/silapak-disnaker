@@ -17,7 +17,9 @@ class Pelaporanphk extends Model
         'surat_pemberitahuan_phk',
         'surat_tanggapan_pemberitahuan_phk',
         'pb_bipartit',
-        'status'
+        'status',
+        'pesan',
+        'sk',
     ];
 
     public function phk_user()

@@ -23,6 +23,8 @@ class Pengesahanpp extends Model
         'struktur_skala_upah_asli',
         'draf_pp',
         'status',
+        'pesan',
+        'sk',
     ];
 
     public function pp_user()

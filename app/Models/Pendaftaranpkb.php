@@ -20,7 +20,9 @@ class Pendaftaranpkb extends Model
         'surat_pernyataan_struktur_skala_upah',
         'struktur_skala_upah_asli',
         'draft_pkb',
-        'status'
+        'status',
+        'pesan',
+        'sk',
     ];
 
     public function pkb_user()

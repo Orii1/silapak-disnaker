@@ -17,7 +17,9 @@ class Pencatatanperselihan extends Model
         'surat_permintaan_perundingan_bipartit',
         'daftar_hadir_perundingan_bipartit',
         'risalah_perundingan_bipartit',
-        'status'
+        'status',
+        'pesan',
+        'sk',
     ];
 
     public function hi_user()

@@ -86,6 +86,7 @@
                                     <tr>
                                         <th><div class="text-center">No</div></th>
                                         <th><div class="text-center">Perusahaan</div></th>
+                                        <th><div class="text-center">Permohonan</div></th>
                                         <th><div class="text-center">Tanggal Diajukan</div></th>
                                         <th><div class="text-center">Status</div></th>
                                         <th><div class="text-center">Aksi</div></th>
@@ -96,6 +97,7 @@
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pp_user->name}}</div></td>
+                                            <td><div class="text-center">Pengesahan Peraturan Perusahaan</div></td>
                                             <td><div class="text-center">{{$item->updated_at->format('Y-m-d')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
@@ -140,6 +142,7 @@
                                     <tr>
                                         <th><div class="text-center">No</div></th>
                                         <th><div class="text-center">Perusahaan</div></th>
+                                        <th><div class="text-center">Permohonan</div></th>
                                         <th><div class="text-center">Tanggal Diajukan</div></th>
                                         <th><div class="text-center">Status</div></th>
                                         <th><div class="text-center">Aksi</div></th>
@@ -150,6 +153,7 @@
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pkb_user->name}}</div></td>
+                                            <td><div class="text-center">Pendafatran Perjanjian Kerja Bersama</div></td>
                                             <td><div class="text-center">{{$item->updated_at->format('Y-m-d')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
@@ -160,7 +164,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="{{route('sk-pkb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -194,6 +198,7 @@
                                     <tr>
                                         <th><div class="text-center">No</div></th>
                                         <th><div class="text-center">Perusahaan</div></th>
+                                        <th><div class="text-center">Permohonan</div></th>
                                         <th><div class="text-center">Tanggal Diajukan</div></th>
                                         <th><div class="text-center">Status</div></th>
                                         <th><div class="text-center">Aksi</div></th>
@@ -204,6 +209,7 @@
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pkwt_user->name}}</div></td>
+                                            <td><div class="text-center">Pendaftaran Perjanjian Kerja Waktu Tertentu</div></td>
                                             <td><div class="text-center">{{$item->updated_at->format('Y-m-d')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
@@ -214,7 +220,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="{{route('sk-pkwt-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -248,6 +254,7 @@
                                     <tr>
                                         <th><div class="text-center">No</div></th>
                                         <th><div class="text-center">Perusahaan</div></th>
+                                        <th><div class="text-center">Permohonan</div></th>
                                         <th><div class="text-center">Tanggal Diajukan</div></th>
                                         <th><div class="text-center">Status</div></th>
                                         <th><div class="text-center">Aksi</div></th>
@@ -258,6 +265,7 @@
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->spsb_user->name}}</div></td>
+                                            <td><div class="text-center">Pencatatan Serikat Pekerja/Serikat Buruh</div></td>
                                             <td><div class="text-center">{{$item->updated_at->format('Y-m-d')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
@@ -268,7 +276,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="{{route('sk-spsb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -302,6 +310,7 @@
                                     <tr>
                                         <th><div class="text-center">No</div></th>
                                         <th><div class="text-center">Perusahaan</div></th>
+                                        <th><div class="text-center">Permohonan</div></th>
                                         <th><div class="text-center">Tanggal Diajukan</div></th>
                                         <th><div class="text-center">Status</div></th>
                                         <th><div class="text-center">Aksi</div></th>
@@ -312,6 +321,7 @@
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->lks_user->name}}</div></td>
+                                            <td><div class="text-center">Pendaftaran LKS Bipartit</div></td>
                                             <td><div class="text-center">{{$item->updated_at->format('Y-m-d')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
@@ -322,7 +332,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="{{route('sk-lks-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -356,6 +366,7 @@
                                     <tr>
                                         <th><div class="text-center">No</div></th>
                                         <th><div class="text-center">Perusahaan</div></th>
+                                        <th><div class="text-center">Permohonan</div></th>
                                         <th><div class="text-center">Tanggal Diajukan</div></th>
                                         <th><div class="text-center">Status</div></th>
                                         <th><div class="text-center">Aksi</div></th>
@@ -366,6 +377,7 @@
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->hi_user->name}}</div></td>
+                                            <td><div class="text-center">Pencatatan Penyelesaian Perselisihan Hubungan Internal</div></td>
                                             <td><div class="text-center">{{$item->updated_at->format('Y-m-d')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
@@ -376,7 +388,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="{{route('sk-hi-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -410,6 +422,7 @@
                                     <tr>
                                         <th><div class="text-center">No</div></th>
                                         <th><div class="text-center">Perusahaan</div></th>
+                                        <th><div class="text-center">Permohonan</div></th>
                                         <th><div class="text-center">Tanggal Diajukan</div></th>
                                         <th><div class="text-center">Status</div></th>
                                         <th><div class="text-center">Aksi</div></th>
@@ -420,6 +433,7 @@
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->phk_user->name}}</div></td>
+                                            <td><div class="text-center">Pelaporan PHK</div></td>
                                             <td><div class="text-center">{{$item->updated_at->format('Y-m-d')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
@@ -430,7 +444,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="{{route('sk-phk-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>

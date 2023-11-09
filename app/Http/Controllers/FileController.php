@@ -63,7 +63,7 @@ class FileController extends Controller
     {
         $sk_hi = Pencatatanperselihan::find($id);
         $downloadFileName = $sk_hi->sk;
-        $filePath = storage_path('app/public/hi/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public/perselisihan_hi/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }

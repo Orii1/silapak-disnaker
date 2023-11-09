@@ -336,8 +336,8 @@ class AdminController extends Controller
     public function pelaporan_phk_terima(Request $request, $id)
     {
         $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-        $file1 = $id . 'surat_keputusan' . '-' . 'perselisihan_hi' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_keputusan')->storeAs('perselisihan_hi/sk', $file1);
+        $file1 = $id . 'surat_keputusan' . '-' . 'phk' . now()->timestamp . '.' . $extension1;
+        $request->file('surat_keputusan')->storeAs('phk/sk', $file1);
 
         $pelaporanphk = Pelaporanphk::find($id);
         $pelaporanphk->status = '1';

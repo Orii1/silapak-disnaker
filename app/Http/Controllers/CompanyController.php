@@ -62,7 +62,7 @@ class CompanyController extends Controller
     {
         $pp = Pengesahanpp::find($id);
         $pp->update([
-            
+
         ]);
     }
 

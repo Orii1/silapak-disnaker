@@ -158,7 +158,7 @@
               <h1 class="modal-title fs-5" id="tolakLabel">Pesan</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="/permohonan-lks/terima/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/permohonan-lks/tolak/{{$data->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <label class="mb-3">Masukkan Pesan</label>

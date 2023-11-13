@@ -75,7 +75,7 @@ class AdminController extends Controller
                 $curpass = User::find($id);
                 $curpass->password = Hash::make($request->newpassword);
                 $curpass->save();
-                toastr()->success('Password Berhasil Diganti!');
+                toastr()->info('Password Berhasil Diganti!');
                 return back();
             } else {
                 Session::flash('error', 'Password tidak sesuai!');

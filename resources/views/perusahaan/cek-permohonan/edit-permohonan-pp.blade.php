@@ -161,7 +161,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" id="">
+                                                    <input type="file" class="form-control" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -188,7 +188,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="permohonan_pengesahan_pp" id="">
+                                                    <input type="file" class="form-control" name="permohonan_pengesahan_pp" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -215,7 +215,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_saran_spsb" id="">
+                                                    <input type="file" class="form-control" name="surat_pernyataan_saran_spsb" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -242,7 +242,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_belum_terbentuk_spsb" id="">
+                                                    <input type="file" class="form-control" name="surat_pernyataan_belum_terbentuk_spsb" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -268,7 +268,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" id="">
+                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -294,7 +294,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="struktur_skala_upah_asli" id="">
+                                                    <input type="file" class="form-control" name="struktur_skala_upah_asli" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -320,13 +320,17 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="draf_pp" id="">
+                                                    <input type="file" class="form-control" name="draf_pp" required>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
                         </table>
+
+                        <div class="d-grid gap-2 col-2 mt-5 mx-auto">
+                            <a class="btn btn-primary"><b>Kirim Ulang</b></a>
+                          </div>
                     </form>
                 </div>
             </div>

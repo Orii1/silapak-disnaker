@@ -36,6 +36,36 @@
 </div>
 
 <div class="mx-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                                <div class="row">
+                                    <div class="col-md-3 my-1">
+                                        <label>Pilih Peruntukan :</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option disabled selected>Pilih Peruntukan</option>
+                                            <option value="Pengesahan Baru Peraturan Perusahaan">Pengesahan Baru Peraturan Perusahaan (PP)</option>
+                                            <option value="Pembaharuan Peraturan Perusahaan">Pembaharuan Peraturan Perusahaan (PP)</option>
+                                            <option value="Perubahan Peraturan Perusahaan">Perpanjangan Peraturan Perusahaan (PP)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mx-4">
     <div class="card">
         <div class="card-body">
             <ul class="mt-2 nav nav-tabs nav-tabs-bordered">

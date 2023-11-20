@@ -378,7 +378,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Struktur upah dan skala upah asli untuk ditunjuk ke pegawai / petugas pengoreksi PP</label><br>
+                            <label for="">Struktur dan skala upah asli untuk ditunjuk ke pegawai / petugas pengoreksi PP</label><br>
 
                         </div>
                     </td>

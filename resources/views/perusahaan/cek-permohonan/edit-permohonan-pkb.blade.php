@@ -1,13 +1,13 @@
 @extends('layout.header2')
 
 @section('content')
-
 <div class="pagetitle-company">
-    <h1>Ajuan Permohonan</h1>
+    <h1>Edit Permohonan Anda</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/perusahaan/dashboard">Home</a></li>
-            <li class="breadcrumb-item active">Permohonan Pendaftaran Perjanjian Kerja Bersama</li>
+            <li class="breadcrumb-item">Cek Permohonan</li>
+            <li class="breadcrumb-item active">Edit Permohonan Anda</li>
         </ol>
     </nav>
 </div>
@@ -20,12 +20,12 @@
                     <div class="row">
                         <div class="col-1">
                             <div class="ms-5 my-2">
-                                <img src="../../assets/img/pkb.png" width="50px;" alt="icon">
+                                <img src="../../assets/img/info-icon.jpg" width="50px;" alt="icon">
                             </div>
                         </div>
                         <div class="col-11">
                             <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                                Permohonan Pendaftaran Perjanjian Kerja Bersama, {{$user->name}}
+                                Edit Permohonan Perusahaan Anda
                             </div>
                         </div>
                     </div>
@@ -37,22 +37,17 @@
 
 <div class="mx-4">
     <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                                <div class="row">
-                                    <div class="col-md-3 my-1">
-                                        <label>Pilih Peruntukan :</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <select class="form-select" aria-label="Default select example" required>
-                                            <option disabled selected>Pilih Peruntukan</option>
-                                            <option value="Pengesahan Baru Peraturan Perusahaan">Pencatatan PKWT</option>
-                                        </select>
-                                    </div>
+        <div class="d-flex justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="p-5">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b>Pesan : </b>
+                                </div>
+                                <div class="col-md-9">
+                                    {{$pendaftaranpkb->pesan}}
                                 </div>
                             </div>
                         </div>
@@ -66,54 +61,13 @@
 <div class="mx-4">
     <div class="card">
         <div class="card-body">
-            <ul class="mt-2 nav nav-tabs nav-tabs-bordered">
-
-                <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#persyaratan">Persyaratan</button>
-                </li>
-
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#alur-perizinan">Alur Perizinan</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#">Dasar Hukum</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#">Durasi Pemrosesan</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#">Kontak</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#retribusi">Retribusi</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#maklumat">Maklumat Pelayanan</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#visimisi">Visi & Misi</button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#motto">Motto</button>
-                </li>
-
-            </ul>
-
-            <div class="tab-content">
-                <div class="tab-pane fade show active profile-overview" id="persyaratan">
-                    <div class="mt-4 mb-5">
-                        <div class="table-responsive">
-                            <table class="table align-middle mb-0 bg-white">
-                                <form action="/permohonan/pendaftaran-pkb" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <thead class="bg-light">
+            <div class="p-4">
+                <div class="table-responsivee">
+                    <form action="/edit-permohonan/{{$pendaftaranpkb->id}}" method="POST" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <table class="table align-middle mb-0 bg-white">
+                            <thead class="bg-light">
                                 <tr>
                                     <th>
                                         <div class="text-center">
@@ -132,7 +86,6 @@
                                     </th>
                                 </tr>
                                 </thead>
-
                                 <tbody>
                                     <tr>
                                         <td>
@@ -148,7 +101,16 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="fc_wlkp" required>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <a href="/storage/pp/{{$pendaftaranpkb->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                            <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input type="file" class="form-control" name="fc_wlkp" required>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -166,8 +128,15 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" id="">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="/storage/pp/{{$pendaftaranpkb->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" required>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -185,8 +154,15 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="fc_setifikat_peserta_bpjs_ketenagakerjaan" id="">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="/storage/pp/{{$pendaftaranpkb->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="file" class="form-control" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" required>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -204,8 +180,15 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="permohonan_pendaftaran_pkb" id="">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="/storage/pp/{{$pendaftaranpkb->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="file" class="form-control" name="permohonan_pengesahan_pp" required>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -218,13 +201,20 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for=""> Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
+                                                <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" id="">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="/storage/pp/{{$pendaftaranpkb->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="file" class="form-control" name="surat_pernyataan_saran_spsb" required>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -237,13 +227,20 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Struktur dan skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PKB</label><br>
+                                                <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PP</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="struktur_skala_upah_asli" id="">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="/storage/pp/{{$pendaftaranpkb->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="file" class="form-control" name="surat_pernyataan_belum_terbentuk_spsb" required>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -261,63 +258,26 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="draft_pkb" id="">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="/storage/pp/{{$pendaftaranpkb->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" required>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
-                        </div>
+                        </table>
 
-                        <div class="col-md-6 pt-1 mt-4">
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-primary btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim</b></a></label></button>
-                            </div>
-                        </div>
-
+                        <div class="d-grid gap-2 col-2 mt-5 mx-auto">
+                            <a class="btn btn-primary"><b>Kirim Ulang</b></a>
+                          </div>
                     </form>
-                    </div>
                 </div>
-
-                <div class="tab-pane fade pt-3" id="alur-perizinan">
-                    <div class="text-center">
-                        <img src="../../assets/img/ppnaker.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-                <div class="tab-pane fade pt-3" id="retribusi">
-                    <div class="text-center">
-                        <div class="mb-4">
-                            <img src="../../assets/img/gratis.png" class="img-fluid" style="width: 900px;" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade pt-3" id="maklumat">
-                    <div class="text-center">
-                        <div class="mb-4">
-                            <img src="../../assets/img/maklumat.jpg" class="img-fluid" style="width: 900px;" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade pt-3" id="visimisi">
-                    <div class="text-center">
-                        <div class="mb-4">
-                            <img src="../../assets/img/visimisi.jpg" class="img-fluid" style="width: 900px;" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade pt-3" id="motto">
-                    <div class="text-center">
-                        <div class="mb-4">
-                            <img src="../../assets/img/motto.jpg" style="width: 900px;" alt="">
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

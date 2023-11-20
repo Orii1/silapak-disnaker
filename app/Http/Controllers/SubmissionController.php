@@ -32,11 +32,11 @@ class SubmissionController extends Controller
         $user = Auth::user();
 
         $validatedata = $request->validate([
-            'surat_permohonan' => 'mimes:png,jpg,pdf|file|',
-            'ad_art' => 'mimes:png,jpg,pdf|file|',
-            'nama_pembentuk' => 'mimes:png,jpg,pdf|file|',
-            'nama_pengurus' => 'mimes:png,jpg,pdf|file|',
-            'ba_pembentukan' => 'mimes:png,jpg,pdf|file|',
+            'surat_permohonan' => 'required|mimes:png,jpg,pdf|file',
+            'ad_art' => 'required|mimes:png,jpg,pdf|file',
+            'nama_pembentuk' => 'required|mimes:png,jpg,pdf|file',
+            'nama_pengurus' => 'required|mimes:png,jpg,pdf|file',
+            'ba_pembentukan' => 'required|mimes:png,jpg,pdf|file',
         ]);
 
         if ($validatedata) {
@@ -191,7 +191,7 @@ class SubmissionController extends Controller
             'struktur_skala_upah_asli' => $file6,
             'draft_pkb' => $file7,
         ]);
-
+        toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
     }
 
@@ -234,7 +234,7 @@ class SubmissionController extends Controller
             'fc_wlkp' => $file4,
             'fc_akta_pendirian_perusahaan' => $file5,
         ]);
-
+        toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
     }
 
@@ -272,7 +272,7 @@ class SubmissionController extends Controller
             'berita_acara_pembentukan_lks_bipartit' => $file3,
             'fc_wlkp' => $file4,
         ]);
-
+        toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
     }
 
@@ -310,7 +310,7 @@ class SubmissionController extends Controller
             'daftar_hadir_perundingan_bipartit' => $file3,
             'risalah_perundingan_bipartit' => $file4,
         ]);
-
+        toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
     }
 
@@ -348,7 +348,7 @@ class SubmissionController extends Controller
             'surat_tanggapan_pemberitahuan_phk' => $file3,
             'pb_bipartit' => $file4,
         ]);
-
+        toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
     }
 }

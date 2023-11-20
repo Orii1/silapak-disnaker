@@ -42,7 +42,7 @@
         <div class="container text-center">
             <h1>Selamat Datang di Website SILAKHI</h1>
             <h1>Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</h1>
-            <h2>Mencetak Perizinan Anda Secara Mandiri</h2>
+            <h2>Memproses Layanan Permohonan Anda Secara Mandiri</h2>
             <h2>Dinas Koperasi Usaha Kecil Menengah dan Tenaga Kerja Banjarbaru</h2>
         </div>
     </section>

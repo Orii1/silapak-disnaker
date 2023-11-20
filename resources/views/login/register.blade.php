@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="text" name="address" id="address" placeholder="Alamat Perusahaan" class="form-control form-control-lg" required/>
+                            <input type="textarea" name="address" id="address" placeholder="Alamat Perusahaan" class="form-control form-control-lg" required/>
                         </div>
 
                         <div class="form-outline mb-4">

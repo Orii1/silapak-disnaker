@@ -23,7 +23,6 @@ class AdminSeeders extends Seeder
             'owner' => 'Dinas Koperasi Usaha Kecil Menengah dan Tenaga Kerja Banjarbaru',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123'),
-
         ]);
     }
 }

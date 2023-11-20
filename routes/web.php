@@ -45,7 +45,7 @@ Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
     Route::get('/cek-permohonan/{id}', [CompanyController::class, 'submission_check']);
     Route::get('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);
-    Route::put('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);
+    // Route::put('/edit-permohonan-pp/{id}', [CompanyController::class, 'update_pp_submission']);
     Route::get('/edit-permohonan-pkb/{id}', [CompanyController::class, 'edit_pkb_submission']);
     Route::get('/edit-permohonan-pkwt/{id}', [CompanyController::class, 'edit_pkwt_submission']);
     Route::get('/edit-permohonan-spsb/{id}', [CompanyController::class, 'edit_spsb_submission']);
@@ -76,9 +76,6 @@ Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::get('/download/sk/hi/{id}', [FileController::class, 'download_sk_hi'])->name('sk-hi-download');
     Route::get('/download/sk/phk/{id}', [FileController::class, 'download_sk_phk'])->name('sk-phk-download');
 
-    Route::get('/map', function () {
-        return view('/map');
-    });
     // END COMPANY DOWNLOAD
     // END COMPANY ROUTE
 
@@ -124,5 +121,8 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     // END ADMIN ROUTE
 });
 
+Route::get('/map', function () {
+    return view('/map');
+});
 Route::get('/logout', [LoginController::class, 'logout']);
 

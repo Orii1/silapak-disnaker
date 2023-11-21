@@ -14,7 +14,21 @@
     </nav>
 </div>
 
-<div class="mt-5">
+<div class="mx-1">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                        {{$data->peruntukan}}, {{$data->pkb_user->name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-2">
     <table class="table table-bordered">
         <thead class="bg-light">
             <tr>

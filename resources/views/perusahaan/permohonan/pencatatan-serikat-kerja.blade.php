@@ -36,38 +36,6 @@
 </div>
 
 <div class="mx-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                                <div class="row">
-                                    <div class="col-md-3 my-1">
-                                        <label>Pilih Peruntukan :</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <select class="form-select" aria-label="Default select example" required>
-                                            <option disabled selected>Pilih Peruntukan</option>
-                                            <option value="Pencatatan/Pemberitahuan SP/SB">Pencatatan/Pemberitahuan SP/SB</option>
-                                            <option value="Pelaporan Pemindahan Domisi SP/SB">Pelaporan Pemindahan Domisi SP/SB</option>
-                                            <option value="Pelaporan Perubahan AD/ART SP/SB">Pelaporan Perubahan AD/ART SP/SB</option>
-                                            <option value="Pemberitahuan Penerimaan Bantuan Keuangan dari LN">Pemberitahuan Penerimaan Bantuan Keuangan dari LN</option>
-                                            <option value="Pelaporan Pembubaran SP/SB">Pelaporan Pembubaran SP/SB</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mx-4">
     <div class="card">
         <div class="card-body">
             <ul class="mt-2 nav nav-tabs nav-tabs-bordered">
@@ -115,6 +83,21 @@
                     <div class="mt-4 mb-5">
                         <form action="/permohonan/pencatatan-serikat-kerja" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <div class="row mb-5">
+                                <div class="col-md-1 my-1 text-start">
+                                    <label>Peruntukan :</label>
+                                </div>
+                                <div class="col-md-4 text-start">
+                                    <select class="form-select" aria-label="Default select example" name="peruntukan" required>
+                                        <option disabled selected>Pilih Peruntukan</option>
+                                        <option value="Pencatatan/Pemberitahuan SP/SB">Pencatatan/Pemberitahuan SP/SB</option>
+                                        <option value="Pelaporan Pemindahan Domisi SP/SB">Pelaporan Pemindahan Domisi SP/SB</option>
+                                        <option value="Pelaporan Perubahan AD/ART SP/SB">Pelaporan Perubahan AD/ART SP/SB</option>
+                                        <option value="Pemberitahuan Penerimaan Bantuan Keuangan dari LN">Pemberitahuan Penerimaan Bantuan Keuangan dari LN</option>
+                                        <option value="Pelaporan Pembubaran SP/SB">Pelaporan Pembubaran SP/SB</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table align-middle mb-0 bg-white">
                                     <thead class="bg-light">

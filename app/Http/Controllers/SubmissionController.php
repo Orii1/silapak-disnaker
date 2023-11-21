@@ -64,6 +64,7 @@ class SubmissionController extends Controller
 
             Pencatatanspsb::create([
                 'user_id' => $user->id,
+                'peruntukan' => $request->peruntukan,
                 'surat_permohonan' => $file1,
                 'ad_art' => $file2,
                 'nama_pembentuk' => $file3,
@@ -124,8 +125,11 @@ class SubmissionController extends Controller
         $file9 = $user->id . 'draf_pp' . '-' . 'pp' . now()->timestamp . '.' . $extension9;
         $request->file('draf_pp')->storeAs('pp', $file9);
 
+
+
         Pengesahanpp::create([
             'user_id' => $user->id,
+            'peruntukan' => $request->peruntukan,
             'fc_wlkp' => $file1,
             'fc_akta_pendirian_perusahaan' => $file2,
             'fc_sertifikat_peserta_bpjs_ketenagakerjaan' => $file3,
@@ -183,6 +187,7 @@ class SubmissionController extends Controller
 
         Pendaftaranpkb::create([
             'user_id' => $user->id,
+            'peruntukan' => $request->peruntukan,
             'fc_wlkp' => $file1,
             'fc_akta_pendirian_perusahaan' => $file2,
             'fc_setifikat_peserta_bpjs_ketenagakerjaan' => $file3,
@@ -228,6 +233,7 @@ class SubmissionController extends Controller
 
         Pendaftaranpkwt::create([
             'user_id' => $user->id,
+            'peruntukan' => $request->peruntukan,
             'srt_permohonan_pencatatan_pkwt' => $file1,
             'daftar_nama_pekerja_pkwt' => $file2,
             'pkwt_asli' => $file3,
@@ -267,6 +273,7 @@ class SubmissionController extends Controller
 
         Pendaftaranlks::create([
             'user_id' => $user->id,
+            'peruntukan' => $request->peruntukan,
             'permohonan_pencatatan_lks_bipartit' => $file1,
             'daftar_susunan_pengurus_lks_bipartit' => $file2,
             'berita_acara_pembentukan_lks_bipartit' => $file3,
@@ -305,6 +312,7 @@ class SubmissionController extends Controller
 
         Pencatatanperselihan::create([
             'user_id' => $user->id,
+            'peruntukan' => $request->peruntukan,
             'permohonan_pencatatan_pphi' => $file1,
             'surat_permintaan_perundingan_bipartit' => $file2,
             'daftar_hadir_perundingan_bipartit' => $file3,
@@ -343,6 +351,7 @@ class SubmissionController extends Controller
 
         Pelaporanphk::create([
             'user_id' => $user->id,
+            'peruntukan' => $request->peruntukan,
             'permohonan_pelaporan_phk' => $file1,
             'surat_pemberitahuan_phk' => $file2,
             'surat_tanggapan_pemberitahuan_phk' => $file3,

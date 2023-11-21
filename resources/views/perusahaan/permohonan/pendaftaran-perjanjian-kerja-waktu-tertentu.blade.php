@@ -36,34 +36,6 @@
 </div>
 
 <div class="mx-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                                <div class="row">
-                                    <div class="col-md-3 my-1">
-                                        <label>Pilih Peruntukan :</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <select class="form-select" aria-label="Default select example" required>
-                                            <option disabled selected>Pilih Peruntukan</option>
-                                            <option value="Pengesahan Baru Peraturan Perusahaan">Pencatatan PKWT</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mx-4">
     <div class="card">
         <div class="card-body">
             <ul class="mt-2 nav nav-tabs nav-tabs-bordered">
@@ -109,10 +81,21 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active profile-overview" id="persyaratan">
                     <div class="mt-4 mb-5">
+                        <form action="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row mb-5">
+                            <div class="col-md-1 my-1 text-start">
+                                <label>Peruntukan :</label>
+                            </div>
+                            <div class="col-md-4 text-start">
+                                <select class="form-select" aria-label="Default select example" name="peruntukan" required>
+                                    <option disabled selected>Pilih Peruntukan</option>
+                                    <option value="Pencatatan PKWT">Pencatatan PKWT</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table class="table align-middle mb-0 bg-white">
-                                <form action="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu" method="POST" enctype="multipart/form-data">
-                                @csrf
                                 <thead class="bg-light">
                                     <tr>
                                         <th>

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pengesahan_pp', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('Users');
+            $table->string('peruntukan');
             $table->string('fc_wlkp');
             $table->string('fc_akta_pendirian_perusahaan');
             $table->string('fc_sertifikat_peserta_bpjs_ketenagakerjaan');

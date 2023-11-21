@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pencatatan_penyelesaian_peselisihan_hi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('Users');
+            $table->string('peruntukan');
             $table->string('permohonan_pencatatan_pphi');
             $table->string('surat_permintaan_perundingan_bipartit');
             $table->string('daftar_hadir_perundingan_bipartit');

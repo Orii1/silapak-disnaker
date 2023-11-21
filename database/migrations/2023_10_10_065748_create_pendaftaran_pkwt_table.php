@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pendaftaran_pkwt', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('Users');
+            $table->string('peruntukan');
             $table->string('srt_permohonan_pencatatan_pkwt');
             $table->string('daftar_nama_pekerja_pkwt');
             $table->string('pkwt_asli');

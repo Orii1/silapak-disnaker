@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pencatatan_sp_sb', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('Users');
+            $table->string('peruntukan');
             $table->string('surat_permohonan');
             $table->string('ad_art');
             $table->string('nama_pembentuk');

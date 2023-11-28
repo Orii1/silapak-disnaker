@@ -88,7 +88,7 @@
                                     <label>Peruntukan :</label>
                                 </div>
                                 <div class="col-md-4 text-start">
-                                    <select class="form-select" aria-label="Default select example" name="peruntukan" required>
+                                    <select class="form-select" name="peruntukan" required>
                                         <option disabled selected>Pilih Peruntukan</option>
                                         <option value="Pencatatan LKS Bipartit">Pencatatan LKS Bipartit</option>
                                         <option value="Pembaharuan Pengurus">Pembaharuan Pengurus</option>
@@ -200,8 +200,8 @@
                                         <button class="btn btn-primary btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim</b></a></label></button>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
 

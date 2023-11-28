@@ -251,6 +251,18 @@ h6 {
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
 
+.cardd {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.cardd:hover {
+    filter: none;
+    transform: translateY(-10px);
+}
 .card-header,
 .card-footer {
   border-color: #ebeef4;

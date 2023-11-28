@@ -48,7 +48,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/spsb/{{$data->surat_permohonan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/spsb/{{$data->surat_permohonan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -71,7 +71,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/spsb/{{$data->ad_art}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/spsb/{{$data->ad_art}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -93,7 +93,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/spsb/{{$data->nama_pembentuk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/spsb/{{$data->nama_pembentuk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -115,7 +115,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/spsb/{{$data->nama_pengurus}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/spsb/{{$data->nama_pengurus}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -137,7 +137,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/spsb/{{$data->ba_pembentukan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/spsb/{{$data->ba_pembentukan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">

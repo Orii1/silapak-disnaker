@@ -24,8 +24,9 @@ return new class extends Migration
             $table->string('surat_pernyataan_struktur_skala_upah');
             $table->string('struktur_skala_upah_asli');
             $table->string('draft_pkb');
-            $table->string('status', 1)->default('0');
+            $table->string('status', 1)->default('3');
             $table->string('sk', 255)->nullable();
+            $table->string('keterangan', 100)->nullable();
             $table->timestamps();
         });
     }

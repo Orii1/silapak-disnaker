@@ -13,6 +13,7 @@ class Pelaporanphk extends Model
 
     protected $fillable = [
         'user_id',
+        'peruntukan',
         'permohonan_pelaporan_phk',
         'surat_pemberitahuan_phk',
         'surat_tanggapan_pemberitahuan_phk',

@@ -22,8 +22,9 @@ return new class extends Migration
             $table->string('pkwt_asli');
             $table->string('fc_wlkp');
             $table->string('fc_akta_pendirian_perusahaan');
-            $table->string('status', 1)->default('0');
+            $table->string('status', 1)->default('3');
             $table->string('sk', 255)->nullable();
+            $table->string('keterangan', 100)->nullable();
             $table->timestamps();
         });
     }

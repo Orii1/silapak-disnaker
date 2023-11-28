@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan/{{$pengesahanpp->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-pp/{{$pengesahanpp->id}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-0 bg-white">
@@ -329,8 +329,8 @@
                         </table>
 
                         <div class="d-grid gap-2 col-2 mt-5 mx-auto">
-                            <a class="btn btn-primary"><b>Kirim Ulang</b></a>
-                          </div>
+                            <button class="btn btn-primary btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim Ulang</b></a></label></button>
+                        </div>
                     </form>
                 </div>
             </div>

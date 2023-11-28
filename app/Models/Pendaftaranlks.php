@@ -13,6 +13,7 @@ class Pendaftaranlks extends Model
 
     protected $fillable = [
         'user_id',
+        'peruntukan',
         'permohonan_pencatatan_lks_bipartit',
         'daftar_susunan_pengurus_lks_bipartit',
         'berita_acara_pembentukan_lks_bipartit',

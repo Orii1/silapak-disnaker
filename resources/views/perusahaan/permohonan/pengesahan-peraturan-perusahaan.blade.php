@@ -91,9 +91,9 @@
                                     <div class="col-md-4 text-start">
                                         <select class="form-select" aria-label="Default select example" name="peruntukan" required>
                                             <option disabled selected>Pilih Peruntukan</option>
-                                            <option value="Pengesahan Baru Peraturan Perusahaan">Pengesahan Baru Peraturan Perusahaan (PP)</option>
-                                            <option value="Pembaharuan Peraturan Perusahaan">Pembaharuan Peraturan Perusahaan (PP)</option>
-                                            <option value="Perubahan Peraturan Perusahaan">Perpanjangan Peraturan Perusahaan (PP)</option>
+                                            <option value="Pengesahan Baru Peraturan Perusahaan (PP)">Pengesahan Baru Peraturan Perusahaan (PP)</option>
+                                            <option value="Pembaharuan Peraturan Perusahaan (PP)">Pembaharuan Peraturan Perusahaan (PP)</option>
+                                            <option value="Perubahan Peraturan Perusahaan (PP)">Perpanjangan Peraturan Perusahaan (PP)</option>
                                         </select>
                                     </div>
                                 </div>

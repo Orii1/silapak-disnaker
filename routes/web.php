@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EditSubmissionController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SubmissionController;
@@ -45,7 +46,7 @@ Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
     Route::get('/cek-permohonan/{id}', [CompanyController::class, 'submission_check']);
     Route::get('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);
-    // Route::put('/edit-permohonan-pp/{id}', [CompanyController::class, 'update_pp_submission']);
+    Route::put('/edit-permohonan-pp/{id}', [EditSubmissionController::class, 'update_pp_submission']);
     Route::get('/edit-permohonan-pkb/{id}', [CompanyController::class, 'edit_pkb_submission']);
     Route::get('/edit-permohonan-pkwt/{id}', [CompanyController::class, 'edit_pkwt_submission']);
     Route::get('/edit-permohonan-spsb/{id}', [CompanyController::class, 'edit_spsb_submission']);
@@ -89,34 +90,63 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/admin/change-password/{id}', [AdminController::class, 'change_password']);
     Route::get('/admin/detail-perusahaan/{id}', [AdminController::class, 'detail_perusahaan']);
     Route::get('/admin/delete-perusahaan/{id}', [AdminController::class, 'delete_perusahaan']);
+
+    // PP
     Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);
+    Route::get('/konfirmasi/permohonan-pengesahan-pp/{id}', [AdminController::class, 'permohonan_pp_konfir']);
+    Route::post('/konfirmasi/permohonan-pp/{id}', [AdminController::class, 'permohonan_pp_proses']);
     Route::get('/permohonan-pengesahan-pp/{id}', [AdminController::class, 'permohonan_pp_show']);
+    Route::post('/permohonan-pp/update/{id}', [AdminController::class, 'permohonan_pp_update']);
     Route::post('/permohonan-pp/terima/{id}', [AdminController::class, 'permohonan_pp_terima']);
     Route::post('/permohonan-pp/tolak/{id}', [AdminController::class, 'permohonan_pp_tolak']);
+    // END PP
+
+    // PKB
     Route::get('/admin/permohonan-pendaftaran-pkb', [AdminController::class, 'pendaftaran_pkb']);
+    Route::get('/konfirmasi/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pendaftaran_pkb_konfir']);
+    Route::post('/konfirmasi/permohonan-pkb/{id}', [AdminController::class, 'pendaftaran_pkb_proses']);
     Route::get('/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pendaftaran_pkb_show']);
+    Route::post('/permohonan-pkb/update/{id}', [AdminController::class, 'pendaftaran_pkb_update']);
     Route::post('/permohonan-pkb/terima/{id}', [AdminController::class, 'pendaftaran_pkb_terima']);
     Route::post('/permohonan-pkb/tolak/{id}', [AdminController::class, 'pendaftaran_pkb_tolak']);
+    // END PKB
+
+    // PKWT
     Route::get('/admin/permohonan-pendaftaran-pkwt', [AdminController::class, 'pendaftaran_pkwt']);
     Route::get('/permohonan-pendaftaran-pkwt/{id}', [AdminController::class, 'pendaftaran_pkwt_show']);
     Route::post('/permohonan-pkwt/terima/{id}', [AdminController::class, 'pendaftaran_pkwt_terima']);
     Route::post('/permohonan-pkwt/tolak/{id}', [AdminController::class, 'pendaftaran_pkwt_tolak']);
+    // END PKWT
+
+    // SPSB
     Route::get('/admin/permohonan-pencatatan-spsb', [AdminController::class, 'pencatatan_spsb']);
     Route::get('/permohonan-pencatatan-spsb/{id}', [AdminController::class, 'pencatatan_spsb_show']);
     Route::post('/permohonan-spsb/terima/{id}', [AdminController::class, 'pencatatan_spsb_terima']);
     Route::post('/permohonan-spsb/tolak/{id}', [AdminController::class, 'pencatatan_spsb_tolak']);
+    // END SPSB
+
+    // LKS
     Route::get('/admin/permohonan-pendaftaran-lks', [AdminController::class, 'pendaftaran_lks']);
     Route::get('/permohonan-pendaftaran-lks/{id}', [AdminController::class, 'pendaftaran_lks_show']);
     Route::post('/permohonan-lks/terima/{id}', [AdminController::class, 'pendaftaran_lks_terima']);
     Route::post('/permohonan-lks/tolak/{id}', [AdminController::class, 'pendaftaran_lks_tolak']);
+    // END LKS
+
+    // HI
     Route::get('/admin/permohonan-pencatatan-hi', [AdminController::class, 'pencatatan_hi']);
     Route::get('/permohonan-penyelesaian-hi/{id}', [AdminController::class, 'pencatatan_hi_show']);
     Route::post('/permohonan-hi/terima/{id}', [AdminController::class, 'pencatatan_hi_terima']);
     Route::post('/permohonan-hi/tolak/{id}', [AdminController::class, 'pencatatan_hi_tolak']);
+    // HI
+
+    // PHK
     Route::get('/admin/permohonan-pelaporan-phk', [AdminController::class, 'pelaporan_phk']);
     Route::get('/permohonan-pelaporan-phk/{id}', [AdminController::class, 'pelaporan_phk_show']);
     Route::post('/permohonan-phk/terima/{id}', [AdminController::class, 'pelaporan_phk_terima']);
     Route::post('/permohonan-phk/tolak/{id}', [AdminController::class, 'pelaporan_phk_tolak']);
+        // END PHK
+
+
     Route::get('/admin/asset', [AdminController::class, 'asset']);
     // END ADMIN ROUTE
 });

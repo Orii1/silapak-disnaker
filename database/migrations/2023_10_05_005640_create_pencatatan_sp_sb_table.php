@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('nama_pembentuk');
             $table->string('nama_pengurus');
             $table->string('ba_pembentukan');
+            $table->string('keterangan', 100)->nullable();
             $table->string('sk', 255)->nullable();
             $table->timestamps();
         });

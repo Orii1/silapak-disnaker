@@ -94,7 +94,7 @@
                     <div class="row">
                         <div class="col-md-4 ps-5">
                             <a href="/permohonan/pengesahan-peraturan-perusahaan">
-                                <div class="card">
+                                <div class="cardd">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-3 d-flex align-items-center">
@@ -113,7 +113,7 @@
 
                         <div class="col-md-4 ps-5">
                             <a href="/permohonan/pendaftaran-pkb">
-                                <div class="card">
+                                <div class="cardd">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-3 d-flex align-items-center">
@@ -132,7 +132,7 @@
 
                         <div class="col-md-4 ps-5">
                             <a href="/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu">
-                                <div class="card">
+                                <div class="cardd">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-3 d-flex align-items-center">
@@ -151,7 +151,7 @@
 
                         <div class="col-md-4 ps-5">
                             <a href="/permohonan/pencatatan-serikat-kerja">
-                                <div class="card">
+                                <div class="cardd">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-3 d-flex align-items-center">
@@ -170,7 +170,7 @@
 
                         <div class="col-md-4 ps-5">
                             <a href="/permohonan/pendaftaran-lks-bipartit">
-                                <div class="card">
+                                <div class="cardd">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-3 d-flex align-items-center">
@@ -189,7 +189,7 @@
 
                         <div class="col-md-4 ps-5">
                             <a href="/permohonan/pencatatan-penyelesaian-perselisihan-internal">
-                                <div class="card">
+                                <div class="cardd">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-3 d-flex align-items-center">
@@ -208,7 +208,7 @@
 
                         <div class="col-md-4 ps-5">
                             <a href="/permohonan/pelaporan-pemutusan-hubungan-kerja">
-                                <div class="card">
+                                <div class="cardd">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-3 d-flex align-items-center">

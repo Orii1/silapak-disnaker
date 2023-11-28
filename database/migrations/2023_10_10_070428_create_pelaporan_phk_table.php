@@ -21,8 +21,9 @@ return new class extends Migration
             $table->string('surat_pemberitahuan_phk');
             $table->string('surat_tanggapan_pemberitahuan_phk');
             $table->string('pb_bipartit');
-            $table->string('status', 1)->default('0');
+            $table->string('status', 1)->default('3');
             $table->string('sk', 255)->nullable();
+            $table->string('keterangan', 100)->nullable();
             $table->timestamps();
         });
     }

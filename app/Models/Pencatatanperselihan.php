@@ -13,6 +13,7 @@ class Pencatatanperselihan extends Model
 
     protected $fillable = [
         'user_id',
+        'peruntukan',
         'permohonan_pencatatan_pphi',
         'surat_permintaan_perundingan_bipartit',
         'daftar_hadir_perundingan_bipartit',

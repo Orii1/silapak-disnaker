@@ -137,23 +137,4 @@
         </div>
     </div>
 </div>
-
-{{-- <div class="mt-4">
-    @foreach ($pkb as $item)
-        <a href="/permohonan-pendaftaran-pkb/{{$item->id}}">
-            <div class="card" style="height: 60px; display: flex; align-items: center;">
-                <div class="mt-3 text-center justify-text-center">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" style="font-size: 20px;">
-                           <b>{{$item->pkb_user->name}}</b>
-                        </li>
-                        <li class="breadcrumb-item" style="font-size: 19px;">
-                            Selengkapnya
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </a>
-    @endforeach
-</div> --}}
 @endsection

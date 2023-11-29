@@ -172,7 +172,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PP</label><br>
+                            <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PKB</label><br>
 
                         </div>
                     </td>

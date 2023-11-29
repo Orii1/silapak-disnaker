@@ -113,20 +113,28 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
 
     // PKWT
     Route::get('/admin/permohonan-pendaftaran-pkwt', [AdminController::class, 'pendaftaran_pkwt']);
+    Route::get('/konfirmasi/permohonan-pkwt/{id}', [AdminController::class, 'pendaftaran_pkwt_konfir']);
+    Route::post('/konfirmasi/permohonan-pkwt/{id}', [AdminController::class, 'pendaftaran_pkwt_proses']);
     Route::get('/permohonan-pendaftaran-pkwt/{id}', [AdminController::class, 'pendaftaran_pkwt_show']);
+    Route::post('/permohonan-pkwt/update/{id}', [AdminController::class, 'pendaftaran_pkwt_update']);
     Route::post('/permohonan-pkwt/terima/{id}', [AdminController::class, 'pendaftaran_pkwt_terima']);
     Route::post('/permohonan-pkwt/tolak/{id}', [AdminController::class, 'pendaftaran_pkwt_tolak']);
     // END PKWT
 
     // SPSB
     Route::get('/admin/permohonan-pencatatan-spsb', [AdminController::class, 'pencatatan_spsb']);
+    Route::get('/konfirmasi/permohonan-pencatatan-spsb/{id}', [AdminController::class, 'pencatatan_spsb_konfir']);
+    Route::post('/konfirmasi/permohonan-spsb/{id}', [AdminController::class, 'pendaftaran_spsb_proses']);
     Route::get('/permohonan-pencatatan-spsb/{id}', [AdminController::class, 'pencatatan_spsb_show']);
+    Route::post('/permohonan-spsb/update/{id}', [AdminController::class, 'pencatatan_spsb_update']);
     Route::post('/permohonan-spsb/terima/{id}', [AdminController::class, 'pencatatan_spsb_terima']);
     Route::post('/permohonan-spsb/tolak/{id}', [AdminController::class, 'pencatatan_spsb_tolak']);
     // END SPSB
 
     // LKS
     Route::get('/admin/permohonan-pendaftaran-lks', [AdminController::class, 'pendaftaran_lks']);
+    Route::get('/konfirmasi/permohonan-pendaftaran-lks/{id}', [AdminController::class, 'pendaftaran_lks_konfir']);
+    Route::post('/konfirmasi/permohonan-lks/{id}', [AdminController::class, 'pendaftaran_lks_proses']);
     Route::get('/permohonan-pendaftaran-lks/{id}', [AdminController::class, 'pendaftaran_lks_show']);
     Route::post('/permohonan-lks/terima/{id}', [AdminController::class, 'pendaftaran_lks_terima']);
     Route::post('/permohonan-lks/tolak/{id}', [AdminController::class, 'pendaftaran_lks_tolak']);

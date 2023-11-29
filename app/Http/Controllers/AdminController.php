@@ -328,6 +328,41 @@ class AdminController extends Controller
         return view('/admin/pendaftaran-pkwt/permohonan-pendaftaran-pkwt', compact('pkwt_proses', 'pkwt_konfir', 'pkwt_terima', 'pkwt_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
+    public function pendaftaran_pkwt_konfir($id)
+    {
+        $data = Pendaftaranpkwt::find($id);
+
+        $pp_not = Pengesahanpp::where('status', '3')->count();
+        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        $lks_not = Pendaftaranlks::where('status', '3')->count();
+        $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/pendaftaran-pkwt/konfirmasi', compact('data', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function pendaftaran_pkwt_proses(Request $request, $id)
+    {
+        $permohonanpkwt = Pendaftaranpkwt::find($id);
+
+        $permohonanpkwt->keterangan = $request->keterangan;
+        $permohonanpkwt->status = '0';
+        $permohonanpkwt->save();
+        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
+        return redirect('/admin/permohonan-pendaftaran-pkwt');
+    }
+
+    public function pendaftaran_pkwt_update(Request $request, $id)
+    {
+        $permohonanpkwt = Pendaftaranpkwt::find($id);
+
+        $permohonanpkwt->keterangan = $request->keterangan;
+        $permohonanpkwt->save();
+        toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
+        return redirect('/admin/permohonan-pendaftaran-pkwt');
+    }
+
     public function pendaftaran_pkwt_show($id)
     {
         $data = Pendaftaranpkwt::find($id);
@@ -351,6 +386,7 @@ class AdminController extends Controller
 
         $pendaftaranpkwt->status = '1';
         $pendaftaranpkwt->sk = $file1;
+        $pendaftaranpkwt->keterangan = 'Permohonan Selesai';
         $pendaftaranpkwt->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-pkwt');
@@ -361,6 +397,7 @@ class AdminController extends Controller
         $pendaftaranpkwt = Pendaftaranpkwt::find($id);
         $pendaftaranpkwt->pesan = $request->pesan;
         $pendaftaranpkwt->status = '2';
+        $pendaftaranpkwt->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
         $pendaftaranpkwt->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pendaftaran-pkwt');
@@ -383,6 +420,41 @@ class AdminController extends Controller
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
         return view('/admin/pencatatan-spsb/permohonan-pencatatan-spsb', compact('spsb_proses', 'spsb_konfir', 'spsb_terima', 'spsb_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function pencatatan_spsb_konfir($id)
+    {
+        $data = Pencatatanspsb::find($id);
+
+        $pp_not = Pengesahanpp::where('status', '3')->count();
+        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        $lks_not = Pendaftaranlks::where('status', '3')->count();
+        $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/pencatatan-spsb/konfirmasi', compact('data', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function pendaftaran_spsb_proses(Request $request, $id)
+    {
+        $pencatatanspsb = Pencatatanspsb::find($id);
+
+        $pencatatanspsb->keterangan = $request->keterangan;
+        $pencatatanspsb->status = '0';
+        $pencatatanspsb->save();
+        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
+        return redirect('/admin/permohonan-pencatatan-spsb');
+    }
+
+    public function pendaftaran_spsb_update(Request $request, $id)
+    {
+        $pencatatanspsb = Pencatatanspsb::find($id);
+
+        $pencatatanspsb->keterangan = $request->keterangan;
+        $pencatatanspsb->save();
+        toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
+        return redirect('/admin/permohonan-pendaftaran-pkwt');
     }
 
     public function pencatatan_spsb_show($id)

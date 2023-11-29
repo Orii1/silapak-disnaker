@@ -17,6 +17,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
+        toastr()->info('Berhasil Membuat Akun!, Silahkan Login');
         return redirect('/login');
     }
 

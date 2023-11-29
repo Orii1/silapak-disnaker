@@ -13,6 +13,7 @@ class Pendaftaranpkb extends Model
 
     protected $fillable = [
         'user_id',
+        'peruntukan',
         'fc_wlkp',
         'fc_akta_pendirian_perusahaan',
         'fc_setifikat_peserta_bpjs_ketenagakerjaan',
@@ -20,7 +21,9 @@ class Pendaftaranpkb extends Model
         'surat_pernyataan_struktur_skala_upah',
         'struktur_skala_upah_asli',
         'draft_pkb',
-        'status'
+        'status',
+        'pesan',
+        'sk',
     ];
 
     public function pkb_user()

@@ -48,7 +48,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/perselisihan_hi/{{$data->permohonan_pencatatan_pphi}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->permohonan_pencatatan_pphi}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -71,7 +71,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/perselisihan_hi/{{$data->surat_permintaan_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->surat_permintaan_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -94,7 +94,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/perselisihan_hi/{{$data->daftar_hadir_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->daftar_hadir_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -117,7 +117,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/perselisihan_hi/{{$data->risalah_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->risalah_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
@@ -129,12 +129,56 @@
         </tbody>
     </table>
 
+    <div class="modal fade" id="terima" tabindex="-1" aria-labelledby="terimaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="terimaLabel">Upload Surat Keputusan</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/permohonan-hi/terima/{{$data->id}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <label class="mb-3">Surat Keputusan</label>
+                    <input type="file" name="surat_keputusan" class="form-control">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tolak" tabindex="-1" aria-labelledby="tolakLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="tolakLabel">Pesan</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/permohonan-hi/tolak/{{$data->id}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <label class="mb-3">Masukkan Pesan</label>
+                    <textarea class="form-control" id="pesan" name="pesan" style="height: 150px"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
     <div class="mt-4">
         <div class="text-center">
             <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->hi_user->name}} :</b></label><br>
             <div class="mt-2">
-                <a href="/permohonan-hi/terima/{{$data->id}}" class="btn btn-success"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
-                <a href="/permohonan-hi/tolak/{{$data->id}}" class="btn btn-danger"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Tolak</a>
+                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
+                <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
             </div>
         </div>
     </div>

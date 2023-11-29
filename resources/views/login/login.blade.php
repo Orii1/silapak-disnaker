@@ -16,7 +16,9 @@
                 <div class="row g-0">
                   <div class="col-md-6 col-lg-5 d-none d-md-block ">
                     <div class="mt-5 text-center justify-content-center">
-                      <img src="assets/img/banjarbaru.png" alt="banjarbaru" class="w-50 mt-5" style="border-radius: 1rem 0 0 1rem;" />
+                        <div class="img-fluif">
+                            <img src="assets/img/banjarbaru.png" alt="banjarbaru" class="w-50 mt-5" style="border-radius: 1rem 0 0 1rem;" />
+                        </div>
                     </div>
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex justify-content-center align-items-center">
@@ -25,7 +27,7 @@
                       <form method="POST">
                         @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
-                          <label class="fs-3"><b>Sistem Informasi Layanan Perindustrian dan Ketenagakerjaan</b></label>
+                          <label class="fs-3"><b>Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</b></label>
                         </div>
 
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; color: #9b9b9b"> Masukkan Email dan Password</h5>

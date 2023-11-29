@@ -13,12 +13,15 @@ class Pendaftaranpkwt extends Model
 
     protected $fillable = [
         'user_id',
+        'peruntukan',
         'srt_permohonan_pencatatan_pkwt',
         'daftar_nama_pekerja_pkwt',
         'pkwt_asli',
         'fc_wlkp',
         'fc_akta_pendirian_perusahaan',
-        'status'
+        'status',
+        'pesan',
+        'sk',
     ];
 
     public function pkwt_user()

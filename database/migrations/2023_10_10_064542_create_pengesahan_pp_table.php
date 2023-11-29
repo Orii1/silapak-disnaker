@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pengesahan_pp', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('Users');
+            $table->string('peruntukan');
             $table->string('fc_wlkp');
             $table->string('fc_akta_pendirian_perusahaan');
             $table->string('fc_sertifikat_peserta_bpjs_ketenagakerjaan');
@@ -25,7 +26,8 @@ return new class extends Migration
             $table->string('surat_pernyataan_struktur_skala_upah');
             $table->string('struktur_skala_upah_asli');
             $table->string('draf_pp');
-            $table->string('status', 1)->default('0');
+            $table->string('status', 1)->default('3');
+            $table->string('keterangan', 100)->nullable();
             $table->timestamps();
         });
     }

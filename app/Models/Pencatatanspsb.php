@@ -13,12 +13,15 @@ class Pencatatanspsb extends Model
 
     protected $fillable = [
         'user_id',
+        'peruntukan',
         'surat_permohonan',
         'ad_art',
         'nama_pembentuk',
         'nama_pengurus',
         'ba_pembentukan',
-        'status'
+        'status',
+        'pesan',
+        'sk',
     ];
 
     public function spsb_user()

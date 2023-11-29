@@ -13,6 +13,7 @@ class Pengesahanpp extends Model
 
     protected $fillable = [
         'user_id',
+        'peruntukan',
         'fc_wlkp',
         'fc_akta_pendirian_perusahaan',
         'fc_sertifikat_peserta_bpjs_ketenagakerjaan',
@@ -23,6 +24,8 @@ class Pengesahanpp extends Model
         'struktur_skala_upah_asli',
         'draf_pp',
         'status',
+        'pesan',
+        'sk',
     ];
 
     public function pp_user()

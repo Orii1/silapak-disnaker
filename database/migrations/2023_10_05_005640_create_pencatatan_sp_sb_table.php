@@ -16,11 +16,14 @@ return new class extends Migration
         Schema::create('pencatatan_sp_sb', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('Users');
+            $table->string('peruntukan');
             $table->string('surat_permohonan');
             $table->string('ad_art');
             $table->string('nama_pembentuk');
             $table->string('nama_pengurus');
             $table->string('ba_pembentukan');
+            $table->string('keterangan', 100)->nullable();
+            $table->string('sk', 255)->nullable();
             $table->timestamps();
         });
     }

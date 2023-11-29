@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('pencatatan_sp_sb', function (Blueprint $table) {
-            $table->string('status', 1)->default('0')->after('ba_pembentukan');
+            $table->string('status', 1)->default('3')->after('ba_pembentukan');
         });
     }
 

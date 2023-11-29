@@ -38,23 +38,23 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label for="name"><b>Nama Perusahaan</b></label>
+                                        <label for="name"><b>Nama Perusahaan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="name" id="name" class="form-control" placeholder="Nama Perusahaan" value="{{$user->name}}" disabled>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="address"><b>Alamat Perusahaan</b></label>
+                                        <label for="address"><b>Alamat Perusahaan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="address" id="address" class="form-control" placeholder="Alamat Perusahaan" value="{{$user->address}}" disabled>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="owner"><b>Pemilik Perusahaan</b></label>
+                                        <label for="owner"><b>Pemilik Perusahaan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="owner" id="owner" class="form-control" placeholder="Pemilik Perusahaan" value="{{$user->owner}}" disabled>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="email"><b>Email</b></label>
+                                        <label for="email"><b>Email </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="email" id="email" class="form-control" placeholder="Email" value="{{$user->email}}" disabled>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="type"><b>Tipe Perusahaan (Sesuai NIB)</b></label>
+                                        <label for="type"><b>Tipe Perusahaan (Sesuai NIB) </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <select class="form-select" name="type" required>
                                             <option selected disabled>{{$user->type}}</option>
                                             <option value="Mikro">Mikro</option>
@@ -64,11 +64,11 @@
                                         </select>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="sector"><b>Sektor/Nama KBLI (Sesuai NIB)</b></label>
+                                        <label for="sector"><b>Sektor/Nama KBLI (Sesuai NIB) </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="sector" id="sector" class="form-control" value="{{$user->sector}}" required>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="status"><b>Status Perusahaan</b></label>
+                                        <label for="status"><b>Status Perusahaan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <select class="form-select" name="status" required>
                                             <option selected disabled>{{$user->status}}</option>
                                             <option value="Kantor Pusat">Kantor Pusat</option>
@@ -77,7 +77,7 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="type"><b>Status Penanaman Modal</b></label>
+                                        <label for="type"><b>Status Penanaman Modal </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <select class="form-select" name="modal" required>
                                             <option selected disabled>{{$user->modal}}</option>
                                             <option value="Perorangan">Perorangan</option>
@@ -92,7 +92,7 @@
                                 <div class="col-md-6">
 
                                     <div class="mb-4">
-                                        <label for=""><b>Surat Keputusan Izin Usaha (Nomor dan Tanggal Surat)</b></label>
+                                        <label for=""><b>Surat Keputusan Izin Usaha (Nomor dan Tanggal Surat) </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <div class="row">
                                             <div class="col-6">
                                                 <input type="text" name="number_letter" id="number_letter" class="form-control" placeholder="Nomor Surat" value="{{$user->number_letter}}" required>
@@ -104,7 +104,7 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for=""><b>Jumlah Tenaga Kerja</b></label>
+                                        <label for=""><b>Jumlah Tenaga Kerja </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <div class="ms-2">
                                             <div class="row">
                                                 <div class="col-4">
@@ -140,7 +140,7 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for=""><b>Status Hubungan Kerja</b></label>
+                                        <label for=""><b>Status Hubungan Kerja </b><label style="color: red; font-size: 15px;"> *</label></label>
                                          <div class="d-flex justify-content-center">
                                             <div class="row">
                                                 <div class="col-4">
@@ -190,11 +190,11 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for=""><b>Nomor Kepesertaan BPJS Ketenagakerjaan</b></label>
+                                        <label for=""><b>Nomor Kepesertaan BPJS Ketenagakerjaan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="number_ketenagakerjaan" id="number_ketenagakerjaan" class="form-control"  value="{{$user->number_ketenagakerjaan}}" required>
                                     </div>
                                     <div class="mb-4">
-                                        <label for=""><b>Nomor Kepesertaan BPJS Kesehatan</b></label>
+                                        <label for=""><b>Nomor Kepesertaan BPJS Kesehatan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="number_kesehatan" id="number_kesehatan" class="form-control"  value="{{$user->number_kesehatan}}" required>
                                     </div>
 

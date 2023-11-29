@@ -73,7 +73,8 @@ class EditSubmissionController extends Controller
             'surat_pernyataan_struktur_skala_upah' => $file7,
             'struktur_skala_upah_asli' => $file8,
             'draf_pp' => $file9,
-            'status' => '0',
+            'status' => '3',
+            'keterangan' => '',
             'pesan' => '',
             'sk' => '',
         ]);

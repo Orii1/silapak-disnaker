@@ -201,6 +201,7 @@ class AdminController extends Controller
 
         $permohonanpp->status = '1';
         $permohonanpp->sk = $file1;
+        $permohonanpp->keterangan = "Permohonan Selesai";
         $permohonanpp->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pengesahan-pp');
@@ -210,6 +211,7 @@ class AdminController extends Controller
     {
         $permohonanpp = Pengesahanpp::find($id);
         $permohonanpp->pesan = $request->pesan;
+        $permohonanpp->keterangan = "Silahkan Revisi beberapa persyaratan sesuai Pesan";
         $permohonanpp->status = '2';
         $permohonanpp->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -291,6 +293,7 @@ class AdminController extends Controller
 
         $permohonanpkb->status = '1';
         $permohonanpkb->sk = $file1;
+        $permohonanpkb->keterangan = "Permohonan Selesai";
         $permohonanpkb->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-pkb');
@@ -300,7 +303,7 @@ class AdminController extends Controller
     {
         $pendaftaranpkb = Pendaftaranpkb::find($id);
         $pendaftaranpkb->pesan = $request->pesan;
-        $pendaftaranpkb->pesan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
+        $pendaftaranpkb->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
         $pendaftaranpkb->status = '2';
         $pendaftaranpkb->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
@@ -310,7 +313,10 @@ class AdminController extends Controller
 
     public function pendaftaran_pkwt()
     {
-        $pkwt = Pendaftaranpkwt::where('status', '0')->get();
+        $pkwt_proses = Pendaftaranpkwt::where('status', '0')->get();
+        $pkwt_konfir = Pendaftaranpkwt::where('status', '3')->get();
+        $pkwt_terima = Pendaftaranpkwt::where('status', '1')->get();
+        $pkwt_tolak = Pendaftaranpkwt::where('status', '2')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -319,7 +325,7 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-pkwt/permohonan-pendaftaran-pkwt', compact('pkwt', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        return view('/admin/pendaftaran-pkwt/permohonan-pendaftaran-pkwt', compact('pkwt_proses', 'pkwt_konfir', 'pkwt_terima', 'pkwt_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
     public function pendaftaran_pkwt_show($id)
@@ -363,7 +369,11 @@ class AdminController extends Controller
 
     public function pencatatan_spsb()
     {
-        $spsb = Pencatatanspsb::where('status', '0')->get();
+        $spsb_proses = Pencatatanspsb::where('status', '0')->get();
+        $spsb_konfir = Pencatatanspsb::where('status', '3')->get();
+        $spsb_terima = Pencatatanspsb::where('status', '1')->get();
+        $spsb_tolak = Pencatatanspsb::where('status', '2')->get();
+
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -372,7 +382,7 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pencatatan-spsb/permohonan-pencatatan-spsb', compact('spsb', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        return view('/admin/pencatatan-spsb/permohonan-pencatatan-spsb', compact('spsb_proses', 'spsb_konfir', 'spsb_terima', 'spsb_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
     public function pencatatan_spsb_show($id)
@@ -416,7 +426,10 @@ class AdminController extends Controller
 
     public function pendaftaran_lks()
     {
-        $lks = Pendaftaranlks::where('status', '0')->get();
+        $lks_proses = Pendaftaranlks::where('status', '0')->get();
+        $lks_konfir = Pendaftaranlks::where('status', '3')->get();
+        $lks_terima = Pendaftaranlks::where('status', '1')->get();
+        $lks_tolak = Pendaftaranlks::where('status', '2')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -425,7 +438,7 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-lks-bipartit/permohonan-pendaftaran-lks', compact('lks', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        return view('/admin/pendaftaran-lks-bipartit/permohonan-pendaftaran-lks', compact('lks_proses', 'lks_konfir', 'lks_terima', 'lks_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
     public function pendaftaran_lks_show($id)
@@ -469,7 +482,10 @@ class AdminController extends Controller
 
     public function pencatatan_hi()
     {
-        $hi = Pencatatanperselihan::where('status', '0')->get();
+        $hi_proses = Pencatatanperselihan::where('status', '0')->get();
+        $hi_konfir = Pencatatanperselihan::where('status', '3')->get();
+        $hi_terima = Pencatatanperselihan::where('status', '1')->get();
+        $hi_tolak = Pencatatanperselihan::where('status', '2')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -478,7 +494,7 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pencatatan-penyelesaian-hi/permohonan-pencatatan-penyelesaian-hi', compact('hi', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        return view('/admin/pencatatan-penyelesaian-hi/permohonan-pencatatan-penyelesaian-hi', compact('hi_proses', 'hi_konfir', 'hi_terima', 'hi_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
     public function pencatatan_hi_show($id)
@@ -523,7 +539,10 @@ class AdminController extends Controller
 
     public function pelaporan_phk()
     {
-        $phk = Pelaporanphk::where('status', '0')->get();
+        $phk_proses = Pelaporanphk::where('status', '0')->get();
+        $phk_konfir = Pelaporanphk::where('status', '3')->get();
+        $phk_terima = Pelaporanphk::where('status', '1')->get();
+        $phk_tolak = Pelaporanphk::where('status', '2')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -532,7 +551,7 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pelaporan-phk/permohonan-pelaporan-phk', compact('phk', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        return view('/admin/pelaporan-phk/permohonan-pelaporan-phk', compact('phk_proses', 'phk_konfir', 'phk_terima', 'phk_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
     public function pelaporan_phk_show($id)

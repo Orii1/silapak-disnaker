@@ -28,14 +28,31 @@
     </div>
 </div>
 
-<div class="mt-2 mb-2">
-    <div class="mx-2">
-        <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
-        <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
-            <i class="bi bi-clock-fill" style="color: white"></i>
-        </a>
+@if ($data->status == '1')
+    <div class="mt-2 mb-2">
+        <div class="mx-2">
+            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b></label>
+        </div>
     </div>
-</div>
+@elseif ($data->status == '2')
+    <div class="mt-2 mb-2">
+        <div class="mx-2">
+            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persayaratan</b></label>
+        </div>
+    </div>
+@elseif ($data->status == '0')
+    <div class="mt-2 mb-2">
+        <div class="mx-2">
+            <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
+            <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
+                <i class="bi bi-clock-fill" style="color: white"></i>
+            </a>
+        </div>
+    </div>
+@else
+
+@endif
+
 
 <div class="mt-4">
     <table class="table table-bordered">
@@ -317,14 +334,20 @@
     </div>
 </div>
 
-<div class="mt-4">
-    <div class="text-center">
-        <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->pp_user->name}} :</b></label><br>
-        <div class="mt-2">
-            <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
-            <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
+
+@if ($data->status == '0')
+    <div class="mt-4">
+        <div class="text-center">
+            <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->pp_user->name}} :</b></label><br>
+            <div class="mt-2">
+                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
+                <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
+            </div>
         </div>
     </div>
-</div>
+@else
+
+@endif
+
 {{-- END MAIN --}}
 @endsection

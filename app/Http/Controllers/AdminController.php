@@ -127,10 +127,10 @@ class AdminController extends Controller
 
     public function permohonan_pp()
     {
-        $pp_proses = Pengesahanpp::where('status', '0')->get();
-        $pp_konfir = Pengesahanpp::where('status', '3')->get();
-        $pp_terima = Pengesahanpp::where('status', '1')->get();
-        $pp_tolak = Pengesahanpp::where('status', '2')->get();
+        $pp_proses = Pengesahanpp::where('status', '0')->orderBy('updated_at', 'desc')->get();
+        $pp_konfir = Pengesahanpp::where('status', '3')->orderBy('updated_at', 'desc')->get();
+        $pp_terima = Pengesahanpp::where('status', '1')->orderBy('updated_at', 'desc')->get();
+        $pp_tolak = Pengesahanpp::where('status', '2')->orderBy('updated_at', 'desc')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();

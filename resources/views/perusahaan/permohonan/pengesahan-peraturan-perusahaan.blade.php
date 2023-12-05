@@ -93,7 +93,7 @@
                                             <option disabled selected>Pilih Peruntukan</option>
                                             <option value="Pengesahan Baru Peraturan Perusahaan (PP)">Pengesahan Baru Peraturan Perusahaan (PP)</option>
                                             <option value="Pembaharuan Peraturan Perusahaan (PP)">Pembaharuan Peraturan Perusahaan (PP)</option>
-                                            <option value="Perubahan Peraturan Perusahaan (PP)">Perpanjangan Peraturan Perusahaan (PP)</option>
+                                            <option value="Perpanjangan Peraturan Perusahaan (PP)">Perpanjangan Peraturan Perusahaan (PP)</option>
                                         </select>
                                     </div>
                                 </div>

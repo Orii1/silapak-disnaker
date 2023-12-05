@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan/{{$pendaftaranpkwt->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-pkwt/{{$pendaftaranpkwt->id}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-0 bg-white">
@@ -95,7 +95,7 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Fotocopy WLKP yang masih berlaku</label><br>
+                                                <label for="">Surat permohonan pencacatan PKWT</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
@@ -103,12 +103,12 @@
                                             <div class="text-center">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <a href="/storage/pp/{{$pendaftaranpkwt->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                         </a>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="file" class="form-control" name="fc_wlkp" required>
+                                                        <input type="file" class="form-control" name="srt_permohonan_pencatatan_pkwt" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,19 +123,19 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
+                                                <label for="">Daftar nama pekerja / buruh yang di PKWT</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkwt->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" required>
+                                                    <input type="file" class="form-control" name="daftar_nama_pekerja_pkwt" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -149,19 +149,19 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
+                                                <label for="">Asli PKWT yang sudah ditandatangani oleh para pihak (pengusaha dan pekerja)</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkwt->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" required>
+                                                    <input type="file" class="form-control" name="pkwt_asli" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -175,19 +175,19 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Permohonan pendaftaran PKB</label><br>
+                                                <label for="">Fotocopy WLKP yang masih berlaku</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkwt->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="permohonan_pengesahan_pp" required>
+                                                    <input type="file" class="form-control" name="fc_wlkp" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -201,71 +201,19 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
+                                                <label for="">Fotocopy akta pendirian Perusahaan</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkwt->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_saran_spsb" required>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="text-center">
-                                                6
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PP</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkwt->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_belum_terbentuk_spsb" required>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="text-center">
-                                                7
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <label for="">Draft PKB sebanyak 3 eksemplar yang sudah diparaf oleh pimpinan dan ketua SP /SB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkwt->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" required>
+                                                    <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -274,7 +222,7 @@
                         </table>
 
                         <div class="d-grid gap-2 col-2 mt-5 mx-auto">
-                            <a class="btn btn-primary"><b>Kirim Ulang</b></a>
+                            <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim Ulang</b></a></label></button>
                           </div>
                     </form>
                 </div>

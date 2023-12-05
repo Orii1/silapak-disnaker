@@ -46,7 +46,7 @@
                 <div class="tab-pane fade show active profile-overview" id="konfirmasi">
                     <div class="mt-4 mb-5">
                         @foreach ($hi_konfir as $item)
-                            <a href="#">
+                            <a href="/konfirmasi/permohonan-penyelesaian-hi/{{$item->id}}">
                                 <div class="card" style="height: 60px; display: flex; align-items: center;">
                                     <div class="mt-3 text-center">
                                         <ol class="breadcrumb">
@@ -68,7 +68,7 @@
                     <div class="text-center">
                         <div class="mb-4">
                             @foreach ($hi_proses as $item)
-                                <a href="#">
+                                <a href="/permohonan-penyelesaian-hi/{{$item->id}}">
                                     <div class="card" style="height: 60px; display: flex; align-items: center;">
                                         <div class="mt-3 text-center">
                                             <ol class="breadcrumb">
@@ -96,7 +96,7 @@
                                         <div class="mt-3 text-center">
                                             <ol class="breadcrumb">
                                                 <li class="breadcrumb-item active" style="font-size: 20px;">
-                                                <b>{{$item->spsb_user->name}}</b>
+                                                <b>{{$item->hi_user->name}}</b>
                                                 </li>
                                                 <li class="breadcrumb-item" style="font-size: 19px;">
                                                     Selengkapnya

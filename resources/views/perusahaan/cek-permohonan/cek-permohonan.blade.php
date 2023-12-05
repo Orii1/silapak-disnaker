@@ -176,11 +176,13 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-pkb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-pkb/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->status == '3')
                                                 <td><div class="text-center">

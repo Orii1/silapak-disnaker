@@ -64,8 +64,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-
+                            <label for="">Fotocopy WLKP yang masih berlaku</label><br> 
                         </div>
                     </td>
                     <td>
@@ -73,9 +72,6 @@
                             <a href="/storage/{{$data->user_id}}/pkb/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-download" style="height:100px;color: white;"></i>
-                            </button>
                         </div>
                     </td>
                 </tr>
@@ -96,9 +92,6 @@
                             <a href="/storage/{{$data->user_id}}/pkb/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-download" style="height:100px;color: white;"></i>
-                            </button>
                         </div>
                     </td>
                 </tr>
@@ -112,7 +105,6 @@
                     <td>
                         <div class="text-center">
                             <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
-
                         </div>
                     </td>
                     <td>
@@ -120,9 +112,6 @@
                             <a href="/storage/{{$data->user_id}}/pkb/{{$data->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-download" style="height:100px;color: white;"></i>
-                            </button>
                         </div>
                     </td>
                 </tr>
@@ -136,7 +125,6 @@
                     <td>
                         <div class="text-center">
                             <label for="">Permohonan pendaftaran PKB</label><br>
-
                         </div>
                     </td>
                     <td>
@@ -144,9 +132,6 @@
                             <a href="/storage/{{$data->user_id}}/pkb/{{$data->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-download" style="height:100px;color: white;"></i>
-                            </button>
                         </div>
                     </td>
                 </tr>
@@ -160,7 +145,6 @@
                     <td>
                         <div class="text-center">
                             <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
-
                         </div>
                     </td>
                     <td>
@@ -168,9 +152,6 @@
                             <a href="/storage/{{$data->user_id}}/pkb/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-download" style="height:100px;color: white;"></i>
-                            </button>
                         </div>
                     </td>
                 </tr>
@@ -184,7 +165,6 @@
                     <td>
                         <div class="text-center">
                             <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PP</label><br>
-
                         </div>
                     </td>
                     <td>
@@ -192,9 +172,6 @@
                             <a href="/storage/{{$data->user_id}}/pkb/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-download" style="height:100px;color: white;"></i>
-                            </button>
                         </div>
                     </td>
                 </tr>
@@ -208,7 +185,6 @@
                     <td>
                         <div class="text-center">
                             <label for="">Draft PKB sebanyak 3 eksemplar yang sudah diparaf oleh pimpinan dan ketua SP /SB</label><br>
-
                         </div>
                     </td>
                     <td>
@@ -216,9 +192,6 @@
                             <a href="/storage/{{$data->user_id}}/pkb/{{$data->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-download" style="height:100px;color: white;"></i>
-                            </button>
                         </div>
                     </td>
                 </tr>

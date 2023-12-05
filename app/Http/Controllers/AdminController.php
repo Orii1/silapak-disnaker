@@ -436,7 +436,7 @@ class AdminController extends Controller
         return view('/admin/pencatatan-spsb/konfirmasi', compact('data', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
-    public function pendaftaran_spsb_proses(Request $request, $id)
+    public function pencatatan_spsb_proses(Request $request, $id)
     {
         $pencatatanspsb = Pencatatanspsb::find($id);
 
@@ -447,14 +447,14 @@ class AdminController extends Controller
         return redirect('/admin/permohonan-pencatatan-spsb');
     }
 
-    public function pendaftaran_spsb_update(Request $request, $id)
+    public function pencatatan_spsb_update(Request $request, $id)
     {
         $pencatatanspsb = Pencatatanspsb::find($id);
 
         $pencatatanspsb->keterangan = $request->keterangan;
         $pencatatanspsb->save();
         toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
-        return redirect('/admin/permohonan-pendaftaran-pkwt');
+        return redirect('/admin/permohonan-pencatatan-spsb');
     }
 
     public function pencatatan_spsb_show($id)
@@ -480,6 +480,7 @@ class AdminController extends Controller
 
         $pencatatanspsb->status = '1';
         $pencatatanspsb->sk = $file1;
+        $pencatatanspsb->keterangan = 'Permohonan Selesai';
         $pencatatanspsb->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pencatatan-spsb');
@@ -513,6 +514,42 @@ class AdminController extends Controller
         return view('/admin/pendaftaran-lks-bipartit/permohonan-pendaftaran-lks', compact('lks_proses', 'lks_konfir', 'lks_terima', 'lks_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
+    public function pendaftaran_lks_konfir($id)
+    {
+        $data = Pendaftaranlks::find($id);
+
+        $pp_not = Pengesahanpp::where('status', '3')->count();
+        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        $lks_not = Pendaftaranlks::where('status', '3')->count();
+        $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/pendaftaran-lks-bipartit/konfirmasi', compact('data', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+
+    public function pendaftaran_lks_proses(Request $request, $id)
+    {
+        $pendaftaranlks = Pendaftaranlks::find($id);
+
+        $pendaftaranlks->keterangan = $request->keterangan;
+        $pendaftaranlks->status = '0';
+        $pendaftaranlks->save();
+        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
+        return redirect('/admin/permohonan-pendaftaran-lks');
+    }
+
+    public function pendaftaran_lks_update(Request $request, $id)
+    {
+        $pendaftaranlks = Pendaftaranlks::find($id);
+
+        $pendaftaranlks->keterangan = $request->keterangan;
+        $pendaftaranlks->save();
+        toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
+        return redirect('/admin/permohonan-pendaftaran-lks');
+    }
+
     public function pendaftaran_lks_show($id)
     {
         $data = Pendaftaranlks::find($id);
@@ -536,6 +573,7 @@ class AdminController extends Controller
 
         $pendaftaranlks->status = '1';
         $pendaftaranlks->sk = $file1;
+        $pendaftaranlks->keterangan = 'Permohonan Selesai';
         $pendaftaranlks->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pendaftaran-lks');
@@ -567,6 +605,41 @@ class AdminController extends Controller
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
         return view('/admin/pencatatan-penyelesaian-hi/permohonan-pencatatan-penyelesaian-hi', compact('hi_proses', 'hi_konfir', 'hi_terima', 'hi_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function pencatatan_hi_konfir($id)
+    {
+        $data = Pencatatanperselihan::find($id);
+
+        $pp_not = Pengesahanpp::where('status', '3')->count();
+        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        $lks_not = Pendaftaranlks::where('status', '3')->count();
+        $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/pencatatan-penyelesaian-hi/konfirmasi', compact('data', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function pencatatan_hi_proses(Request $request, $id)
+    {
+        $pencatatanhi = Pencatatanperselihan::find($id);
+
+        $pencatatanhi->keterangan = $request->keterangan;
+        $pencatatanhi->status = '0';
+        $pencatatanhi->save();
+        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
+        return redirect('/admin/permohonan-pencatatan-hi');
+    }
+
+    public function pencatatan_hi_update(Request $request, $id)
+    {
+        $pencatatanhi = Pencatatanperselihan::find($id);
+
+        $pencatatanhi->keterangan = $request->keterangan;
+        $pencatatanhi->save();
+        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
+        return redirect('/admin/permohonan-pencatatan-hi');
     }
 
     public function pencatatan_hi_show($id)
@@ -624,6 +697,41 @@ class AdminController extends Controller
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
         return view('/admin/pelaporan-phk/permohonan-pelaporan-phk', compact('phk_proses', 'phk_konfir', 'phk_terima', 'phk_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function pelaporan_phk_konfir($id)
+    {
+        $data = Pelaporanphk::find($id);
+
+        $pp_not = Pengesahanpp::where('status', '3')->count();
+        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        $lks_not = Pendaftaranlks::where('status', '3')->count();
+        $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/pelaporan-phk/konfirmasi', compact('data', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function pelaporan_phk_proses(Request $request, $id)
+    {
+        $pelaporanphk = Pelaporanphk::find($id);
+
+        $pelaporanphk->keterangan = $request->keterangan;
+        $pelaporanphk->status = '0';
+        $pelaporanphk->save();
+        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
+        return redirect('/admin/permohonan-pelaporan-phk');
+    }
+
+    public function pelaporan_phk_update(Request $request, $id)
+    {
+        $pelaporanphk = Pelaporanphk::find($id);
+
+        $pelaporanphk->keterangan = $request->keterangan;
+        $pelaporanphk->save();
+        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
+        return redirect('/admin/permohonan-pelaporan-phk');
     }
 
     public function pelaporan_phk_show($id)

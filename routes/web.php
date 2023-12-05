@@ -45,14 +45,42 @@ Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);
     Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
     Route::get('/cek-permohonan/{id}', [CompanyController::class, 'submission_check']);
+
+    // Edit PP
     Route::get('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);
     Route::put('/edit-permohonan-pp/{id}', [EditSubmissionController::class, 'update_pp_submission']);
+    // END EDIT PP
+
+    // EDIT PKB
     Route::get('/edit-permohonan-pkb/{id}', [CompanyController::class, 'edit_pkb_submission']);
+    Route::put('/edit-permohonan-pkb/{id}', [EditSubmissionController::class, 'update_pkb_submission']);
+    // END EDIT PKB
+
+    // EDIT PKWT
     Route::get('/edit-permohonan-pkwt/{id}', [CompanyController::class, 'edit_pkwt_submission']);
+    Route::put('/edit-permohonan-pkwt/{id}', [EditSubmissionController::class, 'update_pkwt_submission']);
+    // END EDIT PKWT
+
+    // EDIT SPSB
     Route::get('/edit-permohonan-spsb/{id}', [CompanyController::class, 'edit_spsb_submission']);
+    Route::put('/edit-permohonan-spsb/{id}', [EditSubmissionController::class, 'update_spsb_submission']);
+    // END EDIT SPSB
+
+    // EDIT LKS
     Route::get('/edit-permohonan-lks/{id}', [CompanyController::class, 'edit_lks_submission']);
+    Route::put('/edit-permohonan-lks/{id}', [EditSubmissionController::class, 'update_lks_submission']);
+    // END EDIT LKS
+
+    // EDIT HI
     Route::get('/edit-permohonan-hi/{id}', [CompanyController::class, 'edit_hi_submission']);
+    Route::put('/edit-permohonan-hi/{id}', [EditSubmissionController::class, 'update_hi_submission']);
+    // END EDIT HI
+
+    // EDIT PHK
     Route::get('/edit-permohonan-phk/{id}', [CompanyController::class, 'edit_phk_submission']);
+    Route::put('/edit-permohonan-phk/{id}', [EditSubmissionController::class, 'update_phk_submission']);
+    // END EDIT PHK
+
     Route::get('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja']);
     Route::post('/permohonan/pencatatan-serikat-kerja', [SubmissionController::class, 'serikat_kerja_store']);
     Route::get('/permohonan/pengesahan-peraturan-perusahaan', [SubmissionController::class, 'pengesahan_pp']);
@@ -124,7 +152,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     // SPSB
     Route::get('/admin/permohonan-pencatatan-spsb', [AdminController::class, 'pencatatan_spsb']);
     Route::get('/konfirmasi/permohonan-pencatatan-spsb/{id}', [AdminController::class, 'pencatatan_spsb_konfir']);
-    Route::post('/konfirmasi/permohonan-spsb/{id}', [AdminController::class, 'pendaftaran_spsb_proses']);
+    Route::post('/konfirmasi/permohonan-spsb/{id}', [AdminController::class, 'pencatatan_spsb_proses']);
     Route::get('/permohonan-pencatatan-spsb/{id}', [AdminController::class, 'pencatatan_spsb_show']);
     Route::post('/permohonan-spsb/update/{id}', [AdminController::class, 'pencatatan_spsb_update']);
     Route::post('/permohonan-spsb/terima/{id}', [AdminController::class, 'pencatatan_spsb_terima']);
@@ -136,20 +164,27 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/konfirmasi/permohonan-pendaftaran-lks/{id}', [AdminController::class, 'pendaftaran_lks_konfir']);
     Route::post('/konfirmasi/permohonan-lks/{id}', [AdminController::class, 'pendaftaran_lks_proses']);
     Route::get('/permohonan-pendaftaran-lks/{id}', [AdminController::class, 'pendaftaran_lks_show']);
+    Route::post('/permohonan-lks/update/{id}', [AdminController::class, 'pendaftaran_lks_update']);
     Route::post('/permohonan-lks/terima/{id}', [AdminController::class, 'pendaftaran_lks_terima']);
     Route::post('/permohonan-lks/tolak/{id}', [AdminController::class, 'pendaftaran_lks_tolak']);
     // END LKS
 
     // HI
     Route::get('/admin/permohonan-pencatatan-hi', [AdminController::class, 'pencatatan_hi']);
+    Route::get('/konfirmasi/permohonan-penyelesaian-hi/{id}', [AdminController::class, 'pencatatan_hi_konfir']);
+    Route::post('/konfirmasi/permohonan-hi/{id}', [AdminController::class, 'pencatatan_hi_proses']);
     Route::get('/permohonan-penyelesaian-hi/{id}', [AdminController::class, 'pencatatan_hi_show']);
+    Route::post('/permohonan-hi/update/{id}', [AdminController::class, 'pencatatan_hi_update']);
     Route::post('/permohonan-hi/terima/{id}', [AdminController::class, 'pencatatan_hi_terima']);
     Route::post('/permohonan-hi/tolak/{id}', [AdminController::class, 'pencatatan_hi_tolak']);
     // HI
 
     // PHK
     Route::get('/admin/permohonan-pelaporan-phk', [AdminController::class, 'pelaporan_phk']);
+    Route::get('/konfirmasi/permohonan-pelaporan-phk/{id}', [AdminController::class, 'pelaporan_phk_konfir']);
+    Route::post('/konfirmasi/permohonan-phk/{id}', [AdminController::class, 'pelaporan_phk_proses']);
     Route::get('/permohonan-pelaporan-phk/{id}', [AdminController::class, 'pelaporan_phk_show']);
+    Route::post('/permohonan-phk/update/{id}', [AdminController::class, 'pelaporan_phk_update']);
     Route::post('/permohonan-phk/terima/{id}', [AdminController::class, 'pelaporan_phk_terima']);
     Route::post('/permohonan-phk/tolak/{id}', [AdminController::class, 'pelaporan_phk_tolak']);
         // END PHK

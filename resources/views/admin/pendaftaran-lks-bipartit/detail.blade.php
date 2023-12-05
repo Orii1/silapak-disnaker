@@ -12,6 +12,29 @@
     </nav>
 </div>
 
+<div class="mx-1">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                        {{$data->peruntukan}}, {{$data->lks_user->name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-2 mb-2">
+    <div class="mx-2">
+        <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
+        <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
+            <i class="bi bi-clock-fill" style="color: white"></i>
+        </a>
+    </div>
+</div>
+
 <div class="mt-5">
     <table class="table table-bordered">
         <thead class="bg-light">
@@ -163,6 +186,28 @@
                 <div class="modal-body">
                     <label class="mb-3">Masukkan Pesan</label>
                     <textarea class="form-control" id="pesan" name="pesan" style="height: 150px"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="updateLabel">Perbaharui Keterangan Pemrosesan</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/permohonan-lks/update/{{$data->id}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <label class="mb-3">Masukkan Keterangan Terbaru</label>
+                    <input class="form-control" id="keterangan" name="keterangan">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

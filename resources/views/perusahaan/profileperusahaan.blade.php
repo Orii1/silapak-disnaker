@@ -194,12 +194,13 @@
                                         <input type="text" name="number_ketenagakerjaan" id="number_ketenagakerjaan" class="form-control"  value="{{$user->number_ketenagakerjaan}}" required>
                                     </div>
                                     <div class="mb-4">
-                                        <label for=""><b>Nomor Kepesertaan BPJS Kesehatan </b><label style="color: red; font-size: 15px;"> *</label></label>
+                                        <labe for=""><b>Nomor Kepesertaan BPJS Kesehatan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="number_kesehatan" id="number_kesehatan" class="form-control"  value="{{$user->number_kesehatan}}" required>
                                     </div>
 
                                     <div class="d-flex align-content-center flex-wrap">
                                         <iframe src="/map" frameborder="0" style="border:0; width: 100%; height: 230px;" allowfullscreen>
+
 
                                         </iframe>
                                     </div>

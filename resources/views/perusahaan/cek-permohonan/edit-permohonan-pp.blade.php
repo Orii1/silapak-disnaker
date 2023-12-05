@@ -103,7 +103,7 @@
                                             <div class="text-center">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <a href="/storage/pp/{{$pengesahanpp->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                         </a>
                                                     </div>
@@ -130,7 +130,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -156,7 +156,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/pp/{{$pengesahanpp->user_id}}/{{$pengesahanpp->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -183,7 +183,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -210,7 +210,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -237,7 +237,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -263,7 +263,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -289,7 +289,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -315,7 +315,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->draf_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->draf_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -328,9 +328,10 @@
                                 </tbody>
                         </table>
 
-                        <div class="d-grid gap-2 col-2 mt-5 mx-auto">
-                            <button class="btn btn-primary btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim Ulang</b></a></label></button>
+                        <div class="d-grid gap-2 col-2 mt-4 mx-auto">
+                            <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim Ulang</b></a></label></button>
                         </div>
+                        
                     </form>
                 </div>
             </div>

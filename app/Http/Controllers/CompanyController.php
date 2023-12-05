@@ -74,6 +74,34 @@ class CompanyController extends Controller
         return view('perusahaan/cek-permohonan/edit-permohonan-pkwt', compact('pendaftaranpkwt', 'user'));
     }
 
+    public function edit_spsb_submission($id)
+    {
+        $pencatatanspsb = Pencatatanspsb::find($id);
+        $user = $pencatatanspsb->spsb_user;
+        return view('perusahaan/cek-permohonan/edit-permohonan-spsb', compact('pencatatanspsb', 'user'));
+    }
+
+    public function edit_lks_submission($id)
+    {
+        $pendaftaranlks = Pendaftaranlks::find($id);
+        $user = $pendaftaranlks->lks_user;
+        return view('perusahaan/cek-permohonan/edit-permohonan-lks', compact('pendaftaranlks', 'user'));
+    }
+
+    public function edit_hi_submission($id)
+    {
+        $pencatatanhi = Pencatatanperselihan::find($id);
+        $user = $pencatatanhi->hi_user;
+        return view('perusahaan/cek-permohonan/edit-permohonan-hi', compact('pencatatanhi', 'user'));
+    }
+
+    public function edit_phk_submission($id)
+    {
+        $pelaporanphk = Pelaporanphk::find($id);
+        $user = $pelaporanphk->phk_user;
+        return view('perusahaan/cek-permohonan/edit-permohonan-phk', compact('pelaporanphk', 'user'));
+    }
+
 
     public function index()
     {

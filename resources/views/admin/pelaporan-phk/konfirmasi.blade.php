@@ -27,12 +27,8 @@
 </div>
 
 <div class="mt-2 mb-2">
-    <div class="mx-2">
-        <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
-        <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
-            <i class="bi bi-clock-fill" style="color: white"></i>
-        </a>
-    </div>
+    <label for=""><b>Konfirmasi Permohonan {{$data->phk_user->name}} :</b></label>
+    <a class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#konfirmasi" style="color: white;"> <b>Konfirmasi</b></a>
 </div>
 
 <div class="mt-4">
@@ -125,6 +121,7 @@
                 <td>
                     <div class="text-center">
                         <label for="">Perjanjian bersama Bipartit (jika terjadi kesepakatan / jika pekerja / buruh tidak menolak PHK)</label><br>
+
                     </div>
                 </td>
                 <td>
@@ -137,81 +134,27 @@
             </tr>
         </tbody>
     </table>
+</div>
 
-    <div class="modal fade" id="terima" tabindex="-1" aria-labelledby="terimaLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="terimaLabel">Upload Surat Keputusan</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="/permohonan-phk/terima/{{$data->id}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <label class="mb-3">Surat Keputusan</label>
-                    <input type="file" name="surat_keputusan" class="form-control">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-            </form>
-          </div>
+<div class="modal fade" id="konfirmasi" tabindex="-1" aria-labelledby="konfirmasiLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="konfirmasiLabel">Konfirmasi Permohonan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </div>
-
-    <div class="modal fade" id="tolak" tabindex="-1" aria-labelledby="tolakLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="tolakLabel">Pesan</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <form action="/konfirmasi/permohonan-phk/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <label class="mb-3">Masukkan Status Pemrosesan</label>
+                <input type="text" name="keterangan" class="form-control">
             </div>
-            <form action="/permohonan-phk/tolak/{{$data->id}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <label class="mb-3">Masukkan Pesan</label>
-                    <textarea class="form-control" id="pesan" name="pesan" style="height: 150px"></textarea>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-            </form>
-          </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="updateLabel">Perbaharui Keterangan Pemrosesan</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
             </div>
-            <form action="/permohonan-phk/update/{{$data->id}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <label class="mb-3">Masukkan Keterangan Terbaru</label>
-                    <input class="form-control" id="keterangan" name="keterangan">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-            </form>
-          </div>
-        </div>
-    </div>
-
-    <div class="mt-4">
-        <div class="text-center">
-            <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->phk_user->name}} :</b></label><br>
-            <div class="mt-2">
-                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
-                <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
-            </div>
-        </div>
+        </form>
+      </div>
     </div>
 </div>
 @endsection

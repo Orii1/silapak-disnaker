@@ -99,7 +99,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pp_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->isoFormat('D MMMM Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -165,7 +165,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pkb_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->isoFormat('D MMMM Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -231,7 +231,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pkwt_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->isoFormat('D MMMM Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -297,7 +297,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->spsb_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->isoFormat('D MMMM Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -363,7 +363,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->lks_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->isoFormat('D MMMM Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -429,7 +429,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->hi_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->isoFormat('D MMMM Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -495,7 +495,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->phk_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->isoFormat('D MMMM Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>

@@ -836,6 +836,9 @@ padding: 0 20px 0 20px;
 # Dashboard
 --------------------------------------------------------------*/
 /* Filter dropdown */
+.login {
+    color: #aab7cf;
+}
 .dashboard .filter {
   position: absolute;
   right: 0px;

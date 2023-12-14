@@ -134,8 +134,8 @@ transition: all 0.5s;
     background: #ffffff;
     box-shadow: #0c3c53;
 }
-#header.header-scrolled{
-    background: #ffffff;
+#header.header-scrolled {
+    background: #51678f;
         color: #eeff00;
 }
 #header.header-inner-pages {

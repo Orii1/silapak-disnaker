@@ -31,49 +31,11 @@
 
     <script>
         var mymap = ''
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-            //result.innerHTML = "Getting the position information...";
-        } else {
-            alert("Sorry, your browser does not support HTML5 geolocation.");
-        }
-
-        // Define callback function for successful attempt
-        function successCallback(position) {
-            // result.innerHTML = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-            var latlng = position.coords.latitude + ',' + position.coords.longitude;
-            //    alert(latlng);
-            var lat = document.getElementById('lat');
-            lat.value = position.coords.latitude;
-
-            var lng = document.getElementById('lng');
-            lng.value = position.coords.longitude;
-
-            //$('#lng').val(position.coords.longitude);
-            var accuracy = position.coords.accuracy;
-
-            // $('#akuratnya').text('Akurasi Jarak: '+accuracy+ 'meter');
-            showMap(position.coords.latitude, position.coords.longitude);
-            // showMapFocus(position.coords.latitude, position.coords.longitude);
-
-        }
-
-        // Define callback function for failed attempt
-        function errorCallback(error) {
-            if (error.code == 1) {
-                alert("You've decided not to share your position, but it's OK. We won't ask you again whyyy.");
-            } else if (error.code == 2) {
-                alert("The network is down or the positioning service can't be reached.");
-            } else if (error.code == 3) {
-                alert("The attempt timed out before it could get the location data.");
-            } else {
-                alert("Geolocation failed due to unknown error.");;
-            }
-        }
-
+        var latitude = {{$lat}};
+        var longitude = {{$lng}}
         //ambil data gps
 
+        showMap(latitude,longitude)
         //function showmmap jar
 
         function showMap(latitude, longitude) {

@@ -14,8 +14,8 @@
     </div>
 
     <div class="mx-0">
-        <div class="card">
-            <div class="card-body">
+        {{-- <div class="card">
+            <div class="card-body"> --}}
                 <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
 
                       <li class="nav-item">
@@ -176,7 +176,7 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
+            {{-- </div>
+        </div> --}}
     </div>
 @endsection

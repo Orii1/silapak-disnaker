@@ -30,7 +30,7 @@
                             {{Session('error')}}
                         </div>
                         @endif
-                        <div class="col-12 mb-4">
+                        <div class="col-12 mb-2">
                             <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
                         </div>
 

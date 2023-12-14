@@ -115,6 +115,9 @@ class AdminController extends Controller
     {
         $detail = User::find($id);
 
+        $lat = $detail->lat;
+        $lng = $detail->lng;
+
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -122,7 +125,7 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/perusahaan/detail-perusahaan', compact('detail', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        return view('/admin/perusahaan/detail-perusahaan', compact('detail', 'lat', 'lng', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
     public function permohonan_pp()
@@ -757,6 +760,7 @@ class AdminController extends Controller
 
         $pelaporanphk->status = '1';
         $pelaporanphk->sk = $file1;
+        $pelaporanphk->keterangan = 'Permohonan Selesai';
         $pelaporanphk->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pelaporan-phk');

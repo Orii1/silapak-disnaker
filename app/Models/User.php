@@ -37,6 +37,8 @@ class User extends Authenticatable
         'wna',
         'number_ketenagakerjaan',
         'number_kesehatan',
+        'lat',
+        'lng',
     ];
 
     /**

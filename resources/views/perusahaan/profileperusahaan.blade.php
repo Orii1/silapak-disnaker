@@ -194,21 +194,28 @@
                                         <input type="text" name="number_ketenagakerjaan" id="number_ketenagakerjaan" class="form-control"  value="{{$user->number_ketenagakerjaan}}" required>
                                     </div>
                                     <div class="mb-4">
-                                        <labe for=""><b>Nomor Kepesertaan BPJS Kesehatan </b><label style="color: red; font-size: 15px;"> *</label></label>
+                                        <label for=""><b>Nomor Kepesertaan BPJS Kesehatan </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="text" name="number_kesehatan" id="number_kesehatan" class="form-control"  value="{{$user->number_kesehatan}}" required>
                                     </div>
 
                                     <div class="d-flex align-content-center flex-wrap">
-                                        <iframe src="/map" frameborder="0" style="border:0; width: 100%; height: 230px;" allowfullscreen>
-
-
-                                        </iframe>
+                                        <div style="border:0; width: 100%; height: 230px;" allowfullscreen>
+                                            @include('map')
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input class="form-control form-control-sm" type="hidden" name="lat" id="lat" readonly>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input class="form-control form-control-sm" type="hidden" name="lng" id="lng" readonly>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <div class="mt-5">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit"><b style="color: #ffffff;">Simpan</b></button>
+                                <div class="d-grid gap-2 col-2 mt-4 mx-auto">
+                                    <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Simpan</b></a></label></button>
                                 </div>
                             </div>
                         </div>

@@ -244,6 +244,7 @@
         </div>
     </div>
 
+    @if ($data->status == '0')
     <div class="mt-4">
         <div class="text-center">
             <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->pkwt_user->name}} :</b></label><br>
@@ -253,6 +254,9 @@
             </div>
         </div>
     </div>
+@else
+
+@endif
 
 </div>
 @endsection

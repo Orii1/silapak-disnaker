@@ -198,7 +198,7 @@
                                         <input type="text" name="number_kesehatan" id="number_kesehatan" class="form-control"  value="{{$user->number_kesehatan}}" required>
                                     </div>
 
-                                    <div class="d-flex align-content-center flex-wrap">
+                                    <div class="d-flex align-content-center flex-wrap mb-0">
                                         <div style="border:0; width: 100%; height: 230px;" allowfullscreen>
                                             @include('map')
                                         </div>
@@ -208,6 +208,9 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <input class="form-control form-control-sm" type="hidden" name="lng" id="lng" readonly>
+                                            </div>
+                                            <div class="col-12">
+                                                <i class="mt-0 card-title" style="font-size: 11px">*) Mohon dicek kembali lokasi perusahaan Anda, jika tidak sesuai silahkan refresh browser atau ganti jaringan anda.</i>
                                             </div>
                                         </div>
                                     </div>

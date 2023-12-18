@@ -49,23 +49,20 @@
                         <div class="mt-4 mb-5">
                             @foreach ($pp_konfir as $item)
                                 <a href="/konfirmasi/permohonan-pengesahan-pp/{{$item->id}}">
-                                    <div class="cardd radius-5 border-start border-0 border-3 border-menunggu" style="height: 100px; display: flex;">
-                                        <div class="ms-3 my-2">
-                                           <div class="row text-start">
-                                                <div style="font-size: 21px; color: black;">
-                                                    <b>{{$item->pp_user->name}}</b>
-                                                </div>
-                                           </div>
-                                           <div class="row">
-                                                <div class="disabled-text">
-                                                    Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
-                                                </div>
-                                           </div>
-                                           <div class="row text-start">
-                                                <div class="disabled-text">
-                                                    Diajukan pada tanggal : {{$item->updated_at->isoFormat('D MMMM Y')}}
-                                                </div>
-                                           </div>
+<<<<<<< HEAD
+                                    <div class="card" style="height: 60px; display: flex; align-items: center;">
+=======
+                                    <div class="card radius-5 border-start border-0 border-3 border-menunggu" style="height: 60px; display: flex; align-items: center;">
+>>>>>>> c9030cdfea2172938b1baa3ef48f1df17ae4ddc5
+                                        <div class="mt-3 text-center">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item active" style="font-size: 20px;">
+                                                <b>{{$item->pp_user->name}}</b>
+                                                </li>
+                                                <li class="breadcrumb-item" style="font-size: 19px;">
+                                                    Selengkapnya
+                                                </li>
+                                            </ol>
                                         </div>
                                     </div>
                                 </a>
@@ -78,23 +75,16 @@
                             <div class="mb-4">
                                 @foreach ($pp_proses as $item)
                                     <a href="/permohonan-pengesahan-pp/{{$item->id}}">
-                                        <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
-                                            <div class="ms-3 my-2">
-                                               <div class="row text-start">
-                                                    <div style="font-size: 21px; color: black;">
-                                                        <b>{{$item->pp_user->name}}</b>
-                                                    </div>
-                                               </div>
-                                               <div class="row">
-                                                    <div class="disabled-text">
-                                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
-                                                    </div>
-                                               </div>
-                                               <div class="row text-start">
-                                                    <div class="disabled-text">
-                                                        Diajukan pada tanggal : {{$item->updated_at->isoFormat('D MMMM Y')}}
-                                                    </div>
-                                               </div>
+                                        <div class="card" style="height: 60px; display: flex; align-items: center;">
+                                            <div class="mt-3 text-center">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item active" style="font-size: 20px;">
+                                                    <b>{{$item->pp_user->name}}</b>
+                                                    </li>
+                                                    <li class="breadcrumb-item" style="font-size: 19px;">
+                                                        Selengkapnya
+                                                    </li>
+                                                </ol>
                                             </div>
                                         </div>
                                     </a>
@@ -108,23 +98,16 @@
                             <div class="mb-4">
                                 @foreach ($pp_terima as $item)
                                     <a href="/permohonan-pengesahan-pp/{{$item->id}}">
-                                        <div class="cardd radius-5 border-start border-0 border-3 border-diterima" style="height: 100px; display: flex;">
-                                            <div class="ms-3 my-2">
-                                               <div class="row text-start">
-                                                    <div style="font-size: 21px; color: black;">
-                                                        <b>{{$item->pp_user->name}}</b>
-                                                    </div>
-                                               </div>
-                                               <div class="row">
-                                                    <div class="disabled-text">
-                                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
-                                                    </div>
-                                               </div>
-                                               <div class="row text-start">
-                                                    <div class="disabled-text">
-                                                        Diajukan pada tanggal : {{$item->updated_at->isoFormat('D MMMM Y')}}
-                                                    </div>
-                                               </div>
+                                        <div class="card" style="height: 60px; display: flex; align-items: center;">
+                                            <div class="mt-3 text-center">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item active" style="font-size: 20px;">
+                                                    <b>{{$item->pp_user->name}}</b>
+                                                    </li>
+                                                    <li class="breadcrumb-item" style="font-size: 19px;">
+                                                        Selengkapnya
+                                                    </li>
+                                                </ol>
                                             </div>
                                         </div>
                                     </a>
@@ -138,26 +121,7 @@
                             <div class="mb-4">
                                 @foreach ($pp_tolak as $item)
                                     <a href="/permohonan-pengesahan-pp/{{$item->id}}">
-                                        <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
-                                            <div class="ms-3 my-2">
-                                               <div class="row text-start">
-                                                    <div style="font-size: 21px; color: black;">
-                                                        <b>{{$item->pp_user->name}}</b>
-                                                    </div>
-                                               </div>
-                                               <div class="row">
-                                                    <div class="disabled-text">
-                                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
-                                                    </div>
-                                               </div>
-                                               <div class="row text-start">
-                                                    <div class="disabled-text">
-                                                        Diajukan pada tanggal : {{$item->updated_at->isoFormat('D MMMM Y')}}
-                                                    </div>
-                                               </div>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="card" style="height: 60px; display: flex; align-items: center;">
+                                        <div class="card" style="height: 60px; display: flex; align-items: center;">
                                             <div class="mt-3 text-center">
                                                 <ol class="breadcrumb">
                                                     <li class="breadcrumb-item active" style="font-size: 20px;">

@@ -99,7 +99,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pp_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->format('d-m-Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -165,7 +165,7 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pkb_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->format('d-m-Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -176,11 +176,13 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-pkb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-pkb/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->status == '3')
                                                 <td><div class="text-center">
@@ -229,21 +231,24 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->pkwt_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->format('d-m-Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
-                                            <td><div class="text-center">
-                                                <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
-                                            </div></td>
-                                                <td><div class="text-center"></div></td>
+                                                <td><div class="text-center">
+                                                    <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
+                                                </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center"> </div></td>
                                             @elseif ($item->status == "1")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-pkwt-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-pkwt/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->status == '3')
                                                 <td><div class="text-center">
@@ -292,21 +297,24 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->spsb_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->format('d-m-Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                             </div></td>
-                                                <td><div class="text-center"></div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center"> </div></td>
                                             @elseif ($item->status == "1")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-spsb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-spsb/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->status == '3')
                                                 <td><div class="text-center">
@@ -355,21 +363,24 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->lks_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->format('d-m-Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
-                                            <td><div class="text-center">
-                                                <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
-                                            </div></td>
-                                                <td><div class="text-center"></div></td>
+                                                <td><div class="text-center">
+                                                    <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
+                                                </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center"> </div></td>
                                             @elseif ($item->status == "1")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-lks-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-lks/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->status == '3')
                                                 <td><div class="text-center">
@@ -418,21 +429,24 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->hi_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->format('d-m-Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
-                                            <td><div class="text-center">
-                                                <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
-                                            </div></td>
-                                                <td><div class="text-center"></div></td>
+                                                <td><div class="text-center">
+                                                    <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
+                                                </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center"> </div></td>
                                             @elseif ($item->status == "1")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-hi-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-hi/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->status == '3')
                                                 <td><div class="text-center">
@@ -481,21 +495,24 @@
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
                                             <td><div class="text-center">{{$item->phk_user->name}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
-                                            <td><div class="text-center">{{$item->updated_at->format('d-m-Y')}}</div></td>
+                                            <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
                                             @if ($item->status == "0")
-                                            <td><div class="text-center">
-                                                <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
-                                            </div></td>
-                                                <td><div class="text-center"></div></td>
+                                                <td><div class="text-center">
+                                                    <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
+                                                </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center"> </div></td>
                                             @elseif ($item->status == "1")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-phk-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->status == '2')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
+                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-phk/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->status == '3')
                                                 <td><div class="text-center">

@@ -46,7 +46,7 @@
                 <div class="tab-pane fade show active profile-overview" id="konfirmasi">
                     <div class="mt-4 mb-5">
                         @foreach ($spsb_konfir as $item)
-                            <a href="#">
+                            <a href="/konfirmasi/permohonan-pencatatan-spsb/{{$item->id}}">
                                 <div class="card" style="height: 60px; display: flex; align-items: center;">
                                     <div class="mt-3 text-center">
                                         <ol class="breadcrumb">
@@ -68,7 +68,7 @@
                     <div class="text-center">
                         <div class="mb-4">
                             @foreach ($spsb_proses as $item)
-                                <a href="#">
+                                <a href="/permohonan-pencatatan-spsb/{{$item->id}}">
                                     <div class="card" style="height: 60px; display: flex; align-items: center;">
                                         <div class="mt-3 text-center">
                                             <ol class="breadcrumb">

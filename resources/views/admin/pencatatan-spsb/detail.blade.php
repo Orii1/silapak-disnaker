@@ -12,7 +12,46 @@
     </nav>
 </div>
 
-<div class="mt-5">
+<div class="mx-1">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
+                        {{$data->peruntukan}}, {{$data->spsb_user->name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if ($data->status == '1')
+    <div class="mt-2 mb-2">
+        <div class="mx-2">
+            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b></label>
+        </div>
+    </div>
+@elseif ($data->status == '2')
+    <div class="mt-2 mb-2">
+        <div class="mx-2">
+            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</b></label>
+        </div>
+    </div>
+@elseif ($data->status == '0')
+    <div class="mt-2 mb-2">
+        <div class="mx-2">
+            <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
+            <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
+                <i class="bi bi-clock-fill" style="color: white"></i>
+            </a>
+        </div>
+    </div>
+@else
+
+@endif
+
+<div class="mt-4">
     <table class="table table-bordered">
         <thead class="bg-light">
             <tr>
@@ -43,7 +82,6 @@
                 <td>
                     <div class="text-center">
                         <label for="">Surat Permohonan Pencatatan SP/SB</label><br>
-
                     </div>
                 </td>
                 <td>
@@ -51,9 +89,6 @@
                         <a href="/storage/{{$data->user_id}}/spsb/{{$data->surat_permohonan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -66,7 +101,6 @@
                 <td>
                     <div class="text-center">
                         <label for="">Fotocopy AD/ART Serikat Pekerja/Serikat Buruh</label><br>
-
                     </div>
                 </td>
                 <td>
@@ -74,9 +108,6 @@
                         <a href="/storage/{{$data->user_id}}/spsb/{{$data->ad_art}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -96,9 +127,6 @@
                         <a href="/storage/{{$data->user_id}}/spsb/{{$data->nama_pembentuk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -118,9 +146,6 @@
                         <a href="/storage/{{$data->user_id}}/spsb/{{$data->nama_pengurus}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -140,9 +165,6 @@
                         <a href="/storage/{{$data->user_id}}/spsb/{{$data->ba_pembentukan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -193,6 +215,29 @@
         </div>
     </div>
 
+    <div class="modal fade" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="updateLabel">Perbaharui Keterangan Pemrosesan</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/permohonan-spsb/update/{{$data->id}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <label class="mb-3">Masukkan Keterangan Terbaru</label>
+                    <input class="form-control" id="keterangan" name="keterangan">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    @if ($data->status == '0')
     <div class="mt-4">
         <div class="text-center">
             <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->spsb_user->name}} :</b></label><br>
@@ -202,6 +247,9 @@
             </div>
         </div>
     </div>
+    @else
+
+    @endif
 
 </div>
 @endsection

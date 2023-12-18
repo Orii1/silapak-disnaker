@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan/{{$pendaftaranpkb->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-pkb/{{$pendaftaranpkb->id}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-0 bg-white">
@@ -103,7 +103,7 @@
                                             <div class="text-center">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <a href="/storage/pp/{{$pendaftaranpkb->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                         </a>
                                                     </div>
@@ -130,7 +130,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkb->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -156,7 +156,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkb->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -182,12 +182,12 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkb->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="permohonan_pengesahan_pp" required>
+                                                    <input type="file" class="form-control" name="permohonan_pendaftaran_pkb" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -208,12 +208,12 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkb->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_saran_spsb" required>
+                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -227,19 +227,19 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PP</label><br>
+                                                <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PKB</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkb->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_belum_terbentuk_spsb" required>
+                                                    <input type="file" class="form-control" name="struktur_skala_upah_asli" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -260,12 +260,12 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pendaftaranpkb->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" required>
+                                                    <input type="file" class="form-control" name="draft_pkb" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -274,7 +274,7 @@
                         </table>
 
                         <div class="d-grid gap-2 col-2 mt-5 mx-auto">
-                            <a class="btn btn-primary"><b>Kirim Ulang</b></a>
+                            <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim Ulang</b></a></label></button>
                           </div>
                     </form>
                 </div>

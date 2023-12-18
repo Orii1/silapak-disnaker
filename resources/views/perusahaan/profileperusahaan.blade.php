@@ -199,15 +199,23 @@
                                     </div>
 
                                     <div class="d-flex align-content-center flex-wrap">
-                                        <iframe src="/map" frameborder="0" style="border:0; width: 100%; height: 230px;" allowfullscreen>
-
-                                        </iframe>
+                                        <div style="border:0; width: 100%; height: 230px;" allowfullscreen>
+                                            @include('map')
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input class="form-control form-control-sm" type="hidden" name="lat" id="lat" readonly>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input class="form-control form-control-sm" type="hidden" name="lng" id="lng" readonly>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <div class="mt-5">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit"><b style="color: #ffffff;">Simpan</b></button>
+                                <div class="d-grid gap-2 col-2 mt-4 mx-auto">
+                                    <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Simpan</b></a></label></button>
                                 </div>
                             </div>
                         </div>

@@ -245,6 +245,7 @@ h6 {
 
 /* Card */
 .border-menunggu {
+<<<<<<< HEAD
     border-left: 5px solid  #0dcaf0 !important;
 }
 
@@ -258,12 +259,35 @@ h6 {
 
 .border-diproses     {
     border-left: 5px solid  #ffc107 !important;
+=======
+    border-left: 5px solid #0dcaf0 !important;
+}
+
+.border-dikembalikan {
+    border-left: 5px solid #dc3545 !important;
+}
+
+.border-diterima {
+    border-left: 5px solid #198754 !important;
+}
+
+.border-diproses {
+    border-left: 5px solid #ffc107 !important;
+>>>>>>> backend
 }
 
 .radius-5 {
     border-radius: 5px !important;
 }
 
+<<<<<<< HEAD
+=======
+.disabled-text {
+    color: #666;
+    font-style: italic;
+    font-size: 15px;
+}
+>>>>>>> backend
 .card {
   margin-bottom: 30px;
   border: none;
@@ -831,6 +855,9 @@ padding: 0 20px 0 20px;
 # Dashboard
 --------------------------------------------------------------*/
 /* Filter dropdown */
+.login {
+    color: #aab7cf;
+}
 .dashboard .filter {
   position: absolute;
   right: 0px;

@@ -18,7 +18,7 @@ class FileController extends Controller
     {
         $sk_pp = Pengesahanpp::find($id);
         $downloadFileName = $sk_pp->sk;
-        $filePath = storage_path('app/public/pp/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public/' . $sk_pp->user_id . '/pp/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }
@@ -27,7 +27,7 @@ class FileController extends Controller
     {
         $sk_pkb = Pendaftaranpkb::find($id);
         $downloadFileName = $sk_pkb->sk;
-        $filePath = storage_path('app/public/pkb/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public' . $sk_pkb->user_id . '/pkb/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }
@@ -36,7 +36,7 @@ class FileController extends Controller
     {
         $sk_pkwt = Pendaftaranpkwt::find($id);
         $downloadFileName = $sk_pkwt->sk;
-        $filePath = storage_path('app/public/pkwt/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public/' . $sk_pkwt->user_id . '/pkwt/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }
@@ -45,7 +45,7 @@ class FileController extends Controller
     {
         $sk_spsb = Pencatatanspsb::find($id);
         $downloadFileName = $sk_spsb->sk;
-        $filePath = storage_path('app/public/spsb/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public/' . $sk_spsb->user_id . '/spsb/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }
@@ -54,7 +54,7 @@ class FileController extends Controller
     {
         $sk_lks = Pendaftaranlks::find($id);
         $downloadFileName = $sk_lks->sk;
-        $filePath = storage_path('app/public/lks/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public/' . $sk_lks->user_id . '/lks/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }
@@ -63,7 +63,7 @@ class FileController extends Controller
     {
         $sk_hi = Pencatatanperselihan::find($id);
         $downloadFileName = $sk_hi->sk;
-        $filePath = storage_path('app/public/perselisihan_hi/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public/' . $sk_hi->user_id . '/perselisihan_hi/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }
@@ -72,7 +72,7 @@ class FileController extends Controller
     {
         $sk_phk = Pelaporanphk::find($id);
         $downloadFileName = $sk_phk->sk;
-        $filePath = storage_path('app/public/phk/sk/' . $downloadFileName);
+        $filePath = storage_path('app/public/' . $sk_phk->user_id . '/phk/sk/' . $downloadFileName);
 
         return response()->download($filePath);
     }

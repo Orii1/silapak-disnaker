@@ -68,7 +68,8 @@ class SubmissionController extends Controller
                 'ad_art' => $file2,
                 'nama_pembentuk' => $file3,
                 'nama_pengurus' => $file4,
-                'ba_pembentukan' => $file5
+                'ba_pembentukan' => $file5,
+                'keterangan' => 'Menunggu Konfirmasi'
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -137,7 +138,8 @@ class SubmissionController extends Controller
             'surat_pernyataan_belum_terbentuk_spsb' => $file6,
             'surat_pernyataan_struktur_skala_upah' => $file7,
             'struktur_skala_upah_asli' => $file8,
-            'draf_pp' => $file9
+            'draf_pp' => $file9,
+            'keterangan' => 'Menunggu Konfirmasi'
         ]);
 
         toastr()->success('Permohonan Berhasil Dikirim!');
@@ -194,6 +196,7 @@ class SubmissionController extends Controller
             'surat_pernyataan_struktur_skala_upah' => $file5,
             'struktur_skala_upah_asli' => $file6,
             'draft_pkb' => $file7,
+            'keterangan' => 'Menunggu Konfirmasi'
         ]);
         toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
@@ -238,6 +241,7 @@ class SubmissionController extends Controller
             'pkwt_asli' => $file3,
             'fc_wlkp' => $file4,
             'fc_akta_pendirian_perusahaan' => $file5,
+            'keterangan' => 'Menunggu Konfirmasi'
         ]);
         toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
@@ -277,6 +281,7 @@ class SubmissionController extends Controller
             'daftar_susunan_pengurus_lks_bipartit' => $file2,
             'berita_acara_pembentukan_lks_bipartit' => $file3,
             'fc_wlkp' => $file4,
+            'keterangan' => 'Menunggu Konfirmasi'
         ]);
         toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
@@ -316,6 +321,7 @@ class SubmissionController extends Controller
             'surat_permintaan_perundingan_bipartit' => $file2,
             'daftar_hadir_perundingan_bipartit' => $file3,
             'risalah_perundingan_bipartit' => $file4,
+            'keterangan' => 'Menunggu Konfirmasi'
         ]);
         toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');
@@ -355,6 +361,7 @@ class SubmissionController extends Controller
             'surat_pemberitahuan_phk' => $file2,
             'surat_tanggapan_pemberitahuan_phk' => $file3,
             'pb_bipartit' => $file4,
+            'keterangan' => 'Menunggu Konfirmasi'
         ]);
         toastr()->success('Permohonan Berhasil Dikirim!');
         return redirect('perusahaan/dashboard');

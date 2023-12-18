@@ -1,4 +1,87 @@
-<!DOCTYPE html>
+@extends('layout.master')
+
+@section('content')
+
+<div class="container">
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+            <div class="d-flex justify-content-center py-4">
+              <a href="index.html" class="logo d-flex align-items-center w-auto">
+                <img src="assets/img/banjarbaru.png" alt="">
+                <span class="d-none d-lg-block">SILAKHI</span>
+              </a>
+            </div><!-- End Logo -->
+
+            <div class="card mb-3">
+
+              <div class="card-body">
+
+                <div class="pt-2 pb-0">
+                  <h5 class="card-title text-center pb-2 fs-7">Membuat Akun Perusahaan Anda</h5>
+                  <p class="text-center small" style="color: #9b9b9b">Masukkan data perusahaan Anda</p>
+                </div>
+
+                <form method="POST">
+                  @csrf
+                  @if (Session('error'))
+                  <div class="alert alert-danger">
+                      {{Session('error')}}
+                  </div>
+                  @endif
+                  <div class="col-12 mb-4">
+                     <input type="text" name="name" id="name" placeholder="Nama Perusahaan" class="form-control" required/>
+                  </div>
+
+                  <div class="col-12 mb-4">
+                     <input type="text" name="owner" id="owner" placeholder="Pemilik Perusahaan" class="form-control" required/>
+                  </div>
+
+                  <div class="col-12 mb-4">
+                     <input type="textarea" name="address" id="address" placeholder="Alamat Perusahaan" class="form-control" required/>
+                  </div>
+
+                  <div class="col-12 mb-4">
+                    <input type="email" name="email" id="email" placeholder="Email Perusahaan" class="form-control" required/>
+                 </div>
+
+                  <div class="col-12 mb-4">
+                      <input type="password" name="password" class="form-control" id="yourPassword" placeholder="Password" required>
+                  </div>
+
+                  <div class="col-12 mb-4">
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" value="" name="cek" id="cek" required>
+                        <label class="form-check-label" for="cek" style="font-size: 13px;">
+                            Dengan ini saya menyetujui <a href="">Peraturan dan Ketentuan</a> Perizinan Online.
+                        </label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-2">
+                      <button class="btn btn-primary w-100" type="submit">Daftar</button>
+                  </div>
+                  <div class="col-12 mb-5">
+                      <a href="login" class="btn btn-outline-primary w-100">Kembali</a>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+@endsection
+
+
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -84,4 +167,4 @@
       </section>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
-</html>
+</html> --}}

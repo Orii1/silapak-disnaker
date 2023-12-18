@@ -10,6 +10,7 @@ use App\Models\Pendaftaranpkb;
 use App\Models\Pendaftaranpkwt;
 use App\Models\Pengesahanpp;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -56,7 +57,39 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/dashboard', compact('total', 'total_terima', 'total_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+
+        $now = Carbon::now();
+        $now->setLocale('id');
+        $datestring = $now->isoFormat('D MMMM Y');
+
+        $pp_all = Pengesahanpp::all()->count();
+        $pkb_all = Pendaftaranpkb::all()->count();
+        $pkwt_all = Pendaftaranpkwt::all()->count();
+        $spsb_all = Pencatatanspsb::all()->count();
+        $lks_all = Pendaftaranlks::all()->count();
+        $hi_all = Pencatatanperselihan::all()->count();
+        $phk_all = Pelaporanphk::all()->count();
+
+        return view('/admin/dashboard', compact(
+            'datestring',
+            'total',
+            'total_terima',
+            'total_tolak',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+            'pp_all',
+            'pkb_all',
+            'pkwt_all',
+            'spsb_all',
+            'lks_all',
+            'hi_all',
+            'phk_all'
+        ));
     }
 
     public function company()
@@ -494,6 +527,7 @@ class AdminController extends Controller
         $pencatatanspsb = Pencatatanspsb::find($id);
         $pencatatanspsb->pesan = $request->pesan;
         $pencatatanspsb->status = '2';
+        $pencatatanspsb->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
         $pencatatanspsb->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pencatatan-spsb');
@@ -587,6 +621,7 @@ class AdminController extends Controller
         $pendaftaranlks = Pendaftaranlks::find($id);
         $pendaftaranlks->pesan = $request->pesan;
         $pendaftaranlks->status = '2';
+        $pendaftaranlks->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
         $pendaftaranlks->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pendaftaran-lks');
@@ -669,6 +704,7 @@ class AdminController extends Controller
 
         $penyelesaianhi->status = '1';
         $penyelesaianhi->sk = $file1;
+        $penyelesaianhi->keterangan = 'Permohonan Selesai';
         $penyelesaianhi->save();
         toastr()->success('Permohonan Berhasil Diterima!');
         return redirect('/admin/permohonan-pencatatan-hi');
@@ -679,6 +715,7 @@ class AdminController extends Controller
         $penyelesaianhi = Pencatatanperselihan::find($id);
         $penyelesaianhi->pesan = $request->pesan;
         $penyelesaianhi->status = '2';
+        $penyelesaianhi->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai pesan';
         $penyelesaianhi->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pencatatan-hi');
@@ -771,6 +808,7 @@ class AdminController extends Controller
         $pelaporanphk = Pelaporanphk::find($id);
         $pelaporanphk->pesan = $request->pesan;
         $pelaporanphk->status = '2';
+        $pelaporanphk->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai pesan';
         $pelaporanphk->save();
         toastr()->success('Permohonan Berhasil Dikembalikan!');
         return redirect('/admin/permohonan-pelaporan-phk');

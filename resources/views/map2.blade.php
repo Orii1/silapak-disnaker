@@ -31,7 +31,7 @@
 
     <script>
         var mymap = ''
-        var latitude = {{$lat}};
+        var latitude = {{$lat}}
         var longitude = {{$lng}}
         //ambil data gps
 

@@ -48,54 +48,53 @@
     </section>
 
 {{-- Section Layanan Kami --}}
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Layanan Kami</h2>
-            </div>
-            <div class="row content">
-                <div class="col-lg-3">
-                    <div class="card align-items-center justify-content-center">
-                        <img class="img" src="assets/img/1.png" alt="">
-                        <p class="text-center">
-                            <b>Pelacakan</b>
-                        </p>
-                        <p class="text-center">Pelacakan Posisi Berkas Secara Berkala</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card align-items-center justify-content-center">
-                        <img class="img" src="assets/img/1.png" alt="">
-                        <p class="text-center">
-                            <b>Penyimpanan</b>
-                        </p>
-                        <p class="text-center">Menyimpan data persayaratan pengguna</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card align-items-center justify-content-center">
-                        <img class="img" src="assets/img/1.png" alt="">
-                        <p class="text-center">
-                            <b>Info dan Perbaikan</b>
-                        </p>
-                        <p class="text-center">Menyampaikan apabila berkas kesahalan</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card align-items-center justify-content-center">
-                        <img class="img" src="assets/img/1.png" alt="">
-                        <p class="text-center">
-                            <b>Unduh dan Cetak Izin</b>
-                        </p>
-                        <p class="text-center">Dapat mencetak surat izin anda</p>
-                    </div>
-                </div>
-            </div>
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Syarat Syarat Pengajuan</h2>
+            <p>Lengkapi Persyaratan Anda Sebelum Melakukan Pengajuan. Syarat syarat dapat dilihat dibawah ini :</p>
         </div>
-    </section>
+
+        <div class="row">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <h4><a href="">Lorem Ipsum</a></h4>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-file"></i></div>
+                  <h4><a href="">Sed ut perspici</a></h4>
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-tachometer"></i></div>
+                  <h4><a href="">Magni Dolores</a></h4>
+                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-layer"></i></div>
+                  <h4><a href="">Nemo Enim</a></h4>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                </div>
+              </div>
+        </div>
+
+    </div>
+</section>
 {{-- Akhir Section Layanan Kami --}}
 
     <section id="services" class="services section-bg">
+    <div class="col-12">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Syarat Syarat Pengajuan</h2>
@@ -137,7 +136,9 @@
             </div>
 
         </div>
+    </div>
     </section>
+
 
 </body>
 <script src="assets/vendor/aos/aos.js"></script>

@@ -49,11 +49,7 @@
                         <div class="mt-4 mb-5">
                             @foreach ($pp_konfir as $item)
                                 <a href="/konfirmasi/permohonan-pengesahan-pp/{{$item->id}}">
-<<<<<<< HEAD
-                                    <div class="card" style="height: 60px; display: flex; align-items: center;">
-=======
                                     <div class="card radius-5 border-start border-0 border-3 border-menunggu" style="height: 60px; display: flex; align-items: center;">
->>>>>>> c9030cdfea2172938b1baa3ef48f1df17ae4ddc5
                                         <div class="mt-3 text-center">
                                             <ol class="breadcrumb">
                                                 <li class="breadcrumb-item active" style="font-size: 20px;">

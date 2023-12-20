@@ -304,7 +304,7 @@
                                 <a href="/permohonan/pencatatan-penyelesaian-perselisihan-internal">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
-                                            <p style="font-size: 20px; color: black;">Pencatatan Penyelesaian Perselisihan Hubungan Internal</p>
+                                            <p style="font-size: 20px; color: black;">Pencatatan Perselisihan Hubungan Internal</p>
                                         </div>
                                     </div>
                                 </a>
@@ -324,7 +324,7 @@
                                 <a href="/pendaftaran-alih-daya">
                                     <div class="icon-box" style="border-radius: 1rem; width: 400px;">
                                         <div class="icon">
-                                            <p style="font-size: 16px; color: black;">Pendaftaran Perjanjian Alih Daya</p>
+                                            <p style="font-size: 20px; color: black;">Pendaftaran Perjanjian Alih Daya</p>
                                         </div>
                                     </div>
                                 </a>

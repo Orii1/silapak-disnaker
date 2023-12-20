@@ -83,6 +83,17 @@
                     <div class="mt-4 mb-5">
                         <form action="/permohonan/pendaftaran-pkb" method="POST" enctype="multipart/form-data">
                         @csrf
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div class="align-item-center">
                             <div class="row mb-5">
                                 <div class="col-md-1 my-1 text-start">

@@ -61,9 +61,657 @@
 
         <div class="tab-content">
             <div class="tab-pane fade show active profile-overview" id="pp">
-                
+                <div class="mt-3 disabled-text text-center">
+                    Asset Permohonan Pengesahan Peraturan Perusahaan
+                </div>
+                <div class="card-title my-1">
+                    <label>Alur Perizinan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="alur_perizinan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Dasar Hukum</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="dasar_hukum" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Durasi Pemrosesan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="durasi_pemrosesan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Kontak</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="kontak" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Retribusi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="retribusi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Maklumat</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="maklumat" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Visi Misi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Motto</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="motto" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pkb">
+                <div class="mt-3 disabled-text text-center">
+                    Asset Permohonan Pendaftaran Perjanjian Kerja Bersama
+                </div>
+                <div class="card-title my-1">
+                    <label>Alur Perizinan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="alur_perizinan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Dasar Hukum</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="dasar_hukum" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Durasi Pemrosesan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="durasi_pemrosesan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Kontak</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="kontak" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Retribusi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="retribusi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Maklumat</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="maklumat" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Visi Misi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Motto</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pkwt">
+                <div class="mt-3 disabled-text text-center">
+                    Asset Permohonan Pendaftaran Perjanjian Kerja Waktu Tertentu
+                </div>
+                <div class="card-title my-1">
+                    <label>Alur Perizinan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="alur_perizinan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Dasar Hukum</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="dasar_hukum" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Durasi Pemrosesan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="durasi_pemrosesan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Kontak</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="kontak" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Retribusi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="retribusi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Maklumat</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="maklumat" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Visi Misi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Motto</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="motto" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="spsb">
+                <div class="mt-3 disabled-text text-center">
+                    Asset Permohonan Pencatatan Serikat Pekerja/Serikat Buruh
+                </div>
+                <div class="card-title my-1">
+                    <label>Alur Perizinan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="alur_perizinan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Dasar Hukum</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="dasar_hukum" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Durasi Pemrosesan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="durasi_pemrosesan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Kontak</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="kontak" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Retribusi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="retribusi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Maklumat</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="maklumat" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Visi Misi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Motto</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="motto" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="lks">
+                <div class="mt-3 disabled-text text-center">
+                    Asset Permohonan Pendaftaran Lembaga Kerja Sama Bipartit
+                </div>
+                <div class="card-title my-1">
+                    <label>Alur Perizinan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="alur_perizinan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Dasar Hukum</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="dasar_hukum" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Durasi Pemrosesan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="durasi_pemrosesan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Kontak</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="kontak" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Retribusi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="retribusi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Maklumat</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="maklumat" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Visi Misi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Motto</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="motto" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="hi">
+                <div class="mt-3 disabled-text text-center">
+                    Asset Permohonan Pencatatan Penyelesaian Perselisihan Hubungan Internal
+                </div>
+                <div class="card-title my-1">
+                    <label>Alur Perizinan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="alur_perizinan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Dasar Hukum</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="dasar_hukum" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Durasi Pemrosesan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="durasi_pemrosesan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Kontak</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="kontak" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Retribusi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="retribusi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Maklumat</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="maklumat" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Visi Misi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Motto</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="motto" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="phk">
+                <div class="mt-3 disabled-text text-center">
+                    Asset Permohonan Pelaporan Pemutusan Hubungan Kerja
+                </div>
+                <div class="card-title my-1">
+                    <label>Alur Perizinan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="alur_perizinan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                    <label>Dasar Hukum</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="dasar_hukum" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Durasi Pemrosesan</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="durasi_pemrosesan" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Kontak</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="kontak" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Retribusi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="retribusi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Maklumat</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="maklumat" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Visi Misi</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="visi_misi" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+
+                    <label>Motto</label><br>
+                    <div class="row">
+                        <div class="col-9 mb-4">
+                            <input type="file" name="motto" class="my-1 form-control">
+                        </div>
+                        <div class="col-3 mb-4">
+                            <a href="" class="btn btn-primary">Kirim</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
     </div>
 </div>
 

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c9030cdfea2172938b1baa3ef48f1df17ae4ddc5
 @extends('layout.header2')
 
 @section('content')

@@ -35,7 +35,7 @@
 @elseif ($data->status == '2')
     <div class="mt-2 mb-2">
         <div class="mx-2">
-            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</b></label>
+            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persayaratan</b></label>
         </div>
     </div>
 @elseif ($data->status == '0')
@@ -222,7 +222,6 @@
         </div>
     </div>
 
-    @if ($data->status == '0')
     <div class="mt-4">
         <div class="text-center">
             <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->hi_user->name}} :</b></label><br>
@@ -232,8 +231,5 @@
             </div>
         </div>
     </div>
-    @else
-
-    @endif
 </div>
 @endsection

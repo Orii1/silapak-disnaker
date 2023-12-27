@@ -8,7 +8,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Permohonan Pengesahan Peraturan Perusahaan</li>
+            <li class="breadcrumb-item">Pendaftaran Perjanjian Kerja Bersama</li>
             <li class="breadcrumb-item active">{{$data->pkb_user->name}}</li>
         </ol>
     </nav>

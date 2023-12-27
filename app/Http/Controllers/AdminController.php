@@ -166,10 +166,10 @@ class AdminController extends Controller
 
     public function permohonan_pp()
     {
-        $pp_proses = Pengesahanpp::where('status', '0')->orderBy('updated_at', 'desc')->get();
-        $pp_konfir = Pengesahanpp::where('status', '3')->orderBy('updated_at', 'desc')->get();
-        $pp_terima = Pengesahanpp::where('status', '1')->orderBy('updated_at', 'desc')->get();
-        $pp_tolak = Pengesahanpp::where('status', '2')->orderBy('updated_at', 'desc')->get();
+        $pp_proses = Pengesahanpp::where('status', '0')->orderBy('created_at', 'desc')->get();
+        $pp_konfir = Pengesahanpp::where('status', '3')->orderBy('created_at', 'desc')->get();
+        $pp_terima = Pengesahanpp::where('status', '1')->orderBy('created_at', 'desc')->get();
+        $pp_tolak = Pengesahanpp::where('status', '2')->orderBy('created_at', 'desc')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -260,10 +260,10 @@ class AdminController extends Controller
 
     public function pendaftaran_pkb()
     {
-        $pkb_proses = Pendaftaranpkb::where('status', '0')->get();
-        $pkb_konfir = Pendaftaranpkb::where('status', '3')->get();
-        $pkb_terima = Pendaftaranpkb::where('status', '1')->get();
-        $pkb_tolak = Pendaftaranpkb::where('status', '2')->get();
+        $pkb_proses = Pendaftaranpkb::where('status', '0')->orderBy('created_at', 'desc')->get();
+        $pkb_konfir = Pendaftaranpkb::where('status', '3')->orderBy('created_at', 'desc')->get();
+        $pkb_terima = Pendaftaranpkb::where('status', '1')->orderBy('created_at', 'desc')->get();
+        $pkb_tolak = Pendaftaranpkb::where('status', '2')->orderBy('created_at', 'desc')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -353,10 +353,10 @@ class AdminController extends Controller
 
     public function pendaftaran_pkwt()
     {
-        $pkwt_proses = Pendaftaranpkwt::where('status', '0')->get();
-        $pkwt_konfir = Pendaftaranpkwt::where('status', '3')->get();
-        $pkwt_terima = Pendaftaranpkwt::where('status', '1')->get();
-        $pkwt_tolak = Pendaftaranpkwt::where('status', '2')->get();
+        $pkwt_proses = Pendaftaranpkwt::where('status', '0')->orderBy('created_at', 'desc')->get();
+        $pkwt_konfir = Pendaftaranpkwt::where('status', '3')->orderBy('created_at', 'desc')->get();
+        $pkwt_terima = Pendaftaranpkwt::where('status', '1')->orderBy('created_at', 'desc')->get();
+        $pkwt_tolak = Pendaftaranpkwt::where('status', '2')->orderBy('created_at', 'desc')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -446,10 +446,10 @@ class AdminController extends Controller
 
     public function pencatatan_spsb()
     {
-        $spsb_proses = Pencatatanspsb::where('status', '0')->get();
-        $spsb_konfir = Pencatatanspsb::where('status', '3')->get();
-        $spsb_terima = Pencatatanspsb::where('status', '1')->get();
-        $spsb_tolak = Pencatatanspsb::where('status', '2')->get();
+        $spsb_proses = Pencatatanspsb::where('status', '0')->orderBy('created_at', 'desc')->get();
+        $spsb_konfir = Pencatatanspsb::where('status', '3')->orderBy('created_at', 'desc')->get();
+        $spsb_terima = Pencatatanspsb::where('status', '1')->orderBy('created_at', 'desc')->get();
+        $spsb_tolak = Pencatatanspsb::where('status', '2')->orderBy('created_at', 'desc')->get();
 
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
@@ -540,10 +540,10 @@ class AdminController extends Controller
 
     public function pendaftaran_lks()
     {
-        $lks_proses = Pendaftaranlks::where('status', '0')->get();
-        $lks_konfir = Pendaftaranlks::where('status', '3')->get();
-        $lks_terima = Pendaftaranlks::where('status', '1')->get();
-        $lks_tolak = Pendaftaranlks::where('status', '2')->get();
+        $lks_proses = Pendaftaranlks::where('status', '0')->orderBy('created_at', 'desc')->get();
+        $lks_konfir = Pendaftaranlks::where('status', '3')->orderBy('created_at', 'desc')->get();
+        $lks_terima = Pendaftaranlks::where('status', '1')->orderBy('created_at', 'desc')->get();
+        $lks_tolak = Pendaftaranlks::where('status', '2')->orderBy('created_at', 'desc')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -634,10 +634,10 @@ class AdminController extends Controller
 
     public function pencatatan_hi()
     {
-        $hi_proses = Pencatatanperselihan::where('status', '0')->get();
-        $hi_konfir = Pencatatanperselihan::where('status', '3')->get();
-        $hi_terima = Pencatatanperselihan::where('status', '1')->get();
-        $hi_tolak = Pencatatanperselihan::where('status', '2')->get();
+        $hi_proses = Pencatatanperselihan::where('status', '0')->orderBy('created_at', 'desc')->get();
+        $hi_konfir = Pencatatanperselihan::where('status', '3')->orderBy('created_at', 'desc')->get();
+        $hi_terima = Pencatatanperselihan::where('status', '1')->orderBy('created_at', 'desc')->get();
+        $hi_tolak = Pencatatanperselihan::where('status', '2')->orderBy('created_at', 'desc')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -728,10 +728,10 @@ class AdminController extends Controller
 
     public function pelaporan_phk()
     {
-        $phk_proses = Pelaporanphk::where('status', '0')->get();
-        $phk_konfir = Pelaporanphk::where('status', '3')->get();
-        $phk_terima = Pelaporanphk::where('status', '1')->get();
-        $phk_tolak = Pelaporanphk::where('status', '2')->get();
+        $phk_proses = Pelaporanphk::where('status', '0')->orderBy('created_at', 'desc')->get();
+        $phk_konfir = Pelaporanphk::where('status', '3')->orderBy('created_at', 'desc')->get();
+        $phk_terima = Pelaporanphk::where('status', '1')->orderBy('created_at', 'desc')->get();
+        $phk_tolak = Pelaporanphk::where('status', '2')->orderBy('created_at', 'desc')->get();
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();

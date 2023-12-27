@@ -222,14 +222,18 @@
         </div>
     </div>
 
-    <div class="mt-4">
-        <div class="text-center">
-            <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->hi_user->name}} :</b></label><br>
-            <div class="mt-2">
-                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
-                <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
+    @if ($data->status == '0')
+        <div class="mt-4">
+            <div class="text-center">
+                <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->hi_user->name}} :</b></label><br>
+                <div class="mt-2">
+                    <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
+                    <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
+                </div>
             </div>
         </div>
-    </div>
+    @else
+
+    @endif
 </div>
 @endsection

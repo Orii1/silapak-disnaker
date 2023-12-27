@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asset;
 use App\Models\Pelaporanphk;
 use App\Models\Pencatatanperselihan;
 use App\Models\Pencatatanspsb;
@@ -61,6 +62,7 @@ class AdminController extends Controller
         $now = Carbon::now();
         $now->setLocale('id');
         $datestring = $now->isoFormat('D MMMM Y');
+        $dayname = $now->translatedFormat('l');
 
         $pp_all = Pengesahanpp::all()->count();
         $pkb_all = Pendaftaranpkb::all()->count();
@@ -72,6 +74,7 @@ class AdminController extends Controller
 
         return view('/admin/dashboard', compact(
             'datestring',
+            'dayname',
             'total',
             'total_terima',
             'total_tolak',
@@ -175,6 +178,7 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
+
         return view('/admin/pengesahan-pp/permohonan-pengesahan-pp', compact('pp_proses', 'pp_konfir', 'pp_terima', 'pp_tolak', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
@@ -825,5 +829,113 @@ class AdminController extends Controller
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
         return view('/admin/asset/asset', compact('pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+    public function alur_perizinan(Request $request, $id)
+    {
+        $pp_alur = Asset::find($id);
+
+        $extension1 = $request->file('alur_perizinan')->getClientOriginalExtension();
+        $file1 = 'Alur-Perizinan' . now()->timestamp . '.' . $extension1;
+        $request->file('alur_perizinan')->storeAs('asset', $file1);
+
+        $pp_alur->alur_perizinan = $file1;
+        $pp_alur->save();
+
+        toastr()->success('Alur Perizinan Berhail diperbarui!');
+        return redirect('/admin/asset');
+    }
+
+    public function dasar_hukum(Request $request, $id)
+    {
+        $pp_dasar = Asset::find($id);
+
+        $pp_dasar->dasar_hukum = $request->dasar_hukum;
+        $pp_dasar->save();
+
+        toastr()->success('Dasar Hukum Berhail diperbarui!');
+        return redirect('/admin/asset');
+    }
+
+    public function durasi(Request $request, $id)
+    {
+        $pp_durasi = Asset::find($id);
+
+        $pp_durasi->durasi_pemrosesan = $request->durasi_pemrosesan;
+        $pp_durasi->save();
+
+        toastr()->success('Durasi Pemrosesan Berhail diperbarui!');
+        return redirect('/admin/asset');
+    }
+
+    public function kontak(Request $request, $id)
+    {
+        $kontak = Asset::find($id);
+
+        $kontak->kontak = $request->kontak;
+        $kontak->save();
+
+        toastr()->success('Kontak Berhail diperbarui!');
+        return redirect('/admin/asset');
+    }
+
+    public function retribusi(Request $request, $id)
+    {
+        $retribusi = Asset::find($id);
+
+        $extension1 = $request->file('retribusi')->getClientOriginalExtension();
+        $file1 = 'Retribusi' . now()->timestamp . '.' . $extension1;
+        $request->file('retribusi')->storeAs('asset', $file1);
+
+        $retribusi->retribusi = $file1;
+        $retribusi->save();
+
+        toastr()->success('Retribusi Berhail diperbarui!');
+        return redirect('/admin/asset');
+    }
+
+    public function maklumat(Request $request, $id)
+    {
+        $maklumat = Asset::find($id);
+
+        $extension1 = $request->file('maklumat')->getClientOriginalExtension();
+        $file1 = 'Maklumat' . now()->timestamp . '.' . $extension1;
+        $request->file('maklumat')->storeAs('asset', $file1);
+
+        $maklumat->maklumat = $file1;
+        $maklumat->save();
+
+        toastr()->success('Maklumat Berhail diperbarui!');
+        return redirect('/admin/asset');
+    }
+
+    public function visi_misi(Request $request, $id)
+    {
+        $visi_misi = Asset::find($id);
+
+        $extension1 = $request->file('visi_misi')->getClientOriginalExtension();
+        $file1 = 'Visi-Misi' . now()->timestamp . '.' . $extension1;
+        $request->file('visi_misi')->storeAs('asset', $file1);
+
+        $visi_misi->visi_misi = $file1;
+        $visi_misi->save();
+
+        toastr()->success('Visi dan Misi Berhail diperbarui!');
+        return redirect('/admin/asset');
+    }
+
+    public function motto(Request $request, $id)
+    {
+        $motto = Asset::find($id);
+
+        $extension1 = $request->file('motto')->getClientOriginalExtension();
+        $file1 = 'Motto' . now()->timestamp . '.' . $extension1;
+        $request->file('motto')->storeAs('asset', $file1);
+
+        $motto->motto = $file1;
+        $motto->save();
+
+        toastr()->success('Visi dan Misi Berhail diperbarui!');
+        return redirect('/admin/asset');
     }
 }

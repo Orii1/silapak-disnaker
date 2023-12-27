@@ -49,15 +49,15 @@
                 </li>
 
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#">Dasar Hukum</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#dasar_hukum">Dasar Hukum</button>
                 </li>
 
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#">Durasi Pemrosesan</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#durasi_pemrosesan">Durasi Pemrosesan</button>
                 </li>
 
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#">Kontak</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#kontak">Kontak</button>
                 </li>
 
                 <li class="nav-item">
@@ -236,14 +236,14 @@
 
                 <div class="tab-pane fade pt-3" id="alur-perizinan">
                     <div class="text-center">
-                        <img src="../../assets/img/ppnaker.png" class="img-fluid" alt="">
+                        <img src="/storage/asset/{{$asset_pkwt->alur_perizinan}}" class="img-fluid" alt="">
                     </div>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="retribusi">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="../../assets/img/gratis.png" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->retribusi}}" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                 <div class="tab-pane fade pt-3" id="maklumat">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="../../assets/img/maklumat.jpg" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->maklumat}}" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -259,7 +259,7 @@
                 <div class="tab-pane fade pt-3" id="visimisi">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="../../assets/img/visimisi.jpg" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->visi_misi}}" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -267,12 +267,48 @@
                 <div class="tab-pane fade pt-3" id="motto">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="../../assets/img/motto.jpg" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->motto}}" style="width: 900px;" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade pt-0" id="dasar_hukum">
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <div class="card-title">
+                                <Label style="font-size: 20px;">Dasar Hukum</Label><br>
+                                <label class="mt-2" style="font-size: 17px;">{{$asset_pkwt->dasar_hukum}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade pt-0" id="durasi_pemrosesan">
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <div class="card-title">
+                                <Label style="font-size: 20px;">Durasi Pemrosesan</Label><br>
+                                <label class="mt-2" style="font-size: 17px;">{{$asset_pkwt->durasi_pemrosesan}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade pt-0" id="kontak">
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <div class="card-title">
+                                <Label style="font-size: 20px;">Kontak Layanan Permohonan</Label><br>
+                            </div>
+                            <label class="ms-5 mb-2 card-tittle" style="font-size: 16px;"><b>Dinas Koperasi, Usaha Mikro dan Tenaga Kerja kota Banjarbaru</b></label><br>
+                            <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Alamat : Jalan Soekarno Hatta - Trikora</label><br>
+                            <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Nomor : {{$asset->kontak}}</label><br>
                         </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
     </div>
 </div>

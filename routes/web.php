@@ -189,8 +189,22 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/permohonan-phk/tolak/{id}', [AdminController::class, 'pelaporan_phk_tolak']);
     // END PHK
 
-
+    // Asset
     Route::get('/admin/asset', [AdminController::class, 'asset']);
+
+    // Store Asset
+    Route::post('/alur-perizinan/store/{id}', [AdminController::class, 'alur_perizinan']);
+    Route::post('/dasar-hukum/store/{id}', [AdminController::class, 'dasar_hukum']);
+    Route::post('/durasi-pemrosesan/store/{id}', [AdminController::class, 'durasi']);
+    Route::post('/kontak/store/{id}', [AdminController::class, 'kontak']);
+    Route::post('/maklumat/store/{id}', [AdminController::class, 'maklumat']);
+    Route::post('/retribusi/store/{id}', [AdminController::class, 'retribusi']);
+    Route::post('/visi-misi/store/{id}', [AdminController::class, 'visi_misi']);
+    Route::post('/motto/store/{id}', [AdminController::class, 'motto']);
+    // END Store Asset
+    // END Asset
+
+
     // END ADMIN ROUTE
 });
 

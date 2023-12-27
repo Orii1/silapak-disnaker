@@ -25,7 +25,7 @@
     <div class="col-xxl-6">
         <div class="card">
             <div class="card-title mx-4">
-                {{$datestring}}
+                {{$dayname}}, {{$datestring}}
             </div>
         </div>
     </div>

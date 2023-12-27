@@ -32,78 +32,75 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                            <div class="mx-5">
-                                <div class="mx-5">
-                                    <div class="mx-5">
-                                        <h5 class="card-title mx-5 mb-4">Detail Perusahaan</h5>
+                            <div class="text-center">
+                                <h5 class="card-title">Detail Perusahaan</h5>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="label">Nama Perusahaan</div><br>
+                                        <label>{{$detail->name}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Alamat</div><br>
+                                        <label>{{$detail->address}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Nama Pemilik</div><br>
+                                        <label>{{$detail->owner}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Email</div><br>
+                                        <label>{{$detail->email}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Jenis Usaha</div><br>
+                                        <label>{{$detail->type}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Modal</div><br>
+                                        <label>{{$detail->modal}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Sektor</div><br>
+                                        <label>{{$detail->sector}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Status Perusahaan</div><br>
+                                        <label>{{$detail->status}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">Surat Keputusan Izin Usaha</div><br>
+                                        <label>No : {{$detail->number_letter}}</label>
+                                        <label>Tanggal : {{$detail->date_latter}}</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-5 col-md-5 label ">Nama</div>
-                                <div class="col-lg-5 col-md-8 label">Jumlah Tenaga Kerja <i>(Orang)</i></div>
-                                <div class="col-lg-5 col-md-6">{{ $detail->name }}</div>
-                                <div class="col-lg-2 col-md-8">Laki-laki <b>{{ $detail->men }}</b></div>
-                                <div class="col-lg-2 col-md-8">Wanita <b>{{ $detail->woman }}</b></div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-5 col-md-4 label">Alamat</div>
-                                <div class="col-lg-5 col-md-8 label">Status Hubungan Kerja <i>(Orang)</i></div>
-                                <div class="col-lg-5 col-md-8">{{ $detail->address }}</div>
-                                <div class="col-lg-2 col-md-8">PKWT <b>{{ $detail->pkwt }}</b></div>
-                                <div class="col-lg-3 col-md-8">Outsourcing <b>{{ $detail->outsourcing }}</b></div>
-                                <div class="col-lg-2 col-md-8">WNA <b>{{ $detail->wna }}</b></div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-5 col-md-4 label">Nama Pemilik</div>
-                                <div class="col-lg-5 col-md-4 label">No Kepesertaan BPJS Ketenagakerjaan</div>
-                                <div class="col-lg-5 col-md-8">{{ $detail->owner }}</div>
-                                <div class="col-lg-4 col-md-8">{{ $detail->number_ketenagakerjaan }}</div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-5 col-md-4 label">Email</div>
-                                <div class="col-lg-5 col-md-4 label">No Kepesertaan BPJS Kesehatan</div>
-                                <div class="col-lg-5 col-md-8">{{ $detail->email }}</div>
-                                <div class="col-lg-4 col-md-8">{{ $detail->number_kesehatan }}</div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-5 col-md-4 label">Jenis Usaha</div>
-                                <div class="col-lg-9 col-md-8">{{ $detail->type }}</div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-5 col-md-4 label">Modal</div>
-                                <div class="col-lg-9 col-md-8">{{ $detail->modal }}</div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-5 col-md-4 label">Sektor</div>
-                                <div class="col-lg-9 col-md-8">{{ $detail->sector }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-5 col-md-4 label">Status Perusahaan</div>
-                                <div class="col-lg-9 col-md-8">{{ $detail->status }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9 col-md-4 label">Surat Keputusan Izin Usaha</div>
-                                <div class="col-lg-9 col-md-8">No : {{ $detail->number_letter }}</div>
-                                <div class="col-lg-6 col-md-8">Tanggal : {{ $detail->date_latter }}</div>
-                            </div>
-
-                            <div class="d-flex align-content-center flex-wrap">
-                                <div style="border:0; width: 100%; height: 230px;" allowfullscreen>
-                                    @include('map2')
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input class="form-control form-control-sm" type="hidden" name="lat" id="lat" readonly>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="label">Jumlah Tenaga Kerja <i>(Orang)</i></div><br>
+                                        <label>Laki-laki <b>{{$detail->men}}</b></label>
+                                        <label>Wanita <b>{{$detail->woman}}</b></label>
                                     </div>
-                                    <div class="col-md-6">
-                                        <input class="form-control form-control-sm" type="hidden" name="lng" id="lng" readonly>
+                                    <div class="row">
+                                        <div class="label">Status Hubungan Kerja <i>(Orang)</i></div><br>
+                                        <label>PKWT <b>{{$detail->pkwt}}</b></label>
+                                        <label>Outsourcing <b>{{$detail->outsourcing}}</b></label>
+                                        <label>WNA <b>{{$detail->wna}}</b></label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">No Kepesertaan BPJS Ketenagakerjaan</div><br>
+                                        <label>{{$detail->number_ketenagakerjaan}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">No Kepesertaan BPJS Kesehatan</div><br>
+                                        <label>{{$detail->number_kesehatan}}</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="d-flex align-content-center flex-wrap">
+                                            <div style="border:0; width: 100%;" allowfullscreen>
+                                                @include('map2')
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -11,7 +11,7 @@
 
     <style>
         #mapid {
-            aspect-ratio: 3/1;
+            aspect-ratio: 1/1;
             width: 100%;
             border-radius: 10px;
             z-index: 0;

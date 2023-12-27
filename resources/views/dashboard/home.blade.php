@@ -19,6 +19,7 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
       <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top">
@@ -29,8 +30,8 @@
 
             <nav id="navbar" class="navbar" >
                 <ul>
-                <li><a class="header-scrolled getstarted scrollto" href="#cta">Beranda</a></li>
-                <li><a class="header-scrolled getstarted scrollto" href="#about">Layanan Kami</a></li>
+                <li><a class="header-scrolled getstarted scrollto" href="#about">Tentang Kami</a></li>
+                <li><a class="header-scrolled getstarted scrollto" href="#services">Layanan Kami</a></li>
                 <li><a class="header-scrolled getstarted scrollto border border-white rounded-5" href="/login">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -47,98 +48,181 @@
         </div>
     </section>
 
-{{-- Section Layanan Kami --}}
-<section id="services" class="services section-bg">
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Syarat Syarat Pengajuan</h2>
-            <p>Lengkapi Persyaratan Anda Sebelum Melakukan Pengajuan. Syarat syarat dapat dilihat dibawah ini :</p>
-        </div>
+{{--Section Tentang Kami  --}}
+    <section id="about" class="section-bg">
+        <div class="container" data-aos="fade-up">
 
-        <div class="row">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                    <h4><a href="">Lorem Ipsum</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                </div>
+            <div class="section-title">
+              <h2>Tentang Kami</h2>
             </div>
 
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box">
-                  <div class="icon"><i class="bx bx-file"></i></div>
-                  <h4><a href="">Sed ut perspici</a></h4>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                </div>
+            <div class="row content">
+              <div class="col-lg-6">
+                <p>
+                  SILAKHI (Sistem Informasi Layanan Ketenagakerjaan dan Hubungan Industrial) adalah layanan daring <i>(Online)</i> yang dapat membantu anda dalam mengajukan izin perusahaan anda. Beberapa Layanan Kami yaitu :
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> Pengesahan Peraturan Perusahaan</li>
+                  <li><i class="ri-check-double-line"></i> Pendaftaran Perjanjian Kerja Bersama</li>
+                  <li><i class="ri-check-double-line"></i> Pendaftaran Perjanjian Kerja Waktu Tertentu</li>
+                  <li><i class="ri-check-double-line"></i> Pencatatan Serikat Pekerja/Serikat Buruh</li>
+                  <li><i class="ri-check-double-line"></i> Pendaftaran Lembaga Kerja Sama Bipartit</li>
+                  <li><i class="ri-check-double-line"></i> Pencatatan Penyelesaian Perselisihan Hubungan Internal</li>
+                  <li><i class="ri-check-double-line"></i> Pelaporan Pemutusan Hubungan Kerja</li>
+                </ul>
               </div>
-
-              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                  <div class="icon"><i class="bx bx-tachometer"></i></div>
-                  <h4><a href="">Magni Dolores</a></h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                </div>
+              <div class="col-lg-6 pt-4 pt-lg-0">
+                <p>
+                  Dengan menggunakan SILAKHI anda dapat mengetahui progress permohonan anda dengan jelas tanpa harus datang ketempat, lengkapi Sarana HI buhan Pian, Sakira Beusaha Nyaman, Bagawi Tanang.
+                </p>
               </div>
+            </div>
 
-              <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-                <div class="icon-box">
-                  <div class="icon"><i class="bx bx-layer"></i></div>
-                  <h4><a href="">Nemo Enim</a></h4>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                </div>
-              </div>
-        </div>
+          </div>
+    </section>
+{{-- Akhir Section Tentang Kami --}}
 
-    </div>
-</section>
-{{-- Akhir Section Layanan Kami --}}
 
-    <section id="services" class="services section-bg">
-    <div class="col-12">
+{{-- Section Layanan Kami --}}
+    <section id="services" class="services section-bgg">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Syarat Syarat Pengajuan</h2>
                 <p>Lengkapi Persyaratan Anda Sebelum Melakukan Pengajuan. Syarat syarat dapat dilihat dibawah ini :</p>
             </div>
 
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4><a href="">Lorem Ipsum</a></h4>
-                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                        <div class="text-center">
+                            <div class="icon"><img src="/assets/img/permohonan.png" alt=""></div>
+                            <h4><a>Pengesahan Peraturan Perusahaan</a></h4>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box">
-                      <div class="icon"><i class="bx bx-file"></i></div>
-                      <h4><a href="">Sed ut perspici</a></h4>
-                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        <div class="text-center">
+                            <div class="icon"><img src="/assets/img/pkb.png" alt=""></i></div>
+                            <h4><a>Pendaftaran Perjanjian Kerja Bersama</a></h4>
+                        </div>
                     </div>
-                  </div>
+                </div>
 
-                  <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box">
-                      <div class="icon"><i class="bx bx-tachometer"></i></div>
-                      <h4><a href="">Magni Dolores</a></h4>
-                      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        <div class="text-center">
+                            <div class="icon"><img src="/assets/img/pkwt.png" alt=""></div>
+                            <h4><a>Pendaftaran Perjanjian Kerja Waktu Tertentu</a></h4>
+                        </div>
                     </div>
-                  </div>
+                </div>
 
-                  <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
                     <div class="icon-box">
-                      <div class="icon"><i class="bx bx-layer"></i></div>
-                      <h4><a href="">Nemo Enim</a></h4>
-                      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        <div class="text-center">
+                            <div class="icon"><img src="/assets/img/spsb.png" alt=""></div>
+                            <h4><a>Pencatatan Serikat Buruh/Serikat Pekerja</a></h4>
+                        </div>
                     </div>
-                  </div>
+                </div>
             </div>
 
-        </div>
-    </div>
-    </section>
+            <div class="row justify-content-center">
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="text-center">
+                                <div class="icon"><img src="/assets/img/lks.png" alt=""></div>
+                                <h4><a>Pendaftaran Lembaga Kerja Sama Bipartit</a></h4>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="text-center">
+                                <div class="icon"><img src="/assets/img/hi.png" alt=""></div>
+                                <h4><a>Pencatatan Penyelesaian Perselisihan Hubungan Internal</a></h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="text-center">
+                                <div class="icon"><img src="/assets/img/phk.png" alt=""></div>
+                                <h4><a>Pelaporan Pemutusan Hubungan Kerja</a></h4>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+{{-- Akhir Section Layanan Kami --}}
+
+
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h3>SILAKHI</h3>
+            <p>
+              Jalan Soekarno Hatta <br>
+              Trikora<br>
+              Banjarbaru, Kalimantan Selatan <br><br>
+              <strong>Phone:</strong> 0511-6749523<br>
+              <strong>Email:</strong> admin@diskopukmnaker.banjarbarukota.go.id<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#cta">Beranda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang Kami</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Syarat Pengajuan</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Layanan</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a>Pengesahan PP</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Pendaftaran PKB</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Pendaftaran PKWT</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Pencatatan SP/SB</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Pendaftaran LKS Bipartit</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Pencatatan Perselisihan HI</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Pelaporan PHK</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Sosial Media Kami</h4>
+            <p>Beberapa Sosial Media Kami</p>
+            <div class="social-links mt-3">
+              <a href="https://diskopukmnaker.banjarbarukota.go.id/" target="_blank" class="twitter"><i class='bx bxs-color'></i></a>
+              <a href="https://www.instagram.com/diskopukmnaker.banjarbaru/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong></strong>
+      </div>
+      <div class="credits">
+        Pemerintah Kota Banjarbaru
+      </div>
+    </div>
+</footer>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 </body>
 <script src="assets/vendor/aos/aos.js"></script>

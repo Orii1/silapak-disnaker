@@ -16,17 +16,13 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-      <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top">
         <div class="container d-flex align-items-center">
             <h1 class="logo me-auto"><img src="assets/img/banjarbaru.png" alt="banjarbaru"><a href="#">SILAKHI</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar" >
                 <ul>
@@ -35,16 +31,16 @@
                 <li><a class="header-scrolled getstarted scrollto border border-white rounded-5" href="/login">Masuk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+            </nav>
         </div>
     </header>
 
     <section id="cta" class="cta">
         <div class="container text-center">
-            <h1>Selamat Datang di Website SILAKHI</h1>
-            <h1>Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</h1>
-            <h2>Memproses Layanan Permohonan Anda Secara Mandiri</h2>
-            <h2>Dinas Koperasi Usaha Kecil Menengah dan Tenaga Kerja Banjarbaru</h2>
+            <h1 data-aos="fade-up">Selamat Datang di SILAKHI</h1>
+            <h1 data-aos="fade-up" data-aos-delay="100">Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</h1>
+            <h2 data-aos="fade-up" data-aos-delay="200">Mencetak Dokumen Anda Secara Mandiri</h2>
+            <h3 data-aos="fade-up" data-aos-delay="300">"Ayo Lengkapi Sarana HI Buhan Pian, Sakira Bausaha Nyaman, Bagawi Tanang"</h3>
         </div>
     </section>
 
@@ -91,70 +87,86 @@
                 <p>Lengkapi Persyaratan Anda Sebelum Melakukan Pengajuan. Syarat syarat dapat dilihat dibawah ini :</p>
             </div>
 
+            @include('dashboard.modal')
             <div class="row mb-4">
-                <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="text-center">
-                            <div class="icon"><img src="/assets/img/permohonan.png" alt=""></div>
-                            <h4><a>Pengesahan Peraturan Perusahaan</a></h4>
-                        </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <button class="btn-no-border" data-bs-toggle="modal" data-bs-target="#pp">
+                            <div class="icon-box">
+                                <div class="text-center">
+                                    <div class="icon"><img src="/assets/img/permohonan.png" alt=""></div>
+                                    <h4><a>Pengesahan Peraturan Perusahaan</a></h4>
+                                </div>
+                            </div>
+                        </button>
                     </div>
-                </div>
 
                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="text-center">
-                            <div class="icon"><img src="/assets/img/pkb.png" alt=""></i></div>
-                            <h4><a>Pendaftaran Perjanjian Kerja Bersama</a></h4>
+                    <button class="btn-no-border" data-bs-toggle="modal" data-bs-target="#pkb">
+                        <div class="icon-box">
+                            <div class="text-center">
+                                <div class="icon"><img src="/assets/img/pkb.png" alt=""></i></div>
+                                <h4><a>Pendaftaran Perjanjian Kerja Bersama</a></h4>
+                            </div>
                         </div>
-                    </div>
+                    </button>
                 </div>
 
                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="text-center">
-                            <div class="icon"><img src="/assets/img/pkwt.png" alt=""></div>
-                            <h4><a>Pendaftaran Perjanjian Kerja Waktu Tertentu</a></h4>
+                    <button class="btn-no-border" data-bs-toggle="modal" data-bs-target="#pkwt">
+                        <div class="icon-box">
+                            <div class="text-center">
+                                <div class="icon"><img src="/assets/img/pkwt.png" alt=""></div>
+                                <h4><a>Pendaftaran Perjanjian Kerja Waktu Tertentu</a></h4>
+                            </div>
                         </div>
-                    </div>
+                    </button>
                 </div>
 
                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="icon-box">
-                        <div class="text-center">
-                            <div class="icon"><img src="/assets/img/spsb.png" alt=""></div>
-                            <h4><a>Pencatatan Serikat Buruh/Serikat Pekerja</a></h4>
+                    <button class="btn-no-border" data-bs-toggle="modal" data-bs-target="#spsb">
+                        <div class="icon-box">
+                            <div class="text-center">
+                                <div class="icon"><img src="/assets/img/spsb.png" alt=""></div>
+                                <h4><a>Pencatatan Serikat Buruh/Serikat Pekerja</a></h4>
+                            </div>
                         </div>
-                    </div>
+                    </button>
                 </div>
             </div>
 
             <div class="row justify-content-center">
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="text-center">
-                                <div class="icon"><img src="/assets/img/lks.png" alt=""></div>
-                                <h4><a>Pendaftaran Lembaga Kerja Sama Bipartit</a></h4>
+                        <button class="btn-no-border" data-bs-toggle="modal" data-bs-target="#lks">
+                            <div class="icon-box">
+                                <div class="text-center">
+                                    <div class="icon"><img src="/assets/img/lks.png" alt=""></div>
+                                    <h4><a>Pendaftaran Lembaga Kerja Sama Bipartit</a></h4>
+                                </div>
                             </div>
-                        </div>
+                        </button>
                     </div>
 
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="text-center">
-                                <div class="icon"><img src="/assets/img/hi.png" alt=""></div>
-                                <h4><a>Pencatatan Penyelesaian Perselisihan Hubungan Internal</a></h4>
+                        <button class="btn-no-border" data-bs-toggle="modal" data-bs-target="#hi">
+                            <div class="icon-box">
+                                <div class="text-center">
+                                    <div class="icon"><img src="/assets/img/hi.png" alt=""></div>
+                                    <h4><a>Pencatatan Penyelesaian Perselisihan Hubungan Internal</a></h4>
+                                </div>
                             </div>
-                        </div>
+                        </button>
                     </div>
 
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="text-center">
-                                <div class="icon"><img src="/assets/img/phk.png" alt=""></div>
-                                <h4><a>Pelaporan Pemutusan Hubungan Kerja</a></h4>
+                        <button class="btn-no-border" data-bs-toggle="modal" data-bs-target="#phk">
+                            <div class="icon-box">
+                                <div class="text-center">
+                                    <div class="icon"><img src="/assets/img/phk.png" alt=""></div>
+                                    <h4><a>Pelaporan Pemutusan Hubungan Kerja</a></h4>
+                                </div>
                             </div>
-                        </div>
+                        </button>
                     </div>
             </div>
         </div>
@@ -162,7 +174,7 @@
 {{-- Akhir Section Layanan Kami --}}
 
 
-<footer id="footer">
+<footer id="footer" data-aos="fade-up">
     <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -233,7 +245,7 @@
 <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 
-<!-- Template Main JS File -->
+
 <script src="assets/js/main.js"></script>
-{{-- <script src="{{asset('js/script.js')}}"></script> --}}
+
 </html>

@@ -215,7 +215,7 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <label for=""> Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
+                                                <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
                                                 <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
                                             </div>
                                         </td>
@@ -267,9 +267,9 @@
                             </table>
                         </div>
 
-                        <div class="col-md-6 pt-1 mt-4">
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-primary btn-lg btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim</b></a></label></button>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-grid gap-2 col-2 mt-5 mx-auto">
+                                <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim</b></a></label></button>
                             </div>
                         </div>
                       </form>

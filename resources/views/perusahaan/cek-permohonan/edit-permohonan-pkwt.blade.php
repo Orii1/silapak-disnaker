@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c9030cdfea2172938b1baa3ef48f1df17ae4ddc5
 @extends('layout.header2')
 
 @section('content')
@@ -104,16 +100,14 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-md-2">
-                                                        <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                                            <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <input type="file" class="form-control" name="srt_permohonan_pencatatan_pkwt" required>
-                                                    </div>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="file" class="form-control" name="srt_permohonan_pencatatan_pkwt" required>
                                                 </div>
                                             </div>
                                         </td>

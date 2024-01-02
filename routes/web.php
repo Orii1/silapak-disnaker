@@ -118,6 +118,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/admin/change-password/{id}', [AdminController::class, 'change_password']);
     Route::get('/admin/detail-perusahaan/{id}', [AdminController::class, 'detail_perusahaan']);
     Route::get('/admin/delete-perusahaan/{id}', [AdminController::class, 'delete_perusahaan']);
+    Route::get('/download/data-perusahaan/{id}', [AdminController::class, 'download_data_perusahaan']);
 
     // PP
     Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);

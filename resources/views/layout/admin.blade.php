@@ -147,11 +147,11 @@
           <li>
             @if ($hi_not == "0")
             <a href="/admin/permohonan-pencatatan-hi">
-                <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Internal
+                <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial
             </a>
             @else
             <a href="/admin/permohonan-pencatatan-hi">
-                <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Internal<span class="badge text-bg-danger">{{$hi_not}}</span>
+                <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial<span class="badge text-bg-danger">{{$hi_not}}</span>
             </a>
             @endif
           </li>
@@ -165,7 +165,6 @@
                 <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja<span class="badge text-bg-danger">{{$phk_not}}</span>
             </a>
             @endif
-
         </li>
     </ul>
 

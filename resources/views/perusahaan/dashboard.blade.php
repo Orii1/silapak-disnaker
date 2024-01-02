@@ -197,7 +197,7 @@
                                             </div>
                                             <div class="col-9">
                                                 <div class="card-menu" style="padding-top: 40px; padding-bottom: 35px;">
-                                                    Pencatatan Penyelesaian Perselisihan Hubungan Internal
+                                                    Pencatatan Penyelesaian Perselisihan Hubungan Industrial
                                                 </div>
                                             </div>
                                         </div>

@@ -36,6 +36,11 @@
                                 <h5 class="card-title">Detail Perusahaan</h5>
                             </div>
                             <div class="row">
+                                <div class="col-9">
+                                    <a href="/download/data-perusahaan/{{$detail->id}}" target="_blank" class="btn btn-danger btn-sm"><i class="bi bi-printer-fill"></i> Cetak PDF</a>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="label">Nama Perusahaan</div><br>
@@ -99,6 +104,14 @@
                                         <div class="d-flex align-content-center flex-wrap">
                                             <div style="border:0; width: 100%;" allowfullscreen>
                                                 @include('map2')
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>lat : {{$detail->lat}}</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>lng : {{$detail->lng}}</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

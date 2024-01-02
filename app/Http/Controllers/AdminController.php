@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
+
+
 class AdminController extends Controller
 {
     public function dashboard()
@@ -833,17 +835,30 @@ class AdminController extends Controller
 
     public function alur_perizinan(Request $request, $id)
     {
-        $pp_alur = Asset::find($id);
 
-        $extension1 = $request->file('alur_perizinan')->getClientOriginalExtension();
-        $file1 = 'Alur-Perizinan' . now()->timestamp . '.' . $extension1;
-        $request->file('alur_perizinan')->storeAs('asset', $file1);
+        $validatedata = $request->validate([
+            'alur_perizinan' => 'required|mimes:png,jpg|file',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+        ]);
 
-        $pp_alur->alur_perizinan = $file1;
-        $pp_alur->save();
+        if ($validatedata) {
+            $pp_alur = Asset::find($id);
 
-        toastr()->success('Alur Perizinan Berhail diperbarui!');
-        return redirect('/admin/asset');
+            $extension1 = $request->file('alur_perizinan')->getClientOriginalExtension();
+            $file1 = 'Alur-Perizinan' . now()->timestamp . '.' . $extension1;
+            $request->file('alur_perizinan')->storeAs('asset', $file1);
+
+            $pp_alur->alur_perizinan = $file1;
+            $pp_alur->save();
+
+            toastr()->success('Alur Perizinan Berhail diperbarui!');
+            return redirect('/admin/asset');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function dasar_hukum(Request $request, $id)
@@ -937,5 +952,15 @@ class AdminController extends Controller
 
         toastr()->success('Visi dan Misi Berhail diperbarui!');
         return redirect('/admin/asset');
+    }
+
+    public function download_data_perusahaan($id)
+    {
+        $data = User::find($id);
+        $lat = $data->lat;
+        $lng = $data->lng;
+        $mpdf = new \Mpdf\Mpdf();
+        $mpdf->WriteHTML(view("admin.perusahaan.pdf-perusahaan", compact('data', 'lat', 'lng')));
+        $mpdf->Output();
     }
 }

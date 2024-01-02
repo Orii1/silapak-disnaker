@@ -83,7 +83,7 @@
     <section id="services" class="services section-bgg">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Syarat Syarat Pengajuan</h2>
+                <h2>Layanan Kami</h2>
                 <p>Lengkapi Persyaratan Anda Sebelum Melakukan Pengajuan. Syarat syarat dapat dilihat dibawah ini :</p>
             </div>
 
@@ -152,7 +152,7 @@
                             <div class="icon-box">
                                 <div class="text-center">
                                     <div class="icon"><img src="/assets/img/hi.png" alt=""></div>
-                                    <h4><a>Pencatatan Penyelesaian Perselisihan Hubungan Internal</a></h4>
+                                    <h4><a>Pencatatan Penyelesaian Perselisihan Hubungan Industrial</a></h4>
                                 </div>
                             </div>
                         </button>
@@ -195,7 +195,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#cta">Beranda</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang Kami</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#services">Syarat Pengajuan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan Kami</a></li>
             </ul>
           </div>
 

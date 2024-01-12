@@ -31,6 +31,7 @@
                       {{Session('error')}}
                   </div>
                   @endif
+                    <input type="hidden" name="email" value={{$user->email}} required>
                   <div class="col-12 mb-4">
                      <input type="text" name="name" id="name" placeholder="Nama Perusahaan" class="form-control" required/>
                   </div>
@@ -42,10 +43,6 @@
                   <div class="col-12 mb-4">
                      <input type="textarea" name="address" id="address" placeholder="Alamat Perusahaan" class="form-control" required/>
                   </div>
-
-                  <div class="col-12 mb-4">
-                    <input type="email" name="email" id="email" placeholder="Email Perusahaan" class="form-control" required/>
-                 </div>
 
                   <div class="col-12 mb-4">
                       <input type="password" name="password" class="form-control" id="yourPassword" placeholder="Password" required>
@@ -64,7 +61,7 @@
                       <button class="btn btn-primary w-100" type="submit">Daftar</button>
                   </div>
                   <div class="col-12 mb-5">
-                      <a href="login" class="btn btn-outline-primary w-100">Kembali</a>
+                      <a href="{{route('login')}}" class="btn btn-outline-primary w-100">Kembali</a>
                   </div>
 
                 </form>

@@ -5,21 +5,12 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EditSubmissionController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     return view('/dashboard/home');
@@ -28,6 +19,10 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return redirect('/');
 });
+
+Route::get('/auth/redirect', [SocialController::class, 'redirect'])->name('google.redirect');
+Route::get('/google/redirect', [SocialController::class, 'googleCallback'])->name('google.callback');
+Route::post('/google/redirect', [UserController::class, 'store'])->name('store.account');
 
 Route::get('/login', function () {
     return view('/login/login');

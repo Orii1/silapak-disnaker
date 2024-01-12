@@ -6,7 +6,7 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Permohonan Pencatatan Penyelesaian Perselisihan Hubungan Internal</li>
+            <li class="breadcrumb-item">Permohonan Pencatatan Penyelesaian Perselisihan Hubungan Industrial</li>
             <li class="breadcrumb-item active">{{$data->hi_user->name}}</li>
         </ol>
     </nav>
@@ -29,7 +29,7 @@
 @if ($data->status == '1')
     <div class="mt-2 mb-2">
         <div class="mx-2">
-            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b></label>
+            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/perselisihan_hi/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
         </div>
     </div>
 @elseif ($data->status == '2')

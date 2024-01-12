@@ -42,11 +42,8 @@
                         <div class="col-12 mb-2">
                             <button class="btn btn-primary w-100" type="submit">Masuk</button>
                         </div>
-                        <div class="col-12 mb-4">
-                            <a href="/register" class="btn btn-outline-primary w-100" type="submit">Daftar</a>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <p class="small mb-0">Lupa Password? <a href="#">Reset Password</a></p>
+                        <div class="col-12 mb-5">
+                            <a href="{{route('google.redirect')}}" class="btn btn-outline-primary w-100" type="submit"><i class="bi bi-google"></i> Daftar</a>
                         </div>
 
                       </form>

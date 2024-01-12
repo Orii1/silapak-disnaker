@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="card-title my-1">
-                    <label>Alur Perizinan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Alur Perizinan <a href="/storage/asset/{{$asset_pp->alur_perizinan}}" target="_blank" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/alur-perizinan/store/1" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -79,7 +79,7 @@
                         </div>
                     </form>
 
-                    <label>Dasar Hukum <a href="" title="Dasar Hukum Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Dasar Hukum <a href="" title="{{$asset_pp->dasar_hukum}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/dasar-hukum/store/1" method="POST">
                         @csrf
                         <div class="row">
@@ -92,7 +92,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a href="" title="{{$asset_pp->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/1" method="POST">
                         @csrf
                         <div class="row">
@@ -112,7 +112,7 @@
                     Asset Permohonan Pendaftaran Perjanjian Kerja Bersama
                 </div>
                 <div class="card-title my-1">
-                    <label>Alur Perizinan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Alur Perizinan <a href="/storage/asset/{{$asset_pkb->alur_perizinan}}" target="_blank" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/alur-perizinan/store/2" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -125,7 +125,7 @@
                         </div>
                     </form>
 
-                    <label>Dasar Hukum <a href="" title="Dasar Hukum Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Dasar Hukum <a href="" title="{{$asset_pkb->dasar_hukum}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/dasar-hukum/store/2" method="POST">
                         @csrf
                         <div class="row">
@@ -138,7 +138,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a href="" title="{{$asset_pkb->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/2" method="POST">
                         @csrf
                         <div class="row">
@@ -158,7 +158,7 @@
                     Asset Permohonan Pendaftaran Perjanjian Kerja Waktu Tertentu
                 </div>
                 <div class="card-title my-1">
-                    <label>Alur Perizinan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Alur Perizinan <a href="/storage/asset/{{$asset_pkwt->alur_perizinan}}" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/alur-perizinan/store/3" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -171,7 +171,7 @@
                         </div>
                     </form>
 
-                    <label>Dasar Hukum <a href="" title="Dasar Hukum Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Dasar Hukum <a href="" title="{{$asset_pkwt->dasar_hukum}}" target="_blank"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/dasar-hukum/store/3" method="POST">
                         @csrf
                         <div class="row">
@@ -184,7 +184,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a title="{{$asset_pkwt->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/3" method="POST">
                         @csrf
                         <div class="row">
@@ -205,7 +205,7 @@
                     Asset Permohonan Pencatatan Serikat Pekerja/Serikat Buruh
                 </div>
                 <div class="card-title my-1">
-                    <label>Alur Perizinan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Alur Perizinan <a href="/storage/asset/{{$asset_spsb->alur_perizinan}}" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/alur-perizinan/store/4" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -218,7 +218,7 @@
                         </div>
                     </form>
 
-                    <label>Dasar Hukum <a href="" title="Dasar Hukum Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Dasar Hukum <a href="" title="{{$asset_spsb->dasar_hukum}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/dasar-hukum/store/4" method="POST">
                         @csrf
                         <div class="row">
@@ -231,7 +231,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a href="" title="{{$asset_spsb->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/4" method="POST">
                         @csrf
                         <div class="row">
@@ -251,7 +251,7 @@
                     Asset Permohonan Pendaftaran Lembaga Kerja Sama Bipartit
                 </div>
                 <div class="card-title my-1">
-                    <label>Alur Perizinan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Alur Perizinan <a href="/storage/asset/{{$asset_lks->alur_perizinan}}" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/alur-perizinan/store/5" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -264,7 +264,7 @@
                         </div>
                     </form>
 
-                    <label>Dasar Hukum <a href="" title="Dasar Hukum Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Dasar Hukum <a href="" title="{{$asset_lks->dasar_hukum}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/dasar-hukum/store/5" method="POST">
                         @csrf
                         <div class="row">
@@ -277,7 +277,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a href="" title="{{$asset_lks->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/5" method="POST">
                         @csrf
                         <div class="row">
@@ -298,7 +298,7 @@
                     Asset Permohonan Pencatatan Penyelesaian Perselisihan Hubungan Internal
                 </div>
                 <div class="card-title my-1">
-                    <label>Alur Perizinan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Alur Perizinan <a href="/storage/asset/{{$asset_hi->alur_perizinan}}" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/alur-perizinan/store/6" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -311,7 +311,7 @@
                         </div>
                     </form>
 
-                    <label>Dasar Hukum <a href="" title="Dasar Hukum Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Dasar Hukum <a href="" title="{{$asset_hi->dasar_hukum}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/dasar-hukum/store/6" method="POST">
                         @csrf
                         <div class="row">
@@ -324,7 +324,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a href="" title="{{$asset_hi->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/6" method="POST">
                         @csrf
                         <div class="row">
@@ -345,7 +345,7 @@
                     Asset Permohonan Pelaporan Pemutusan Hubungan Kerja
                 </div>
                 <div class="card-title my-1">
-                    <label>Alur Perizinan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Alur Perizinan <a href="/storage/asset/{{$asset_phk->alur_perizinan}}" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/alur-perizinan/store/7" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -358,7 +358,7 @@
                         </div>
                     </form>
 
-                    <label>Dasar Hukum <a href="" title="Dasar Hukum Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Dasar Hukum <a href="" title="{{$asset_phk->dasar_hukum}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/dasar-hukum/store/7" method="POST">
                         @csrf
                         <div class="row">
@@ -371,7 +371,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a href="" title="Alur Perizinan Saat Ini"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a href="" title="{{$asset_phk->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/7" method="POST">
                         @csrf
                         <div class="row">
@@ -387,6 +387,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 

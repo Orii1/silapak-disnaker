@@ -29,7 +29,7 @@
 @if ($data->status == '1')
     <div class="mt-2 mb-2">
         <div class="mx-2">
-            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b></label>
+            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/lks/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
         </div>
     </div>
 @elseif ($data->status == '2')
@@ -90,9 +90,6 @@
                         <a href="/storage/{{$data->user_id}}/lks/{{$data->permohonan_pencatatan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -113,9 +110,6 @@
                         <a href="/storage/{{$data->user_id}}/lks/{{$data->daftar_susunan_pengurus_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -136,9 +130,6 @@
                         <a href="/storage/{{$data->user_id}}/lks/{{$data->berita_acara_pembentukan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>
@@ -159,9 +150,6 @@
                         <a href="/storage/{{$data->user_id}}/lks/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fc_akta_pendirian_perusahaan" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-download" style="height:100px;color: white;"></i>
-                        </button>
                     </div>
                 </td>
             </tr>

@@ -186,7 +186,7 @@
               Trikora<br>
               Banjarbaru, Kalimantan Selatan <br><br>
               <strong>Phone:</strong> 0511-6749523<br>
-              <strong>Email:</strong> admin@diskopukmnaker.banjarbarukota.go.id<br>
+              <strong>Email:</strong> admin@diskopukmnaker.banjarbarukota.go.id, hubunganindustrialbjb@gmail.com<br>
             </p>
           </div>
 

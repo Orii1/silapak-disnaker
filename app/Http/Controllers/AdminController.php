@@ -830,7 +830,15 @@ class AdminController extends Controller
         $lks_not = Pendaftaranlks::where('status', '3')->count();
         $hi_not = Pencatatanperselihan::where('status', '3')->count();
         $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/asset/asset', compact('pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+
+        $asset_pp = Asset::find('1');
+        $asset_pkb = Asset::find('2');
+        $asset_pkwt = Asset::find('3');
+        $asset_spsb = Asset::find('4');
+        $asset_lks = Asset::find('5');
+        $asset_hi = Asset::find('6');
+        $asset_phk = Asset::find('7');
+        return view('/admin/asset/asset', compact('asset_pp', 'asset_pkb', 'asset_pkwt', 'asset_spsb', 'asset_lks', 'asset_hi', 'asset_phk', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
     public function alur_perizinan(Request $request, $id)
@@ -863,6 +871,13 @@ class AdminController extends Controller
 
     public function dasar_hukum(Request $request, $id)
     {
+        $validatedata = $request->validate([
+            'dasar_hukum' => 'required',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+        ]);
+
+        if ($validatedata) {
         $pp_dasar = Asset::find($id);
 
         $pp_dasar->dasar_hukum = $request->dasar_hukum;
@@ -870,32 +885,63 @@ class AdminController extends Controller
 
         toastr()->success('Dasar Hukum Berhail diperbarui!');
         return redirect('/admin/asset');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function durasi(Request $request, $id)
     {
-        $pp_durasi = Asset::find($id);
+        $validatedata = $request->validate([
+            'durasi_pemrosesan' => 'required',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+        ]);
 
-        $pp_durasi->durasi_pemrosesan = $request->durasi_pemrosesan;
-        $pp_durasi->save();
+        if ($validatedata) {
+            $pp_durasi = Asset::find($id);
 
-        toastr()->success('Durasi Pemrosesan Berhail diperbarui!');
-        return redirect('/admin/asset');
+            $pp_durasi->durasi_pemrosesan = $request->durasi_pemrosesan;
+            $pp_durasi->save();
+
+            toastr()->success('Durasi Pemrosesan Berhail diperbarui!');
+            return redirect('/admin/asset');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function kontak(Request $request, $id)
     {
-        $kontak = Asset::find($id);
+        $validatedata = $request->validate([
+            'kontak' => 'required',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+        ]);
 
-        $kontak->kontak = $request->kontak;
-        $kontak->save();
+        if ($validatedata) {
+            $kontak = Asset::find($id);
 
-        toastr()->success('Kontak Berhail diperbarui!');
-        return redirect('/admin/asset');
+            $kontak->kontak = $request->kontak;
+            $kontak->save();
+
+            toastr()->success('Kontak Berhail diperbarui!');
+            return redirect('/admin/asset');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
+
     }
 
     public function retribusi(Request $request, $id)
     {
+        $validatedata = $request->validate([
+            'retribusi' => 'required',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+        ]);
+
+        if ($validatedata) {
         $retribusi = Asset::find($id);
 
         $extension1 = $request->file('retribusi')->getClientOriginalExtension();
@@ -907,51 +953,78 @@ class AdminController extends Controller
 
         toastr()->success('Retribusi Berhail diperbarui!');
         return redirect('/admin/asset');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function maklumat(Request $request, $id)
     {
-        $maklumat = Asset::find($id);
+        $validatedata = $request->validate([
+            'maklumat' => 'required',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+        ]);
 
-        $extension1 = $request->file('maklumat')->getClientOriginalExtension();
-        $file1 = 'Maklumat' . now()->timestamp . '.' . $extension1;
-        $request->file('maklumat')->storeAs('asset', $file1);
+        if ($validatedata) {
+            $maklumat = Asset::find($id);
 
-        $maklumat->maklumat = $file1;
-        $maklumat->save();
+            $extension1 = $request->file('maklumat')->getClientOriginalExtension();
+            $file1 = 'Maklumat' . now()->timestamp . '.' . $extension1;
+            $request->file('maklumat')->storeAs('asset', $file1);
 
-        toastr()->success('Maklumat Berhail diperbarui!');
-        return redirect('/admin/asset');
+            $maklumat->maklumat = $file1;
+            $maklumat->save();
+
+            toastr()->success('Maklumat Berhail diperbarui!');
+            return redirect('/admin/asset');
+        }
     }
 
     public function visi_misi(Request $request, $id)
     {
-        $visi_misi = Asset::find($id);
+        $validatedata = $request->validate([
+            'visi_misi' => 'required',
+        ], [
+            'required' => 'Field :atribut wajib diisi',
+        ]);
 
-        $extension1 = $request->file('visi_misi')->getClientOriginalExtension();
-        $file1 = 'Visi-Misi' . now()->timestamp . '.' . $extension1;
-        $request->file('visi_misi')->storeAs('asset', $file1);
+        if ($validatedata) {
+            $visi_misi = Asset::find($id);
 
-        $visi_misi->visi_misi = $file1;
-        $visi_misi->save();
+            $extension1 = $request->file('visi_misi')->getClientOriginalExtension();
+            $file1 = 'Visi-Misi' . now()->timestamp . '.' . $extension1;
+            $request->file('visi_misi')->storeAs('asset', $file1);
 
-        toastr()->success('Visi dan Misi Berhail diperbarui!');
-        return redirect('/admin/asset');
+            $visi_misi->visi_misi = $file1;
+            $visi_misi->save();
+
+            toastr()->success('Visi dan Misi Berhail diperbarui!');
+            return redirect('/admin/asset');
+        }
     }
 
     public function motto(Request $request, $id)
     {
-        $motto = Asset::find($id);
+        $validatedata = $request->validate([
+            'motto' => 'required',
+        ], [
+            'required' => 'Field :atribut wajib diisi',
+        ]);
 
-        $extension1 = $request->file('motto')->getClientOriginalExtension();
-        $file1 = 'Motto' . now()->timestamp . '.' . $extension1;
-        $request->file('motto')->storeAs('asset', $file1);
+        if ($validatedata) {
+            $motto = Asset::find($id);
 
-        $motto->motto = $file1;
-        $motto->save();
+            $extension1 = $request->file('motto')->getClientOriginalExtension();
+            $file1 = 'Motto' . now()->timestamp . '.' . $extension1;
+            $request->file('motto')->storeAs('asset', $file1);
 
-        toastr()->success('Visi dan Misi Berhail diperbarui!');
-        return redirect('/admin/asset');
+            $motto->motto = $file1;
+            $motto->save();
+
+            toastr()->success('Visi dan Misi Berhail diperbarui!');
+            return redirect('/admin/asset');
+        }
     }
 
     public function download_data_perusahaan($id)
@@ -963,4 +1036,7 @@ class AdminController extends Controller
         $mpdf->WriteHTML(view("admin.perusahaan.pdf-perusahaan", compact('data', 'lat', 'lng')));
         $mpdf->Output();
     }
+
+
+
 }

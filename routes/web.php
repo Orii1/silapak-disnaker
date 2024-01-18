@@ -10,6 +10,7 @@ use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
@@ -30,6 +31,11 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('/login/register');
 });
+Route::get('/mail', function () {
+    return view('/verify-email');
+});
+
+
 
 Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
@@ -40,6 +46,14 @@ Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);
     Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
     Route::get('/cek-permohonan/{id}', [CompanyController::class, 'submission_check']);
+
+    // Verify Email Route
+    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+        $request->fulfill();
+
+        return redirect('/perusahaan/dashboard');
+    })->middleware(['auth', 'signed'])->name('verification.verify');
+    // END Verify Email Route
 
     // Edit PP
     Route::get('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);

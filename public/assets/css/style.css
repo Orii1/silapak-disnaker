@@ -976,11 +976,11 @@ color: rgb(255, 255, 255);
 # Cta
 --------------------------------------------------------------*/
 .cta {
-background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../img/disnaker.jpg") fixed center center;
-  background-size: cover;
-  padding: 290px 0;
-z-index: 99;
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../img/disnaker.jpg") fixed center center;
+            background-size: 100% 100%;
+                padding: 290px 0;
 }
+
 
 .cta h1 {
   color: #fff;

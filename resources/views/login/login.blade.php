@@ -8,7 +8,7 @@
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
                   <div class="d-flex justify-content-center py-4">
-                    <a href="index.html" class="logo d-flex align-items-center w-auto">
+                    <a href="/home" class="logo d-flex align-items-center w-auto">
                       <img src="assets/img/banjarbaru.png" alt="">
                       <span class="d-none d-lg-block">SILAKHI</span>
                     </a>
@@ -33,19 +33,19 @@
                         <div class="col-12 mb-2">
                             <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
                         </div>
-
+                        
                         <div class="col-12 mb-4">
                             <input type="password" name="password" class="form-control" id="yourPassword" placeholder="Password" required>
                         </div>
-                        <div class="col-12 mb-4">
+                        <a href="/register" >Belum Punya Akun?</a>
                           
-                        </div>
+                        
 
                         <div class="col-12 mb-2">
                             <button class="btn btn-primary w-100" type="submit">Masuk</button>
                         </div>
                         <div class="col-12 mb-5">
-                            <a href="{{route('google.redirect')}}" class="btn btn-outline-primary w-100" type="submit"><i class="bi bi-google"></i> Daftar</a>
+                            <a href="{{route('google.redirect')}}" class="btn btn-outline-primary w-100" type="submit"><i class="bi bi-google"></i> Masuk dengan Google</a>
                         </div>
 
                       </form>

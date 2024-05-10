@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('pengesahan_pp', function (Blueprint $table) {
-            $table->string('pesan', 100)->nullable()->after('status');
+        Schema::create('modal', function (Blueprint $table) {
+            $table->id('id_modal');
+            $table->string('nama_modal');
+            $table->timestamps();
         });
     }
 
@@ -25,10 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('pengesahan_pp', function (Blueprint $table) {
-            if (Schema::hasColumn('pengesahan_pp', 'pesan')) {
-                $table->dropColumn('pesan');
-            }
-        });
+        Schema::dropIfExists('modal');
     }
 };

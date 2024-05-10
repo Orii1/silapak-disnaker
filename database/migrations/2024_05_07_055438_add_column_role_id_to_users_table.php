@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('pencatatan_penyelesaian_peselisihan_hi', function (Blueprint $table) {
-            $table->string('pesan', 255)->nullable()->after('status');
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('id_role')->after('password')->references('id_role')->on('roles');
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('pencatatan_penyelesaian_peselisihan_hi', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

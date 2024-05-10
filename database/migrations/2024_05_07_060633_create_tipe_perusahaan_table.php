@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('lat')->nullable()->after('number_kesehatan');
-            $table->string('lng')->nullable()->after('lat');
+        Schema::create('tipe_perusahaan', function (Blueprint $table) {
+            $table->id('id_tipe_perusahaan');
+            $table->string('nama_tipe');
+            $table->timestamps();
         });
     }
 
@@ -26,9 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('lat');
-            $table->dropColumn('lng');
-        });
+        Schema::dropIfExists('tipe_perusahaan');
     }
 };

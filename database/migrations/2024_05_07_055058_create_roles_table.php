@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('pendaftaran_pkb', function (Blueprint $table) {
-            $table->string('pesan', 100)->nullable()->after('status');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id('id_role');
+            $table->string('nama');
+            $table->timestamps();
         });
     }
 
@@ -25,10 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('pendaftaran_pkb', function (Blueprint $table) {
-            if (Schema::hasColumn('pendaftaran_pkb', 'pesan')) {
-                $table->dropColumn('pesan');
-            }
-        });
+        Schema::dropIfExists('roles');
     }
 };

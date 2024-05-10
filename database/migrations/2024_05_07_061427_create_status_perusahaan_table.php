@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('pencatatan_lks_bipartit', function (Blueprint $table) {
-            $table->string('pesan', 255)->nullable()->after('status');
+        Schema::create('status_perusahaan', function (Blueprint $table) {
+            $table->id('id_status_perusahaan');
+            $table->string('nama_status');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('pencatatan_lks_bipartit', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('status_perusahaan');
     }
 };

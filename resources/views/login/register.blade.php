@@ -23,7 +23,7 @@
                                     <p class="text-center small" style="color: #9b9b9b">Masukkan data perusahaan Anda</p>
                                 </div>
 
-                                <form method="POST" id="registerForm">
+                                <form method="POST" id="registerForm1">
                                     @csrf
                                     @if (Session('error'))
                                         <div class="alert alert-danger">
@@ -31,12 +31,30 @@
                                         </div>
                                     @endif
 
-                                    <div id="formStep1" class="col-12 mb-4">
+                                    <div class ="tab" id="tab-1" class="col-12 mb-4">
+                                        <div class="">
+                                            <label for="type"><b>Email </b><label
+                                                style="color: red; font-size: 15px;"> *</label></label>
                                         <input type="email" name="email" id="email" placeholder="Email Perusahaan"
                                             class="form-control" required />
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="type"><b>Password </b><label
+                                                style="color: red; font-size: 15px;"> *</label></label>
+                                        <input type="password" name="password" class="form-control" id="yourPassword"
+                                            placeholder="Password" required>
+                                        </div>
+                                        <div class="col-12 mb-2">
+                                            <button class="btn btn-primary w-100" type="button"
+                                                onclick="run(1, 2);">Selanjutnya</button>
+                                        </div>
+                                        <div class="col-12 mb-5">
+                                            <a href="{{ route('login') }}" class="btn btn-outline-primary w-100">Kembali</a>
+                                        </div>
                                     </div>
-
-                                    <div id="formStep2" class="col-12 mb-4" style="display: none;">
+                                
+                                
+                                    <div id="tab-2" class="col-12 mb-4" style="display: none;">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-4">
@@ -230,41 +248,55 @@
                                                     <input type="text" name="number_kesehatan" id="number_kesehatan"
                                                         class="form-control" value="{$user->number_kesehatan}}" required>
                                                 </div>
+                                                
                                             </div>
                                             <div class="col-12 mb-2">
                                                 <button class="btn btn-primary w-100" type="button"
-                                                    onclick="nextStep()">Selanjutnya</button>
+                                                    onclick="run(2, 3);">Selanjutnya</button>
                                             </div>
-                                            <div class="col-12 mb-4">
-                                                <button class="btn btn-outline-primary w-100" type="button"
-                                                    onclick="backStep()">Kembali</button>
+                                            <div class="col-12 mb-5">
+                                                <button class="btn btn-outline-primary w-100"  onclick="run(2,1);">Kembali</button>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 mb-4">
-                                        <input type="password" name="password" class="form-control" id="yourPassword"
-                                            placeholder="Password" required>
-                                    </div>
-
-                                    <div class="col-12 mb-4">
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                name="cek" id="cek" required>
-                                            <label class="form-check-label" for="cek" style="font-size: 13px;">
-                                                Dengan ini saya menyetujui <a href="">Peraturan dan Ketentuan</a>
-                                                Perizinan Online.
-                                            </label>
+                                    <div id="tab-3" class="col-12 mb-4" style="display: none;">
+                                        <div class="d-flex align-content-center flex-wrap mb-0">
+                                            <div style="border:0; width: 100%; height: 270px;" allowfullscreen>
+                                                @include('map')
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <input class="form-control form-control-sm" type="hidden" name="lat" id="lat" readonly>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input class="form-control form-control-sm" type="hidden" name="lng" id="lng" readonly>
+                                                </div>
+                                                <div class="col-12">
+                                                    <i class="mt-0 card-title" style="font-size: 11px">*) Mohon dicek kembali lokasi perusahaan Anda, jika tidak sesuai silahkan refresh browser atau ganti jaringan anda.</i>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <div class="col-12 mb-2">
-                                        <button class="btn btn-primary w-100" type="button"
-                                            onclick="nextStep()">Selanjutnya</button>
-                                    </div>
-                                    <div class="col-12 mb-5">
-                                        <a href="{{ route('login') }}" class="btn btn-outline-primary w-100">Kembali</a>
-                                    </div>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="col-12 mb-2">
+                                                <button class="btn btn-primary w-100" id="btn" type="submit"><a style="color: #ffffff;"><b>Simpan</b></a></label></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-5">
+                                            <button class="btn btn-outline-primary w-100"  onclick="run(3,2);">Kembali</button>
+                                        </div>
+                                    </div>    
+                                    
+                                    
+                                    {{-- <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            name="cek" id="cek" required>
+                                        <label class="form-check-label" for="cek" style="font-size: 13px;">
+                                            Dengan ini saya menyetujui <a href="">Peraturan dan Ketentuan</a>
+                                            Perizinan Online.
+                                        </label>
+                                    </div> --}}
+                                    
 
                                 </form>
 
@@ -278,30 +310,35 @@
 @endsection
 
 <script>
-    let currentStep = 1;
-    const totalSteps = 2; // Jumlah langkah pada form
+    // Default tab
+    $(".tab").css("display", "none");
+    $("#tab-1").css("display", "block");
 
-    function showStep(step) {
-        document.querySelectorAll('#registerForm > div').forEach(div => {
-            div.style.display = 'none';
-        });
-
-        document.querySelector(`#formStep${step}`).style.display = 'block';
-    }
-
-    function nextStep() {
-        if (currentStep < totalSteps) {
-            currentStep++;
-            showStep(currentStep);
+    function run(hideTab, showTab){
+      if(hideTab < showTab){ // If not press previous button
+        // Validation if press next button
+        var currentTab = 0;
+        x = $('#tab-'+hideTab);
+        y = $(x).find("input")
+        for (i = 0; i < y.length; i++){
+          if (y[i].value == ""){
+            $(y[i]).css("background", "#ffdddd");
+            return false;
+          }
         }
-    }
+      }
 
-    function backStep() {
-        if (currentStep > 1) {
-            currentStep--;
-            showStep(currentStep);
-        }
-    }
+      // Progress bar
+      for (i = 1; i < showTab; i++){
+        $("#step-"+i).css("opacity", "1");
+      }
 
-    showStep(currentStep); // Menampilkan langkah pertama saat halaman dimuat
-</script>
+      // Switch tab
+      $("#tab-"+hideTab).css("display", "none");
+      $("#tab-"+showTab).css("display", "block");
+      $("input").css("background", "#fff");
+    }
+  </script>
+
+
+

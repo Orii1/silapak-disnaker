@@ -277,6 +277,15 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-12 mb-4">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="checkbox" value="" name="cek" id="cek" required>
+                                                <label class="form-check-label" for="cek" style="font-size: 13px;">
+                                                    Dengan ini saya menyetujui <a href="">Peraturan dan Ketentuan</a> Perizinan Online.
+                                                </label>
+                                            </div>
+                                          </div>
+                        
                                         <div class="d-flex justify-content-center">
                                             <div class="col-12 mb-2">
                                                 <button class="btn btn-primary w-100" id="btn" type="submit"><a style="color: #ffffff;"><b>Simpan</b></a></label></button>

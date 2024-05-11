@@ -8,7 +8,7 @@
   <title>Sistem Informasi Ketenagakerjaan Hubungan Industrial</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <!-- Favicons -->
   <link href="../../assets/img/banjarbaru.png" rel="icon">
 
@@ -28,6 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/styleadmin.css" rel="stylesheet">
+  <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>

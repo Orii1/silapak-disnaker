@@ -1,0 +1,11 @@
+.step {
+    height: 30px;
+    width: 120px; /* Lebar diganti agar persegi panjang */
+    line-height: 30px;
+    margin: 0 2px;
+    color: white;
+    background: rgb(10, 75, 255);
+    /* border-radius: 50%; */ /* Hapus properti ini untuk membuat persegi panjang */
+    /* display: inline-block; */
+    opacity: 0.25;
+}

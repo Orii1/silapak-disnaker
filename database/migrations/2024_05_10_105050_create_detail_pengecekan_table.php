@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('id_detail_pengecekan');
             $table->string('hasil_pengecekan');
             $table->foreignId('id_pegawai')->references('id_pegawai')->on('pegawai');
-            $table->string('pesan');
+            $table->string('pesan')->nullable();
             $table->timestamps();
         });
     }

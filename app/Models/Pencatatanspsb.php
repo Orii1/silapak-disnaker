@@ -12,20 +12,23 @@ class Pencatatanspsb extends Model
     protected $table = 'pencatatan_sp_sb';
 
     protected $fillable = [
-        'user_id',
+        'id_perusahaan',
         'peruntukan',
         'surat_permohonan',
         'ad_art',
         'nama_pembentuk',
         'nama_pengurus',
         'ba_pembentukan',
-        'status',
-        'pesan',
-        'sk',
+        'id_detail_status'
     ];
 
-    public function spsb_user()
+    public function spsb_perusahaan()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+    }
+
+    public function spsb_status()
+    {
+        return $this->hasOne(DetailStatus::class, 'id_detail_status', 'id_detail_status');
     }
 }

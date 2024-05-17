@@ -9,22 +9,25 @@ class Pencatatanperselihan extends Model
 {
     use HasFactory;
 
-    protected $table = 'pencatatan_penyelesaian_peselisihan_hi';
+    protected $table = 'pencatatan_penyelesaian_hi';
 
     protected $fillable = [
-        'user_id',
+        'id_perusahaan',
         'peruntukan',
         'permohonan_pencatatan_pphi',
         'surat_permintaan_perundingan_bipartit',
         'daftar_hadir_perundingan_bipartit',
         'risalah_perundingan_bipartit',
-        'status',
-        'pesan',
-        'sk',
+        'id_detail_status',
     ];
 
-    public function hi_user()
+    public function hi_perusahaan()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+    }
+
+    public function hi_status()
+    {
+        return $this->hasOne(DetailStatus::class, 'id_detail_status', 'id_detail_status');
     }
 }

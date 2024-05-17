@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('id_user');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('status_akun');
+            $table->string('status_akun')->default('inactive');
             $table->rememberToken();
             $table->timestamps();
         });

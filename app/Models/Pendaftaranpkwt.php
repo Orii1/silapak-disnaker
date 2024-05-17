@@ -12,21 +12,24 @@ class Pendaftaranpkwt extends Model
     protected $table = 'pendaftaran_pkwt';
 
     protected $fillable = [
-        'user_id',
+        'id_perusahan',
         'peruntukan',
         'srt_permohonan_pencatatan_pkwt',
         'daftar_nama_pekerja_pkwt',
         'pkwt_asli',
         'fc_wlkp',
         'fc_akta_pendirian_perusahaan',
-        'status',
-        'pesan',
-        'sk',
+        'id_detail_status'
     ];
 
-    public function pkwt_user()
+    public function pkwt_perusahaan()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+    }
+
+    public function pkwt_status()
+    {
+        return $this->hasOne(DetailStatus::class, 'id_detail_status', 'id_detail_status');
     }
 
 }

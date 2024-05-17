@@ -18,27 +18,10 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'role_id',
-        'name',
-        'owner',
-        'address',
+        'id_role',
         'email',
         'password',
-        'type',
-        'modal',
-        'sector',
-        'status',
-        'number_letter',
-        'date_latter',
-        'men',
-        'woman',
-        'pkwt',
-        'outsourcing',
-        'wna',
-        'number_ketenagakerjaan',
-        'number_kesehatan',
-        'lat',
-        'lng',
+        'status_akun'
     ];
 
     /**
@@ -60,39 +43,18 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-
-    public function user_pp()
+    public function user_role()
     {
-        return $this->hasOne(Pengesahanpp::class);
+        return $this->belongsTo(Role::class, 'id_role', 'id_role');
     }
 
-    public function user_pkb()
+    public function user_perusahaan()
     {
-        return $this->hasOne(Pendaftaranpkb::class);
+        return $this->hasOne(Perusahaan::class, 'id_user', 'id_user');
     }
 
-    public function user_pkwt()
+    public function user_pegawai()
     {
-        return $this->hasOne(Pendaftaranpkwt::class);
-    }
-
-    public function user_spsb()
-    {
-        return $this->hasOne(Pencatatanspsb::class);
-    }
-
-    public function user_lks()
-    {
-        return $this->hasOne(Pendaftaranlks::class);
-    }
-
-    public function user_hi()
-    {
-        return $this->hasOne(Pencatatanperselihan::class);
-    }
-
-    public function user_phk()
-    {
-        return $this->hasOne(Pelaporanphk::class);
+        return $this->hasOne(Pegawai::class, 'id_user', 'id_user');
     }
 }

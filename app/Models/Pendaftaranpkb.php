@@ -12,7 +12,7 @@ class Pendaftaranpkb extends Model
     protected $table = 'pendaftaran_pkb';
 
     protected $fillable = [
-        'user_id',
+        'id_perusahaan',
         'peruntukan',
         'fc_wlkp',
         'fc_akta_pendirian_perusahaan',
@@ -21,13 +21,16 @@ class Pendaftaranpkb extends Model
         'surat_pernyataan_struktur_skala_upah',
         'struktur_skala_upah_asli',
         'draft_pkb',
-        'status',
-        'pesan',
-        'sk',
+        'id_detail_status'
     ];
 
-    public function pkb_user()
+    public function pkb_perusahaan()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+    }
+
+    public function pkb_status()
+    {
+        return $this->hasOne(DetailStatus::class, 'id_detail_status', 'id_detail_status');
     }
 }

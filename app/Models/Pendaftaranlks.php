@@ -12,19 +12,22 @@ class Pendaftaranlks extends Model
     protected $table = 'pencatatan_lks_bipartit';
 
     protected $fillable = [
-        'user_id',
+        'id_perusahaan',
         'peruntukan',
         'permohonan_pencatatan_lks_bipartit',
         'daftar_susunan_pengurus_lks_bipartit',
         'berita_acara_pembentukan_lks_bipartit',
         'fc_wlkp',
-        'status',
-        'pesan',
-        'sk',
+        'id_detail_perusahaan'
     ];
 
-    public function lks_user()
+    public function lks_perusahaan()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+    }
+
+    public function lks_status()
+    {
+        return $this->hasOne(DetailStatus::class, 'id_detail_status', 'id_detail_status');
     }
 }

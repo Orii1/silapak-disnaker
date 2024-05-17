@@ -12,19 +12,22 @@ class Pelaporanphk extends Model
     protected $table = 'pelaporan_phk';
 
     protected $fillable = [
-        'user_id',
+        'id_perusahaan',
         'peruntukan',
         'permohonan_pelaporan_phk',
         'surat_pemberitahuan_phk',
         'surat_tanggapan_pemberitahuan_phk',
         'pb_bipartit',
-        'status',
-        'pesan',
-        'sk',
+        'id_detail_status',
     ];
 
-    public function phk_user()
+    public function phk_perusahaan()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+    }
+
+    public function phk_status()
+    {
+        return $this->hasOne(DetailStatus::class, 'id_detail_status', 'id_detail_status');
     }
 }

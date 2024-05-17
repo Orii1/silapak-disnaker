@@ -23,25 +23,10 @@
                                     <h5 class="card-title text-center pb-2 fs-7">Membuat Akun Perusahaan Anda</h5>
                                     <p class="text-center small" style="color: #9b9b9b">Masukkan data perusahaan Anda</p>
                                 </div>
-<<<<<<< HEAD
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="step col">
-                                          Data Akun
-                                        </div>
-                                        <div class="step col">
-                                          Data Perusahaan
-                                        </div>
-                                        <div class="step col">
-                                          Koordinat Perusahaan
-                                        </div>
-                                      </div>
-=======
                                 <div style="text-align:center;">
                                     <span class="step active" id = "step-1">1</span>
                                     <span class="step" id = "step-2">2</span>
                                     <span class="step" id = "step-3">3</span>
->>>>>>> 17ad172ee410922d15299ca4fdb3217a6227e98e
                                   </div>
                                 <form method="POST" id="registerForm1">
                                     @csrf

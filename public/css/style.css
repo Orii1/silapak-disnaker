@@ -1,11 +1,16 @@
 .step {
     height: 30px;
-    width: 120px; /* Lebar diganti agar persegi panjang */
+    width:  30px; /* Lebar diganti agar persegi panjang */
     line-height: 30px;
     margin: 0 2px;
     color: white;
-    background: rgb(10, 75, 255);
-    /* border-radius: 50%; */ /* Hapus properti ini untuk membuat persegi panjang */
-    /* display: inline-block; */
+    background: rgb(0, 62, 205);
     opacity: 0.25;
+    border-radius: 100%;      /* Hapus properti ini untuk membuat persegi panjang?*/
+    display: inline-block;  
+    
 }
+.step.active {
+    opacity: 1; /* Active step is fully opaque */
+    background-color: rgb(0, 62, 205); /* Darker background for active step */ /* Adjusted for better contrast */
+  }

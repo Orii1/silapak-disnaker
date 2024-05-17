@@ -23,6 +23,7 @@
                                     <h5 class="card-title text-center pb-2 fs-7">Membuat Akun Perusahaan Anda</h5>
                                     <p class="text-center small" style="color: #9b9b9b">Masukkan data perusahaan Anda</p>
                                 </div>
+<<<<<<< HEAD
                                 <div class="container text-center">
                                     <div class="row">
                                         <div class="step col">
@@ -35,6 +36,12 @@
                                           Koordinat Perusahaan
                                         </div>
                                       </div>
+=======
+                                <div style="text-align:center;">
+                                    <span class="step active" id = "step-1">1</span>
+                                    <span class="step" id = "step-2">2</span>
+                                    <span class="step" id = "step-3">3</span>
+>>>>>>> 17ad172ee410922d15299ca4fdb3217a6227e98e
                                   </div>
                                 <form method="POST" id="registerForm1">
                                     @csrf
@@ -45,6 +52,7 @@
                                     @endif
 
                                     <div class ="tab" id="tab-1" class="col-12 mb-4">
+                                        <h5 class="fs-title">Account Information:</h5>
                                         <div class="">
                                             <label for="type"><b>Email </b><label
                                                 style="color: red; font-size: 15px;"> *</label></label>
@@ -68,6 +76,7 @@
                                 
                                 
                                     <div id="tab-2" class="col-12 mb-4" style="display: none;">
+                                        <h5 class="fs-title">Informasi Perusahaan:</h5>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-4">
@@ -274,6 +283,7 @@
                                     </div>
 
                                     <div id="tab-3" class="col-12 mb-4" style="display: none;">
+                                        <h5 class="fs-title">Koordinat Perusahaan:</h5>
                                         <div class="d-flex align-content-center flex-wrap mb-0">
                                             <div style="border:0; width: 100%; height: 270px;" allowfullscreen>
                                                 @include('map')
@@ -332,34 +342,46 @@
 @endsection
 
 <script>
-    // Default tab
-    $(".tab").css("display", "none");
-    $("#tab-1").css("display", "block");
+     // Default tab
+  $(".tab").css("display", "none");
+  $("#tab-1").css("display", "block");
+  $(".step:first-child").css("opacity", "1"); // Initial active step
 
-    function run(hideTab, showTab){
-      if(hideTab < showTab){ // If not press previous button
-        // Validation if press next button
-        var currentTab = 0;
-        x = $('#tab-'+hideTab);
-        y = $(x).find("input")
-        for (i = 0; i < y.length; i++){
-          if (y[i].value == ""){
-            $(y[i]).css("background", "#ffdddd");
-            return false;
-          }
+  function run(hideTab, showTab) {
+    // Validation for both next and previous buttons
+    var currentTab = parseInt($(".step.active").attr("id").slice(5)); // Get active tab number
+
+    if (hideTab && hideTab < showTab) { // If clicking "Previous"
+      // Check if all fields in the previous tab are filled
+      var prevTab = $("#tab-" + hideTab);
+      var prevInputs = prevTab.find("input");
+      for (var i = 0; i < prevInputs.length; i++) {
+        if ($(prevInputs[i]).val() === "") {
+          $(prevInputs[i]).css("background", "#ffdddd");
+          return false;
         }
       }
+    } else if (hideTab && hideTab > showTab) { // If clicking "Next"
+      // No validation needed as the user is moving forward
 
-      // Progress bar
-      for (i = 1; i < showTab; i++){
-        $("#step-"+i).css("opacity", "1");
+    } else { // If clicking on a step (not "Previous" or "Next")
+      // Check if clicking on an already active step
+      if (currentTab === showTab) {
+        return false; // Do nothing if clicking on the same step
       }
-
-      // Switch tab
-      $("#tab-"+hideTab).css("display", "none");
-      $("#tab-"+showTab).css("display", "block");
-      $("input").css("background", "#fff");
     }
+
+    // Progress bar
+    $(".step").removeClass("active").css("opacity", "0.25"); // Reset all steps
+    for (var i = 1; i <= showTab; i++) {
+      $("#step-" + i).addClass("active").css("opacity", "1");
+    }
+
+    // Switch tab
+    $("#tab-" + hideTab).css("display", "none");
+    $("#tab-" + showTab).css("display", "block");
+    $("input").css("background", "#fff"); // Reset input backgrounds
+  }
   </script>
 
 

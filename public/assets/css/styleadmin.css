@@ -66,6 +66,84 @@ h6 {
 
 
 /*--------------------------------------------------------------
+# Regist Form
+--------------------------------------------------------------*/
+.container-regist{
+    width: 900px;
+    height: 540px;
+    margin: 8% auto;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    overflow: hidden;
+}
+
+.step-row{
+    width: 900px;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+    position: relative;
+}
+
+.step-col{
+    justify-content: center; /* menambahkan properti ini */
+    align-items: center; /* menambahkan properti ini */
+    width: 450px;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+#progress{
+    position: absolute;
+    height: 100%;
+    background : #0d6efd;
+    width: 450px; /* Mulai dari 0 dan akan diubah dengan JavaScript */
+    z-index: 0; /* memastikan progress berada di belakang */
+    transition: width 0.5s ease-in-out; /* transisi untuk animasi */
+}
+
+#progress::after{
+    content: '';
+    height: 30px;
+    width: 0;
+    border-top: 15px solid transparent; /* setengah dari tinggi elemen */
+    border-bottom: 15px solid transparent; /* setengah dari tinggi elemen */
+    position: absolute;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid #0d6efd;
+
+}
+
+.btn-box-regist{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+#form1, #form2 {
+    position: absolute;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+#form1 {
+    transform: translateX(0);
+}
+
+#form2 {
+    transform: translateX(100%);
+}
+
+
+
+/*--------------------------------------------------------------
 # Page Title
 --------------------------------------------------------------*/
 .image {

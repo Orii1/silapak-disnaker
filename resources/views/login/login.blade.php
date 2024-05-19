@@ -38,12 +38,14 @@
                             <input type="password" name="password" class="form-control" id="yourPassword" placeholder="Password" required>
                         </div>
 
-
                         <div class="col-12 mb-2">
-                            <button class="btn btn-primary w-100" type="submit">Masuk</button>
+                            <button class="btn btn-primary w-100" type="submit">Login</button>
                         </div>
-                        <div class="col-12 mb-5">
-                            <a href="{{route('google.redirect')}}" class="btn btn-outline-primary w-100" type="submit"><i class="bi bi-google"></i> Daftar</a>
+                        <div class="mb-0">
+                            <p class="text-center small" style="color: #9b9b9b">Atau</p>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <a href="{{route('google.redirect')}}" class="btn btn-outline-primary w-100" type="submit"><i class="bi bi-google"></i> Masuk dengan Google</a>
                         </div>
 
                       </form>

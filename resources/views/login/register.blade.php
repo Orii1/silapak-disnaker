@@ -327,7 +327,7 @@
 @endsection
 
 <script>
-     // Default tab
+  // Default tab
   $(".tab").css("display", "none");
   $("#tab-1").css("display", "block");
   $(".step:first-child").css("opacity", "1"); // Initial active step
@@ -346,9 +346,24 @@
           return false;
         }
       }
+
+      // Animate previous tab out (slide left)
+      $("#tab-" + hideTab).animate({
+        opacity: 0,
+        marginLeft: '-100%',
+      }, 300, function() {
+        $(this).css('display', 'none');
+      });
     } else if (hideTab && hideTab > showTab) { // If clicking "Next"
       // No validation needed as the user is moving forward
 
+      // Animate previous tab out (slide right)
+      $("#tab-" + hideTab).animate({
+        opacity: 0,
+        marginLeft: '100%',
+      }, 300, function() {
+        $(this).css('display', 'none');
+      });
     } else { // If clicking on a step (not "Previous" or "Next")
       // Check if clicking on an already active step
       if (currentTab === showTab) {
@@ -362,12 +377,17 @@
       $("#step-" + i).addClass("active").css("opacity", "1");
     }
 
-    // Switch tab
-    $("#tab-" + hideTab).css("display", "none");
-    $("#tab-" + showTab).css("display", "block");
+    // Animate new tab in (slide from the opposite direction)
+    var direction = (showTab > hideTab) ? 'right' : 'left';
+    $("#tab-" + showTab).css('display', 'block').animate({
+      opacity: 1,
+      marginLeft: '0'
+    }, 300);
+
     $("input").css("background", "#fff"); // Reset input backgrounds
   }
-  </script>
+</script>
+
 
 
 

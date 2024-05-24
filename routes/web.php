@@ -40,7 +40,7 @@ Route::get('/mail', function () {
 Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
 
-Route::middleware(['auth', 'UserAkses:2'])->group(function () {
+Route::middleware(['auth', 'UserAkses:4'])->group(function () {
     // COMPANY ROUTE
     Route::get('/perusahaan/dashboard', [CompanyController::class, 'index']);
     Route::get('/profileperusahaan/{id}', [CompanyController::class, 'profile']);

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pencatatan_spsb', function (Blueprint $table) {
             $table->id('id_spsb');
-            $table->foreignId('id_perusahaan')->references('id_perusahaan')->on('perusahaan');
+            $table->foreignId('id_perusahaan')->references('id')->on('perusahaan');
             $table->string('peruntukan');
             $table->string('surat_permohonan');
             $table->string('ad_art');

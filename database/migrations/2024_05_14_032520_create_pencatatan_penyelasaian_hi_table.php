@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pencatatan_penyelasaian_hi', function (Blueprint $table) {
             $table->id('id_hi');
-            $table->foreignId('id_perusahaan')->references('id_perusahaan')->on('perusahaan');
+            $table->foreignId('id_perusahaan')->references('id')->on('perusahaan');
             $table->string('peruntukan');
             $table->string('permohonan_pencatatan_pphi');
             $table->string('surat_permintaan_perundingan_bipartit');

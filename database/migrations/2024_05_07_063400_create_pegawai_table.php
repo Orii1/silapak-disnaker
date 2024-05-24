@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pegawai', function (Blueprint $table) {
             $table->id('id_pegawai');
-            $table->foreignId('id_user')->references('id_user')->on('users');
+            $table->foreignId('id_user')->references('id')->on('users');
             $table->string('nip');
             $table->string('nama_pegawai');
             $table->string('jabatan');

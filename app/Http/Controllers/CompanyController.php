@@ -111,6 +111,8 @@ class CompanyController extends Controller
         $now->setLocale('id');
         $datestring = $now->isoFormat('D MMMM Y');
         $dayname = $now->translatedFormat('l');
+
+        // dd($user->user_perusahaan->nama_perusahaan);
         return view('/perusahaan/dashboard', compact('user', 'dayname', 'datestring'));
     }
 

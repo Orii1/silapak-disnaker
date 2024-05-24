@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pencatatan_lks_bipartit', function (Blueprint $table) {
             $table->id('id_lks');
-            $table->foreignId('id_perusahaan')->references('id_perusahaan')->on('perusahaan');
+            $table->foreignId('id_perusahaan')->references('id')->on('perusahaan');
             $table->string('peruntukan');
             $table->string('permohonan_pencatatan_lks_bipartit');
             $table->string('daftar_susunan_pengurus_lks_bipartit');

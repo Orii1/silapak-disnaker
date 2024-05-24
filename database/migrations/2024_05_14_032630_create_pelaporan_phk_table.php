@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pelaporan_phk', function (Blueprint $table) {
             $table->id('id_phk');
-            $table->foreignId('id_perusahaan')->references('id_perusahaan')->on('perusahaan');
+            $table->foreignId('id_perusahaan')->references('id')->on('perusahaan');
             $table->string('peruntukan');
             $table->string('permohonan_pelaporan_phk');
             $table->string('surat_pemberitahuan_phk');

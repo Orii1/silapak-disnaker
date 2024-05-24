@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pendaftaran_pkb', function (Blueprint $table) {
             $table->id('id_pkb');
-            $table->foreignId('id_perusahaan')->references('id_perusahaan')->on('perusahaan');
+            $table->foreignId('id_perusahaan')->references('id')->on('perusahaan');
             $table->string('peruntukan');
             $table->string('fc_wlkp');
             $table->string('fc_akta_pendirian_perusahaan');

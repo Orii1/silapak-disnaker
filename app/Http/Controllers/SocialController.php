@@ -21,10 +21,10 @@ class SocialController extends Controller
         $existingUser = User::where('email', $user->getEmail())->first();
 
     if ($existingUser) {
-        Auth::login($existingUser);
-        return redirect('/perusahaan/dashboard');
+            Auth::login($existingUser);
+            return redirect('/perusahaan/dashboard');
     } else {
-        return view('login.register', compact('user'));
+            return view('login.register', compact('user'));
     }
 
     }

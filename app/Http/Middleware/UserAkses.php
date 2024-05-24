@@ -15,9 +15,9 @@ class UserAkses
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $role_id)
+    public function handle(Request $request, Closure $next, $id_role)
     {
-        if (auth()->user()->role_id == $role_id) {
+        if (auth()->user()->id_role == $id_role) {
             return $next($request);
         }
         return redirect()->back();

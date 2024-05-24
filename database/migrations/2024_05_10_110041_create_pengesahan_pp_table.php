@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pengesahan_pp', function (Blueprint $table) {
             $table->id('id_pp');
-            $table->foreignId('id_perusahaan')->references('id_perusahaan')->on('perusahaan');
+            $table->foreignId('id_perusahaan')->references('id')->on('perusahaan');
             $table->string('peruntukan');
             $table->string('fc_wlkp');
             $table->string('fc_akta_pendirian_perusahaan');

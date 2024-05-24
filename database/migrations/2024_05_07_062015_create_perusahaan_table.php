@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('perusahaan', function (Blueprint $table) {
-            $table->id('id_perusahaan');
-            $table->foreignId('id_user')->references('id_user')->on('users');
+            $table->id();
+            $table->foreignId('id_user')->references('id')->on('users');
             $table->string('nama_perusahaan', 100)->nullable();
             $table->string('alamat', 100)->nullable();
             $table->string('pemilik', 100)->nullable();

@@ -13,7 +13,7 @@ class Perusahaan extends Model
 
     protected $fillable = [
         'id_user',
-        'nama',
+        'nama_perusahaan',
         'pemilik',
         'alamat',
         'id_tipe_perusahaan',

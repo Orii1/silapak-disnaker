@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                        Selamat datang, {{$user->name}}
+                        Selamat datang, {{$user->user_perusahaan->nama_perusahaan}}
                     </div>
                 </div>
             </div>

@@ -49,7 +49,7 @@
         <div class="mx-5">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                 <img src="../../assets/img/company-icon.png" alt="Profile" class="rounded-circle mx-2">
-                <span class="d-none d-md-block">{{$user->name}}</span>
+                <span class="d-none d-md-block">{{$user->user_perusahaan->nama_perusahaan}}</span>
             </a>
         </div>
         <div class="mx-4">

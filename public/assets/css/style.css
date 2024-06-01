@@ -190,6 +190,7 @@ transition: all 0.5s;
 /**
 * Desktop Navigation
 */
+
 .navbar {
   padding: 0;
 }
@@ -980,7 +981,7 @@ color: rgb(255, 255, 255);
 .cta {
 background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../img/disnaker2.jpg") fixed center center;
   background-size: cover;
-  padding: 290px 0;
+  padding: 380px 0;
 z-index: 99;
 }
 

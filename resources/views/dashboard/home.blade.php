@@ -17,27 +17,85 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="assets/css/style.css" rel="stylesheet">
-</head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-FvmAhALlG2hctwwHrY7EGU1EVgCWVVDy4pUwCEXLFqO9lcyvQjGQZt7TvaJCfwG2" crossorigin="anonymous">
+  <style>
+    /* Existing styles */
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center logo horizontally within its container */
+    }
+    .logo img {
+      margin-right: 10px;
+    }
 
+    /* New styles for desired layout */
+    .navbar {
+      justify-content: space-between; /* Distribute content horizontally */
+    }
+    .navbar-nav {
+      flex-direction: row; /* Maintain row layout for navigation items */
+    }
+    .navbar-brand { /* Style logo container consistently */
+      display: flex;
+      align-items: center;
+    }
+    .logo-text { /* Center logo text horizontally (if needed) */
+      flex: 1; /* Allow text to grow and fill space (if needed) */
+      text-align: center;
+    }
+    .nav-item {
+      margin: 0 15px; /* Consistent margin for all items */
+    }
+    .collapse .navbar-nav { /* Remove any existing centering */
+      justify-content: flex-start; /* Align navigation items to the left */
+    }
+    .collapse .btn { /* Style "Masuk" button consistently */
+      margin-left: 15px; /* Consistent margin from left */
+    }
+  </style>
+</head>
 <body>
   <header id="header" class="header fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-      
+    <nav id="navbar" class="navbar navbar-expand-lg d-flex align-items-center w-100">
+      <div class="container d-flex justify-content-between align-items-stretch">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <img src="assets/img/banjarbaru.png" alt="banjarbaru" width="30" height="30" class="d-inline-block me-2">
+          <span class="logo-text">SILAKHI</span>
+        </a>
 
-        <nav id="navbar" class="navbar d-flex justify-content-center align-items-center w-100">
-            <ul class="navbar-nav d-flex flex-row justify-content-center align-items-center w-100">
-                <li class="nav-item mx-2"><a class="nav-link header-scrolled getstarted scrollto" href="#about">Tentang Kami</a></li>
-                <li class="nav-item mx-2"><h1 class="logo me-auto"><img src="assets/img/banjarbaru.png" alt="banjarbaru"><a href="#" class="nav-link header-scrolled getstarted scrollto">SILAKHI</a></h1></li>
-                <li class="nav-item mx-2"><a class="nav-link header-scrolled getstarted scrollto" href="#services">Layanan Kami</a></li>
-                <li class="nav-item ms-auto"><a class="btn btn-outline-dark header-scrolled getstarted scrollto border border-white rounded-5" href="/login">Masuk</a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Layanan Kami</a>
+            </li>
+          </ul>
+          <a href="/login" class="btn btn-outline-dark header-scrolled getstarted scrollto border border-white rounded-5">Masuk</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-एँw7i7Cf3zFjsokChf7enPGasWCSHs0NEzUcQHmO9lwIIa6m+zFKySznwWnLlEyA" crossorigin="anonymous"></script>
+</body>
+</html>
 
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-    </div>
-</header>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 
     <section id="cta" class="cta">

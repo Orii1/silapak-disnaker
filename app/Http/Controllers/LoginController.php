@@ -14,11 +14,11 @@ class LoginController extends Controller
     public function authenticating(Request $request)
     {
         if (Auth::attempt($request->only('email','password'))){
-            $user_role = Auth::user()->role_id;
+            $user_role = Auth::user()->id_role;
             if ($user_role == '1') {
                 toastr()->success('Berhasil Login, Selamat Datang Admin!');
                 return redirect('/admin/dashboard');
-            } else if ($user_role == '2') {
+            } else if ($user_role == '3') {
                 $user = Auth::user();
                 toastr()->success('Berhasil Login, Selamat Datang ' . $user->name . '!');
                 return redirect('/perusahaan/dashboard');

@@ -21,8 +21,13 @@ class SocialController extends Controller
         $existingUser = User::where('email', $user->getEmail())->first();
 
     if ($existingUser) {
+        if ($existingUser->status_akun == 'active') {
             Auth::login($existingUser);
             return redirect('/perusahaan/dashboard');
+        }else{
+            return redirect('/aktivasi-user');
+        }
+
     } else {
             return view('login.register', compact('user'));
     }

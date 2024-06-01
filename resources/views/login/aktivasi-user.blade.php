@@ -16,8 +16,11 @@
 
                 <div class="text-center pb-5">
                     <b class="card-title" style="color: black; font-size: 20px;">Berhasil Membuat Akun</b>
-                    <label class="mt-3" style="font-size: 16px;">Silahkan Lakukan Verifikasi Email untuk Melanjutkan!</label>
-                    <label class="mt-2" style="font-size: 16px;">Silahkan Buka Email Anda</label>
+                    <label class="mt-3" style="font-size: 16px;">Akun anda masih perlu aktivasi oleh Admin!</label>
+                    <label class="mt-2" style="font-size: 16px;">Silahkan tunggu hingga akun telah di Aktivasi</label>
+                    <div class="mt-3">
+                        <a href="/">ke beranda</a>
+                    </div>
                 </div>
 
               </div>

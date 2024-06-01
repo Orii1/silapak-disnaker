@@ -18,7 +18,7 @@ class Pendaftaranlks extends Model
         'daftar_susunan_pengurus_lks_bipartit',
         'berita_acara_pembentukan_lks_bipartit',
         'fc_wlkp',
-        'id_detail_perusahaan'
+        'id_detail_status'
     ];
 
     public function lks_perusahaan()

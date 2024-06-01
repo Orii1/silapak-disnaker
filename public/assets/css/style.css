@@ -619,7 +619,7 @@ color: #51678f;
   display: block;
   width: 40px;
   height: 3px;
-background: #51678f;
+    background: #51678f;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -976,9 +976,9 @@ color: rgb(255, 255, 255);
 # Cta
 --------------------------------------------------------------*/
 .cta {
-        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../img/disnaker.jpg") fixed center center;
-            background-size: 100% 100%;
-                padding: 290px 0;
+        background: linear-gradient(rgba(81, 103, 143, 0.912), rgba(103, 103, 103, 0.775)), url("../img/disnaker2.jpeg") fixed center center;
+        background-size: 100% 100%;
+        padding: 290px 0;
 }
 
 

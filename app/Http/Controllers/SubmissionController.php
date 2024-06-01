@@ -12,11 +12,13 @@ use App\Models\Pengesahanpp;
 use App\Models\User;
 use Alert;
 use App\Models\Asset;
+use App\Models\DetailStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\File;
+use Mpdf\Tag\Details;
 
 class SubmissionController extends Controller
 {
@@ -25,26 +27,27 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        $asset_spsb = Asset::find('4');
-        $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pencatatan-serikat-kerja', compact('user', 'asset', 'asset_spsb'));
+        // $asset_spsb = Asset::find('4');
+        // $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pencatatan-serikat-kerja', compact('user'));
     }
 
     public function serikat_kerja_store(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
-            'surat_permohonan' => 'required|mimes:png,jpg,pdf|file',
-            'ad_art' => 'required|mimes:png,jpg,pdf|file',
-            'nama_pembentuk' => 'required|mimes:png,jpg,pdf|file',
-            'nama_pengurus' => 'required|mimes:png,jpg,pdf|file',
-            'ba_pembentukan' => 'required|mimes:png,jpg,pdf|file',
+            'surat_permohonan' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'ad_art' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'nama_pembentuk' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'nama_pengurus' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'ba_pembentukan' => 'required|mimes:png,jpg,pdf|file|max:2048',
         ], [
             'required' => 'Field :attribute wajib diisi.',
             'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
             'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
         if ($validatedata) {
@@ -68,16 +71,20 @@ class SubmissionController extends Controller
             $file5 = $user->id . 'ba_pembentukan' . '-' . 'spsb' . now()->timestamp . '.' . $extension5;
             $request->file('ba_pembentukan')->storeAs($user->id . '/spsb', $file5);
 
+            $status = DetailStatus::create([
+                'id_status' => '1',
+                'keterangan' => 'Menunggu Konfirmasi Admin'
+            ]);
 
             Pencatatanspsb::create([
-                'user_id' => $user->id,
+                'id_perusahaan' => $user->id,
                 'peruntukan' => $request->peruntukan,
                 'surat_permohonan' => $file1,
                 'ad_art' => $file2,
                 'nama_pembentuk' => $file3,
                 'nama_pengurus' => $file4,
                 'ba_pembentukan' => $file5,
-                'keterangan' => 'Menunggu Konfirmasi'
+                'id_detail_status' => $status->id
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -93,29 +100,30 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pengesahan-peraturan-perusahaan', compact('user', 'asset'));
+        // $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pengesahan-peraturan-perusahaan', compact('user'));
     }
 
     public function pengesahan_pp_store(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
-            'fc_wlkp' => 'required|mimes:png,jpg,pdf|file',
-            'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file',
-            'fc_sertifikat_peserta_bpjs_ketenagakerjaan' => 'required|mimes:png,jpg,pdf|file',
-            'permohonan_pengesahan_pp' => 'required|mimes:png,jpg,pdf|file',
-            'surat_pernyataan_saran_spsb' => 'required|mimes:png,jpg,pdf|file',
-            'surat_pernyataan_belum_terbentuk_spsb' => 'required|mimes:png,jpg,pdf|file',
-            'surat_pernyataan_struktur_skala_upah' => 'required|mimes:png,jpg,pdf|file',
-            'struktur_skala_upah_asli' => 'required|mimes:png,jpg,pdf|file',
-            'draf_pp' => 'required|mimes:png,jpg,pdf|file',
+            'fc_wlkp' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'fc_sertifikat_peserta_bpjs_ketenagakerjaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'permohonan_pengesahan_pp' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_pernyataan_saran_spsb' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_pernyataan_belum_terbentuk_spsb' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_pernyataan_struktur_skala_upah' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'struktur_skala_upah_asli' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'draft_pp' => 'required|mimes:png,jpg,pdf|file|max:2048',
         ], [
             'required' => 'Field :attribute wajib diisi.',
             'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
             'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
         if ($validatedata) {
@@ -151,14 +159,18 @@ class SubmissionController extends Controller
             $file8 = $user->id . 'struktur_skala_upah_asli' . '-' . 'pp' . now()->timestamp . '.' . $extension8;
             $request->file('struktur_skala_upah_asli')->storeAs($user->id . '/pp', $file8);
 
-            $extension9 = $request->file('draf_pp')->getClientOriginalExtension();
-            $file9 = $user->id . 'draf_pp' . '-' . 'pp' . now()->timestamp . '.' . $extension9;
-            $request->file('draf_pp')->storeAs($user->id . '/pp', $file9);
+            $extension9 = $request->file('draft_pp')->getClientOriginalExtension();
+            $file9 = $user->id . 'draft_pp' . '-' . 'pp' . now()->timestamp . '.' . $extension9;
+            $request->file('draft_pp')->storeAs($user->id . '/pp', $file9);
 
 
+            $status = DetailStatus::create([
+                'id_status' => '1',
+                'keterangan' => 'Menunggu Konfirmasi Admin'
+            ]);
 
             Pengesahanpp::create([
-                'user_id' => $user->id,
+                'id_perusahaan' => $user->id,
                 'peruntukan' => $request->peruntukan,
                 'fc_wlkp' => $file1,
                 'fc_akta_pendirian_perusahaan' => $file2,
@@ -168,9 +180,11 @@ class SubmissionController extends Controller
                 'surat_pernyataan_belum_terbentuk_spsb' => $file6,
                 'surat_pernyataan_struktur_skala_upah' => $file7,
                 'struktur_skala_upah_asli' => $file8,
-                'draf_pp' => $file9,
-                'keterangan' => 'Menunggu Konfirmasi'
+                'draft_pp' => $file9,
+                'id_detail_status' => $status->id
             ]);
+
+
 
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -185,28 +199,29 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        $asset_pkb = Asset::find('2');
-        $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pendaftaran-pkb', compact('user', 'asset', 'asset_pkb'));
+        // $asset_pkb = Asset::find('2');
+        // $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pendaftaran-pkb', compact('user'));
     }
 
     public function pendaftaran_pkb_store(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
-            'fc_wlkp' => 'required|mimes:png,jpg,pdf|file',
-            'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file',
-            'fc_setifikat_peserta_bpjs_ketenagakerjaan' => 'required|mimes:png,jpg,pdf|file',
-            'permohonan_pendaftaran_pkb' => 'required|mimes:png,jpg,pdf|file',
-            'surat_pernyataan_struktur_skala_upah' => 'required|mimes:png,jpg,pdf|file',
-            'struktur_skala_upah_asli' => 'required|mimes:png,jpg,pdf|file',
-            'draft_pkb' => 'required|mimes:png,jpg,pdf|file',
+            'fc_wlkp' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'fc_setifikat_peserta_bpjs_ketenagakerjaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'permohonan_pendaftaran_pkb' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_pernyataan_struktur_skala_upah' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'struktur_skala_upah_asli' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'draft_pkb' => 'required|mimes:png,jpg,pdf|file|max:2048',
         ], [
             'required' => 'Field :attribute wajib diisi.',
             'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
             'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
         if ($validatedata) {
@@ -238,8 +253,14 @@ class SubmissionController extends Controller
             $file7 = $user->id . 'draft_pkb' . '-' . 'pkb' . now()->timestamp . '.' . $extension7;
             $request->file('draft_pkb')->storeAs($user->id . '/pkb', $file7);
 
+
+            $status = DetailStatus::create([
+                'id_status'=>'1',
+                'keterangan'=> 'Menunggu Konfirmasi Admin'
+            ]);
+
             Pendaftaranpkb::create([
-                'user_id' => $user->id,
+                'id_perusahaan' => $user->id,
                 'peruntukan' => $request->peruntukan,
                 'fc_wlkp' => $file1,
                 'fc_akta_pendirian_perusahaan' => $file2,
@@ -248,7 +269,7 @@ class SubmissionController extends Controller
                 'surat_pernyataan_struktur_skala_upah' => $file5,
                 'struktur_skala_upah_asli' => $file6,
                 'draft_pkb' => $file7,
-                'keterangan' => 'Menunggu Konfirmasi'
+                'id_detail_status' => $status->id
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -262,26 +283,27 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        $asset_pkwt = Asset::find('3');
-        $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', compact('user', 'asset', 'asset_pkwt'));
+        // $asset_pkwt = Asset::find('3');
+        // $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', compact('user'));
     }
 
     public function perjanjian_pkwt_store(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
-            'srt_permohonan_pencatatan_pkwt' => 'required|mimes:png,jpg,pdf|file',
-            'daftar_nama_pekerja_pkwt' => 'required|mimes:png,jpg,pdf|file',
-            'pkwt_asli' => 'required|mimes:png,jpg,pdf|file',
-            'fc_wlkp' => 'required|mimes:png,jpg,pdf|file',
-            'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file',
+            'srt_permohonan_pencatatan_pkwt' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'daftar_nama_pekerja_pkwt' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'pkwt_asli' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'fc_wlkp' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
         ], [
             'required' => 'Field :attribute wajib diisi.',
             'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
             'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
         if ($validatedata) {
@@ -305,15 +327,21 @@ class SubmissionController extends Controller
             $file5 = $user->id . 'fc_akta_pendirian_perusahaan' . '-' . 'pkwt' . now()->timestamp . '.' . $extension5;
             $request->file('fc_akta_pendirian_perusahaan')->storeAs($user->id . '/pkwt', $file5);
 
+
+            $status = DetailStatus::create([
+                'id_status'=>'1',
+                'keterangan'=>'Menunggu Konfirmasi Admin'
+            ]);
+
             Pendaftaranpkwt::create([
-                'user_id' => $user->id,
+                'id_perusahaan' => $user->id,
                 'peruntukan' => $request->peruntukan,
                 'srt_permohonan_pencatatan_pkwt' => $file1,
                 'daftar_nama_pekerja_pkwt' => $file2,
                 'pkwt_asli' => $file3,
                 'fc_wlkp' => $file4,
                 'fc_akta_pendirian_perusahaan' => $file5,
-                'keterangan' => 'Menunggu Konfirmasi'
+                'id_detail_status' => $status->id
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -327,14 +355,14 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        $asset_lks = Asset::find('5');
-        $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pendaftaran-lks-bipartit', compact('user', 'asset', 'asset_lks'));
+        // $asset_lks = Asset::find('5');
+        // $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pendaftaran-lks-bipartit', compact('user'));
     }
 
     public function pendaftaran_lks_store(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
@@ -346,6 +374,7 @@ class SubmissionController extends Controller
             'required' => 'Field :attribute wajib diisi.',
             'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
             'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
         if ($validatedata) {
@@ -365,14 +394,19 @@ class SubmissionController extends Controller
             $file4 = $user->id . 'fc_wlkp' . '-' . 'lks' . now()->timestamp . '.' . $extension4;
             $request->file('fc_wlkp')->storeAs($user->id . '/lks', $file4);
 
+            $status = DetailStatus::create([
+                'id_status'=>'1',
+                'keterangan'=>'Menunggu Konfirmasi Admin'
+            ]);
+
             Pendaftaranlks::create([
-                'user_id' => $user->id,
+                'id_perusahaan' => $user->id,
                 'peruntukan' => $request->peruntukan,
                 'permohonan_pencatatan_lks_bipartit' => $file1,
                 'daftar_susunan_pengurus_lks_bipartit' => $file2,
                 'berita_acara_pembentukan_lks_bipartit' => $file3,
                 'fc_wlkp' => $file4,
-                'keterangan' => 'Menunggu Konfirmasi'
+                'id_detail_status' => $status->id
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -386,25 +420,26 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        $asset_hi = Asset::find('6');
-        $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pencatatan-penyelesaian-perselisihan-internal', compact('user', 'asset', 'asset_hi'));
+        // $asset_hi = Asset::find('6');
+        // $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pencatatan-penyelesaian-perselisihan-internal', compact('user'));
     }
 
     public function pencatatan_perselisihan_internal_store(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
-            'permohonan_pencatatan_pphi' => 'required|mimes:png,jpg,pdf|file',
-            'surat_permintaan_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file',
-            'daftar_hadir_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file',
-            'risalah_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file',
+            'permohonan_pencatatan_pphi' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_permintaan_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'daftar_hadir_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'risalah_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file|max:2048',
         ], [
             'required' => 'Field :attribute wajib diisi.',
             'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
             'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
         if ($validatedata) {
@@ -424,14 +459,19 @@ class SubmissionController extends Controller
             $file4 = $user->id . 'risalah_perundingan_bipartit' . '-' . 'perselisihan_hi' . now()->timestamp . '.' . $extension4;
             $request->file('risalah_perundingan_bipartit')->storeAs($user->id . '/perselisihan_hi', $file4);
 
+            $status = DetailStatus::create([
+                'id_status'=>'1',
+                'keterangan'=>'Menunggu Konfirmasi Admin'
+            ]);
+
             Pencatatanperselihan::create([
-                'user_id' => $user->id,
+                'id_perusahaan' => $user->id,
                 'peruntukan' => $request->peruntukan,
                 'permohonan_pencatatan_pphi' => $file1,
                 'surat_permintaan_perundingan_bipartit' => $file2,
                 'daftar_hadir_perundingan_bipartit' => $file3,
                 'risalah_perundingan_bipartit' => $file4,
-                'keterangan' => 'Menunggu Konfirmasi'
+                'id_detail_status' => $status->id
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -445,25 +485,26 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        $asset_phk = Asset::find('7');
-        $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pelaporan-pemutusan-hubungan-kerja', compact('user', 'asset', 'asset_phk'));
+        // $asset_phk = Asset::find('7');
+        // $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pelaporan-pemutusan-hubungan-kerja', compact('user'));
     }
 
     public function pelaporan_phk_store(Request $request)
     {
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
-            'permohonan_pelaporan_phk' => 'required|mimes:png,jpg,pdf|file',
-            'surat_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file',
-            'surat_tanggapan_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file',
-            'pb_bipartit' => 'required|mimes:png,jpg,pdf|file',
+            'permohonan_pelaporan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_tanggapan_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'pb_bipartit' => 'required|mimes:png,jpg,pdf|file|max:2048',
         ], [
             'required' => 'Field :attribute wajib diisi.',
             'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
             'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
         if ($validatedata) {
@@ -483,14 +524,19 @@ class SubmissionController extends Controller
             $file4 = $user->id . 'pb_bipartit' . '-' . 'phk' . now()->timestamp . '.' . $extension4;
             $request->file('pb_bipartit')->storeAs($user->id . '/phk', $file4);
 
+            $status = DetailStatus::create([
+                'id_status'=>'1',
+                'keterangan'=>'Menunggu Konfirmasi Admin'
+            ]);
+
             Pelaporanphk::create([
-                'user_id' => $user->id,
+                'id_perusahaan' => $user->id,
                 'peruntukan' => $request->peruntukan,
                 'permohonan_pelaporan_phk' => $file1,
                 'surat_pemberitahuan_phk' => $file2,
                 'surat_tanggapan_pemberitahuan_phk' => $file3,
                 'pb_bipartit' => $file4,
-                'keterangan' => 'Menunggu Konfirmasi'
+                'id_detail_status' => $status->id
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');

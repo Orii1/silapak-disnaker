@@ -227,7 +227,7 @@
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong></strong>
+        &copy; Copyright <strong>MFA/MN</strong>
       </div>
       <div class="credits">
         Pemerintah Kota Banjarbaru

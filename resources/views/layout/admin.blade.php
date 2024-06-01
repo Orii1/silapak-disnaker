@@ -90,81 +90,81 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            @if ($pp_not == "0")
+            {{-- @if ($pp_not == "0") --}}
             <a class="position-relative" href="/admin/permohonan-pengesahan-pp">
                 <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan
             </a>
-            @else
+            {{-- @else
             <a class="position-relative" href="/admin/permohonan-pengesahan-pp">
                 <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan<span class="badge text-bg-danger">{{$pp_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
-            @if ($pkb_not == "0")
+            {{-- @if ($pkb_not == "0") --}}
             <a href="/admin/permohonan-pendaftaran-pkb">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama
             </a>
-            @else
+            {{-- @else
             <a href="/admin/permohonan-pendaftaran-pkb">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama<span class="badge text-bg-danger">{{$pkb_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
-            @if ($pkwt_not == "0")
+            {{-- @if ($pkwt_not == "0") --}}
             <a href="/admin/permohonan-pendaftaran-pkwt">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Waktu Tertentu
               </a>
-            @else
+            {{-- @else
             <a href="/admin/permohonan-pendaftaran-pkwt">
               <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Waktu Tertentu<span class="badge text-bg-danger">{{$pkwt_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
-            @if ($spsb_not == "0")
+            {{-- @if ($spsb_not == "0") --}}
             <a href="/admin/permohonan-pencatatan-spsb">
                 <i class="bi bi-circle"></i>Pencatatan Serikat Pekerja/Serikat Buruh
             </a>
-            @else
+            {{-- @else
             <a href="/admin/permohonan-pencatatan-spsb">
               <i class="bi bi-circle"></i>Pencatatan Serikat Pekerja/Serikat Buruh<span class="badge text-bg-danger">{{$spsb_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
-            @if ($lks_not == "0")
+            {{-- @if ($lks_not == "0") --}}
             <a href="/admin/permohonan-pendaftaran-lks">
                 <i class="bi bi-circle"></i>Pendaftaran Lembaga Kerja Sama Bipartit
             </a>
-            @else
+            {{-- @else
             <a href="/admin/permohonan-pendaftaran-lks">
               <i class="bi bi-circle"></i>Pendaftaran Lembaga Kerja Sama Bipartit<span class="badge text-bg-danger">{{$lks_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
-            @if ($hi_not == "0")
+            {{-- @if ($hi_not == "0") --}}
             <a href="/admin/permohonan-pencatatan-hi">
                 <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial
             </a>
-            @else
+            {{-- @else
             <a href="/admin/permohonan-pencatatan-hi">
                 <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial<span class="badge text-bg-danger">{{$hi_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
-            @if ($phk_not == "0")
+            {{-- @if ($phk_not == "0") --}}
             <a href="/admin/permohonan-pelaporan-phk">
                 <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja
             </a>
-            @else
+            {{-- @else
             <a href="/admin/permohonan-pelaporan-phk">
                 <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja<span class="badge text-bg-danger">{{$phk_not}}</span>
             </a>
-            @endif
+            @endif --}}
         </li>
     </ul>
 

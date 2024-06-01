@@ -23,43 +23,43 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        $tolak_pp = Pengesahanpp::where('status', '2')->count();
-        $tolak_pkp = Pendaftaranpkb::where('status', '2')->count();
-        $tolak_pkwt = Pendaftaranpkwt::where('status', '2')->count();
-        $tolak_spsb = Pencatatanspsb::where('status', '2')->count();
-        $tolak_lks = Pendaftaranlks::where('status', '2')->count();
-        $tolak_hi = Pencatatanperselihan::where('status', '2')->count();
-        $tolak_phk = Pelaporanphk::where('status', '2')->count();
+        // $tolak_pp = Pengesahanpp::where('status', '2')->count();
+        // $tolak_pkp = Pendaftaranpkb::where('status', '2')->count();
+        // $tolak_pkwt = Pendaftaranpkwt::where('status', '2')->count();
+        // $tolak_spsb = Pencatatanspsb::where('status', '2')->count();
+        // $tolak_lks = Pendaftaranlks::where('status', '2')->count();
+        // $tolak_hi = Pencatatanperselihan::where('status', '2')->count();
+        // $tolak_phk = Pelaporanphk::where('status', '2')->count();
 
-        $total_tolak = $tolak_pp + $tolak_pkp + $tolak_pkwt + $tolak_spsb + $tolak_lks + $tolak_hi + $tolak_phk;
+        // $total_tolak = $tolak_pp + $tolak_pkp + $tolak_pkwt + $tolak_spsb + $tolak_lks + $tolak_hi + $tolak_phk;
 
-        $terima_pp = Pengesahanpp::where('status', '1')->count();
-        $terima_pkp = Pendaftaranpkb::where('status', '1')->count();
-        $terima_pkwt = Pendaftaranpkwt::where('status', '1')->count();
-        $terima_spsb = Pencatatanspsb::where('status', '1')->count();
-        $terima_lks = Pendaftaranlks::where('status', '1')->count();
-        $terima_hi = Pencatatanperselihan::where('status', '1')->count();
-        $terima_phk = Pelaporanphk::where('status', '1')->count();
+        // $terima_pp = Pengesahanpp::where('status', '1')->count();
+        // $terima_pkp = Pendaftaranpkb::where('status', '1')->count();
+        // $terima_pkwt = Pendaftaranpkwt::where('status', '1')->count();
+        // $terima_spsb = Pencatatanspsb::where('status', '1')->count();
+        // $terima_lks = Pendaftaranlks::where('status', '1')->count();
+        // $terima_hi = Pencatatanperselihan::where('status', '1')->count();
+        // $terima_phk = Pelaporanphk::where('status', '1')->count();
 
-        $total_terima = $terima_pp + $terima_pkp + $terima_pkwt + $terima_spsb + $terima_lks + $terima_hi + $terima_phk;
+        // $total_terima = $terima_pp + $terima_pkp + $terima_pkwt + $terima_spsb + $terima_lks + $terima_hi + $terima_phk;
 
-        $pp = Pengesahanpp::where('status', '3')->count();
-        $pkb = Pendaftaranpkb::where('status', '3')->count();
-        $pkwt = Pendaftaranpkwt::where('status', '3')->count();
-        $spsb = Pencatatanspsb::where('status', '3')->count();
-        $lks = Pendaftaranlks::where('status', '3')->count();
-        $hi = Pencatatanperselihan::where('status', '3')->count();
-        $phk = Pelaporanphk::where('status', '3')->count();
+        // $pp = Pengesahanpp::where('status', '3')->count();
+        // $pkb = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb = Pencatatanspsb::where('status', '3')->count();
+        // $lks = Pendaftaranlks::where('status', '3')->count();
+        // $hi = Pencatatanperselihan::where('status', '3')->count();
+        // $phk = Pelaporanphk::where('status', '3')->count();
 
-        $total = $pp + $pkb + $pkwt + $spsb + $lks + $hi + $phk;
+        // $total = $pp + $pkb + $pkwt + $spsb + $lks + $hi + $phk;
 
-        $pp_not = Pengesahanpp::where('status', '3')->count();
-        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
-        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
-        $spsb_not = Pencatatanspsb::where('status', '3')->count();
-        $lks_not = Pendaftaranlks::where('status', '3')->count();
-        $hi_not = Pencatatanperselihan::where('status', '3')->count();
-        $phk_not = Pelaporanphk::where('status', '3')->count();
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
 
         $now = Carbon::now();
         $now->setLocale('id');
@@ -77,16 +77,13 @@ class AdminController extends Controller
         return view('/admin/dashboard', compact(
             'datestring',
             'dayname',
-            'total',
-            'total_terima',
-            'total_tolak',
-            'pp_not',
-            'pkb_not',
-            'pkwt_not',
-            'spsb_not',
-            'lks_not',
-            'hi_not',
-            'phk_not',
+            // 'pp_not',
+            // 'pkb_not',
+            // 'pkwt_not',
+            // 'spsb_not',
+            // 'lks_not',
+            // 'hi_not',
+            // 'phk_not',
             'pp_all',
             'pkb_all',
             'pkwt_all',
@@ -101,14 +98,14 @@ class AdminController extends Controller
     {
         $perusahaan = User::where('id', '!=', 1)->get();
 
-        $pp_not = Pengesahanpp::where('status', '3')->count();
-        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
-        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
-        $spsb_not = Pencatatanspsb::where('status', '3')->count();
-        $lks_not = Pendaftaranlks::where('status', '3')->count();
-        $hi_not = Pencatatanperselihan::where('status', '3')->count();
-        $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/perusahaan/data-perusahaan', compact('perusahaan', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/perusahaan/data-perusahaan', compact('perusahaan'));
     }
 
     public function profile()
@@ -116,14 +113,14 @@ class AdminController extends Controller
 
         $profile = User::where('id', '1')->get();
 
-        $pp_not = Pengesahanpp::where('status', '3')->count();
-        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
-        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
-        $spsb_not = Pencatatanspsb::where('status', '3')->count();
-        $lks_not = Pendaftaranlks::where('status', '3')->count();
-        $hi_not = Pencatatanperselihan::where('status', '3')->count();
-        $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/profile/profileadmin', compact('profile', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/profile/profileadmin', compact('profile'));
     }
 
     public function change_password(Request $request, $id)
@@ -149,21 +146,33 @@ class AdminController extends Controller
         }
     }
 
+    public function aktivasi_user($id)
+    {
+        $user = User::find($id);
+        if ($user) {
+            $user->status_akun = 'active'; // Atur status user sesuai kebutuhan
+            $user->save();
+            return redirect()->back()->with('success', 'User berhasil diaktifkan.');
+        } else {
+            return redirect()->back()->with('error', 'User tidak ditemukan.');
+        }
+    }
+
     public function detail_perusahaan($id)
     {
         $detail = User::find($id);
 
-        $lat = $detail->lat;
-        $lng = $detail->lng;
+        $lat = $detail->user_perusahaan->latitude;
+        $lng = $detail->user_perusahaan->longtitude;
 
-        $pp_not = Pengesahanpp::where('status', '3')->count();
-        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
-        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
-        $spsb_not = Pencatatanspsb::where('status', '3')->count();
-        $lks_not = Pendaftaranlks::where('status', '3')->count();
-        $hi_not = Pencatatanperselihan::where('status', '3')->count();
-        $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/perusahaan/detail-perusahaan', compact('detail', 'lat', 'lng', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/perusahaan/detail-perusahaan', compact('detail', 'lat', 'lng'));
     }
 
     public function permohonan_pp()

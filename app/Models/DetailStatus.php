@@ -11,6 +11,13 @@ class DetailStatus extends Model
 
     protected $table = 'detail_status';
 
+    protected $fillable = [
+        'id_status',
+        'id_detail_pengecekan',
+        'keterangan',
+        'sk'
+    ];
+
     public function detail_status()
     {
         return $this->hasMany(Status::class, 'id_status', 'id_status');

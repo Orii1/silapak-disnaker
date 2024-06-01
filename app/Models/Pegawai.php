@@ -21,4 +21,5 @@ class Pegawai extends Model
     ];
 
     
+
 }

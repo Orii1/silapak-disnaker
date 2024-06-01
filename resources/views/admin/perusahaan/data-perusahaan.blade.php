@@ -1,6 +1,7 @@
 @extends('layout.admin')
 
 @section('content')
+
 <div class="pagetitle">
     <h1>Perusahaan</h1>
     <nav>
@@ -33,7 +34,12 @@
                     </th>
                     <th class="col-2">
                         <div class="text-center">
-                            Aksi
+                            Detail
+                        </div>
+                    </th>
+                    <th class="col-2">
+                        <div class="text-center">
+                            Aktivasi
                         </div>
                     </th>
                 </tr>
@@ -50,19 +56,19 @@
                                     class="rounded-circle"
                                     />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-0">{{$item->name}}</p>
+                                    <p class="fw-bold mb-0">{{$item->user_perusahaan->nama_perusahaan}}</p>
                                     <p class="text-muted mb-0">{{$item->email}}</p>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="text-center">
-                                {{$item->owner}}
+                                {{$item->user_perusahaan->pemilik}}
                             </div>
                         </td>
-                        <td>
-                            <div style="font-size: 13px;">
-                                {{$item->address}}
+                        <td class="col-5">
+                            <div class="ms-5" style="font-size: 13px;">
+                                {{$item->user_perusahaan->alamat}}
                             </div>
                         </td>
                         <td>
@@ -70,10 +76,53 @@
                                 <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-primary" id=""><i class="bi bi-info-circle-fill"></i></a>
                             </div>
                         </td>
+                        <td>
+                            @if ($item->status_akun == 'inactive')
+                                <div class="text-center">
+                                    <button class="activate-button" data-user-id="{{ $item->id }}">Aktifkan</button>
+                                </div>
+                            @else
+                                <div class="text-center">
+                                    <span class="badge rounded-pill text-bg-success"><label style="color: white;">Aktif</label></span>
+                                </div>
+                            @endif
+                        </td>
                     </tr>
                 </tbody>
             @endforeach
         </table>
     </div>
 </div>
+@if (session('success'))
+    <script>
+        Swal.fire("Berhasil DiAktifkan!", "{{ session('success') }}", "success");
+    </script>
+@elseif (session('error'))
+    <script>
+        Swal.fire("Gagal!", "{{ session('error') }}", "error");
+    </script>
+@endif
+
+<script>
+  document.querySelectorAll('.activate-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const userId = this.getAttribute('data-user-id');
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: 'Anda akan mengaktifkan user ini!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, aktifkan!',
+            cancelButtonText: 'Tidak, batalkan'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = `/aktivasi-user/${userId}`;
+            }
+        });
+    });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

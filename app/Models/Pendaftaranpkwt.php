@@ -12,7 +12,7 @@ class Pendaftaranpkwt extends Model
     protected $table = 'pendaftaran_pkwt';
 
     protected $fillable = [
-        'id_perusahan',
+        'id_perusahaan',
         'peruntukan',
         'srt_permohonan_pencatatan_pkwt',
         'daftar_nama_pekerja_pkwt',

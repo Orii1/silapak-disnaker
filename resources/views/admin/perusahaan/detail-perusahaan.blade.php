@@ -20,7 +20,7 @@
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                         <img src="../../assets/img/company-icon.png" alt="Profile" class="rounded-circle"
                             style="width: 500px;">
-                        <h2 class="mb-1">{{ $detail->name }}</h2>
+                        <h2 class="mb-1">{{ $detail->user_perusahaan->nama_perusahaan }}</h2>
                         <h3 class="mb-4 text-muted text-center">{{ $detail->email }}</h3>
                     </div>
                 </div>
@@ -44,15 +44,15 @@
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="label">Nama Perusahaan</div><br>
-                                        <label>{{$detail->name}}</label>
+                                        <label>{{$detail->user_perusahaan->nama_perusahaan}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Alamat</div><br>
-                                        <label>{{$detail->address}}</label>
+                                        <label>{{$detail->user_perusahaan->alamat}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Nama Pemilik</div><br>
-                                        <label>{{$detail->owner}}</label>
+                                        <label>{{$detail->user_perusahaan->pemilik}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Email</div><br>
@@ -60,45 +60,45 @@
                                     </div>
                                     <div class="row">
                                         <div class="label">Jenis Usaha</div><br>
-                                        <label>{{$detail->type}}</label>
+                                        <label>{{$detail->user_perusahaan->perusahaan_tipeperusahaan->nama_tipe}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Modal</div><br>
-                                        <label>{{$detail->modal}}</label>
+                                        <label>{{$detail->user_perusahaan->perusahaan_modal->nama_modal}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Sektor</div><br>
-                                        <label>{{$detail->sector}}</label>
+                                        <label>{{$detail->user_perusahaan->sektor}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Status Perusahaan</div><br>
-                                        <label>{{$detail->status}}</label>
+                                        <label>{{$detail->user_perusahaan->perusahaan_statusperusahaan->nama_status}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Surat Keputusan Izin Usaha</div><br>
-                                        <label>No : {{$detail->number_letter}}</label>
-                                        <label>Tanggal : {{$detail->date_latter}}</label>
+                                        <label>No : {{$detail->user_perusahaan->nomor_surat_izin_usaha}}</label>
+                                        <label>Tanggal : {{$detail->tgl_surat_izin_usaha}}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="label">Jumlah Tenaga Kerja <i>(Orang)</i></div><br>
-                                        <label>Laki-laki <b>{{$detail->men}}</b></label>
-                                        <label>Wanita <b>{{$detail->woman}}</b></label>
+                                        <label>Laki-laki <b>{{$detail->user_perusahaan->laki_laki}}</b></label>
+                                        <label>Wanita <b>{{$detail->user_perusahaan->perempuan}}</b></label>
                                     </div>
                                     <div class="row">
                                         <div class="label">Status Hubungan Kerja <i>(Orang)</i></div><br>
-                                        <label>PKWT <b>{{$detail->pkwt}}</b></label>
-                                        <label>Outsourcing <b>{{$detail->outsourcing}}</b></label>
-                                        <label>WNA <b>{{$detail->wna}}</b></label>
+                                        <label>PKWT <b>{{$detail->user_perusahaan->pkwt}}</b></label>
+                                        <label>Outsourcing <b>{{$detail->user_perusahaan->outsourcing}}</b></label>
+                                        <label>WNA <b>{{$detail->user_perusahaan->wna}}</b></label>
                                     </div>
                                     <div class="row">
                                         <div class="label">No Kepesertaan BPJS Ketenagakerjaan</div><br>
-                                        <label>{{$detail->number_ketenagakerjaan}}</label>
+                                        <label>{{$detail->user_perusahaan->no_bpjs_ketenagakerjaan}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="label">No Kepesertaan BPJS Kesehatan</div><br>
-                                        <label>{{$detail->number_kesehatan}}</label>
+                                        <label>{{$detail->user_perusahaan->no_bpjs_kesehatan}}</label>
                                     </div>
                                     <div class="row">
                                         <div class="d-flex align-content-center flex-wrap">
@@ -106,10 +106,10 @@
                                                 @include('map2')
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <label>lat : {{$detail->lat}}</label>
+                                                        <label>lat : {{$detail->user_perusahaan->latitude}}</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>lng : {{$detail->lng}}</label>
+                                                        <label>lng : {{$detail->user_perusahaan->longtitude}}</label>
                                                     </div>
                                                 </div>
                                             </div>

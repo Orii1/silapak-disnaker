@@ -31,8 +31,8 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('/login/register');
 });
-Route::get('/mail', function () {
-    return view('/verify-email');
+Route::get('/aktivasi-user', function () {
+    return view('/login/aktivasi-user');
 });
 
 
@@ -128,6 +128,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/admin/detail-perusahaan/{id}', [AdminController::class, 'detail_perusahaan']);
     Route::get('/admin/delete-perusahaan/{id}', [AdminController::class, 'delete_perusahaan']);
     Route::get('/download/data-perusahaan/{id}', [AdminController::class, 'download_data_perusahaan']);
+    Route::get('/aktivasi-user/{id}', [AdminController::class, 'aktivasi_user']);
 
     // PP
     Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);

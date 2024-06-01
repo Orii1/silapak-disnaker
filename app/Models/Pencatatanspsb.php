@@ -9,7 +9,7 @@ class Pencatatanspsb extends Model
 {
     use HasFactory;
 
-    protected $table = 'pencatatan_sp_sb';
+    protected $table = 'pencatatan_spsb';
 
     protected $fillable = [
         'id_perusahaan',

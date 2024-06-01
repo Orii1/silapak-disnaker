@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-6">
                             <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                                Permohonan Pengesahan Peraturan Perusahaan, {{$user->name}}
+                                Permohonan Pengesahan Peraturan Perusahaan, {{$user->user_perusahaan->nama_perusahaan}}
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -160,7 +160,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -179,7 +179,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy sertifikat kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan dan/atau bukti pembayaran iuran terakhir</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -199,7 +199,7 @@
                                             <div class="text-center">
                                                 <label for="">Permohonan Pengesahan PP</label>
                                                     <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -219,7 +219,7 @@
                                             <div class="text-center">
                                                 <label for="">Surat pernyataan bahwa PP sudah dimintakan saran dan pertimbangan dari wakil pekerja, SP/SB</label>
                                                     <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -239,7 +239,7 @@
                                             <div class="text-center">
                                                 <label for="">Surat pernyataan bahwa di Perusahaan belum terbentuk SP/SB</label>
                                                     <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -258,7 +258,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for=""> Surat pernyataan sudah / belum memiliki struktur upah dan skala upah dan sudah dilaksanakan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -277,7 +277,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Struktur upah dan skala upah asli untuk ditunjuk ke pegawai / petugas pengoreksi PP</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -296,12 +296,12 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Draft PP sebanyak 3 eksemplar yang sudah di paraf oleh pimpinan Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="draf_pp" required>
+                                                <input type="file" class="form-control" name="draft_pp" required>
                                             </div>
                                         </td>
                                     </tr>
@@ -320,14 +320,14 @@
 
                 <div class="tab-pane fade pt-3" id="alur-perizinan">
                     <div class="text-center">
-                        <img src="/storage/asset/{{$asset->alur_perizinan}}" class="img-fluid" alt="">
+                        <img src="#" class="img-fluid" alt="">
                     </div>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="retribusi">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="/storage/asset/{{$asset->retribusi}}" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="#" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -335,7 +335,7 @@
                 <div class="tab-pane fade pt-3" id="maklumat">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="/storage/asset/{{$asset->maklumat}}" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="#" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -343,7 +343,7 @@
                 <div class="tab-pane fade pt-3" id="visimisi">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="/storage/asset/{{$asset->visi_misi}}" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="#" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
                 <div class="tab-pane fade pt-3" id="motto">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="/storage/asset/{{$asset->motto}}" style="width: 900px;" alt="">
+                            <img src="#" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -361,7 +361,7 @@
                         <div class="mb-4">
                             <div class="card-title">
                                 <Label style="font-size: 20px;">Dasar Hukum</Label><br>
-                                <label class="mt-2" style="font-size: 17px;">{{$asset->dasar_hukum}}</label>
+                                <label class="mt-2" style="font-size: 17px;">#</label>
                             </div>
                         </div>
                     </div>
@@ -372,7 +372,7 @@
                         <div class="mb-4">
                             <div class="card-title">
                                 <Label style="font-size: 20px;">Durasi Pemrosesan</Label><br>
-                                <label class="mt-2" style="font-size: 17px;">{{$asset->durasi_pemrosesan}}</label>
+                                <label class="mt-2" style="font-size: 17px;"></label>
                             </div>
                         </div>
                     </div>
@@ -386,7 +386,7 @@
                             </div>
                             <label class="ms-5 mb-2 card-tittle" style="font-size: 16px;"><b>Dinas Koperasi, Usaha Mikro dan Tenaga Kerja kota Banjarbaru</b></label><br>
                             <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Alamat : Jalan Soekarno Hatta - Trikora</label><br>
-                            <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Nomor : {{$asset->kontak}}</label><br>
+                            <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Nomor :</label><br>
                         </div>
                     </div>
                 </div>

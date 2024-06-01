@@ -168,7 +168,7 @@ class CompanyController extends Controller
     public function update(Request $request, $id)
     {
         $data = User::findOrFail($id);
-        $data->update($request->all());
+        $data->user_perusahaan->update($request->all());
         toastr()->success('Data Berhasil Disimpan!');
         return redirect('/perusahaan/dashboard');
     }

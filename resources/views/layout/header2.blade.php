@@ -53,7 +53,7 @@
             </a>
         </div>
         <div class="mx-4">
-            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="/logout" title="Log out">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" id="logout-button" title="Log out">
                 <span class="d-none d-md-block">
                     <div class="btn btn-primary">
                         <i class="bi bi-door-closed-fill"></i>
@@ -84,6 +84,25 @@
   <script src="../../assets/js/mainadmin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <script>
+    document.getElementById('logout-button').addEventListener('click', function() {
+    Swal.fire({
+        title: 'Apakah Anda yakin ingin keluar?',
+        text: "Anda akan keluar dari akun ini.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Ya, keluar',
+        cancelButtonText: 'Tidak, batalkan',
+        reverseButtons: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/logout';
+            }
+        });
+    });
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

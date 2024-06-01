@@ -37,11 +37,11 @@ class UserController extends Controller
             'no_bpjs_ketenagakerjaan' => $request->no_bpjs_ketenagakerjaan,
             'no_bpjs_kesehatan' => $request->no_bpjs_kesehatan,
             'latitude' => $request->latitude,
-            'longitude' => $request->longitude,
+            'longtitude' => $request->longtitude,
             'id_user' => $user->id,
         ]);
 
-        return redirect('/perusahaan/dashboard');
+        return redirect('/aktivasi-user');
     }
 
 

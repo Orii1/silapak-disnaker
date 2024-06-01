@@ -33,6 +33,21 @@ class Perusahaan extends Model
         'longtitude',
     ];
 
+    public function perusahaan_statusperusahaan()
+    {
+        return $this->belongsTo(StatusPerusahaan::class, 'id_status_perusahaan', 'id_status_perusahaan');
+    }
+
+    public function perusahaan_tipeperusahaan()
+    {
+        return $this->belongsTo(TipePerusahaan::class, 'id_tipe_perusahaan', 'id_tipe_perusahaan');
+    }
+
+    public function perusahaan_modal()
+    {
+        return $this->belongsTo(Modal::class, 'id_modal', 'id_modal');
+    }
+
     public function perusahaan_pp()
     {
         return $this->hasMany(Pengesahanpp::class, 'id_perusahaan', 'id_perusahaan');

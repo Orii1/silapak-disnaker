@@ -9,7 +9,7 @@ class Pencatatanperselihan extends Model
 {
     use HasFactory;
 
-    protected $table = 'pencatatan_penyelesaian_hi';
+    protected $table = 'pencatatan_penyelasaian_hi';
 
     protected $fillable = [
         'id_perusahaan',

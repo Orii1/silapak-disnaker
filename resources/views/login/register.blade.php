@@ -51,7 +51,7 @@
                                             placeholder="Password" required>
                                         </div>
                                         <div class="col-12 mb-2">
-                                            <button class="btn btn-primary w-100" type="button"
+                                            <button class="btn btn-primary w-100" id="next1" type="button"
                                                 onclick="run(1, 2);">Selanjutnya</button>
                                         </div>
                                         <div class="col-12 mb-5">
@@ -262,7 +262,7 @@
                                                     onclick="run(2, 3);">Selanjutnya</button>
                                             </div>
                                             <div class="col-12 mb-5">
-                                                <button class="btn btn-outline-primary w-100"  onclick="run(2,1);">Kembali</button>
+                                                <button class="btn btn-outline-primary w-100" id="back2" onclick="run(2,1);" type="button">Kembali</button>
                                             </div>
                                         </div>
                                     </div>
@@ -327,6 +327,17 @@
 @endsection
 
 <script>
+    document.getElementById('next1').addEventListener('click', function() {
+        document.getElementById('tab-1').style.transform = 'translateX(-100%)';
+        document.getElementById('tab-2').style.transform = 'translateX(0)';
+        document.getElementById('progress').style.width = '100%'; // Sesuaikan dengan langkah
+    });
+
+    document.getElementById('back2').addEventListener('click', function() {
+        document.getElementById('tab-1').style.transform = 'translateX(0)';
+        document.getElementById('tab-2').style.transform = 'translateX(100%)';
+        document.getElementById('progress').style.width = '50%';
+    });
      // Default tab
   $(".tab").css("display", "none");
   $("#tab-1").css("display", "block");
@@ -367,6 +378,7 @@
     $("#tab-" + showTab).css("display", "block");
     $("input").css("background", "#fff"); // Reset input backgrounds
   }
+  
   </script>
 
 

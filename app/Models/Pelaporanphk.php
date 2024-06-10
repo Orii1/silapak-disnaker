@@ -11,6 +11,8 @@ class Pelaporanphk extends Model
 
     protected $table = 'pelaporan_phk';
 
+    protected $primaryKey = 'id_phk';
+
     protected $fillable = [
         'id_perusahaan',
         'peruntukan',
@@ -23,7 +25,7 @@ class Pelaporanphk extends Model
 
     public function phk_perusahaan()
     {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 
     public function phk_status()

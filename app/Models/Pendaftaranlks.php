@@ -11,6 +11,8 @@ class Pendaftaranlks extends Model
 
     protected $table = 'pencatatan_lks_bipartit';
 
+    protected $primaryKey = 'id_lks';
+
     protected $fillable = [
         'id_perusahaan',
         'peruntukan',
@@ -23,7 +25,7 @@ class Pendaftaranlks extends Model
 
     public function lks_perusahaan()
     {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 
     public function lks_status()

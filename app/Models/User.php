@@ -55,6 +55,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function user_pegawai()
     {
-        return $this->hasOne(Pegawai::class, 'id_user', 'id_user');
+        return $this->hasOne(Pegawai::class, 'id_user', 'id');
     }
 }

@@ -11,7 +11,10 @@ class Pengesahanpp extends Model
 
     protected $table = 'pengesahan_pp';
 
+    protected $primaryKey = 'id_pp';
+
     protected $fillable = [
+        'id_pp',
         'id_perusahaan',
         'peruntukan',
         'fc_wlkp',
@@ -28,7 +31,7 @@ class Pengesahanpp extends Model
 
     public function pp_perusahaan()
     {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 
     public function pp_status()

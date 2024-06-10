@@ -19,25 +19,31 @@
                 <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
 
                       <li class="nav-item">
-                        <div class="mx-5">
+                        <div class="mx-4">
                             <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#konfirmasi">Menunggu Konfirmasi</button>
                         </div>
                       </li>
 
                       <li class="nav-item">
-                        <div class="mx-5">
+                        <div class="mx-4">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diproses">Diproses</button>
                         </div>
                       </li>
 
                       <li class="nav-item">
-                        <div class="mx-5">
+                        <div class="mx-4">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#selesaidicek">Selesai Diperiksa</button>
+                        </div>
+                      </li>
+
+                      <li class="nav-item">
+                        <div class="mx-4">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diterima">Diterima</button>
                         </div>
                       </li>
 
                       <li class="nav-item">
-                        <div class="mx-5">
+                        <div class="mx-4">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#dikembalikan">Dikembalikan</button>
                         </div>
                       </li>
@@ -50,17 +56,17 @@
             <div class="tab-pane fade show active profile-overview" id="konfirmasi">
                 <div class="mt-4 mb-5">
                     @foreach ($pp_konfir as $item)
-                        <a href="/konfirmasi/permohonan-pengesahan-pp/{{$item->id}}">
+                        <a href="/konfirmasi/permohonan-pengesahan-pp/{{$item->id_pp}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-menunggu" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->pp_user->name}}</b>
+                                            <b>{{$item->pp_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->pp_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -79,17 +85,17 @@
                 <div class="text-center">
                     <div class="mb-4">
                         @foreach ($pp_proses as $item)
-                            <a href="/permohonan-pengesahan-pp/{{$item->id}}">
+                            <a href="/permohonan-pengesahan-pp/{{$item->id_pp}}">
                                 <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
                                     <div class="ms-3 my-2">
                                         <div class="row text-start">
                                             <div style="font-size: 21px; color: black;">
-                                                <b>{{$item->pp_user->name}}</b>
+                                                <b>{{$item->pp_perusahaan->nama_perusahaan}}</b>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="disabled-text">
-                                                Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                                Peruntukan : {{$item->peruntukan}} / {{$item->pp_status->keterangan}}
                                             </div>
                                         </div>
                                         <div class="row text-start">
@@ -109,17 +115,17 @@
                 <div class="text-center">
                     <div class="mb-4">
                         @foreach ($pp_terima as $item)
-                            <a href="/permohonan-pengesahan-pp/{{$item->id}}">
+                            <a href="/permohonan-pengesahan-pp/{{$item->id_pp}}">
                                 <div class="cardd radius-5 border-start border-0 border-3 border-diterima" style="height: 100px; display: flex;">
                                     <div class="ms-3 my-2">
                                         <div class="row text-start">
                                             <div style="font-size: 21px; color: black;">
-                                                <b>{{$item->pp_user->name}}</b>
+                                                <b>{$item->pp_perusahaan->nama_perusahaan}}</b>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="disabled-text">
-                                                Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                                Peruntukan : {{$item->peruntukan}} / {{$item->pp_status->keterangan}}
                                             </div>
                                         </div>
                                         <div class="row text-start">
@@ -139,17 +145,17 @@
                 <div class="text-center">
                     <div class="mb-4">
                         @foreach ($pp_tolak as $item)
-                            <a href="/permohonan-pengesahan-pp/{{$item->id}}">
+                            <a href="/permohonan-pengesahan-pp/{{$item->id_pp}}">
                                 <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
                                     <div class="ms-3 my-2">
                                         <div class="row text-start">
                                             <div style="font-size: 21px; color: black;">
-                                                <b>{{$item->pp_user->name}}</b>
+                                                <b>{$item->pp_perusahaan->nama_perusahaan}}</b>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="disabled-text">
-                                                Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                                Peruntukan : {{$item->peruntukan}} / {{$item->pp_status->keterangan}}
                                             </div>
                                         </div>
                                         <div class="row text-start">
@@ -164,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 @endsection

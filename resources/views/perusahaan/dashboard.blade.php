@@ -68,7 +68,7 @@
                         <div class="col-3">
                             <div class="text-end me-3">
                                 <div class="my-4">
-                                    <a href="/cek-permohonan/{{$user->id}}" class="btn btn-primary btn-lg"><i class="bi bi-hourglass-split"></i></a>
+                                    <a href="/cek-permohonan/{{$user->user_perusahaan->id}}" class="btn btn-primary btn-lg"><i class="bi bi-hourglass-split"></i></a>
                                 </div>
                             </div>
                         </div>

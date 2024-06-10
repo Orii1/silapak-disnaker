@@ -5,6 +5,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EditSubmissionController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MediatorController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\UserController;
@@ -35,10 +36,16 @@ Route::get('/aktivasi-user', function () {
     return view('/login/aktivasi-user');
 });
 
-
-
 Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
+
+
+Route::middleware(['auth', 'UserAkses:2'])->group(function () {
+    Route::get('/mediator/dashboard', [MediatorController::class, 'index']);
+    Route::get('/mediator/profile', [MediatorController::class, 'profile']);
+
+    Route::get('/mediator/permohonan-pengesahan-pp', [MediatorController::class, 'pengesahan_pp']);
+});
 
 Route::middleware(['auth', 'UserAkses:4'])->group(function () {
     // COMPANY ROUTE
@@ -132,7 +139,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
 
     // PP
     Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);
-    Route::get('/konfirmasi/permohonan-pengesahan-pp/{id}', [AdminController::class, 'permohonan_pp_konfir']);
+    Route::get('/konfirmasi/permohonan-pengesahan-pp/{id_pp}', [AdminController::class, 'permohonan_pp_konfir']);
     Route::post('/konfirmasi/permohonan-pp/{id}', [AdminController::class, 'permohonan_pp_proses']);
     Route::get('/permohonan-pengesahan-pp/{id}', [AdminController::class, 'permohonan_pp_show']);
     Route::post('/permohonan-pp/update/{id}', [AdminController::class, 'permohonan_pp_update']);
@@ -142,7 +149,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
 
     // PKB
     Route::get('/admin/permohonan-pendaftaran-pkb', [AdminController::class, 'pendaftaran_pkb']);
-    Route::get('/konfirmasi/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pendaftaran_pkb_konfir']);
+    Route::get('/konfirmasi/permohonan-pendaftaran-pkb/{id_pkb}', [AdminController::class, 'pendaftaran_pkb_konfir']);
     Route::post('/konfirmasi/permohonan-pkb/{id}', [AdminController::class, 'pendaftaran_pkb_proses']);
     Route::get('/permohonan-pendaftaran-pkb/{id}', [AdminController::class, 'pendaftaran_pkb_show']);
     Route::post('/permohonan-pkb/update/{id}', [AdminController::class, 'pendaftaran_pkb_update']);
@@ -214,8 +221,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/motto/store/{id}', [AdminController::class, 'motto']);
     // END Store Asset
     // END Asset
-
-
+    
     // END ADMIN ROUTE
 });
 

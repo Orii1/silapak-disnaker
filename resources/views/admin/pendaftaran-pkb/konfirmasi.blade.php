@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item">Permohonan Pendaftaran Kerja Bersama</li>
-            <li class="breadcrumb-item active">{{$data->pkb_user->name}}</li>
+            <li class="breadcrumb-item active">{{$data->pkb_perusahaan->nama_perusahaan}}</li>
         </ol>
     </nav>
 </div>
@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                        {{$data->peruntukan}}, {{$data->pkb_user->name}}
+                        {{$data->peruntukan}}, {{$data->pkb_perusahaan->nama_perusahaan}}
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
 </div>
 
 <div class="mt-3 mb-2">
-    <label for=""><b>Konfirmasi Permohonan {{$data->pkb_user->name}} :</b></label>
+    <label for=""><b>Konfirmasi Permohonan {{$data->pkb_perusahaan->nama_perusahaan}} :</b></label>
     <a class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#konfirmasi" style="color: white;"> <b>Konfirmasi</b></a>
 </div>
 
@@ -64,12 +64,12 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Fotocopy WLKP yang masih berlaku</label><br> 
+                            <label for="">Fotocopy WLKP yang masih berlaku</label><br>
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkb/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -89,7 +89,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkb/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -109,7 +109,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkb/{{$data->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -129,7 +129,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkb/{{$data->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -149,7 +149,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkb/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -169,7 +169,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkb/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -189,7 +189,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkb/{{$data->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>

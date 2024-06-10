@@ -97,28 +97,28 @@
                                     @foreach ($pp_submission as $item)
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
-                                            <td><div class="text-center">{{$item->pp_user->name}}</div></td>
+                                            <td><div class="text-center">{{$item->pp_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->status == "0")
+                                            @if ($item->pp_status->id_status == "2")
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                             </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->pp_status->keterangan}}</div></td>
                                                 <td><div class="text-center"></div></td>
-                                            @elseif ($item->status == "1")
+                                            @elseif ($item->pp_status->id_status == "3")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">Permohonan Selesai</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
-                                            @elseif ($item->status == '2')
+                                            @elseif ($item->pp_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-pp/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
-                                            @elseif ($item->status == '3')
+                                            @elseif ($item->pp_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
@@ -163,28 +163,28 @@
                                     @foreach ($pkb_submission as $item)
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
-                                            <td><div class="text-center">{{$item->pkb_user->name}}</div></td>
+                                            <td><div class="text-center">{{$item->pkb_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->status == "0")
+                                            @if ($item->pkb_status->id_status == "2")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->pkb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
-                                            @elseif ($item->status == "1")
+                                            @elseif ($item->pkb_status->id_status == "3")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->pkb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-pkb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
-                                            @elseif ($item->status == '2')
+                                            @elseif ($item->pkb_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->pkb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-pkb/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
-                                            @elseif ($item->status == '3')
+                                            @elseif ($item->pkb_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
@@ -229,28 +229,28 @@
                                     @foreach ($pkwt_submission as $item)
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
-                                            <td><div class="text-center">{{$item->pkwt_user->name}}</div></td>
+                                            <td><div class="text-center">{{$item->pkwt_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->status == "0")
+                                            @if ($item->pkwt_status->id_status == "2")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->pkwt_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
-                                            @elseif ($item->status == "1")
+                                            @elseif ($item->pkwt_status->id_status == "3")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->pkwt_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-pkwt-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
-                                            @elseif ($item->status == '2')
+                                            @elseif ($item->pkwt_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->pkwt_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-pkwt/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
-                                            @elseif ($item->status == '3')
+                                            @elseif ($item->pkwt_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
@@ -295,28 +295,28 @@
                                     @foreach ($spsb_submission as $item)
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
-                                            <td><div class="text-center">{{$item->spsb_user->name}}</div></td>
+                                            <td><div class="text-center">{{$item->spsb_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->status == "0")
+                                            @if ($item->spsb_status->id_status == "2")
                                             <td><div class="text-center">
                                                 <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                             </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->spsb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
-                                            @elseif ($item->status == "1")
+                                            @elseif ($item->spsb_status->id_status == "3")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->spsb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-spsb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
-                                            @elseif ($item->status == '2')
+                                            @elseif ($item->spsb_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->spsb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-spsb/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
-                                            @elseif ($item->status == '3')
+                                            @elseif ($item->spsb_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
@@ -361,28 +361,28 @@
                                     @foreach ($lks_submission as $item)
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
-                                            <td><div class="text-center">{{$item->lks_user->name}}</div></td>
+                                            <td><div class="text-center">{{$item->lks_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->status == "0")
+                                            @if ($item->lks_status->id_status == "2")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->lks_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
-                                            @elseif ($item->status == "1")
+                                            @elseif ($item->lks_status->id_status == "3")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->lks_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-lks-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
-                                            @elseif ($item->status == '2')
+                                            @elseif ($item->lks_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->lks_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-lks/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
-                                            @elseif ($item->status == '3')
+                                            @elseif ($item->lks_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
@@ -427,28 +427,28 @@
                                     @foreach ($hi_submission as $item)
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
-                                            <td><div class="text-center">{{$item->hi_user->name}}</div></td>
+                                            <td><div class="text-center">{{$item->hi_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->status == "0")
+                                            @if ($item->hi_status->status == "2")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->hi_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
-                                            @elseif ($item->status == "1")
+                                            @elseif ($item->hi_status->id_status == "3")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->hi_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-hi-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
-                                            @elseif ($item->status == '2')
+                                            @elseif ($item->hi_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->hi_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-hi/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
-                                            @elseif ($item->status == '3')
+                                            @elseif ($item->hi_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
@@ -493,28 +493,28 @@
                                     @foreach ($phk_submission as $item)
                                         <tr>
                                             <td><div class="text-center">{{$loop->iteration}}</div></td>
-                                            <td><div class="text-center">{{$item->phk_user->name}}</div></td>
+                                            <td><div class="text-center">{{$item->phk_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->status == "0")
+                                            @if ($item->phk_status->status == "2")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->phk_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
-                                            @elseif ($item->status == "1")
+                                            @elseif ($item->phk_status->id_status == "3")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->phk_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="{{route('sk-phk-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
-                                            @elseif ($item->status == '2')
+                                            @elseif ($item->phk_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
+                                                <td><div class="text-center">{{$item->phk_status->keterangan}}</div></td>
                                                 <td><div class="text-center"><a href="/edit-permohonan-phk/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
-                                            @elseif ($item->status == '3')
+                                            @elseif ($item->phk_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>

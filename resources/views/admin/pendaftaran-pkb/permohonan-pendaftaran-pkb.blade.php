@@ -48,12 +48,12 @@
         <div class="tab-pane fade show active profile-overview" id="konfirmasi">
             <div class="mt-4 mb-5">
                 @foreach ($pkb_konfir as $item)
-                    <a href="/konfirmasi/permohonan-pendaftaran-pkb/{{$item->id}}">
+                    <a href="/konfirmasi/permohonan-pendaftaran-pkb/{{$item->id_pkb}}">
                         <div class="cardd radius-5 border-start border-0 border-3 border-menunggu" style="height: 100px; display: flex;">
                             <div class="ms-3 my-2">
                                 <div class="row text-start">
                                     <div style="font-size: 21px; color: black;">
-                                        <b>{{$item->pkb_user->name}}</b>
+                                        <b>{{$item->pkb_perusahaan->nama_perusahaan}}</b>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -77,12 +77,12 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($pkb_proses as $item)
-                        <a href="/permohonan-pendaftaran-pkb/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-pkb/{{$item->id_pkb}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->pkb_user->name}}</b>
+                                            <b>{{$item->pkb_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -107,12 +107,12 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($pkb_terima as $item)
-                        <a href="/permohonan-pendaftaran-pkb/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-pkb/{{$item->id_pkb}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diterima" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->pkb_user->name}}</b>
+                                            <b>{{$item->pkb_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -137,12 +137,12 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($pkb_tolak as $item)
-                        <a href="/permohonan-pengesahan-pp/{{$item->id}}">
+                        <a href="/permohonan-pengesahan-pp/{{$item->id_pkb}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->pkb_user->name}}</b>
+                                            <b>{{$item->pkb_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">

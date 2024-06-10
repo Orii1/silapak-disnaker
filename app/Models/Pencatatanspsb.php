@@ -11,6 +11,8 @@ class Pencatatanspsb extends Model
 
     protected $table = 'pencatatan_spsb';
 
+    protected $primaryKey = 'id_spsb';
+
     protected $fillable = [
         'id_perusahaan',
         'peruntukan',
@@ -24,7 +26,7 @@ class Pencatatanspsb extends Model
 
     public function spsb_perusahaan()
     {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 
     public function spsb_status()

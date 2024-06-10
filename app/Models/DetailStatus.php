@@ -11,12 +11,19 @@ class DetailStatus extends Model
 
     protected $table = 'detail_status';
 
+    protected $primaryKey = 'id_detail_status';
+
     protected $fillable = [
         'id_status',
         'id_detail_pengecekan',
         'keterangan',
         'sk'
     ];
+
+    public function status_cek()
+    {
+        return $this->hasOne(DetailPengecekan::class, 'id_detail_pengecekan', 'id_detail_pengecekan');
+    }
 
     public function detail_status()
     {

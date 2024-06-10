@@ -18,10 +18,10 @@ class LoginController extends Controller
             if ($user_role == '1') {
                 toastr()->success('Berhasil Login, Selamat Datang Admin!');
                 return redirect('/admin/dashboard');
-            } else if ($user_role == '3') {
-                $user = Auth::user();
-                toastr()->success('Berhasil Login, Selamat Datang ' . $user->name . '!');
-                return redirect('/perusahaan/dashboard');
+            } else if ($user_role == '2') {
+                $user = Auth::user()->user_pegawai;
+                toastr()->success('Berhasil Login, Selamat Datang ' . $user->nama_pegawai . '!');
+                return redirect('/mediator/dashboard');
             }
         } else {
             Session::flash('error', 'Email atau Password salah!');

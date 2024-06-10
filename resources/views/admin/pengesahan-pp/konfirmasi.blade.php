@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item">Permohonan Pengesahan Peraturan Perusahaan</li>
-            <li class="breadcrumb-item active">{{$data->pp_user->name}}</li>
+            <li class="breadcrumb-item active">{{$data->pp_perusahaan->nama_perusahaan}}</li>
         </ol>
     </nav>
 </div>
@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                        {{$data->peruntukan}}, {{$data->pp_user->name}}
+                        {{$data->peruntukan}}, {{$data->pp_perusahaan->nama_perusahaan}}
                     </div>
                 </div>
             </div>
@@ -29,9 +29,19 @@
 </div>
 
 <div class="mt-3 mb-2">
-    <label for=""><b>Konfirmasi Permohonan {{$data->pp_user->name}} :</b></label>
+    <label for=""><b>Konfirmasi Permohonan {{$data->pp_perusahaan->nama_perusahaan}} :</b></label>
     <a class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#konfirmasi" style="color: white;"> <b>Konfirmasi</b></a>
 </div>
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
 <div class="mt-4">
     <table class="table table-bordered">
@@ -70,7 +80,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -91,7 +101,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -113,7 +123,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -135,7 +145,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -157,7 +167,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -179,7 +189,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -201,7 +211,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -223,7 +233,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
 
@@ -245,7 +255,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pp/{{$data->draf_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->draft_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -262,11 +272,16 @@
           <h1 class="modal-title fs-5" id="konfirmasiLabel">Konfirmasi Permohonan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="/konfirmasi/permohonan-pp/{{$data->id}}" method="POST" enctype="multipart/form-data">
+        <form action="/konfirmasi/permohonan-pp/{{$data->id_pp}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
-                <label class="mb-3">Masukkan Status Pemrosesan</label>
-                <input type="text" name="keterangan" class="form-control">
+                <label class="mb-3">Pilih Mediator untuk mengecek persyaratan pemohon</label>
+                <select class="form-select" name="id_pegawai" required>
+                    <option selected disabled>Pilih Mediator</option>
+                    @foreach ($mediator as $item)
+                        <option value="{{$item->id_pegawai}}">{{$item->nama_pegawai}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

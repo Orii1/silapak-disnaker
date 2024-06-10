@@ -47,7 +47,6 @@
                         <div class="col-12 mb-4">
                             <a href="{{route('google.redirect')}}" class="btn btn-outline-primary w-100" type="submit"><i class="bi bi-google"></i> Masuk dengan Google</a>
                         </div>
-
                       </form>
                     </div>
                   </div>

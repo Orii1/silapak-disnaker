@@ -181,7 +181,7 @@ class SubmissionController extends Controller
                 'surat_pernyataan_struktur_skala_upah' => $file7,
                 'struktur_skala_upah_asli' => $file8,
                 'draft_pp' => $file9,
-                'id_detail_status' => $status->id
+                'id_detail_status' => $status->id_detail_status
             ]);
 
 
@@ -269,7 +269,7 @@ class SubmissionController extends Controller
                 'surat_pernyataan_struktur_skala_upah' => $file5,
                 'struktur_skala_upah_asli' => $file6,
                 'draft_pkb' => $file7,
-                'id_detail_status' => $status->id
+                'id_detail_status' => $status->id_detail_status
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -341,7 +341,7 @@ class SubmissionController extends Controller
                 'pkwt_asli' => $file3,
                 'fc_wlkp' => $file4,
                 'fc_akta_pendirian_perusahaan' => $file5,
-                'id_detail_status' => $status->id
+                'id_detail_status' => $status->id_detail_status
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -406,7 +406,7 @@ class SubmissionController extends Controller
                 'daftar_susunan_pengurus_lks_bipartit' => $file2,
                 'berita_acara_pembentukan_lks_bipartit' => $file3,
                 'fc_wlkp' => $file4,
-                'id_detail_status' => $status->id
+                'id_detail_status' => $status->id_detail_status
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -471,7 +471,7 @@ class SubmissionController extends Controller
                 'surat_permintaan_perundingan_bipartit' => $file2,
                 'daftar_hadir_perundingan_bipartit' => $file3,
                 'risalah_perundingan_bipartit' => $file4,
-                'id_detail_status' => $status->id
+                'id_detail_status' => $status->id_detail_status
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');
@@ -536,7 +536,7 @@ class SubmissionController extends Controller
                 'surat_pemberitahuan_phk' => $file2,
                 'surat_tanggapan_pemberitahuan_phk' => $file3,
                 'pb_bipartit' => $file4,
-                'id_detail_status' => $status->id
+                'id_detail_status' => $status->id_detail_status
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');

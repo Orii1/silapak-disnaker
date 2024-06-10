@@ -11,7 +11,10 @@ class Pendaftaranpkb extends Model
 
     protected $table = 'pendaftaran_pkb';
 
+    protected $primaryKey = 'id_pkb';
+
     protected $fillable = [
+        'id_pkb',
         'id_perusahaan',
         'peruntukan',
         'fc_wlkp',
@@ -26,7 +29,7 @@ class Pendaftaranpkb extends Model
 
     public function pkb_perusahaan()
     {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 
     public function pkb_status()

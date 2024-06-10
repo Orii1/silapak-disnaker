@@ -11,6 +11,8 @@ class Pencatatanperselihan extends Model
 
     protected $table = 'pencatatan_penyelasaian_hi';
 
+    protected $primaryKey = 'id_hi';
+
     protected $fillable = [
         'id_perusahaan',
         'peruntukan',
@@ -23,7 +25,7 @@ class Pencatatanperselihan extends Model
 
     public function hi_perusahaan()
     {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 
     public function hi_status()

@@ -9,6 +9,7 @@ use App\Models\Pendaftaranlks;
 use App\Models\Pendaftaranpkb;
 use App\Models\Pendaftaranpkwt;
 use App\Models\Pengesahanpp;
+use App\Models\Perusahaan;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -30,14 +31,15 @@ class CompanyController extends Controller
 
     public function submission_check($id)
     {
-        $user = User::find($id);
-        $pp_submission = Pengesahanpp::where('user_id', $id)->get();
-        $pkb_submission = Pendaftaranpkb::where('user_id', $id)->get();
-        $pkwt_submission = Pendaftaranpkwt::where('user_id', $id)->get();
-        $spsb_submission = Pencatatanspsb::where('user_id', $id)->get();
-        $lks_submission = Pendaftaranlks::where('user_id', $id)->get();
-        $hi_submission = Pencatatanperselihan::where('user_id', $id)->get();
-        $phk_submission = Pelaporanphk::where('user_id', $id)->get();
+        $user=Auth::user();
+        $perusahaan = Perusahaan::find($id);
+        $pp_submission = Pengesahanpp::where('id_perusahaan', $id)->get();
+        $pkb_submission = Pendaftaranpkb::where('id_perusahaan', $id)->get();
+        $pkwt_submission = Pendaftaranpkwt::where('id_perusahaan', $id)->get();
+        $spsb_submission = Pencatatanspsb::where('id_perusahaan', $id)->get();
+        $lks_submission = Pendaftaranlks::where('id_perusahaan', $id)->get();
+        $hi_submission = Pencatatanperselihan::where('id_perusahaan', $id)->get();
+        $phk_submission = Pelaporanphk::where('id_perusahaan', $id)->get();
         return view('/perusahaan/cek-permohonan/cek-permohonan', compact(
             'pp_submission',
             'pkb_submission',

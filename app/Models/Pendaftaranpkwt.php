@@ -11,6 +11,8 @@ class Pendaftaranpkwt extends Model
 
     protected $table = 'pendaftaran_pkwt';
 
+    protected $primaryKey = 'id_pkwt';
+
     protected $fillable = [
         'id_perusahaan',
         'peruntukan',
@@ -24,7 +26,7 @@ class Pendaftaranpkwt extends Model
 
     public function pkwt_perusahaan()
     {
-        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id_perusahaan');
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 
     public function pkwt_status()

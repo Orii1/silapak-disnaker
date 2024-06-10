@@ -36,6 +36,8 @@
     }
     .logo img {
       margin-right: 10px;
+      width: 50px; /* Increase logo width */
+      height: 50px; /* Increase logo height */
     }
 
     /* New styles for desired layout */
@@ -52,6 +54,7 @@
     .logo-text { /* Center logo text horizontally (if needed) */
       flex: 1; /* Allow text to grow and fill space (if needed) */
       text-align: center;
+      font-size: 24px;
     }
     .nav-item {
       margin: 0 15px; /* Consistent margin for all items */
@@ -68,7 +71,7 @@
   <header id="header" class="header fixed-top">
     <nav id="navbar" class="navbar navbar-expand-lg d-flex align-items-center w-100">
       <div class="container d-flex justify-content-between align-items-stretch">
-        <a href="#" class="navbar-brand d-flex align-items-center">
+        <a href="/home" class="navbar-brand d-flex align-items-center">
           <img src="assets/img/banjarbaru.png" alt="banjarbaru" width="30" height="30" class="d-inline-block me-2">
           <span class="logo-text">SILAKHI</span>
         </a>
@@ -80,10 +83,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#about">Tentang Kami</a>
+                <a class="header-scrolled getstarted scrollto" href="#about">Tentang Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">Layanan Kami</a>
+                <a class="header-scrolled getstarted scrollto" href="#services">Layanan Kami</a>
             </li>
           </ul>
           <a href="/login" class="btn btn-outline-dark header-scrolled getstarted scrollto border border-white rounded-5">Masuk</a>

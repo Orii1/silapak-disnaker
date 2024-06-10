@@ -223,6 +223,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/kabid/dashboard', [KabidController::class, 'dashboard']);
     Route::get('/kabid/monitoring', [KabidController::class, 'monitoring']);
     Route::get('/kabid/profile', [KabidController::class, 'profile']);
+    Route::get('/kabid/rekapitulasi', [KabidController::class, 'rekapitulasi']);
 
 Route::get('/map', function () {
     return view('/map');

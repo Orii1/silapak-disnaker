@@ -121,4 +121,18 @@ class KabidController extends Controller
     return view('/kabid/monitoring/monitoring', compact( 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
     }
 
+    public function rekapitulasi(){
+       
+
+        $pp_not = Pengesahanpp::where('status', '3')->count();
+        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        $lks_not = Pendaftaranlks::where('status', '3')->count();
+        $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        $phk_not = Pelaporanphk::where('status', '3')->count();
+    return view('/kabid/rekapitulasi/rekapitulasi', compact( 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+    }
+
+
 }

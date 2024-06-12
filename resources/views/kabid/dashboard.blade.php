@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Dashboard KABID</h1>
+    <h1>Dashboard Kepala Bidang</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
@@ -31,65 +31,35 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-xxl-4 col-md-6">
-        <div class="card info-card sales-card border-diterima">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="card-title">
-                            <div class="d-flex align-items-center my-2">
-                                <p class="text-secondary mb-0" style="font-size: 17px;">Permohonan Diterima</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card-title">
-                            <p class="text-success mb-0" style="font-size: 25px;">{{$total_terima}}</p>
-                        </div>
-                    </div>
-                </div>
+<!-- Menambahkan informasi tentang mediator -->
+<div class="row mt-1">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Informasi Permohonan Mediator</h3>
             </div>
-        </div>
-    </div>
-
-    <div class="col-xxl-4 col-md-6">
-        <div class="card info-card sales-card border-dikembalikan">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="card-title">
-                            <div class="d-flex align-items-center my-2">
-                                <p class="text-secondary mb-0" style="font-size: 17px;">Permohonan Dikembalikan</p>
-                            </div>
-                        </div>
+                <div class="list-group">
+                    <!-- Contoh data mediator -->
+                    <div class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <span>
+                            <i class="bi bi-person-circle me-2"></i>
+                            <strong>Mediator 1</strong>
+                        </span>
+                        <span class="badge bg-primary rounded-pill">
+                            5 permohonan sedang diperiksa
+                        </span>
                     </div>
-                    <div class="col-md-2">
-                        <div class="card-title">
-                            <p class="text-danger mb-0" style="font-size: 25px;">{{$total_tolak}}</p>
-                        </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <span>
+                            <i class="bi bi-person-circle me-2"></i>
+                            <strong>Mediator 2</strong>
+                        </span>
+                        <span class="badge bg-primary rounded-pill">
+                            3 permohonan sedang diperiksa
+                        </span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xxl-4 col-md-6">
-        <div class="card info-card sales-card border-menunggu">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="card-title">
-                            <div class="d-flex align-items-center my-2">
-                                <p class="text-secondary mb-0" style="font-size: 17px;">Permohonan Menunggu</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card-title">
-                            <p class="text-info mb-0" style="font-size: 25px;">{{$total}}</p>
-                        </div>
-                    </div>
+                    <!-- Tambahkan data mediator lainnya di sini -->
                 </div>
             </div>
         </div>

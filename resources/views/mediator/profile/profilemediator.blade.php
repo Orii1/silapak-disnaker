@@ -1,4 +1,4 @@
-@extends('layout.kabid')
+@extends('layout.mediator')
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,7 +20,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
               <img src="../assets/img/adminprofile.png" alt="Profile" class="rounded-circle">
-              <h2 class="mb-3">Kepala Bidang</h2>
+              <h2 class="mb-3">Mediator</h2>
               <h3 class="mb-2 text-muted text-center">Dinas Koperasi Usaha Kecil Menengah dan Tenaga Kerja Banjarbaru</h3>
             </div>
           </div>
@@ -47,7 +47,7 @@
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                   <h5 class="card-title">Tentang</h5>
-                  <p class="small">Kepala Bidang merupakan pemimpin yang bertanggung jawab atas pengelolaan dan pengembangan suatu bidang kerja atau sektor tertentu di sebuah organisasi atau lembaga. Mereka memiliki peran strategis dalam mengkoordinasikan berbagai kegiatan, mengawasi pelaksanaan kebijakan, dan memastikan pencapaian tujuan yang telah ditetapkan dalam bidang kerja yang mereka pimpin.</p>
+                  <p class="small">Mediator merupakan seorang profesional yang memiliki tugas utama untuk membantu menyelesaikan perselisihan antara pekerja dan pengusaha atau antara koperasi dan anggotanya. Peran mediator sangat penting dalam menjaga hubungan industrial yang harmonis dan kondusif di tempat kerja serta dalam pengelolaan koperasi.</p>
                    @foreach ($profile as $p )
                    <h5 class="card-title">Detail Profile</h5>
                    <div class="row">

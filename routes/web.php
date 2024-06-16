@@ -6,6 +6,7 @@ use App\Http\Controllers\EditSubmissionController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\KabidController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MediatorController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\UserController;
@@ -225,6 +226,82 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/kabid/profile', [KabidController::class, 'profile']);
     Route::get('/kabid/rekapitulasi', [KabidController::class, 'rekapitulasi']);
     Route::get('/kabid/monitoring/detailpermohonan', [KabidController::class, 'detailpermohonan']);
+
+
+// Mediator
+    Route::get('/mediator/dashboard', [MediatorController::class, 'dashboard']);
+    Route::get('/mediator/profile', [MediatorController::class, 'profile']);
+
+    
+    // PP
+    Route::get('/mediator/permohonan-pengesahan-pp', [MediatorController::class, 'permohonan_pp']);
+    Route::get('/konfirmasi/permohonan-pengesahan-pp/{id}', [MediatorController::class, 'permohonan_pp_konfir']);
+    Route::post('/konfirmasi/permohonan-pp/{id}', [MediatorController::class, 'permohonan_pp_proses']);
+    Route::get('/permohonan-pengesahan-pp/{id}', [MediatorController::class, 'permohonan_pp_show']);
+    Route::post('/permohonan-pp/update/{id}', [MediatorController::class, 'permohonan_pp_update']);
+    Route::post('/permohonan-pp/terima/{id}', [MediatorController::class, 'permohonan_pp_terima']);
+    Route::post('/permohonan-pp/tolak/{id}', [MediatorController::class, 'permohonan_pp_tolak']);
+    // END PP
+
+    // PKB
+    Route::get('/mediator/permohonan-pendaftaran-pkb', [MediatorController::class, 'pendaftaran_pkb']);
+    Route::get('/konfirmasi/permohonan-pendaftaran-pkb/{id}', [MediatorController::class, 'pendaftaran_pkb_konfir']);
+    Route::post('/konfirmasi/permohonan-pkb/{id}', [MediatorController::class, 'pendaftaran_pkb_proses']);
+    Route::get('/permohonan-pendaftaran-pkb/{id}', [MediatorController::class, 'pendaftaran_pkb_show']);
+    Route::post('/permohonan-pkb/update/{id}', [MediatorController::class, 'pendaftaran_pkb_update']);
+    Route::post('/permohonan-pkb/terima/{id}', [MediatorController::class, 'pendaftaran_pkb_terima']);
+    Route::post('/permohonan-pkb/tolak/{id}', [MediatorController::class, 'pendaftaran_pkb_tolak']);
+    // END PKB
+
+    // PKWT
+    Route::get('/mediator/permohonan-pendaftaran-pkwt', [MediatorController::class, 'pendaftaran_pkwt']);
+    Route::get('/konfirmasi/permohonan-pkwt/{id}', [MediatorController::class, 'pendaftaran_pkwt_konfir']);
+    Route::post('/konfirmasi/permohonan-pkwt/{id}', [MediatorController::class, 'pendaftaran_pkwt_proses']);
+    Route::get('/permohonan-pendaftaran-pkwt/{id}', [MediatorController::class, 'pendaftaran_pkwt_show']);
+    Route::post('/permohonan-pkwt/update/{id}', [MediatorController::class, 'pendaftaran_pkwt_update']);
+    Route::post('/permohonan-pkwt/terima/{id}', [MediatorController::class, 'pendaftaran_pkwt_terima']);
+    Route::post('/permohonan-pkwt/tolak/{id}', [MediatorController::class, 'pendaftaran_pkwt_tolak']);
+    // END PKWT
+
+    // SPSB
+    Route::get('/mediator/permohonan-pencatatan-spsb', [MediatorController::class, 'pencatatan_spsb']);
+    Route::get('/konfirmasi/permohonan-pencatatan-spsb/{id}', [MediatorController::class, 'pencatatan_spsb_konfir']);
+    Route::post('/konfirmasi/permohonan-spsb/{id}', [MediatorController::class, 'pencatatan_spsb_proses']);
+    Route::get('/permohonan-pencatatan-spsb/{id}', [MediatorController::class, 'pencatatan_spsb_show']);
+    Route::post('/permohonan-spsb/update/{id}', [MediatorController::class, 'pencatatan_spsb_update']);
+    Route::post('/permohonan-spsb/terima/{id}', [MediatorController::class, 'pencatatan_spsb_terima']);
+    Route::post('/permohonan-spsb/tolak/{id}', [MediatorController::class, 'pencatatan_spsb_tolak']);
+    // END SPSB
+
+    // LKS
+    Route::get('/mediator/permohonan-pendaftaran-lks', [MediatorController::class, 'pendaftaran_lks']);
+    Route::get('/konfirmasi/permohonan-pendaftaran-lks/{id}', [MediatorController::class, 'pendaftaran_lks_konfir']);
+    Route::post('/konfirmasi/permohonan-lks/{id}', [MediatorController::class, 'pendaftaran_lks_proses']);
+    Route::get('/permohonan-pendaftaran-lks/{id}', [MediatorController::class, 'pendaftaran_lks_show']);
+    Route::post('/permohonan-lks/update/{id}', [MediatorController::class, 'pendaftaran_lks_update']);
+    Route::post('/permohonan-lks/terima/{id}', [MediatorController::class, 'pendaftaran_lks_terima']);
+    Route::post('/permohonan-lks/tolak/{id}', [MediatorController::class, 'pendaftaran_lks_tolak']);
+    // END LKS
+
+    // HI
+    Route::get('/mediator/permohonan-pencatatan-hi', [MediatorController::class, 'pencatatan_hi']);
+    Route::get('/konfirmasi/permohonan-penyelesaian-hi/{id}', [MediatorController::class, 'pencatatan_hi_konfir']);
+    Route::post('/konfirmasi/permohonan-hi/{id}', [MediatorController::class, 'pencatatan_hi_proses']);
+    Route::get('/permohonan-penyelesaian-hi/{id}', [MediatorController::class, 'pencatatan_hi_show']);
+    Route::post('/permohonan-hi/update/{id}', [MediatorController::class, 'pencatatan_hi_update']);
+    Route::post('/permohonan-hi/terima/{id}', [MediatorController::class, 'pencatatan_hi_terima']);
+    Route::post('/permohonan-hi/tolak/{id}', [MediatorController::class, 'pencatatan_hi_tolak']);
+    // HI
+
+    // PHK
+    Route::get('/mediator/permohonan-pelaporan-phk', [MediatorController::class, 'pelaporan_phk']);
+    Route::get('/konfirmasi/permohonan-pelaporan-phk/{id}', [MediatorController::class, 'pelaporan_phk_konfir']);
+    Route::post('/konfirmasi/permohonan-phk/{id}', [MediatorController::class, 'pelaporan_phk_proses']);
+    Route::get('/permohonan-pelaporan-phk/{id}', [MediatorController::class, 'pelaporan_phk_show']);
+    Route::post('/permohonan-phk/update/{id}', [MediatorController::class, 'pelaporan_phk_update']);
+    Route::post('/permohonan-phk/terima/{id}', [MediatorController::class, 'pelaporan_phk_terima']);
+    Route::post('/permohonan-phk/tolak/{id}', [MediatorController::class, 'pelaporan_phk_tolak']);
+    // END PHK
 
 Route::get('/map', function () {
     return view('/map');

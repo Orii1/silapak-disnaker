@@ -51,7 +51,51 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-xxl-6 col-md-6">
+        <div class="card info-card sales-card border-diterima">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="card-title">
+                            <div class="d-flex align-items-center my-2">
+                                <p class="text-secondary mb-0" style="font-size: 17px;">Permohonan Telah Diperiksa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card-title">
+                            <p class="text-success mb-0" style="font-size: 25px;">{{$total_terima}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="col-xxl-6 col-md-6">
+        <div class="card info-card sales-card border-dikembalikan">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="card-title">
+                            <div class="d-flex align-items-center my-2">
+                                <p class="text-secondary mb-0" style="font-size: 17px;">Permohonan Belum Diperiksa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card-title">
+                            <p class="text-danger mb-0" style="font-size: 25px;">{{$total_tolak}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
 
 
 <div class="row">

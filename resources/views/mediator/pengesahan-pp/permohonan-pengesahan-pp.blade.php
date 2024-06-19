@@ -17,35 +17,22 @@
         <div class="card mb-0">
             <div class="card-body">
                 <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
-
+    
                       <li class="nav-item">
                         <div class="mx-5">
-                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#konfirmasi">Menunggu Konfirmasi</button>
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#konfirmasi">Telah Diperiksa</button>
                         </div>
                       </li>
-
+    
                       <li class="nav-item">
                         <div class="mx-5">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diproses">Diproses</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diproses">Belum Diperiksa</button>
                         </div>
                       </li>
-
-                      <li class="nav-item">
-                        <div class="mx-5">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diterima">Diterima</button>
-                        </div>
-                      </li>
-
-                      <li class="nav-item">
-                        <div class="mx-5">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#dikembalikan">Dikembalikan</button>
-                        </div>
-                      </li>
-
+    
                 </ul>
             </div>
         </div>
-
         <div class="tab-content">
             <div class="tab-pane fade show active profile-overview" id="konfirmasi">
                 <div class="mt-4 mb-5">

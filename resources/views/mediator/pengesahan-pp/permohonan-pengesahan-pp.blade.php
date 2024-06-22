@@ -4,10 +4,10 @@
 
 @section('content')
     <div class="pagetitle">
-        <h1>Permohonan</h1>
+        <h1>Permohonan Pengesahan Peraturan Perusahaan</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="/mediator/dashboard">Home</a></li>
                 <li class="breadcrumb-item active">Permohonan Pengesahan Peraturan Perusahaan</li>
             </ol>
         </nav>

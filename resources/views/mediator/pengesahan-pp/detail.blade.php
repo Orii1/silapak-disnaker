@@ -7,7 +7,7 @@
     <h1>Permohonan</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/mediator/dashboard">Home</a></li>
             <li class="breadcrumb-item">Permohonan Pengesahan Peraturan Perusahaan</li>
             <li class="breadcrumb-item active">{{$data->pp_user->name}}</li>
         </ol>

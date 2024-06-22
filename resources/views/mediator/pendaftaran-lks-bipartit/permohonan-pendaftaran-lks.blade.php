@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Permohonan Pendaftaran LKS Bipartit</h1>
+    <h1>Permohonan Pendaftaran Lembaga Kerja Sama Bipartit</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/mediator/dashboard">Home</a></li>

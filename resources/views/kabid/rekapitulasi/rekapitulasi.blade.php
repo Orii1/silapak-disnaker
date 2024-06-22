@@ -4,34 +4,7 @@
 
 
 @section('content')
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekapitulasi Permohonan Perusahaan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .container {
-            margin-top: 50px;
-        }
-        .table th, .table td {
-            vertical-align: middle;
-        }
-        .badge {
-            font-size: 90%;
-        }
-        .action-icon {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .action-icon:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
+
 <body>
     <div class="container mt-0">
         <div class="pagetitle">
@@ -51,7 +24,7 @@
         </div>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
-                <thead class="table-dark">
+                <thead class="table">
                     <tr>
                         <th>No</th>
                         <th>Jenis Permohonan</th>

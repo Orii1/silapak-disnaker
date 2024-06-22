@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Permohonan Pelaporan Pemutusan Hubungan Kerja</h1>
+    <h1>Permohonan Pencatatan Penyelesaian Perselisihan Hubungan Internal</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/mediator/dashboard">Home</a></li>
-            <li class="breadcrumb-item active">Permohonan Pelaporan Pemutusan Hubungan Kerja</li>
+            <li class="breadcrumb-item active">Permohonan Pencatatan Penyelesaian Perselisihan Hubungan Internal</li>
         </ol>
     </nav>
 </div>
@@ -16,7 +16,7 @@
         <div class="card-body">
             <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
 
-                <div class="card mb-0">
+                
                     <div class="card-body">
                         <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
             
@@ -34,7 +34,7 @@
             
                         </ul>
                     </div>
-                </div>
+                
 
             </ul>
         </div>

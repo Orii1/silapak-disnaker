@@ -54,8 +54,8 @@
 <div class="row mt-1">
     <div class="col-12">
         <div class="card shadow-sm">
-            <div class="card-header bg-dark text-white">
-                <h5 class="mb-0">Informasi Permohonan Mediator</h5>
+            <div class="card-header card-title mx-4">
+                <h5 class="mb-0"><b>Informasi Permohonan Mediator</b></h5>
             </div>
             <div class="card-body">
                 <div class="list-group">

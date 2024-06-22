@@ -134,7 +134,7 @@
                         <li><i class="ri-check-double-line"></i> Pendaftaran Perjanjian Kerja Waktu Tertentu</li>
                         <li><i class="ri-check-double-line"></i> Pencatatan Serikat Pekerja/Serikat Buruh</li>
                         <li><i class="ri-check-double-line"></i> Pendaftaran Lembaga Kerja Sama Bipartit</li>
-                        <li><i class="ri-check-double-line"></i> Pencatatan Penyelesaian Perselisihan Hubungan Internal
+                        <li><i class="ri-check-double-line"></i> Pencatatan Penyelesaian Perselisihan Hubungan Industrial
                         </li>
                         <li><i class="ri-check-double-line"></i> Pelaporan Pemutusan Hubungan Kerja</li>
                     </ul>

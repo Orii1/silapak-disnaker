@@ -48,17 +48,17 @@
         <div class="tab-pane fade show active profile-overview" id="konfirmasi">
             <div class="mt-4 mb-5">
                 @foreach ($spsb_konfir as $item)
-                    <a href="/konfirmasi/permohonan-pencatatan-spsb/{{$item->id}}">
+                    <a href="/konfirmasi/permohonan-pencatatan-spsb/{{$item->id_spsb}}">
                         <div class="cardd radius-5 border-start border-0 border-3 border-menunggu" style="height: 100px; display: flex;">
                             <div class="ms-3 my-2">
                                 <div class="row text-start">
                                     <div style="font-size: 21px; color: black;">
-                                        <b>{{$item->spsb_user->name}}</b>
+                                        <b>{{$item->spsb_perusahaan->nama_perusahaan}}</b>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="disabled-text">
-                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                        Peruntukan : {{$item->peruntukan}} / {{$item->spsb_status->keterangan}}
                                     </div>
                                 </div>
                                 <div class="row text-start">
@@ -77,17 +77,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($spsb_proses as $item)
-                        <a href="/permohonan-pencatatan-spsb/{{$item->id}}">
+                        <a href="/permohonan-pencatatan-spsb/{{$item->id_spsb}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->spsb_user->name}}</b>
+                                            <b>{{$item->spsb_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->spsb_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -107,17 +107,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($spsb_terima as $item)
-                        <a href="/permohonan-pencatatan-spsb/{{$item->id}}">
+                        <a href="/permohonan-pencatatan-spsb/{{$item->id_spsb}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diterima" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->spsb_user->name}}</b>
+                                            <b>{{$item->spsb_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->spsb_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -137,17 +137,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($spsb_tolak as $item)
-                        <a href="/permohonan-pencatatan-spsb/{{$item->id}}">
+                        <a href="/permohonan-pencatatan-spsb/{{$item->id_spsb}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->spsb_user->name}}</b>
+                                            <b>{{$item->spsb_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->spsb_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">

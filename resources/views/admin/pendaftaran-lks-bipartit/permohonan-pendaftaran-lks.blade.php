@@ -48,17 +48,17 @@
         <div class="tab-pane fade show active profile-overview" id="konfirmasi">
             <div class="mt-4 mb-5">
                 @foreach ($lks_konfir as $item)
-                    <a href="/konfirmasi/permohonan-pendaftaran-lks/{{$item->id}}">
+                    <a href="/konfirmasi/permohonan-pendaftaran-lks/{{$item->id_lks}}">
                         <div class="cardd radius-5 border-start border-0 border-3 border-menunggu" style="height: 100px; display: flex;">
                             <div class="ms-3 my-2">
                                 <div class="row text-start">
                                     <div style="font-size: 21px; color: black;">
-                                        <b>{{$item->lks_user->name}}</b>
+                                        <b>{{$item->lks_perusahaan->nama_perusahaan}}</b>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="disabled-text">
-                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                        Peruntukan : {{$item->peruntukan}} / {{$item->lks_status->keterangan}}
                                     </div>
                                 </div>
                                 <div class="row text-start">
@@ -77,17 +77,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($lks_proses as $item)
-                        <a href="/permohonan-pendaftaran-lks/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-lks/{{$item->id_lks}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->lks_user->name}}</b>
+                                            <b>{{$item->lks_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->lks_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -107,17 +107,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($lks_terima as $item)
-                        <a href="/permohonan-pendaftaran-lks/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-lks/{{$item->id_lks}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diterima" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->lks_user->name}}</b>
+                                            <b>{{$item->lks_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->lks_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -137,17 +137,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($lks_tolak as $item)
-                        <a href="/permohonan-pendaftaran-lks/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-lks/{{$item->id_lks}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->lks_user->name}}</b>
+                                            <b>{{$item->lks_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->lks_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">

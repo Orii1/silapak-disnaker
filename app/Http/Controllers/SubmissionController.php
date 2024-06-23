@@ -84,7 +84,7 @@ class SubmissionController extends Controller
                 'nama_pembentuk' => $file3,
                 'nama_pengurus' => $file4,
                 'ba_pembentukan' => $file5,
-                'id_detail_status' => $status->id
+                'id_detail_status' => $status->id_detail_status
             ]);
             toastr()->success('Permohonan Berhasil Dikirim!');
             return redirect('perusahaan/dashboard');

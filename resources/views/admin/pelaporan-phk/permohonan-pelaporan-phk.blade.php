@@ -48,17 +48,17 @@
         <div class="tab-pane fade show active profile-overview" id="konfirmasi">
             <div class="mt-4 mb-5">
                 @foreach ($phk_konfir as $item)
-                    <a href="/konfirmasi/permohonan-pelaporan-phk/{{$item->id}}">
+                    <a href="/konfirmasi/permohonan-pelaporan-phk/{{$item->id_phk}}">
                         <div class="cardd radius-5 border-start border-0 border-3 border-menunggu" style="height: 100px; display: flex;">
                             <div class="ms-3 my-2">
                                 <div class="row text-start">
                                     <div style="font-size: 21px; color: black;">
-                                        <b>{{$item->phk_user->name}}</b>
+                                        <b>{{$item->phk_perusahaan->nama_perusahaan}}</b>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="disabled-text">
-                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                        Peruntukan : {{$item->peruntukan}} / {{$item->phk_status->keterangan}}
                                     </div>
                                 </div>
                                 <div class="row text-start">
@@ -77,17 +77,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($phk_proses as $item)
-                        <a href="/permohonan-pelaporan-phk/{{$item->id}}">
+                        <a href="/permohonan-pelaporan-phk/{{$item->id_phk}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->phk_user->name}}</b>
+                                            <b>{{$item->phk_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->phk_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -107,17 +107,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($phk_terima as $item)
-                        <a href="/permohonan-pelaporan-phk/{{$item->id}}">
+                        <a href="/permohonan-pelaporan-phk/{{$item->id_phk}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diterima" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->phk_user->name}}</b>
+                                            <b>{{$item->phk_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->phk_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -136,17 +136,17 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($phk_tolak as $item)
-                        <a href="/permohonan-pelaporan-phk/{{$item->id}}">
+                        <a href="/permohonan-pelaporan-phk/{{$item->id_phk}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->phk_user->name}}</b>
+                                            <b>{{$item->phk_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->phk_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">

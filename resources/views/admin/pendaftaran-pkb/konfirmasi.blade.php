@@ -206,11 +206,16 @@
           <h1 class="modal-title fs-5" id="konfirmasiLabel">Konfirmasi Permohonan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="/konfirmasi/permohonan-pkb/{{$data->id}}" method="POST" enctype="multipart/form-data">
+        <form action="/konfirmasi/permohonan-pkb/{{$data->id_pkb}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
-                <label class="mb-3">Masukkan Status Pemrosesan</label>
-                <input type="text" name="keterangan" class="form-control">
+                <label class="mb-3">Pilih Mediator untuk mengecek persyaratan pemohon</label>
+                <select class="form-select" name="id_pegawai" required>
+                    <option selected disabled>Pilih Mediator</option>
+                    @foreach ($mediator as $item)
+                        <option value="{{$item->id_pegawai}}">{{$item->nama_pegawai}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

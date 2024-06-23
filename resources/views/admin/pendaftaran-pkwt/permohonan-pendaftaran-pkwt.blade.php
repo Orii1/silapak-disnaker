@@ -48,17 +48,17 @@
         <div class="tab-pane fade show active profile-overview" id="konfirmasi">
             <div class="mt-4 mb-5">
                 @foreach ($pkwt_konfir as $item)
-                    <a href="/konfirmasi/permohonan-pkwt/{{$item->id}}">
+                    <a href="/konfirmasi/permohonan-pkwt/{{$item->id_pkwt}}">
                         <div class="cardd radius-5 border-start border-0 border-3 border-menunggu" style="height: 100px; display: flex;">
                             <div class="ms-3 my-2">
                                 <div class="row text-start">
                                     <div style="font-size: 21px; color: black;">
-                                        <b>{{$item->pkwt_user->name}}</b>
+                                        <b>{{$item->pkwt_perusahaan->nama_perusahaan}}</b>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="disabled-text">
-                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                        Peruntukan : {{$item->peruntukan}} / {{$item->pkwt_status->keterangan}}
                                     </div>
                                 </div>
                                 <div class="row text-start">
@@ -82,12 +82,12 @@
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->pkwt_user->name}}</b>
+                                            <b>{{$item->pkwt_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->pkwt_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -112,12 +112,12 @@
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->pkwt_user->name}}</b>
+                                            <b>{{$item->pkwt_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->pkwt_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -142,12 +142,12 @@
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
                                         <div style="font-size: 21px; color: black;">
-                                            <b>{{$item->pkwt_user->name}}</b>
+                                            <b>{{$item->pkwt_perusahaan->nama_perusahaan}}</b>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->pkwt_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">

@@ -7,7 +7,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item">Permohonan Pendaftaran LKS Bipartit</li>
-            <li class="breadcrumb-item active">{{$data->lks_user->name}}</li>
+            <li class="breadcrumb-item active">{{$data->lks_perusahaan->nama_perusahaan}}</li>
         </ol>
     </nav>
 </div>
@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                        {{$data->peruntukan}}, {{$data->lks_user->name}}
+                        {{$data->peruntukan}}, {{$data->lks_perusahaan->nama_perusahaan}}
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="mt-3 mb-2">
-    <label for=""><b>Konfirmasi Permohonan {{$data->lks_user->name}} :</b></label>
+    <label for=""><b>Konfirmasi Permohonan {{$data->lks_perusahaan->nama_perusahaan}} :</b></label>
     <a class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#konfirmasi" style="color: white;"> <b>Konfirmasi</b></a>
 </div>
 
@@ -67,7 +67,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/lks/{{$data->permohonan_pencatatan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->permohonan_pencatatan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -87,7 +87,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/lks/{{$data->daftar_susunan_pengurus_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->daftar_susunan_pengurus_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -107,7 +107,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/lks/{{$data->berita_acara_pembentukan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->berita_acara_pembentukan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -127,7 +127,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/lks/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -147,8 +147,13 @@
         <form action="/konfirmasi/permohonan-lks/{{$data->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
-                <label class="mb-3">Masukkan Status Pemrosesan</label>
-                <input type="text" name="keterangan" class="form-control">
+                <label class="mb-3">Pilih Mediator untuk mengecek persyaratan pemohon</label>
+                <select class="form-select" name="id_pegawai" required>
+                    <option selected disabled>Pilih Mediator</option>
+                    @foreach ($mediator as $item)
+                        <option value="{{$item->id_pegawai}}">{{$item->nama_pegawai}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -39,12 +39,14 @@ Route::get('/aktivasi-user', function () {
 Route::post('/register', [UserController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticating']);
 
-
+// ROUTE MEDIATOR
 Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::get('/mediator/dashboard', [MediatorController::class, 'index']);
     Route::get('/mediator/profile', [MediatorController::class, 'profile']);
 
     Route::get('/mediator/permohonan-pengesahan-pp', [MediatorController::class, 'pengesahan_pp']);
+    Route::get('/mediator/permohonan-pengesahan-pp/{id}', [MediatorController::class, 'pengesahan_pp_show']);
+    Route::post('/mediator/permohonan-pengesahan-pp/hasil/{id}', [MediatorController::class, 'pengesahan_pp_hasil']);
 });
 
 Route::middleware(['auth', 'UserAkses:4'])->group(function () {
@@ -221,7 +223,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/motto/store/{id}', [AdminController::class, 'motto']);
     // END Store Asset
     // END Asset
-    
+
     // END ADMIN ROUTE
 });
 

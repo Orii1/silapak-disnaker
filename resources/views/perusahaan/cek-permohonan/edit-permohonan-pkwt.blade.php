@@ -66,6 +66,17 @@
                     <form action="/edit-permohonan-pkwt/{{$pendaftaranpkwt->id_pkwt}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
                         <table class="table align-middle mb-0 bg-white">
                             <thead class="bg-light">
                                 <tr>

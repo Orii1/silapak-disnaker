@@ -10,6 +10,7 @@ use App\Models\Pendaftaranpkb;
 use App\Models\Pendaftaranpkwt;
 use App\Models\Pengesahanpp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class EditSubmissionController extends Controller
@@ -343,45 +344,66 @@ class EditSubmissionController extends Controller
     public function update_phk_submission(Request $request, $id)
     {
         $phk = Pelaporanphk::find($id);
-        $user = $phk->user_id;
+        $user = Auth::user();
 
-        Storage::disk('public')->delete([
-            $user . '/phk/' . $phk->permohonan_pelaporan_phk,
-            $user . '/phk/' . $phk->surat_pemberitahuan_phk,
-            $user . '/phk/' . $phk->surat_tanggapan_pemberitahuan_phk,
-            $user . '/phk/' . $phk->pb_bipartit,
+        $validatedata = $request->validate([
+            'peruntukan' => 'required',
+            'permohonan_pelaporan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'surat_tanggapan_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'pb_bipartit' => 'required|mimes:png,jpg,pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
         ]);
 
-        $extension1 = $request->file('permohonan_pelaporan_phk')->getClientOriginalExtension();
-        $file1 = $user . 'permohonan_pelaporan_phk' . '-' . 'phk' . now()->timestamp . '.' . $extension1;
-        $request->file('permohonan_pelaporan_phk')->storeAs($user . '/phk', $file1);
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $user->id . '/phk/' . $phk->permohonan_pelaporan_phk,
+                $user->id . '/phk/' . $phk->surat_pemberitahuan_phk,
+                $user->id . '/phk/' . $phk->surat_tanggapan_pemberitahuan_phk,
+                $user->id . '/phk/' . $phk->pb_bipartit,
+            ]);
 
-        $extension2 = $request->file('surat_pemberitahuan_phk')->getClientOriginalExtension();
-        $file2 = $user . 'surat_pemberitahuan_phk' . '-' . 'phk' . now()->timestamp . '.' . $extension2;
-        $request->file('surat_pemberitahuan_phk')->storeAs($user . '/phk', $file2);
+            $extension1 = $request->file('permohonan_pelaporan_phk')->getClientOriginalExtension();
+            $file1 = $user->id . 'permohonan_pelaporan_phk' . '-' . 'phk' . now()->timestamp . '.' . $extension1;
+            $request->file('permohonan_pelaporan_phk')->storeAs($user->id . '/phk', $file1);
 
-        $extension3 = $request->file('surat_tanggapan_pemberitahuan_phk')->getClientOriginalExtension();
-        $file3 = $user . 'surat_tanggapan_pemberitahuan_phk' . '-' . 'phk' . now()->timestamp . '.' . $extension3;
-        $request->file('surat_tanggapan_pemberitahuan_phk')->storeAs($user . '/phk', $file3);
+            $extension2 = $request->file('surat_pemberitahuan_phk')->getClientOriginalExtension();
+            $file2 = $user->id . 'surat_pemberitahuan_phk' . '-' . 'phk' . now()->timestamp . '.' . $extension2;
+            $request->file('surat_pemberitahuan_phk')->storeAs($user->id . '/phk', $file2);
 
-        $extension4 = $request->file('pb_bipartit')->getClientOriginalExtension();
-        $file4 = $user . 'pb_bipartit' . '-' . 'phk' . now()->timestamp . '.' . $extension4;
-        $request->file('pb_bipartit')->storeAs($user . '/phk', $file4);
+            $extension3 = $request->file('surat_tanggapan_pemberitahuan_phk')->getClientOriginalExtension();
+            $file3 = $user->id . 'surat_tanggapan_pemberitahuan_phk' . '-' . 'phk' . now()->timestamp . '.' . $extension3;
+            $request->file('surat_tanggapan_pemberitahuan_phk')->storeAs($user->id . '/phk', $file3);
 
-        $phk->update([
-            'user_id' => $user,
-            'permohonan_pelaporan_phk' => $file1,
-            'surat_pemberitahuan_phk' => $file2,
-            'surat_tanggapan_pemberitahuan_phk' => $file3,
-            'pb_bipartit' => $file4,
-            'status' => '3',
-            'keterangan' => '',
-            'pesan' => '',
-            'sk' => '',
-        ]);
+            $extension4 = $request->file('pb_bipartit')->getClientOriginalExtension();
+            $file4 = $user->id . 'pb_bipartit' . '-' . 'phk' . now()->timestamp . '.' . $extension4;
+            $request->file('pb_bipartit')->storeAs($user->id . '/phk', $file4);
 
-        toastr()->success('Permohonan Berhasil Dikirim Ulang');
-        return redirect('/cek-permohonan/' . $user);
+            $phk->update([
+                'permohonan_pelaporan_phk' => $file1,
+                'surat_pemberitahuan_phk' => $file2,
+                'surat_tanggapan_pemberitahuan_phk' => $file3,
+                'pb_bipartit' => $file4,
+            ]);
+
+            $status = $phk->phk_status;
+            $status->id_status = '2';
+            $status->keterangan = 'Permohonan Sedang dicek oleh Mediator';
+            $status->save();
+
+            $cek = $status->status_cek;
+            $cek->hasil_pengecekan = 'Belum di Periksa';
+            $cek->pesan = '';
+            $cek->save();
+            toastr()->success('Permohonan Berhasil Dikirim Ulang');
+            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+        }else{
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
 

@@ -430,7 +430,7 @@
                                             <td><div class="text-center">{{$item->hi_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->hi_status->status == "2")
+                                            @if ($item->hi_status->id_status == "2")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                                 </div></td>
@@ -496,7 +496,7 @@
                                             <td><div class="text-center">{{$item->phk_perusahaan->nama_perusahaan}}</div></td>
                                             <td><div class="text-center">{{$item->peruntukan}}</div></td>
                                             <td><div class="text-center">{{$item->created_at->isoFormat('D MMMM Y')}}</div></td>
-                                            @if ($item->phk_status->status == "2")
+                                            @if ($item->phk_status->id_status == "2")
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
                                                 </div></td>

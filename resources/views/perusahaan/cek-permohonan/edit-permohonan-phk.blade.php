@@ -47,7 +47,7 @@
                                     <b>Pesan : </b>
                                 </div>
                                 <div class="col-md-9">
-                                    {{$pelaporanphk->pesan}}
+                                    {{$pelaporanphk->phk_status->status_cek->pesan}}
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan-phk/{{$pelaporanphk->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-phk/{{$pelaporanphk->id_phk}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-1 bg-white">
@@ -103,7 +103,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pelaporanphk->user_id}}/phk/{{$pelaporanphk->permohonan_pelaporan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pelaporanphk->phk_perusahaan->id}}/phk/{{$pelaporanphk->permohonan_pelaporan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -131,7 +131,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pelaporanphk->user_id}}/phk/{{$pelaporanphk->surat_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pelaporanphk->phk_perusahaan->id}}/phk/{{$pelaporanphk->surat_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -159,7 +159,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pelaporanphk->user_id}}/phk/{{$pelaporanphk->surat_tanggapan_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pelaporanphk->phk_perusahaan->id}}/phk/{{$pelaporanphk->surat_tanggapan_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -187,7 +187,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pelaporanphk->user_id}}/phk/{{$pelaporanphk->pb_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pelaporanphk->phk_perusahaan->id}}/phk/{{$pelaporanphk->pb_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>

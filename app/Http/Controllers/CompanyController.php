@@ -99,8 +99,8 @@ class CompanyController extends Controller
 
     public function edit_phk_submission($id)
     {
-        $pelaporanphk = Pelaporanphk::find($id);
-        $user = $pelaporanphk->phk_user;
+        $pelaporanphk= Pelaporanphk::find($id);
+        $user = Auth::user();
         return view('perusahaan/cek-permohonan/edit-permohonan-phk', compact('pelaporanphk', 'user'));
     }
 

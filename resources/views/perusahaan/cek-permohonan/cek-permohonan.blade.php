@@ -513,7 +513,7 @@
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->phk_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="/edit-permohonan-phk/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/edit-permohonan-phk/{{$item->id_phk}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->phk_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>

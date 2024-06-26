@@ -47,7 +47,7 @@
                                     <b>Pesan : </b>
                                 </div>
                                 <div class="col-md-9">
-                                    {{$pendaftaranlks->lks_pesan->status_cek->pesan}}
+                                    {{$pendaftaranlks->lks_status->status_cek->pesan}}
                                 </div>
                             </div>
                         </div>

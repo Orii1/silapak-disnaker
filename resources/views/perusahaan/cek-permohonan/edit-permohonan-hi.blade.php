@@ -187,7 +187,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pencatatanhi->hi_perusahaan->id}}/perselisihan_hi    /{{$pencatatanhi->risalah_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pencatatanhi->hi_perusahaan->id}}/perselisihan_hi/{{$pencatatanhi->risalah_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>

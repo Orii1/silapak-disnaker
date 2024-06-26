@@ -47,7 +47,7 @@
                                     <b>Pesan : </b>
                                 </div>
                                 <div class="col-md-9">
-                                    {{$pencatatanspsb->pesan}}
+                                    {{$pencatatanspsb->spsb_status->status_cek->pesan}}
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan-spsb/{{$pencatatanspsb->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-spsb/{{$pencatatanspsb->id_spsb}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-1 bg-white">
@@ -103,7 +103,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pencatatanspsb->user_id}}/spsb/{{$pencatatanspsb->surat_permohonan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pencatatanspsb->spsb_perusahaan->id}}/spsb/{{$pencatatanspsb->surat_permohonan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -131,7 +131,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pencatatanspsb->user_id}}/spsb/{{$pencatatanspsb->ad_art}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pencatatanspsb->spsb_perusahaan->id}}/spsb/{{$pencatatanspsb->ad_art}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -159,7 +159,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pencatatanspsb->user_id}}/spsb/{{$pencatatanspsb->nama_pembentuk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pencatatanspsb->spsb_perusahaan->id}}/spsb/{{$pencatatanspsb->nama_pembentuk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -187,7 +187,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pencatatanspsb->user_id}}/spsb/{{$pencatatanspsb->nama_pengurus}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pencatatanspsb->spsb_perusahaan->id}}/spsb/{{$pencatatanspsb->nama_pengurus}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -215,7 +215,7 @@
                                         <div class="text-center">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pencatatanspsb->user_id}}/spsb/{{$pencatatanspsb->ba_pembentukan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pencatatanspsb->spsb_perusahaan->id}}/spsb/{{$pencatatanspsb->ba_pembentukan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>

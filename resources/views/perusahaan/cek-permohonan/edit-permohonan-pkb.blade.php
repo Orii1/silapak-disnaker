@@ -47,7 +47,7 @@
                                     <b>Pesan : </b>
                                 </div>
                                 <div class="col-md-9">
-                                    {{$pendaftaranpkb->pesan}}
+                                    {{$pendaftaranpkb->pkb_status->status_cek->pesan}}
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan-pkb/{{$pendaftaranpkb->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-pkb/{{$pendaftaranpkb->id_hi}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-0 bg-white">
@@ -103,7 +103,7 @@
                                             <div class="text-center">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <a href="/storage/{{$pendaftaranpkb->pkb_perusahaan->id}}/pkb/{{$pendaftaranpkb->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                         </a>
                                                     </div>
@@ -130,7 +130,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->pkb_perusahaan->id}}/pkb/{{$pendaftaranpkb->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -156,7 +156,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->pkb_perusahaan->id}}/pkb/{{$pendaftaranpkb->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -182,7 +182,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->pkb_perusahaan->id}}/pkb/{{$pendaftaranpkb->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -208,7 +208,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->pkb_perusahaan->id}}/pkb/{{$pendaftaranpkb->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -234,7 +234,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->pkb_perusahaan->id}}/pkb/{{$pendaftaranpkb->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -260,7 +260,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkb->user_id}}/pkb/{{$pendaftaranpkb->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkb->pkb_perusahaan->id}}/pkb/{{$pendaftaranpkb->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>

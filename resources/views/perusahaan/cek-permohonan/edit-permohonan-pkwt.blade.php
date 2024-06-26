@@ -47,7 +47,7 @@
                                     <b>Pesan : </b>
                                 </div>
                                 <div class="col-md-9">
-                                    {{$pendaftaranpkwt->pesan}}
+                                    {{$pendaftaranpkwt->pkwt_status->status_cek->pesan}}
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan-pkwt/{{$pendaftaranpkwt->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-pkwt/{{$pendaftaranpkwt->id_pkwt}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-0 bg-white">
@@ -102,7 +102,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->pkwt_perusahaan->id}}/pkwt/{{$pendaftaranpkwt->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -128,7 +128,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->pkwt_perusahaan->id}}/pkwt/{{$pendaftaranpkwt->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -154,7 +154,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->pkwt_perusahaan->id}}/pkwt/{{$pendaftaranpkwt->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -180,7 +180,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->pkwt_perusahaan->id}}/pkwt/{{$pendaftaranpkwt->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -206,7 +206,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pendaftaranpkwt->user_id}}/pkwt/{{$pendaftaranpkwt->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pendaftaranpkwt->pkwt_perusahaan->id}}/pkwt/{{$pendaftaranpkwt->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>

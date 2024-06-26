@@ -47,7 +47,7 @@
                                     <b>Pesan : </b>
                                 </div>
                                 <div class="col-md-9">
-                                    {{$pengesahanpp->pesan}}
+                                    {{$pengesahanpp->pp_status->status_cek->pesan}}
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan-pp/{{$pengesahanpp->id}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-pp/{{$pengesahanpp->id_pp}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <table class="table align-middle mb-0 bg-white">
@@ -103,7 +103,7 @@
                                             <div class="text-center">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                        <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                         </a>
                                                     </div>
@@ -130,7 +130,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -156,7 +156,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/pp/{{$pengesahanpp->user_id}}/{{$pengesahanpp->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/pp/{{$pengesahanpp->pp_perusahaan->id}}/{{$pengesahanpp->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -183,7 +183,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -210,7 +210,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -237,7 +237,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -263,7 +263,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -289,7 +289,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>
@@ -315,7 +315,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <a href="/storage/{{$pengesahanpp->user_id}}/pp/{{$pengesahanpp->draf_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                                    <a href="/storage/{{$pengesahanpp->pp_perusahaan->id}}/pp/{{$pengesahanpp->draf_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                                         <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                                                     </a>
                                                 </div>

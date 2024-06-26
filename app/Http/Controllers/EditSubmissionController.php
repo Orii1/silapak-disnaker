@@ -196,7 +196,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }

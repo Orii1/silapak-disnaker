@@ -43,10 +43,34 @@ Route::post('/login', [LoginController::class, 'authenticating']);
 Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::get('/mediator/dashboard', [MediatorController::class, 'index']);
     Route::get('/mediator/profile', [MediatorController::class, 'profile']);
-
+    // PP
     Route::get('/mediator/permohonan-pengesahan-pp', [MediatorController::class, 'pengesahan_pp']);
     Route::get('/mediator/permohonan-pengesahan-pp/{id}', [MediatorController::class, 'pengesahan_pp_show']);
     Route::post('/mediator/permohonan-pengesahan-pp/hasil/{id}', [MediatorController::class, 'pengesahan_pp_hasil']);
+    // PKB
+    Route::get('/mediator/permohonan-pendaftaran-pkb', [MediatorController::class, 'pendaftaran_pkb']);
+    Route::get('/mediator/permohonan-pendaftaran-pkb/{id}', [MediatorController::class, 'pendaftaran_pkb_show']);
+    Route::post('/mediator/permohonan-pendaftaran-pkb/hasil/{id}', [MediatorController::class, 'pendaftaran_pkb_hasil']);
+    // PKWT
+    Route::get('/mediator/permohonan-pendaftaran-pkwt', [MediatorController::class, 'pendaftaran_pkwt']);
+    Route::get('/mediator/permohonan-pendaftaran-pkwt/{id}', [MediatorController::class, 'pendaftaran_pkwt_show']);
+    Route::post('/mediator/permohonan-pendaftaran-pkwt/hasil/{id}', [MediatorController::class, 'pendaftaran_pkwt_hasil']);
+    // SPSB
+    Route::get('/mediator/permohonan-pencatatan-spsb', [MediatorController::class, 'pencatatan_spsb']);
+    Route::get('/mediator/permohonan-pencatatan-spsb/{id}', [MediatorController::class, 'pencatatan_spsb_show']);
+    Route::post('/mediator/permohonan-pencatatan-spsb/hasil/{id}', [MediatorController::class, 'pencatatan_spsb_hasil']);
+    // LKS
+    Route::get('/mediator/permohonan-pendaftaran-lks', [MediatorController::class, 'pendaftaran_lks']);
+    Route::get('/mediator/permohonan-pendaftaran-lks/{id}', [MediatorController::class, 'pendaftaran_lks_show']);
+    Route::post('/mediator/permohonan-pendaftaran-lks/hasil/{id}', [MediatorController::class, 'pendaftaran_lks_hasil']);
+    // HI
+    Route::get('/mediator/permohonan-pencatatan-hi', [MediatorController::class, 'pencatatan_hi']);
+    Route::get('/mediator/permohonan-pencatatan-hi/{id}', [MediatorController::class, 'pencatatan_hi_show']);
+    Route::post('/mediator/permohonan-pencatatan-hi/hasil/{id}', [MediatorController::class, 'pencatatan_hi_hasil']);
+    // PHK
+    Route::get('/mediator/permohonan-pelaporan-phk', [MediatorController::class, 'pelaporan_phk']);
+    Route::get('/mediator/permohonan-pelaporan-phk/{id}', [MediatorController::class, 'pelaporan_phk_show']);
+    Route::post('/mediator/permohonan-pelaporan-phk/hasil/{id}', [MediatorController::class, 'pelaporan_phk_hasil']);
 });
 
 Route::middleware(['auth', 'UserAkses:4'])->group(function () {

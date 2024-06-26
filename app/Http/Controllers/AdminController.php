@@ -940,7 +940,7 @@ class AdminController extends Controller
                 $pencatatanhi->hi_status->save();
             }
             toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
-            return redirect('/admin/permohonan-pendaftaran-hi');
+            return redirect('/admin/permohonan-pencatatan-hi');
         }else {
             return redirect('')->withErrors($validatedata)->withInput();
         }

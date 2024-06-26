@@ -7,7 +7,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item">Permohonan Pelaporan Pemutusan Hubungan Kerja</li>
-            <li class="breadcrumb-item active">{{$data->phk_user->name}}</li>
+            <li class="breadcrumb-item active">{{$data->phk_perusahaan->nama_perusahaan}}</li>
         </ol>
     </nav>
 </div>
@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                        {{$data->peruntukan}}, {{$data->phk_user->name}}
+                        {{$data->peruntukan}}, {{$data->phk_perusahaan->nama_perusahaan}}
                     </div>
                 </div>
             </div>
@@ -223,7 +223,7 @@
     @if ($data->status == '0')
         <div class="mt-4">
             <div class="text-center">
-                <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->phk_user->name}} :</b></label><br>
+                <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->phk_perusahaan->nama_perusahaan}} :</b></label><br>
                 <div class="mt-2">
                     <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
                     <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>

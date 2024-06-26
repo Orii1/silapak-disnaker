@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.mediator')
 
 @section('content')
 <div class="pagetitle">
@@ -6,8 +6,8 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Permohonan Pendaftaran Perjanjian Kerja Waktu Tertentu</li>
-            <li class="breadcrumb-item active">{{$data->pkwt_perusahaan->nama_perusahaan}}</li>
+            <li class="breadcrumb-item">Permohonan Pencatatan Serikat Pekerja/Serikat Buruh</li>
+            <li class="breadcrumb-item active">{{$data->spsb_perusahaan->nama_perusahaan}}</li>
         </ol>
     </nav>
 </div>
@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                        {{$data->peruntukan}}, {{$data->pkwt_perusahaan->nama_perusahaan}}
+                        {{$data->peruntukan}}, {{$data->spsb_perusahaan->nama_perusahaan}}
                     </div>
                 </div>
             </div>
@@ -26,53 +26,51 @@
     </div>
 </div>
 
-@if ($data->status == '1')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/pkwt/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
+@if ($data->spsb_status->status_cek->hasil_pengecekan == 'Belum di Periksa')
+    <div class="card">
+        <div class="mt-2 mb-2">
+            <div class="mx-3 my-2">
+                <label for="">Nama Mediator : <b><i>{{$data->spsb_status->status_cek->pengecekan_pegawai->nama_pegawai}} </i></b></label><br>
+            </div>
         </div>
     </div>
-@elseif ($data->status == '2')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</b></label>
-        </div>
-    </div>
-@elseif ($data->status == '0')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
-            <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
-                <i class="bi bi-clock-fill" style="color: white"></i>
-            </a>
-        </div>
+
+    @include('layout.modal')
+    <div class="mb-2">
+        <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#hasil_spsb"><i class="bi bi-file-earmark-bar-graph-fill" style="height:100px;color: white;"></i> Hasil Periksa</a>
     </div>
 @else
-
+    <div class="card">
+        <div class="mx-3 my-2">
+            <label for="">Nama Mediator : <b><i>{{$data->spsb_status->status_cek->pengecekan_pegawai->nama_pegawai}} </i></b></label><br>
+            <label for="">Hasil Periksa : <b><i>{{$data->spsb_status->status_cek->hasil_pengecekan}} </i></b></label><br>
+            <label for="">Pesan : <b><i>{{$data->spsb_status->status_cek->pesan}} </i></b></label><br>
+        </div>
+    </div>
 @endif
 
-<div class="mt-4">
-    <table class="table table-bordered">
-        <thead class="bg-light">
-            <tr>
-                <th>
-                    <div class="text-center">
-                        No
-                    </div>
-                </th>
-                <th>
-                    <div class="text-center">
-                        Persyaratan
-                    </div>
-                </th>
-                <th class="col-3">
-                    <div class="text-center">
-                        File
-                    </div>
-                </th>
-            </tr>
+<div class="card">
+    <div class="mx-3 my-3">
+        <table class="table table-bordered">
+            <thead class="bg-light">
+                <tr>
+                    <th>
+                        <div class="text-center">
+                            No
+                        </div>
+                    </th>
+                    <th>
+                        <div class="text-center">
+                            Persyaratan
+                        </div>
+                    </th>
+                    <th class="col-3">
+                        <div class="text-center">
+                            File
+                        </div>
+                    </th>
+                </tr>
             </thead>
-
             <tbody>
                 <tr>
                     <td>
@@ -82,13 +80,12 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Surat permohonan pencacatan PKWT</label><br>
-
+                            <label for="">Surat Permohonan Pencatatan SP/SB</label><br>
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->spsb_perusahaan->id}}/spsb/{{$data->surat_permohonan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -102,13 +99,12 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Daftar nama pekerja / buruh yang di PKWT</label><br>
-
+                            <label for="">Fotocopy AD/ART Serikat Pekerja/Serikat Buruh</label><br>
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->spsb_perusahaan->id}}/spsb/{{$data->ad_art}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -122,13 +118,12 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Asli PKWT yang sudah ditandatangani oleh para pihak (pengusaha dan pekerja)</label><br>
-
+                            <label for="">Daftar Nama Anggota Pembentuk SP/SB</label><br>
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->spsb_perusahaan->id}}/spsb/{{$data->nama_pembentuk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -142,13 +137,12 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-
+                            <label for="">Daftar Nama Susunan Pengurus SP/SB</label><br>
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->spsb_perusahaan->id}}/spsb/{{$data->nama_pengurus}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -162,22 +156,20 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <label for="">Fotocopy akta pendirian Perusahaan</label><br>
-
+                            <label for="">Berita Acara Pembentukan SP/SB</label><br>
                         </div>
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->spsb_perusahaan->id}}/spsb/{{$data->ba_pembentukan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
                     </td>
                 </tr>
             </tbody>
-    </table>
-
-
+        </table>
+    </div>
 
     <div class="modal fade" id="terima" tabindex="-1" aria-labelledby="terimaLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -186,7 +178,7 @@
               <h1 class="modal-title fs-5" id="terimaLabel">Upload Surat Keputusan</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="/permohonan-pkwt/terima/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/permohonan-spsb/terima/{{$data->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <label class="mb-3">Surat Keputusan</label>
@@ -208,7 +200,7 @@
               <h1 class="modal-title fs-5" id="tolakLabel">Pesan</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="/permohonan-pkwt/tolak/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/permohonan-spsb/tolak/{{$data->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <label class="mb-3">Masukkan Pesan</label>
@@ -230,7 +222,7 @@
               <h1 class="modal-title fs-5" id="updateLabel">Perbaharui Keterangan Pemrosesan</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="/permohonan-pkwt/update/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/permohonan-spsb/update/{{$data->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <label class="mb-3">Masukkan Keterangan Terbaru</label>
@@ -244,20 +236,6 @@
           </div>
         </div>
     </div>
-
-    @if ($data->status == '0')
-    <div class="mt-4">
-        <div class="text-center">
-            <label for=""><b>Setelah dilakukan pemeriksaan, dengan ini permohonan dari {{$data->pkwt_perusahaan->nama_perusahaan}} :</b></label><br>
-            <div class="mt-2">
-                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-check-circle-fill" style="height:100px;color: white;"></i> Terima</a>
-                <a class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#tolak"><i class="bi bi-x-circle-fill" style="height:100px;color: white;"></i> Kembalikan</a>
-            </div>
-        </div>
-    </div>
-@else
-
-@endif
 
 </div>
 @endsection

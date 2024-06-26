@@ -95,7 +95,7 @@
           </li>
           <li>
             {{-- @if ($pkb_not == "0") --}}
-            <a href="/admin/permohonan-pendaftaran-pkb">
+            <a href="/mediator/permohonan-pendaftaran-pkb">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama
             </a>
             {{-- @else
@@ -106,55 +106,55 @@
           </li>
           <li>
             {{-- @if ($pkwt_not == "0") --}}
-            <a href="/admin/permohonan-pendaftaran-pkwt">
+            <a href="/mediator/permohonan-pendaftaran-pkwt">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Waktu Tertentu
               </a>
             {{-- @else
-            <a href="/admin/permohonan-pendaftaran-pkwt">
+            <a href="/mediator/permohonan-pendaftaran-pkwt">
               <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Waktu Tertentu<span class="badge text-bg-danger">{{$pkwt_not}}</span>
             </a>
             @endif --}}
           </li>
           <li>
             {{-- @if ($spsb_not == "0") --}}
-            <a href="/admin/permohonan-pencatatan-spsb">
+            <a href="/mediator/permohonan-pencatatan-spsb">
                 <i class="bi bi-circle"></i>Pencatatan Serikat Pekerja/Serikat Buruh
             </a>
             {{-- @else
-            <a href="/admin/permohonan-pencatatan-spsb">
+            <a href="/mediator/permohonan-pencatatan-spsb">
               <i class="bi bi-circle"></i>Pencatatan Serikat Pekerja/Serikat Buruh<span class="badge text-bg-danger">{{$spsb_not}}</span>
             </a>
             @endif --}}
           </li>
           <li>
             {{-- @if ($lks_not == "0") --}}
-            <a href="/admin/permohonan-pendaftaran-lks">
+            <a href="/mediator/permohonan-pendaftaran-lks">
                 <i class="bi bi-circle"></i>Pendaftaran Lembaga Kerja Sama Bipartit
             </a>
             {{-- @else
-            <a href="/admin/permohonan-pendaftaran-lks">
+            <a href="/mediator/permohonan-pendaftaran-lks">
               <i class="bi bi-circle"></i>Pendaftaran Lembaga Kerja Sama Bipartit<span class="badge text-bg-danger">{{$lks_not}}</span>
             </a>
             @endif --}}
           </li>
           <li>
             {{-- @if ($hi_not == "0") --}}
-            <a href="/admin/permohonan-pencatatan-hi">
+            <a href="/mediator/permohonan-pencatatan-hi">
                 <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial
             </a>
             {{-- @else
-            <a href="/admin/permohonan-pencatatan-hi">
+            <a href="/mediator/permohonan-pencatatan-hi">
                 <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial<span class="badge text-bg-danger">{{$hi_not}}</span>
             </a>
             @endif --}}
           </li>
           <li>
             {{-- @if ($phk_not == "0") --}}
-            <a href="/admin/permohonan-pelaporan-phk">
+            <a href="/mediator/permohonan-pelaporan-phk">
                 <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja
             </a>
             {{-- @else
-            <a href="/admin/permohonan-pelaporan-phk">
+            <a href="/mediator/permohonan-pelaporan-phk">
                 <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja<span class="badge text-bg-danger">{{$phk_not}}</span>
             </a>
             @endif --}}

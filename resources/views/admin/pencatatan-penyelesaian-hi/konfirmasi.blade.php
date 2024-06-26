@@ -142,7 +142,7 @@
           <h1 class="modal-title fs-5" id="konfirmasiLabel">Konfirmasi Permohonan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="/konfirmasi/permohonan-hi/{{$data->id}}" method="POST" enctype="multipart/form-data">
+        <form action="/konfirmasi/permohonan-hi/{{$data->id_hi}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
                 <label class="mb-3">Pilih Mediator untuk mengecek persyaratan pemohon</label>

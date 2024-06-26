@@ -56,7 +56,7 @@ class CompanyController extends Controller
     {
 
         $pengesahanpp = Pengesahanpp::find($id);
-        $user = $pengesahanpp->pp_user;
+        $user = Auth::user();
         return view('perusahaan/cek-permohonan/edit-permohonan-pp', compact('pengesahanpp', 'user'));
     }
 
@@ -64,7 +64,7 @@ class CompanyController extends Controller
     {
 
         $pendaftaranpkb = Pendaftaranpkb::find($id);
-        $user = $pendaftaranpkb->pkb_user;
+        $user = Auth::user();
         return view('perusahaan/cek-permohonan/edit-permohonan-pkb', compact('pendaftaranpkb', 'user'));
     }
 
@@ -72,28 +72,28 @@ class CompanyController extends Controller
     {
 
         $pendaftaranpkwt = Pendaftaranpkwt::find($id);
-        $user = $pendaftaranpkwt->pkwt_user;
+        $user = Auth::user();
         return view('perusahaan/cek-permohonan/edit-permohonan-pkwt', compact('pendaftaranpkwt', 'user'));
     }
 
     public function edit_spsb_submission($id)
     {
         $pencatatanspsb = Pencatatanspsb::find($id);
-        $user = $pencatatanspsb->spsb_user;
+        $user = Auth::user();
         return view('perusahaan/cek-permohonan/edit-permohonan-spsb', compact('pencatatanspsb', 'user'));
     }
 
     public function edit_lks_submission($id)
     {
         $pendaftaranlks = Pendaftaranlks::find($id);
-        $user = $pendaftaranlks->lks_user;
+        $user = Auth::user();
         return view('perusahaan/cek-permohonan/edit-permohonan-lks', compact('pendaftaranlks', 'user'));
     }
 
     public function edit_hi_submission($id)
     {
         $pencatatanhi = Pencatatanperselihan::find($id);
-        $user = $pencatatanhi->hi_user;
+        $user = Auth::user();
         return view('perusahaan/cek-permohonan/edit-permohonan-hi', compact('pencatatanhi', 'user'));
     }
 

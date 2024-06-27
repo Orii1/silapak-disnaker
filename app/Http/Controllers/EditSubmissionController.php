@@ -98,7 +98,7 @@ class EditSubmissionController extends Controller
                 'surat_pernyataan_struktur_skala_upah' => $file7,
                 'struktur_skala_upah_asli' => $file8,
                 'draft_pp' => $file9,
-                
+
             ]);
 
             $status = $pp->pp_status;
@@ -184,7 +184,7 @@ class EditSubmissionController extends Controller
             'surat_pernyataan_struktur_skala_upah' => $file5,
             'struktur_skala_upah_asli' => $file6,
             'draft_pkb' => $file7,
-            
+
         ]);
             $status = $pkb->pkb_status;
             $status->id_status = '2';
@@ -350,10 +350,9 @@ class EditSubmissionController extends Controller
     public function update_lks_submission(Request $request, $id)
     {
         $lks = Pendaftaranlks::find($id);
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
-            'peruntukan' => 'required',
             'permohonan_pencatatan_lks_bipartit' => 'required|mimes:png,jpg,pdf|file',
             'daftar_susunan_pengurus_lks_bipartit' => 'required|mimes:png,jpg,pdf|file',
             'berita_acara_pembentukan_lks_bipartit' => 'required|mimes:png,jpg,pdf|file',
@@ -414,10 +413,9 @@ class EditSubmissionController extends Controller
     public function update_hi_submission(Request $request, $id)
     {
         $hi = Pencatatanperselihan::find($id);
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
-            'peruntukan' => 'required',
             'permohonan_pencatatan_pphi' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'surat_permintaan_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'daftar_hadir_perundingan_bipartit' => 'required|mimes:png,jpg,pdf|file|max:2048',
@@ -432,9 +430,9 @@ class EditSubmissionController extends Controller
         if ($validatedata) {
         Storage::disk('public')->delete([
             $user->id . '/perselisihan_hi/' . $hi->permohonan_pencatatan_pphi,
-            $user->id . '/perselisihan_hi/' . $hi->surat_permintaan_perundingan_bipartit,
-            $user->id . '/perselisihan_hi/' . $hi->daftar_hadir_perundingan_bipartit,
-            $user->id . '/perselisihan_hi/' . $hi->risalah_perundingan_bipartit,
+            $user->id  . '/perselisihan_hi/' . $hi->surat_permintaan_perundingan_bipartit,
+            $user->id  . '/perselisihan_hi/' . $hi->daftar_hadir_perundingan_bipartit,
+            $user->id  . '/perselisihan_hi/' . $hi->risalah_perundingan_bipartit,
         ]);
 
         $extension1 = $request->file('permohonan_pencatatan_pphi')->getClientOriginalExtension();
@@ -470,7 +468,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }
@@ -479,7 +477,7 @@ class EditSubmissionController extends Controller
     public function update_phk_submission(Request $request, $id)
     {
         $phk = Pelaporanphk::find($id);
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',

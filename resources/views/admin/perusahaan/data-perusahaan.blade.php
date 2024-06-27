@@ -72,11 +72,6 @@
                             </div>
                         </td>
                         <td>
-                            <div class="text-center">
-                                <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-primary" id=""><i class="bi bi-info-circle-fill"></i></a>
-                            </div>
-                        </td>
-                        <td>
                             @if ($item->status_akun == 'inactive')
                                 <div class="text-center">
                                     <button class="activate-button" data-user-id="{{ $item->id }}">Aktifkan</button>
@@ -86,6 +81,11 @@
                                     <span class="badge rounded-pill text-bg-success"><label style="color: white;">Aktif</label></span>
                                 </div>
                             @endif
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-primary" id=""><i class="bi bi-info-circle-fill"></i></a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

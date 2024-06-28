@@ -18,7 +18,7 @@ class EditSubmissionController extends Controller
     public function update_pp_submission(Request $request, $id)
     {
         $pp = Pengesahanpp::find($id);
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
          $validatedata = $request->validate([
             'peruntukan' => 'required',
@@ -120,7 +120,7 @@ class EditSubmissionController extends Controller
     public function update_pkb_submission(Request $request, $id)
     {
         $pkb = Pendaftaranpkb::find($id);
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
@@ -206,7 +206,7 @@ class EditSubmissionController extends Controller
     public function update_pkwt_submission(Request $request, $id)
     {
         $pkwt = Pendaftaranpkwt::find($id);
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',
@@ -278,7 +278,7 @@ class EditSubmissionController extends Controller
     public function update_spsb_submission(Request $request, $id)
     {
         $spsb = Pencatatanspsb::find($id);
-        $user = Auth::user();
+        $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
             'peruntukan' => 'required',

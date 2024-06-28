@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="disabled-text">
-                                        Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                        Peruntukan : {{$item->peruntukan}} / {{$item->pkb_status->keterangan}}
                                     </div>
                                 </div>
                                 <div class="row text-start">

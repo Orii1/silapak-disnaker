@@ -21,7 +21,6 @@ class EditSubmissionController extends Controller
         $user = Auth::user()->user_perusahaan;
 
          $validatedata = $request->validate([
-            'peruntukan' => 'required',
             'fc_wlkp' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'fc_sertifikat_peserta_bpjs_ketenagakerjaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
@@ -111,7 +110,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }
@@ -123,10 +122,9 @@ class EditSubmissionController extends Controller
         $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
-            'peruntukan' => 'required',
             'fc_wlkp' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'fc_akta_pendirian_perusahaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
-            'fc_setifikat_peserta_bpjs_ketenagakerjaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
+            'fc_sertifikat_peserta_bpjs_ketenagakerjaan' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'permohonan_pendaftaran_pkb' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'surat_pernyataan_struktur_skala_upah' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'struktur_skala_upah_asli' => 'required|mimes:png,jpg,pdf|file|max:2048',
@@ -196,7 +194,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }
@@ -209,7 +207,6 @@ class EditSubmissionController extends Controller
         $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
-            'peruntukan' => 'required',
             'srt_permohonan_pencatatan_pkwt' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'daftar_nama_pekerja_pkwt' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'pkwt_asli' => 'required|mimes:png,jpg,pdf|file|max:2048',
@@ -268,7 +265,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }
@@ -281,7 +278,6 @@ class EditSubmissionController extends Controller
         $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
-            'peruntukan' => 'required',
             'surat_permohonan' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'ad_art' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'nama_pembentuk' => 'required|mimes:png,jpg,pdf|file|max:2048',
@@ -340,7 +336,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }
@@ -404,7 +400,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }
@@ -480,7 +476,6 @@ class EditSubmissionController extends Controller
         $user = Auth::user()->user_perusahaan;
 
         $validatedata = $request->validate([
-            'peruntukan' => 'required',
             'permohonan_pelaporan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'surat_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
             'surat_tanggapan_pemberitahuan_phk' => 'required|mimes:png,jpg,pdf|file|max:2048',
@@ -533,7 +528,7 @@ class EditSubmissionController extends Controller
             $cek->pesan = '';
             $cek->save();
             toastr()->success('Permohonan Berhasil Dikirim Ulang');
-            return redirect('/cek-permohonan/' . $user->user_perusahaan->id);
+            return redirect('/cek-permohonan/' . $user->id);
         }else{
             return redirect('')->withErrors($validatedata)->withInput();
         }

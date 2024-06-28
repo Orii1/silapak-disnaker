@@ -76,7 +76,7 @@
                             </ul>
                         </div>
                         @endif
-                        
+
                         <table class="table align-middle mb-0 bg-white">
                             <thead class="bg-light">
                                 <tr>
@@ -331,7 +331,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="draf_pp" required>
+                                                    <input type="file" class="form-control" name="draft_pp" required>
                                                 </div>
                                             </div>
                                         </td>
@@ -342,7 +342,7 @@
                         <div class="d-grid gap-2 col-2 mt-4 mx-auto">
                             <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim Ulang</b></a></label></button>
                         </div>
-                        
+
                     </form>
                 </div>
             </div>

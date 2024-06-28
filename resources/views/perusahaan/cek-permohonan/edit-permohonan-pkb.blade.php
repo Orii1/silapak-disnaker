@@ -63,7 +63,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan-pkb/{{$pendaftaranpkb->id_hi}}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit-permohonan-pkb/{{$pendaftaranpkb->id_pkb}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
 
@@ -76,7 +76,7 @@
                             </ul>
                         </div>
                         @endif
-                        
+
                         <table class="table align-middle mb-0 bg-white">
                             <thead class="bg-light">
                                 <tr>

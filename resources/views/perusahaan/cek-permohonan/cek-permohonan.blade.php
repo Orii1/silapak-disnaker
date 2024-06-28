@@ -116,13 +116,13 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
-                                                <td><div class="text-center">{{$item->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="/edit-permohonan-pp/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
+                                                <td><div class="text-center">{{$item->pp_status->keterangan}}</div></td>
+                                                <td><div class="text-center"><a href="/edit-permohonan-pp/{{$item->id_pp}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->pp_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
-                                                <td><div class="text-center"> </div></td>
+                                                <td><div class="text-center">{{$item->pp_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>
@@ -183,12 +183,12 @@
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->pkb_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="/edit-permohonan-pkb/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/edit-permohonan-pkb/{{$item->id_pkb}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->pkb_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
-                                                <td><div class="text-center"> </div></td>
+                                                <td><div class="text-center">{{$item->pkb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>
@@ -249,12 +249,12 @@
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->pkwt_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="/edit-permohonan-pkwt/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/edit-permohonan-pkwt/{{$item->id_pkwt}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->pkwt_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
-                                                <td><div class="text-center"> </div></td>
+                                                <td><div class="text-center">{{$item->pkwt_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>
@@ -315,12 +315,12 @@
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->spsb_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="/edit-permohonan-spsb/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/edit-permohonan-spsb/{{$item->id_spsb}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->spsb_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
-                                                <td><div class="text-center"> </div></td>
+                                                <td><div class="text-center">{{$item->spsb_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>
@@ -381,12 +381,12 @@
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->lks_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="/edit-permohonan-lks/{{$item->id}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/edit-permohonan-lks/{{$item->id_lks}}" class="btn btn-danger btn-sm" title="Info"><i class="bi bi-info-circle-fill"></i></a></div></td>
                                             @elseif ($item->lks_status->id_status == '1')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
-                                                <td><div class="text-center"> </div></td>
+                                                <td><div class="text-center">{{$item->lks_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>
@@ -452,7 +452,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
-                                                <td><div class="text-center"> </div></td>
+                                                <td><div class="text-center">{{$item->hi_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>
@@ -518,7 +518,7 @@
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
                                                 </div></td>
-                                                <td><div class="text-center"> </div></td>
+                                                <td><div class="text-center">{{$item->phk_status->keterangan}}</div></td>
                                                 <td><div class="text-center"> </div></td>
                                             @else
                                                 <td><div class="text-center">Status Tidak Diketahui</div></td>

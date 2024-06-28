@@ -22,7 +22,10 @@
                             style="width: 500px;">
                         <h2 class="mb-1">{{ $detail->user_perusahaan->nama_perusahaan }}</h2>
                         <h3 class="mb-4 text-muted text-center">{{ $detail->email }}</h3>
-                        <button id="activationButton" class="mb-4 btn btn-primary">Aktifkan</button>
+                        @if ($detail->status_akun == 'inactive')
+                            <button class="btn btn-primary activate mb-3" data-user-id="{{ $detail->id }}">Aktifkan</button>
+                        @else
+                        @endif
                     </div>
                 </div>
 
@@ -125,4 +128,27 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.querySelectorAll('.activate').forEach(button => {
+          button.addEventListener('click', function() {
+              const userId = this.getAttribute('data-user-id');
+
+              Swal.fire({
+                  title: 'Apakah Anda yakin?',
+                  text: 'Anda akan mengaktifkan user ini!',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Ya, aktifkan!',
+                  cancelButtonText: 'Tidak, batalkan'
+              }).then((result) => {
+                  if (result.isConfirmed) {
+                      window.location.href = `/aktivasi-user/${userId}`;
+                  }
+              });
+          });
+      });
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

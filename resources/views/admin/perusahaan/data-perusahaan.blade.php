@@ -34,12 +34,12 @@
                     </th>
                     <th class="col-2">
                         <div class="text-center">
-                            Detail
+                            Aktivasi
                         </div>
                     </th>
                     <th class="col-2">
                         <div class="text-center">
-                            Aktivasi
+                            Detail
                         </div>
                     </th>
                 </tr>
@@ -74,7 +74,7 @@
                         <td>
                             @if ($item->status_akun == 'inactive')
                                 <div class="text-center">
-                                    <button class="activate-button" data-user-id="{{ $item->id }}">Aktifkan</button>
+                                    <span class="badge rounded-pill text-bg-danger"><label style="color: white;">Belum Aktif</label></span>
                                 </div>
                             @else
                                 <div class="text-center">

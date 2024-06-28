@@ -22,6 +22,7 @@
                             style="width: 500px;">
                         <h2 class="mb-1">{{ $detail->user_perusahaan->nama_perusahaan }}</h2>
                         <h3 class="mb-4 text-muted text-center">{{ $detail->email }}</h3>
+                        <button id="activationButton" class="mb-4 btn btn-primary">Aktifkan</button>
                     </div>
                 </div>
 

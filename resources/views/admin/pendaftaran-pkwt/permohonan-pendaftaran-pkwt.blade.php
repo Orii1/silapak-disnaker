@@ -77,7 +77,7 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($pkwt_proses as $item)
-                        <a href="/permohonan-pendaftaran-pkwt/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-pkwt/{{$item->id_pkwt}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
@@ -107,7 +107,7 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($pkwt_terima as $item)
-                        <a href="/permohonan-pendaftaran-pkwt/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-pkwt/{{$item->id_pkwt}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-diterima" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
@@ -137,7 +137,7 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($pkwt_tolak as $item)
-                        <a href="/permohonan-pendaftaran-pkwt/{{$item->id}}">
+                        <a href="/permohonan-pendaftaran-pkwt/{{$item->id_pkwt}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">

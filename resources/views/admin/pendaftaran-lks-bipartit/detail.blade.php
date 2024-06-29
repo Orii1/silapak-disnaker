@@ -1,56 +1,124 @@
 @extends('layout.admin')
 
+@section('title')
+
+
 @section('content')
+
 <div class="pagetitle">
     <h1>Permohonan</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
             <li class="breadcrumb-item">Permohonan Pendaftaran LKS Bipartit</li>
             <li class="breadcrumb-item active">{{$data->lks_perusahaan->nama_perusahaan}}</li>
         </ol>
     </nav>
 </div>
 
-<div class="mx-1">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title" style="padding-top: 20px; padding-bottom: 15px;">
-                        {{$data->peruntukan}}, {{$data->lks_perusahaan->nama_perusahaan}}
-                    </div>
-                </div>
+<div class="container-fluid">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered w-100" style="background-color: white;">
+                    <tr>
+                        <td colspan="2">
+                            <b>Detail Permohonan</b>
+                            <div class="text-center">
+                                <tr>
+                                    <td>
+                                        <b>Nama Perusahaan</b>
+                                        <p>{{$data->lks_perusahaan->nama_perusahaan}}</p>
+                                    </td>
+                                    <td>
+                                        <b>Peruntukkan</b>
+                                        <p>{{$data->peruntukan}}</p>
+                                    </td>
+                                </tr>
+                            </div>
+                        </td>
+                        
+                        <td>
+                            <div id="visiContent">
+                                <b>Keterangan</b>
+                            </div>
+                            @if ($data->lks_status->id_status == '3')
+                            <div class="">
+                                <div class="">
+                                    <label for="">Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}} <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/lks/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
+                                </div>
+                            </div>
+                            @elseif ($data->lks_status->id_status == '4')
+                            <div class="">
+                                <div class="">
+                                    <label for="">Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</label>
+                                </div>
+                            </div>
+                            @elseif ($data->lks_status->id_status == '2')
+                                <div class="">
+                                    <div class="">
+                                        <label for="">{{$data->lks_status->keterangan}}<br> 
+                                    </div>
+                                </div>
+                            @else
+                                <div class="">
+                                    <div class="">
+                                        <label for="">Menunggu Konfirmasi Admin<br> 
+                                    </div>
+                                </div>
+                            @endif
+                        
+                        </td>
+                        <td>
+                            <b>Status</b>
+                            <p>
+                                @if ($data->lks_status->id_status == "2")
+                                <div class="text-start">
+                                    <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
+                                </div>
+                                @elseif ($data->lks_status->id_status == "3")
+                                    <div class="text-start">
+                                        <span class="badge rounded-pill text-bg-success">Diterima</span>
+                                    </div>
+                                @elseif ($data->lks_status->id_status == '4')
+                                    <div class="text-start">
+                                        <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
+                                    </div>
+                                @elseif ($data->lks_status->id_status == '1')
+                                    <div class="text-start">
+                                        <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
+                                    </div>
+                                @else
+                                    <div class="text-start">Status Tidak Diketahui</div>
+                                @endif
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="text-start">
+                            <b>Nama Mediator</b>
+                                <p>
+                                    {{$data->lks_status->status_cek->pengecekan_pegawai->nama_pegawai}}
+                                </p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-start">
+                            <b>Surat Keputusan</b>
+                                <p>
+                                    <a href="path/to/your/file.zip" class="btn btn-primary" download>
+                                        <i class="fa fa-download"></i> Download File
+                                    </a>
+                                </p>
+                            </div>
+                        </td>   
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
 </div>
-
-@if ($data->status == '1')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/lks/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
-        </div>
-    </div>
-@elseif ($data->status == '2')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persayaratan</b></label>
-        </div>
-    </div>
-@elseif ($data->status == '0')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
-            <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
-                <i class="bi bi-clock-fill" style="color: white"></i>
-            </a>
-        </div>
-    </div>
-@else
-
-@endif
-
 <div class="mt-5">
     <table class="table table-bordered">
         <thead class="bg-light">

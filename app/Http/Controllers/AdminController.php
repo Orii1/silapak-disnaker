@@ -1093,14 +1093,14 @@ class AdminController extends Controller
     {
         $data = Pelaporanphk::find($id);
 
-        $pp_not = Pengesahanpp::where('status', '3')->count();
-        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
-        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
-        $spsb_not = Pencatatanspsb::where('status', '3')->count();
-        $lks_not = Pendaftaranlks::where('status', '3')->count();
-        $hi_not = Pencatatanperselihan::where('status', '3')->count();
-        $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pelaporan-phk/detail', compact('data', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('/admin/pelaporan-phk/detail', compact('data'));
     }
 
     public function pelaporan_phk_terima(Request $request, $id)

@@ -26,25 +26,25 @@
     </div>
 </div>
 
-@if ($data->status == '1')
+@if ($data->phk_status->id_status == '3')
     <div class="mt-2 mb-2">
         <div class="mx-2">
-            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/phk/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
+            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/hi/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
         </div>
     </div>
-@elseif ($data->status == '2')
+@elseif ($data->phk_status->id_status == '4')
     <div class="mt-2 mb-2">
         <div class="mx-2">
-            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persayaratan</b></label>
+            <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</b></label>
         </div>
     </div>
-@elseif ($data->status == '0')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
-            <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
-                <i class="bi bi-clock-fill" style="color: white"></i>
-            </a>
+@elseif ($data->phk_status->id_status == '2')
+    <div class="card">
+        <div class="mt-2 mb-2">
+            <div class="mx-3 my-2">
+                <label for="">Keterangan : <b><i>{{$data->phk_status->keterangan}} </i></b></label><br>
+                <label for="">Mediator : <b><i>{{$data->phk_status->status_cek->pengecekan_pegawai->nama_pegawai}} </i></b></label>
+            </div>
         </div>
     </div>
 @else
@@ -87,7 +87,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/phk/{{$data->permohonan_pelaporan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->phk_perusahaan->id}}/phk/{{$data->permohonan_pelaporan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -107,7 +107,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/phk/{{$data->surat_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->phk_perusahaan->id}}/phk/{{$data->surat_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -126,7 +126,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/phk/{{$data->surat_tanggapan_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->phk_perusahaan->id}}/phk/{{$data->surat_tanggapan_pemberitahuan_phk}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -145,7 +145,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/phk/{{$data->pb_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->phk_perusahaan->id}}/phk/{{$data->pb_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>

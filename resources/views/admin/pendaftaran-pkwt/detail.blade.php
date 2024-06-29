@@ -26,25 +26,25 @@
     </div>
 </div>
 
-@if ($data->status == '1')
+@if ($data->pkwt_status->id_status == '3')
     <div class="mt-2 mb-2">
         <div class="mx-2">
-            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/pkwt/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
+            <label for=""><b>Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</b> <a class="btn btn-success btn-sm" href="/storage/{{$data->pkwt_perusahaan->id}}/pp/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
         </div>
     </div>
-@elseif ($data->status == '2')
+@elseif ($data->pkwt_status->id_status == '4')
     <div class="mt-2 mb-2">
         <div class="mx-2">
             <label for=""><b>Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</b></label>
         </div>
     </div>
-@elseif ($data->status == '0')
-    <div class="mt-2 mb-2">
-        <div class="mx-2">
-            <label for="">Keterangan : <b><i>{{$data->keterangan}} </i></b></label>
-            <a data-bs-toggle="modal" data-bs-target="#update" class="btn btn-info btn-sm" title="Perbaharui Keterangan Pemrosesan">
-                <i class="bi bi-clock-fill" style="color: white"></i>
-            </a>
+@elseif ($data->pkwt_status->id_status == '2')
+    <div class="card">
+        <div class="mt-2 mb-2">
+            <div class="mx-3 my-2">
+                <label for="">Keterangan : <b><i>{{$data->pkwt_status->keterangan}} </i></b></label><br>
+                <label for="">Mediator : <b><i>{{$data->pkwt_status->status_cek->pengecekan_pegawai->nama_pegawai}} </i></b></label>
+            </div>
         </div>
     </div>
 @else
@@ -88,7 +88,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -108,7 +108,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -128,7 +128,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -148,7 +148,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>
@@ -168,7 +168,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <a href="/storage/{{$data->user_id}}/pkwt/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
                         </div>

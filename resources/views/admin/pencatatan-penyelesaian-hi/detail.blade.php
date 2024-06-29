@@ -87,7 +87,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->permohonan_pencatatan_pphi}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->hi_perusahaan->id}}/perselisihan_hi/{{$data->permohonan_pencatatan_pphi}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -107,7 +107,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->surat_permintaan_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->hi_perusahaan->id}}/perselisihan_hi/{{$data->surat_permintaan_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -127,7 +127,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->daftar_hadir_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->hi_perusahaan->id}}/perselisihan_hi/{{$data->daftar_hadir_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>
@@ -147,7 +147,7 @@
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="/storage/{{$data->user_id}}/perselisihan_hi/{{$data->risalah_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                        <a href="/storage/{{$data->hi_perusahaan->id}}/perselisihan_hi/{{$data->risalah_perundingan_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                             <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                         </a>
                     </div>

@@ -17,25 +17,32 @@
             <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
                         <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#konfirmasi">Menunggu Konfirmasi</button>
                     </div>
                   </li>
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diproses">Diproses</button>
                     </div>
                   </li>
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#selesai">Selesai Diperiksa</button>
+                    </div>
+                  </li>
+
+
+                  <li class="nav-item">
+                    <div class="mx-4">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diterima">Diterima</button>
                     </div>
                   </li>
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#dikembalikan">Dikembalikan</button>
                     </div>
                   </li>
@@ -103,6 +110,36 @@
             </div>
         </div>
 
+        <div class="tab-pane fade pt-3" id="selesai">
+            <div class="text-center">
+                <div class="mb-4">
+                    @foreach ($pkb_done as $item)
+                        <a href="/permohonan-pendaftaran-pkb/{{$item->id_pkb}}">
+                            <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
+                                <div class="ms-3 my-2">
+                                    <div class="row text-start">
+                                        <div style="font-size: 21px; color: black;">
+                                            <b>{{$item->pkb_perusahaan->nama_perusahaan}}</b>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="disabled-text">
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->pkb_status->keterangan}}
+                                        </div>
+                                    </div>
+                                    <div class="row text-start">
+                                        <div class="disabled-text">
+                                            Diajukan pada tanggal : {{$item->updated_at->isoFormat('D MMMM Y')}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
         <div class="tab-pane fade pt-3" id="diterima">
             <div class="text-center">
                 <div class="mb-4">
@@ -117,7 +154,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->pkb_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">
@@ -137,7 +174,7 @@
             <div class="text-center">
                 <div class="mb-4">
                     @foreach ($pkb_tolak as $item)
-                        <a href="/permohonan-pengesahan-pp/{{$item->id_pkb}}">
+                        <a href="/permohonan-pendaftaran-pkb/{{$item->id_pkb}}">
                             <div class="cardd radius-5 border-start border-0 border-3 border-dikembalikan" style="height: 100px; display: flex;">
                                 <div class="ms-3 my-2">
                                     <div class="row text-start">
@@ -147,7 +184,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="disabled-text">
-                                            Peruntukan : {{$item->peruntukan}} / {{$item->keterangan}}
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->pkb_status->keterangan}}
                                         </div>
                                     </div>
                                     <div class="row text-start">

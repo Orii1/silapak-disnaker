@@ -23,6 +23,7 @@ class SocialController extends Controller
         if ($existingUser) {
             if ($existingUser->status_akun == 'active') {
                 Auth::login($existingUser);
+                toastr()->success('Berhasil Login, Selamat Datang ' . $existingUser->user_perusahaan->nama_perusahaan . '!');
                 return redirect('/perusahaan/dashboard');
             } else {
                 return redirect('/aktivasi-user');

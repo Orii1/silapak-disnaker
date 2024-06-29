@@ -17,25 +17,31 @@
             <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
                         <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#konfirmasi">Menunggu Konfirmasi</button>
                     </div>
                   </li>
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diproses">Diproses</button>
                     </div>
                   </li>
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#selesai">Selesai Diperiksa</button>
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <div class="mx-4">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#diterima">Diterima</button>
                     </div>
                   </li>
 
                   <li class="nav-item">
-                    <div class="mx-5">
+                    <div class="mx-4">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#dikembalikan">Dikembalikan</button>
                     </div>
                   </li>

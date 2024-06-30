@@ -90,7 +90,6 @@
                                 @else
                                     <div class="text-start">Status Tidak Diketahui</div>
                                 @endif
-                            </p>
                         </td>
                     </tr>
                     <tr>

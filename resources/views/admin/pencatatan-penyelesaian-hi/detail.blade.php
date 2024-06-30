@@ -48,13 +48,13 @@
                                     <label for="">Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</label>
                                 </div>
                             </div>
-                        @elseif ($data->hi_status->id_status == '4')
+                            @elseif ($data->hi_status->id_status == '4')
                             <div class="">
                                 <div class="">
                                     <label for="">Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</label>
                                 </div>
                             </div>
-                        @elseif ($data->hi_status->id_status == '2')
+                            @elseif ($data->hi_status->id_status == '2')
                                 <div class="">
                                     <div class="">
                                         <label for="">{{$data->hi_status->keterangan}}<br>
@@ -87,7 +87,6 @@
                                 @else
                                     <div class="text-start">Status Tidak Diketahui</div>
                                 @endif
-                            </p>
                         </td>
                     </tr>
                     <tr>

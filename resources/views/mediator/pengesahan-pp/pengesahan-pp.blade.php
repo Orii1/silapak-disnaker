@@ -5,7 +5,7 @@
     <h1>Permohonan</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/mediator/dashboard">Home</a></li>
             <li class="breadcrumb-item active">Permohonan Pengesahan Peraturan Perusahaan</li>
         </ol>
     </nav>

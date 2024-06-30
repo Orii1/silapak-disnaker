@@ -47,26 +47,29 @@
                                     <label for="">Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}} <a class="btn btn-success btn-sm" href="/storage/{{$data->user_id}}/hi/sk/{{$data->sk}}" title="Surat Keputusan" target="_blank"><i class="bi bi-file-earmark-check-fill"></i></a></label>
                                 </div>
                             </div>
-                        @elseif ($data->hi_status->id_status == '4')
+                            @elseif ($data->hi_status->id_status == '4')
                             <div class="">
                                 <div class="">
                                     <label for="">Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</label>
                                 </div>
                             </div>
-                        @elseif ($data->hi_status->id_status == '2')
+                            @elseif ($data->hi_status->id_status == '2')
                                 <div class="">
                                     <div class="">
                                         <label for="">{{$data->hi_status->keterangan}}<br> 
                                     </div>
                                 </div>
-                        @else
-                        
-                        @endif
+                            @else
+                                <div class="">
+                                    <div class="">
+                                        <label for="">Menunggu Konfirmasi Admin<br> 
+                                    </div>
+                                </div>
+                            @endif
                         
                         </td>
                         <td>
                             <b>Status</b>
-                            <p>
                                 @if ($data->hi_status->id_status == "2")
                                 <div class="text-start">
                                     <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -86,7 +89,6 @@
                                 @else
                                     <div class="text-start">Status Tidak Diketahui</div>
                                 @endif
-                            </p>
                         </td>
                     </tr>
                     <tr>

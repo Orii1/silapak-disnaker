@@ -65,7 +65,6 @@
                     </td>
                     <td>
                         <b>Status</b>
-                        <p>
                             @if ($data->hi_status->id_status == "2")
                             <div class="text-start">
                                 <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
@@ -85,7 +84,6 @@
                             @else
                                 <div class="text-start">Status Tidak Diketahui</div>
                             @endif
-                        </p>
                     </td>
                 </tr>
             </table>

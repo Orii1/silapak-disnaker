@@ -111,7 +111,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">Permohonan Selesai</div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pp-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->pp_perusahaan->id}}/pp/sk/{{$item->pp_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan" download><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->pp_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -177,7 +177,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->pkb_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pkb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->pkb_perusahaan->id}}/pkb/sk/{{$item->pkb_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan" download><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->pkb_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -243,7 +243,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->pkwt_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-pkwt-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->pkwt_perusahaan->id}}/pkwt/sk/{{$item->pkwt_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan" download><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->pkwt_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -309,7 +309,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->spsb_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-spsb-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->spsb_perusahaan->id}}/spsb/sk/{{$item->spsb_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan" download><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->spsb_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -375,7 +375,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->lks_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-lks-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->lks_perusahaan->id}}/lks/sk/{{$item->lks_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan" download><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->lks_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -441,7 +441,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->hi_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-hi-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->hi_perusahaan->id}}/perselisihan_hi/sk/{{$item->hi_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan" download><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->hi_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
@@ -507,7 +507,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->phk_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="{{route('sk-phk-download',['id'=>$item->id])}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->phk_perusahaan->id}}/phk/sk/{{$item->phk_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->phk_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>

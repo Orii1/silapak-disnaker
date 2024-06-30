@@ -18,8 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-
-
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -286,42 +285,39 @@ class AdminController extends Controller
 
     }
 
-    // public function permohonan_pp_update(Request $request, $id)
-    // {
-    //     $permohonanpp = Pengesahanpp::find($id);
+    public function permohonan_pp_terima(Request $request, $id_pp)
+    {
+        $permohonanpp = Pengesahanpp::find($id_pp);
 
-    //     $permohonanpp->keterangan = $request->keterangan;
-    //     $permohonanpp->save();
-    //     toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
-    //     return redirect('/admin/permohonan-pengesahan-pp');
-    // }
+        $validatedata = $request->validate([
+            'sk' => 'required|mimes:pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
+        ]);
 
-    // public function permohonan_pp_terima(Request $request, $id)
-    // {
-    //     $permohonanpp = Pengesahanpp::find($id);
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $permohonanpp->pp_perusahaan->id . '/pp/sk' . $permohonanpp->pp_status->sk
+            ]);
 
-    //     $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-    //     $file1 = $id . 'surat_keputusan' . '-' . 'pp' . now()->timestamp . '.' . $extension1;
-    //     $request->file('surat_keputusan')->storeAs($permohonanpp->user_id . '/pp/sk', $file1);
+            $extension1 = $request->file('sk')->getClientOriginalExtension();
+            $file1 = 'SK_' . $permohonanpp->pp_perusahaan->nama_perusahaan . '-pp' . now()->timestamp . '.' . $extension1;
+            $request->file('sk')->storeAs($permohonanpp->pp_perusahaan->id . '/pp/sk', $file1);
 
-    //     $permohonanpp->status = '1';
-    //     $permohonanpp->sk = $file1;
-    //     $permohonanpp->keterangan = "Permohonan Selesai";
-    //     $permohonanpp->save();
-    //     toastr()->success('Permohonan Berhasil Diterima!');
-    //     return redirect('/admin/permohonan-pengesahan-pp');
-    // }
-
-    // public function permohonan_pp_tolak(Request $request, $id)
-    // {
-    //     $permohonanpp = Pengesahanpp::find($id);
-    //     $permohonanpp->pesan = $request->pesan;
-    //     $permohonanpp->keterangan = "Silahkan Revisi beberapa persyaratan sesuai Pesan";
-    //     $permohonanpp->status = '2';
-    //     $permohonanpp->save();
-    //     toastr()->success('Permohonan Berhasil Dikembalikan!');
-    //     return redirect('/admin/permohonan-pengesahan-pp');
-    // }
+            $sk = $permohonanpp->pp_status;
+            $sk->id_status = '3';
+            $sk->sk = $file1;
+            $sk->keterangan = "Permohonan Selesai";
+            $sk->save();
+            toastr()->success('Permohonan Berhasil Diterima!');
+            return redirect('/admin/permohonan-pengesahan-pp');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
+    }
 
     public function pendaftaran_pkb()
     {
@@ -436,19 +432,38 @@ class AdminController extends Controller
         return redirect('/admin/permohonan-pendaftaran-pkb');
     }
 
-    public function pendaftaran_pkb_terima(Request $request, $id)
+    public function pendaftaran_pkb_terima(Request $request, $id_pkb)
     {
-        $permohonanpkb = Pendaftaranpkb::find($id);
-        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-        $file1 = $id . 'surat_keputusan' . '-' . 'pkb' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_keputusan')->storeAs($permohonanpkb->user_id . '/pkb/sk', $file1);
+        $permohonanpkb = Pendaftaranpkb::find($id_pkb);
 
-        $permohonanpkb->status = '1';
-        $permohonanpkb->sk = $file1;
-        $permohonanpkb->keterangan = "Permohonan Selesai";
-        $permohonanpkb->save();
-        toastr()->success('Permohonan Berhasil Diterima!');
-        return redirect('/admin/permohonan-pendaftaran-pkb');
+        $validatedata = $request->validate([
+            'sk' => 'required|mimes:pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
+        ]);
+
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $permohonanpkb->pkb_perusahaan->id . '/pkb/sk' . $permohonanpkb->pkb_status->sk
+            ]);
+
+            $extension1 = $request->file('sk')->getClientOriginalExtension();
+            $file1 = 'SK_' . $permohonanpkb->pkb_perusahaan->nama_perusahaan . '-pkb' . now()->timestamp . '.' . $extension1;
+            $request->file('sk')->storeAs($permohonanpkb->pkb_perusahaan->id . '/pkb/sk', $file1);
+
+            $sk = $permohonanpkb->pkb_status;
+            $sk->id_status = '3';
+            $sk->sk = $file1;
+            $sk->keterangan = "Permohonan Selesai";
+            $sk->save();
+            toastr()->success('Permohonan Berhasil Diterima!');
+            return redirect('/admin/permohonan-pendaftaran-pkb');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function pendaftaran_pkb_tolak(Request $request, $id)
@@ -550,16 +565,6 @@ class AdminController extends Controller
         }else {
             return redirect('')->withErrors($validatedata)->withInput();
         }
-
-    }
-    public function pendaftaran_pkwt_update(Request $request, $id)
-    {
-        $permohonanpkwt = Pendaftaranpkwt::find($id);
-
-        $permohonanpkwt->keterangan = $request->keterangan;
-        $permohonanpkwt->save();
-        toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
-        return redirect('/admin/permohonan-pendaftaran-pkwt');
     }
 
     public function pendaftaran_pkwt_show($id)
@@ -576,32 +581,39 @@ class AdminController extends Controller
         return view('/admin/pendaftaran-pkwt/detail', compact('data'));
     }
 
-    public function pendaftaran_pkwt_terima(Request $request, $id)
+    public function pendaftaran_pkwt_terima(Request $request, $id_pkwt)
     {
-        $pendaftaranpkwt = Pendaftaranpkwt::find($id);
-        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-        $file1 = $id . 'surat_keputusan' . '-' . 'pkwt' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_keputusan')->storeAs($pendaftaranpkwt->user_id . '/pkwt/sk', $file1);
+        $permohonanpkwt = Pendaftaranpkwt::find($id_pkwt);
 
-        $pendaftaranpkwt->status = '1';
-        $pendaftaranpkwt->sk = $file1;
-        $pendaftaranpkwt->keterangan = 'Permohonan Selesai';
-        $pendaftaranpkwt->save();
-        toastr()->success('Permohonan Berhasil Diterima!');
-        return redirect('/admin/permohonan-pendaftaran-pkwt');
+        $validatedata = $request->validate([
+            'sk' => 'required|mimes:pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
+        ]);
+
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $permohonanpkwt->pkwt_perusahaan->id . '/pkwt/sk' . $permohonanpkwt->pkwt_status->sk
+            ]);
+
+            $extension1 = $request->file('sk')->getClientOriginalExtension();
+            $file1 = 'SK_' . $permohonanpkwt->pkwt_perusahaan->nama_perusahaan . '-pkwt' . now()->timestamp . '.' . $extension1;
+            $request->file('sk')->storeAs($permohonanpkwt->pkwt_perusahaan->id . '/pkwt/sk', $file1);
+
+            $sk = $permohonanpkwt->pkwt_status;
+            $sk->id_status = '3';
+            $sk->sk = $file1;
+            $sk->keterangan = "Permohonan Selesai";
+            $sk->save();
+            toastr()->success('Permohonan Berhasil Diterima!');
+            return redirect('/admin/permohonan-pendaftaran-pkwt');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
-
-    public function pendaftaran_pkwt_tolak(Request $request, $id)
-    {
-        $pendaftaranpkwt = Pendaftaranpkwt::find($id);
-        $pendaftaranpkwt->pesan = $request->pesan;
-        $pendaftaranpkwt->status = '2';
-        $pendaftaranpkwt->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
-        $pendaftaranpkwt->save();
-        toastr()->success('Permohonan Berhasil Dikembalikan!');
-        return redirect('/admin/permohonan-pendaftaran-pkwt');
-    }
-
 
     public function pencatatan_spsb()
     {
@@ -716,19 +728,38 @@ class AdminController extends Controller
         return view('/admin/pencatatan-spsb/detail', compact('data'));
     }
 
-    public function pencatatan_spsb_terima(Request $request, $id)
+    public function pencatatan_spsb_terima(Request $request, $id_spsb)
     {
-        $pencatatanspsb = Pencatatanspsb::find($id);
-        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-        $file1 = $id . 'surat_keputusan' . '-' . 'spsb' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_keputusan')->storeAs($pencatatanspsb->user_id . '/spsb/sk', $file1);
+        $permohonanspsb = Pencatatanspsb::find($id_spsb);
 
-        $pencatatanspsb->status = '1';
-        $pencatatanspsb->sk = $file1;
-        $pencatatanspsb->keterangan = 'Permohonan Selesai';
-        $pencatatanspsb->save();
-        toastr()->success('Permohonan Berhasil Diterima!');
-        return redirect('/admin/permohonan-pencatatan-spsb');
+        $validatedata = $request->validate([
+            'sk' => 'required|mimes:pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
+        ]);
+
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $permohonanspsb->spsb_perusahaan->id . '/spsb/sk' . $permohonanspsb->spsb_status->sk
+            ]);
+
+            $extension1 = $request->file('sk')->getClientOriginalExtension();
+            $file1 = 'SK_' . $permohonanspsb->spsb_perusahaan->nama_perusahaan . '-spsb' . now()->timestamp . '.' . $extension1;
+            $request->file('sk')->storeAs($permohonanspsb->spsb_perusahaan->id . '/spsb/sk', $file1);
+
+            $sk = $permohonanspsb->spsb_status;
+            $sk->id_status = '3';
+            $sk->sk = $file1;
+            $sk->keterangan = "Permohonan Selesai";
+            $sk->save();
+            toastr()->success('Permohonan Berhasil Diterima!');
+            return redirect('/admin/permohonan-pencatatan-spsb');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function pencatatan_spsb_tolak(Request $request, $id)
@@ -858,19 +889,38 @@ class AdminController extends Controller
         return view('/admin/pendaftaran-lks-bipartit/detail', compact('data'));
     }
 
-    public function pendaftaran_lks_terima(Request $request, $id)
+    public function pendaftaran_lks_terima(Request $request, $id_lks)
     {
-        $pendaftaranlks = Pendaftaranlks::find($id);
-        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-        $file1 = $id . 'surat_keputusan' . '-' . 'lks' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_keputusan')->storeAs($pendaftaranlks->user_id . '/lks/sk', $file1);
+        $permohonanlks = Pendaftaranlks::find($id_lks);
 
-        $pendaftaranlks->status = '1';
-        $pendaftaranlks->sk = $file1;
-        $pendaftaranlks->keterangan = 'Permohonan Selesai';
-        $pendaftaranlks->save();
-        toastr()->success('Permohonan Berhasil Diterima!');
-        return redirect('/admin/permohonan-pendaftaran-lks');
+        $validatedata = $request->validate([
+            'sk' => 'required|mimes:pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
+        ]);
+
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $permohonanlks->lks_perusahaan->id . '/lks/sk' . $permohonanlks->lks_status->sk
+            ]);
+
+            $extension1 = $request->file('sk')->getClientOriginalExtension();
+            $file1 = 'SK_' . $permohonanlks->lks_perusahaan->nama_perusahaan . '-lks' . now()->timestamp . '.' . $extension1;
+            $request->file('sk')->storeAs($permohonanlks->lks_perusahaan->id . '/lks/sk', $file1);
+
+            $sk = $permohonanlks->lks_status;
+            $sk->id_status = '3';
+            $sk->sk = $file1;
+            $sk->keterangan = "Permohonan Selesai";
+            $sk->save();
+            toastr()->success('Permohonan Berhasil Diterima!');
+            return redirect('/admin/permohonan-pendaftaran-lks');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function pendaftaran_lks_tolak(Request $request, $id)
@@ -998,20 +1048,38 @@ class AdminController extends Controller
         return view('/admin/pencatatan-penyelesaian-hi/detail', compact('data'));
     }
 
-    public function pencatatan_hi_terima(Request $request, $id)
+    public function pencatatan_hi_terima(Request $request, $id_hi)
     {
-        $penyelesaianhi = Pencatatanperselihan::find($id);
+        $permohonanhi = Pencatatanperselihan::find($id_hi);
 
-        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-        $file1 = $id . 'surat_keputusan' . '-' . 'perselisihan_hi' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_keputusan')->storeAs($penyelesaianhi->user_id . '/perselisihan_hi/sk', $file1);
+        $validatedata = $request->validate([
+            'sk' => 'required|mimes:pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
+        ]);
 
-        $penyelesaianhi->status = '1';
-        $penyelesaianhi->sk = $file1;
-        $penyelesaianhi->keterangan = 'Permohonan Selesai';
-        $penyelesaianhi->save();
-        toastr()->success('Permohonan Berhasil Diterima!');
-        return redirect('/admin/permohonan-pencatatan-hi');
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $permohonanhi->hi_perusahaan->id . '/perselisihan_hi/sk' . $permohonanhi->hi_status->sk
+            ]);
+
+            $extension1 = $request->file('sk')->getClientOriginalExtension();
+            $file1 = 'SK_' . $permohonanhi->hi_perusahaan->nama_perusahaan . '-hi' . now()->timestamp . '.' . $extension1;
+            $request->file('sk')->storeAs($permohonanhi->hi_perusahaan->id . '/perselisihan_hi/sk', $file1);
+
+            $sk = $permohonanhi->hi_status;
+            $sk->id_status = '3';
+            $sk->sk = $file1;
+            $sk->keterangan = "Permohonan Selesai";
+            $sk->save();
+            toastr()->success('Permohonan Berhasil Diterima!');
+            return redirect('/admin/permohonan-pencatatan-hi');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function pencatatan_hi_tolak(Request $request, $id)
@@ -1138,19 +1206,38 @@ class AdminController extends Controller
         return view('/admin/pelaporan-phk/detail', compact('data'));
     }
 
-    public function pelaporan_phk_terima(Request $request, $id)
+    public function pelaporan_phk_terima(Request $request, $id_phk)
     {
-        $pelaporanphk = Pelaporanphk::find($id);
-        $extension1 = $request->file('surat_keputusan')->getClientOriginalExtension();
-        $file1 = $id . 'surat_keputusan' . '-' . 'phk' . now()->timestamp . '.' . $extension1;
-        $request->file('surat_keputusan')->storeAs($pelaporanphk->user_id . '/phk/sk', $file1);
+        $permohonanphk = Pelaporanphk::find($id_phk);
 
-        $pelaporanphk->status = '1';
-        $pelaporanphk->sk = $file1;
-        $pelaporanphk->keterangan = 'Permohonan Selesai';
-        $pelaporanphk->save();
-        toastr()->success('Permohonan Berhasil Diterima!');
-        return redirect('/admin/permohonan-pelaporan-phk');
+        $validatedata = $request->validate([
+            'sk' => 'required|mimes:pdf|file|max:2048',
+        ], [
+            'required' => 'Field :attribute wajib diisi.',
+            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'file' => 'Field :attribute harus berupa file.',
+            'max' => 'File :attribute tidak boleh lebih besar dari :max mb.',
+        ]);
+
+        if ($validatedata) {
+            Storage::disk('public')->delete([
+                $permohonanphk->phk_perusahaan->id . '/phk/sk' . $permohonanphk->phk_status->sk
+            ]);
+
+            $extension1 = $request->file('sk')->getClientOriginalExtension();
+            $file1 = 'SK_' . $permohonanphk->phk_perusahaan->nama_perusahaan . '-phk' . now()->timestamp . '.' . $extension1;
+            $request->file('sk')->storeAs($permohonanphk->phk_perusahaan->id . '/phk/sk', $file1);
+
+            $sk = $permohonanphk->phk_status;
+            $sk->id_status = '3';
+            $sk->sk = $file1;
+            $sk->keterangan = "Permohonan Selesai";
+            $sk->save();
+            toastr()->success('Permohonan Berhasil Diterima!');
+            return redirect('/admin/permohonan-pelaporan-phk');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
     }
 
     public function pelaporan_phk_tolak(Request $request, $id)

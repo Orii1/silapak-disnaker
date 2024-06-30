@@ -109,6 +109,36 @@
             </div>
         </div>
 
+        <div class="tab-pane fade pt-3" id="selesai">
+            <div class="text-center">
+                <div class="mb-4">
+                    @foreach ($phk_done as $item)
+                        <a href="/permohonan-pelaporan-phk/{{$item->id_phk}}">
+                            <div class="cardd radius-5 border-start border-0 border-3 border-diproses" style="height: 100px; display: flex;">
+                                <div class="ms-3 my-2">
+                                    <div class="row text-start">
+                                        <div style="font-size: 21px; color: black;">
+                                            <b>{{$item->phk_perusahaan->nama_perusahaan}}</b>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="disabled-text">
+                                            Peruntukan : {{$item->peruntukan}} / {{$item->phk_status->keterangan}}
+                                        </div>
+                                    </div>
+                                    <div class="row text-start">
+                                        <div class="disabled-text">
+                                            Diajukan pada tanggal : {{$item->created_at->isoFormat('D MMMM Y')}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
         <div class="tab-pane fade pt-3" id="diterima">
             <div class="text-center">
                 <div class="mb-4">

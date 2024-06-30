@@ -441,7 +441,7 @@ class MediatorController extends Controller
             $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-hi' . now()->timestamp . '.pdf';
-            $pdfPath = $profile->id . '/hi/sk/' . $pdfname;
+            $pdfPath = $profile->id . '/perselisihan_hi/sk/' . $pdfname;
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;

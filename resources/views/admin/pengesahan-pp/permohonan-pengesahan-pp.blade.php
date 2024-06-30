@@ -150,7 +150,7 @@
                                     <div class="ms-3 my-2">
                                         <div class="row text-start">
                                             <div style="font-size: 21px; color: black;">
-                                                <b>{$item->pp_perusahaan->nama_perusahaan}}</b>
+                                                <b>{{$item->pp_perusahaan->nama_perusahaan}}</b>
                                             </div>
                                         </div>
                                         <div class="row">

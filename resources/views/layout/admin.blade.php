@@ -178,7 +178,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed " href="/logout">
             <i class="bi bi-box-arrow-right"></i>
-          <span>Log Out</span>
+          <span>Logout</span>
         </a>
       </li>
 

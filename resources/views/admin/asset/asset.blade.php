@@ -184,7 +184,7 @@
                         </div>
                     </form>
 
-                    <label>Durasi Pemrosesan <a title="{{$asset_pkwt->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
+                    <label>Durasi Pemrosesan <a href="" title="{{$asset_pkwt->durasi_pemrosesan}}"><i class="bi bi-info-square-fill"></i></a></label><br>
                     <form action="/durasi-pemrosesan/store/3" method="POST">
                         @csrf
                         <div class="row">

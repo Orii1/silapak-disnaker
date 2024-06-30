@@ -1240,27 +1240,16 @@ class AdminController extends Controller
         }
     }
 
-    public function pelaporan_phk_tolak(Request $request, $id)
-    {
-        $pelaporanphk = Pelaporanphk::find($id);
-        $pelaporanphk->pesan = $request->pesan;
-        $pelaporanphk->status = '2';
-        $pelaporanphk->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai pesan';
-        $pelaporanphk->save();
-        toastr()->success('Permohonan Berhasil Dikembalikan!');
-        return redirect('/admin/permohonan-pelaporan-phk');
-    }
-
 
     public function asset()
     {
-        $pp_not = Pengesahanpp::where('status', '3')->count();
-        $pkb_not = Pendaftaranpkb::where('status', '3')->count();
-        $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
-        $spsb_not = Pencatatanspsb::where('status', '3')->count();
-        $lks_not = Pendaftaranlks::where('status', '3')->count();
-        $hi_not = Pencatatanperselihan::where('status', '3')->count();
-        $phk_not = Pelaporanphk::where('status', '3')->count();
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
 
         $asset_pp = Asset::find('1');
         $asset_pkb = Asset::find('2');
@@ -1269,7 +1258,7 @@ class AdminController extends Controller
         $asset_lks = Asset::find('5');
         $asset_hi = Asset::find('6');
         $asset_phk = Asset::find('7');
-        return view('/admin/asset/asset', compact('asset_pp', 'asset_pkb', 'asset_pkwt', 'asset_spsb', 'asset_lks', 'asset_hi', 'asset_phk', 'pp_not', 'pkb_not', 'pkwt_not', 'spsb_not', 'lks_not', 'hi_not', 'phk_not'));
+        return view('/admin/asset/asset', compact('asset_pp', 'asset_pkb', 'asset_pkwt', 'asset_spsb', 'asset_lks', 'asset_hi', 'asset_phk'));
     }
 
     public function alur_perizinan(Request $request, $id)

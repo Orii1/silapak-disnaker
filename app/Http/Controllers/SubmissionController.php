@@ -27,9 +27,9 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // $asset_spsb = Asset::find('4');
-        // $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pencatatan-serikat-kerja', compact('user'));
+        $asset_spsb = Asset::find('4');
+        $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pencatatan-serikat-kerja', compact('user', 'asset', 'asset_spsb'));
     }
 
     public function serikat_kerja_store(Request $request)
@@ -100,8 +100,8 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pengesahan-peraturan-perusahaan', compact('user'));
+        $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pengesahan-peraturan-perusahaan', compact('user', 'asset'));
     }
 
     public function pengesahan_pp_store(Request $request)
@@ -199,9 +199,9 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // $asset_pkb = Asset::find('2');
-        // $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pendaftaran-pkb', compact('user'));
+        $asset_pkb = Asset::find('2');
+        $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pendaftaran-pkb', compact('user', 'asset', 'asset_pkb'));
     }
 
     public function pendaftaran_pkb_store(Request $request)
@@ -283,9 +283,9 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // $asset_pkwt = Asset::find('3');
-        // $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', compact('user'));
+        $asset_pkwt = Asset::find('3');
+        $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pendaftaran-perjanjian-kerja-waktu-tertentu', compact('user', 'asset', 'asset_pkwt'));
     }
 
     public function perjanjian_pkwt_store(Request $request)
@@ -355,9 +355,9 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // $asset_lks = Asset::find('5');
-        // $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pendaftaran-lks-bipartit', compact('user'));
+        $asset_lks = Asset::find('5');
+        $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pendaftaran-lks-bipartit', compact('user', 'asset', 'asset_lks'));
     }
 
     public function pendaftaran_lks_store(Request $request)
@@ -420,9 +420,9 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // $asset_hi = Asset::find('6');
-        // $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pencatatan-penyelesaian-perselisihan-internal', compact('user'));
+        $asset_hi = Asset::find('6');
+        $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pencatatan-penyelesaian-perselisihan-internal', compact('user', 'asset', 'asset_hi'));
     }
 
     public function pencatatan_perselisihan_internal_store(Request $request)
@@ -485,9 +485,9 @@ class SubmissionController extends Controller
     {
         $user = Auth::user();
 
-        // $asset_phk = Asset::find('7');
-        // $asset = Asset::find('1');
-        return view('/perusahaan/permohonan/pelaporan-pemutusan-hubungan-kerja', compact('user'));
+        $asset_phk = Asset::find('7');
+        $asset = Asset::find('1');
+        return view('/perusahaan/permohonan/pelaporan-pemutusan-hubungan-kerja', compact('user', 'asset', 'asset_phk'));
     }
 
     public function pelaporan_phk_store(Request $request)

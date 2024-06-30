@@ -219,14 +219,14 @@
 
                 <div class="tab-pane fade pt-3" id="alur-perizinan">
                     <div class="text-center">
-                        <img src="" class="img-fluid" alt="">
+                        <img src="/storage/asset/{{$asset->alur_perizinan}}" class="img-fluid" alt="">
                     </div>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="retribusi">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->retribusi}}" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@
                 <div class="tab-pane fade pt-3" id="maklumat">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->maklumat}}" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                 <div class="tab-pane fade pt-3" id="visimisi">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="" class="img-fluid" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->visi_misi}}" class="img-fluid" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -250,7 +250,7 @@
                 <div class="tab-pane fade pt-3" id="motto">
                     <div class="text-center">
                         <div class="mb-4">
-                            <img src="" style="width: 900px;" alt="">
+                            <img src="/storage/asset/{{$asset->motto}}" style="width: 900px;" alt="">
                         </div>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                         <div class="mb-4">
                             <div class="card-title">
                                 <Label style="font-size: 20px;">Dasar Hukum</Label><br>
-                                <label class="mt-2" style="font-size: 17px;"></label>
+                                <label class="mt-2" style="font-size: 17px;">{{$asset_hi->dasar_hukum}}</label>
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                         <div class="mb-4">
                             <div class="card-title">
                                 <Label style="font-size: 20px;">Durasi Pemrosesan</Label><br>
-                                <label class="mt-2" style="font-size: 17px;"></label>
+                                <label class="mt-2" style="font-size: 17px;">{{$asset_hi->durasi_pemrosesan}}</label>
                             </div>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                             </div>
                             <label class="ms-5 mb-2 card-tittle" style="font-size: 16px;"><b>Dinas Koperasi, Usaha Mikro dan Tenaga Kerja kota Banjarbaru</b></label><br>
                             <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Alamat : Jalan Soekarno Hatta - Trikora</label><br>
-                            <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Nomor : </label><br>
+                            <label class="ms-5 mt-0 card-tittle" style="font-size: 15px;">Nomor : {{$asset->kontak}}</label><br>
                         </div>
                     </div>
                 </div>

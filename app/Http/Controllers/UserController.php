@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestEmail;
 use App\Models\Perusahaan;
 use App\Models\User;
+use App\Notifications\TestEmailNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -44,5 +47,11 @@ class UserController extends Controller
         return redirect('/aktivasi-user');
     }
 
+    public function sendTestEmail()
+    {
+        Mail::to('recipient@example.com')->send(new TestEmail());
+
+        return 'Test email sent!';
+    }
 
 }

@@ -78,6 +78,13 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link collapsed" href="/admin/manajemen-user">
+            <i class="bi bi-people"></i>
+          <span>Manajemen User</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link collapsed" href="/admin/data-perusahaan">
             <i class="bi bi-building"></i>
           <span>Perusahaan</span>
@@ -167,6 +174,13 @@
             @endif --}}
         </li>
     </ul>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/admin/asset">
+            <i class="bi bi-book"></i>
+          <span>Buku Registrasi</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/admin/asset">

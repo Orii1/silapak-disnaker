@@ -102,8 +102,7 @@ class AdminController extends Controller
 
     public function company()
     {
-        $excludedIds = [1, 2, 3, 4];
-        $perusahaan = User::whereNotIn('id', $excludedIds)->get();
+        $perusahaan = User::where('id_role', '4')->get();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -162,6 +161,12 @@ class AdminController extends Controller
         } else {
             return redirect()->back()->with('error', 'User tidak ditemukan.');
         }
+    }
+
+    public function manage_user()
+    {
+        $user = User::where('id_role', '2')->get();
+        return view('admin.manage.manage-user', compact('user'));
     }
 
     public function detail_perusahaan($id)

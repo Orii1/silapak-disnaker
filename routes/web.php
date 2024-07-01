@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Laravel\Socialite\Facades\Socialite;
 
+Route::get('/send-test-email', [UserController::class, 'sendTestEmail']);
 Route::get('/', function () {
     return view('/dashboard/home');
 });
@@ -162,6 +163,8 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/admin/delete-perusahaan/{id}', [AdminController::class, 'delete_perusahaan']);
     Route::get('/download/data-perusahaan/{id}', [AdminController::class, 'download_data_perusahaan']);
     Route::get('/aktivasi-user/{id}', [AdminController::class, 'aktivasi_user']);
+    Route::get('/admin/manajemen-user', [AdminController::class, 'manage_user']);
+
 
     // PP
     Route::get('/admin/permohonan-pengesahan-pp', [AdminController::class, 'permohonan_pp']);

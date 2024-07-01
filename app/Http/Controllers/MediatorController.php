@@ -11,6 +11,7 @@ use App\Models\Pendaftaranlks;
 use App\Models\Pencatatanperselihan;
 use App\Models\Pelaporanphk;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Database\DBAL\TimestampType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,11 @@ class MediatorController extends Controller
 {
     public function index()
     {
-        return view('mediator.home.home');
+        $now = Carbon::now();
+        $now->setLocale('id');
+        $datestring = $now->isoFormat('D MMMM Y');
+        $dayname = $now->translatedFormat('l');
+        return view('mediator.home.home',compact('datestring','dayname'));
     }
 
     public function profile()

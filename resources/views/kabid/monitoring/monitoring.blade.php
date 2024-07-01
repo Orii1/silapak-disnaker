@@ -68,7 +68,7 @@
         </div>
     <div class="tab-content">
         <div class="tab-pane fade show active profile-overview" id="pengesahanpp">
-            <table class="table table-striped">
+            <table class="table ">
             <thead>
                 <tr>
                     <th>Nomor</th>

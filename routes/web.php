@@ -260,13 +260,13 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
 });
 
 // KABID
-
-Route::get('/kabid/dashboard', [KabidController::class, 'dashboard']);
-Route::get('/kabid/monitoring', [KabidController::class, 'monitoring']);
-Route::get('/kabid/profile', [KabidController::class, 'profile']);
-Route::get('/kabid/rekapitulasi', [KabidController::class, 'rekapitulasi']);
-Route::get('/kabid/monitoring/detailpermohonan', [KabidController::class, 'detailpermohonan']);
-
+Route::middleware(['auth', 'UserAkses:3'])->group(function () {
+    Route::get('/kabid/dashboard', [KabidController::class, 'dashboard']);
+    Route::get('/kabid/monitoring', [KabidController::class, 'monitoring']);
+    Route::get('/kabid/profile', [KabidController::class, 'profile']);
+    Route::get('/kabid/rekapitulasi', [KabidController::class, 'rekapitulasi']);
+    Route::get('/kabid/monitoring/detailpermohonan', [KabidController::class, 'detailpermohonan']);
+});
 // END KABID ROUTE
 Route::get('/map', function () {
     return view('/map');

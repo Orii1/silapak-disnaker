@@ -22,6 +22,9 @@ class LoginController extends Controller
                 $user = Auth::user()->user_pegawai;
                 toastr()->success('Berhasil Login, Selamat Datang ' . $user->nama_pegawai . '!');
                 return redirect('/mediator/dashboard');
+            } else if ($user_role == '3') {
+                toastr()->success('Berhasil Login, Selamat Datang Kepala Bidang HI!');
+                return redirect('/kabid/dashboard');
             }
         } else {
             Session::flash('error', 'Email atau Password salah!');

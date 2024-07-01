@@ -36,11 +36,19 @@
     </header>
 
     <section id="cta" class="cta">
-        <div class="container text-center">
-            <h1 data-aos="fade-up">Selamat Datang di SILAKHI</h1>
-            <h1 data-aos="fade-up" data-aos-delay="100">Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</h1>
-            <h2 data-aos="fade-up" data-aos-delay="200">Mencetak Dokumen Anda Secara Mandiri</h2>
-            <h3 data-aos="fade-up" data-aos-delay="300">"Ayo Lengkapi Sarana HI Buhan Pian, Sakira Bausaha Nyaman, Bagawi Tanang"</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 data-aos="fade-up" data-aos-delay="100" style="font-size:40px;"><b>Sistem Informasi Layanan Ketenagakerjaan Hubungan Industrial</b></h1>
+                    <h2 data-aos="fade-up" data-aos-delay="200" style="font-size:18px;"><b>Mencetak Dokumen Anda Secara Mandiri</b></h2>
+                    <h3 data-aos="fade-up" data-aos-delay="300" style="font-size:18px;"><b>"Ayo Lengkapi Sarana HI Buhan Pian, Sakira Bausaha Nyaman, Bagawi Tanang"</b></h3>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <img data-aos="zoom-in-up" data-aos-delay="100" src="{{asset('assets/img/banjarbaru.png')}}" style="width: 200px;">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

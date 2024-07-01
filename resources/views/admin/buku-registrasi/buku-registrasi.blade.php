@@ -74,7 +74,7 @@
         <table class="table ">
         <thead>
             <tr>
-                <th>Nomor</th>
+                <th>No</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
                 <th>Tanggal SK Disahkan</th>
@@ -107,7 +107,7 @@
         <table class="table ">
         <thead>
             <tr>
-                <th>Nomor</th>
+                <th>No</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
                 <th>Tanggal SK Disahkan</th>
@@ -139,7 +139,7 @@
         <table class="table ">
         <thead>
             <tr>
-                <th>Nomor</th>
+                <th>No</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
                 <th>Tanggal SK Disahkan</th>
@@ -172,7 +172,7 @@
         <table class="table ">
         <thead>
             <tr>
-                <th>Nomor</th>
+                <th>No</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
                 <th>Tanggal SK Disahkan</th>
@@ -205,7 +205,7 @@
         <table class="table ">
         <thead>
             <tr>
-                <th>Nomor</th>
+                <th>No</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
                 <th>Tanggal SK Disahkan</th>
@@ -237,7 +237,7 @@
         <table class="table ">
         <thead>
             <tr>
-                <th>Nomor</th>
+                <th>No</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
                 <th>Tanggal SK Disahkan</th>
@@ -270,7 +270,7 @@
         <table class="table ">
         <thead>
             <tr>
-                <th>Nomor</th>
+                <th>No</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
                 <th>Tanggal SK Disahkan</th>

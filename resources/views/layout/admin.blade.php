@@ -176,7 +176,7 @@
     </ul>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/asset">
+        <a class="nav-link collapsed" href="/admin/buku-registrasi">
             <i class="bi bi-book"></i>
           <span>Buku Registrasi</span>
         </a>

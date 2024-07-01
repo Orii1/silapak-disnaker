@@ -251,6 +251,8 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     // END Store Asset
     // END Asset
 
+    // Buku Registrasi
+    Route::get('/admin/buku-registrasi/buku-registrasi', [AdminController::class, 'buku_registrasi']);
     // END ADMIN ROUTE
 });
 

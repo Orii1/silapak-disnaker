@@ -1462,6 +1462,17 @@ class AdminController extends Controller
         $mpdf->Output();
     }
 
-
+    public function buku_registrasi()
+    {
+        // $perusahaan = User::where('id_role', '4')->get();
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('admin/buku-registrasi/buku-registrasi');
+    }
 
 }

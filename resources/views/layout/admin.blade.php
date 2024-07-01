@@ -88,11 +88,11 @@
         <a class="nav-link collapsed" href="/admin/data-perusahaan">
             <i class="bi bi-building"></i>
           <span>Perusahaan
-            {{-- @if ($aktif_not == '0')
+            @if ($aktif_not == '0')
 
             @else
                 <span class="badge text-bg-danger">{{$aktif_not}}</span>
-            @endif --}}
+            @endif
         </span>
         </a>
       </li>
@@ -103,81 +103,81 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            {{-- @if ($pp_not == "0") --}}
+            @if ($konfir_pp == "0")
             <a class="position-relative" href="/admin/permohonan-pengesahan-pp">
                 <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan
             </a>
-            {{-- @else
+            @else
             <a class="position-relative" href="/admin/permohonan-pengesahan-pp">
-                <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan<span class="badge text-bg-danger">{{$pp_not}}</span>
+                <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan<span class="badge text-bg-danger">{{$konfir_pp}}</span>
             </a>
-            @endif --}}
+            @endif
           </li>
           <li>
-            {{-- @if ($pkb_not == "0") --}}
+            @if ($konfir_pkb == "0")
             <a href="/admin/permohonan-pendaftaran-pkb">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama
             </a>
-            {{-- @else
+            @else
             <a href="/admin/permohonan-pendaftaran-pkb">
-                <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama<span class="badge text-bg-danger">{{$pkb_not}}</span>
+                <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama<span class="badge text-bg-danger">{{$konfir_pkb}}</span>
             </a>
-            @endif --}}
+            @endif
           </li>
           <li>
-            {{-- @if ($pkwt_not == "0") --}}
+            @if ($konfir_pkwt == "0")
             <a href="/admin/permohonan-pendaftaran-pkwt">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Waktu Tertentu
               </a>
-            {{-- @else
+            @else
             <a href="/admin/permohonan-pendaftaran-pkwt">
-              <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Waktu Tertentu<span class="badge text-bg-danger">{{$pkwt_not}}</span>
+              <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Waktu Tertentu<span class="badge text-bg-danger">{{$konfir_pkwt}}</span>
             </a>
-            @endif --}}
+            @endif
           </li>
           <li>
-            {{-- @if ($spsb_not == "0") --}}
+            @if ($konfir_spsb == "0")
             <a href="/admin/permohonan-pencatatan-spsb">
                 <i class="bi bi-circle"></i>Pencatatan Serikat Pekerja/Serikat Buruh
             </a>
-            {{-- @else
+            @else
             <a href="/admin/permohonan-pencatatan-spsb">
-              <i class="bi bi-circle"></i>Pencatatan Serikat Pekerja/Serikat Buruh<span class="badge text-bg-danger">{{$spsb_not}}</span>
+              <i class="bi bi-circle"></i>Pencatatan Serikat Pekerja/Serikat Buruh<span class="badge text-bg-danger">{{$konfir_spsb}}</span>
             </a>
-            @endif --}}
+            @endif
           </li>
           <li>
-            {{-- @if ($lks_not == "0") --}}
+            @if ($konfir_lks == "0")
             <a href="/admin/permohonan-pendaftaran-lks">
                 <i class="bi bi-circle"></i>Pendaftaran Lembaga Kerja Sama Bipartit
             </a>
-            {{-- @else
+            @else
             <a href="/admin/permohonan-pendaftaran-lks">
-              <i class="bi bi-circle"></i>Pendaftaran Lembaga Kerja Sama Bipartit<span class="badge text-bg-danger">{{$lks_not}}</span>
+              <i class="bi bi-circle"></i>Pendaftaran Lembaga Kerja Sama Bipartit<span class="badge text-bg-danger">{{$konfir_lks}}</span>
             </a>
-            @endif --}}
+            @endif
           </li>
           <li>
-            {{-- @if ($hi_not == "0") --}}
+            @if ($konfir_hi == "0")
             <a href="/admin/permohonan-pencatatan-hi">
                 <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial
             </a>
-            {{-- @else
+            @else
             <a href="/admin/permohonan-pencatatan-hi">
-                <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial<span class="badge text-bg-danger">{{$hi_not}}</span>
+                <i class="bi bi-circle"></i>Pencatatan Penyelesaian Perselisihan Hubungan Industrial<span class="badge text-bg-danger">{{$konfir_hi}}</span>
             </a>
-            @endif --}}
+            @endif
           </li>
           <li>
-            {{-- @if ($phk_not == "0") --}}
+            @if ($konfir_phk == "0")
             <a href="/admin/permohonan-pelaporan-phk">
                 <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja
             </a>
-            {{-- @else
+            @else
             <a href="/admin/permohonan-pelaporan-phk">
-                <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja<span class="badge text-bg-danger">{{$phk_not}}</span>
+                <i class="bi bi-circle"></i>Pelaporan Pemutusan Hubungan Kerja<span class="badge text-bg-danger">{{$konfir_phk}}</span>
             </a>
-            @endif --}}
+            @endif
         </li>
     </ul>
 

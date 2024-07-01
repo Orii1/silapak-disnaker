@@ -1490,6 +1490,38 @@ class AdminController extends Controller
         $mpdf->Output();
     }
 
-
+    public function buku_registrasi()
+    {
+        $data_pp = Pengesahanpp::whereHas('pp_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_pkb = Pendaftaranpkb::whereHas('pkb_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_pkwt = Pendaftaranpkwt::whereHas('pkwt_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_spsb = Pencatatanspsb::whereHas('spsb_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_lks = Pendaftaranlks::whereHas('lks_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_hi = Pencatatanperselihan::whereHas('hi_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_phk = Pelaporanphk::whereHas('phk_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        // $perusahaan = User::where('id_role', '4')->get();
+        // $pp_not = Pengesahanpp::where('status', '3')->count();
+        // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
+        // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
+        // $spsb_not = Pencatatanspsb::where('status', '3')->count();
+        // $lks_not = Pendaftaranlks::where('status', '3')->count();
+        // $hi_not = Pencatatanperselihan::where('status', '3')->count();
+        // $phk_not = Pelaporanphk::where('status', '3')->count();
+        return view('admin/buku-registrasi/buku-registrasi', compact('data_pp', 'data_pkb','data_pkwt','data_spsb','data_lks','data_hi','data_phk'));
+    }
 
 }

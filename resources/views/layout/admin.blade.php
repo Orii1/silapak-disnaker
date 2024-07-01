@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="../../assets/img/banjarbaru.png" rel="icon">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -88,11 +88,11 @@
         <a class="nav-link collapsed" href="/admin/data-perusahaan">
             <i class="bi bi-building"></i>
           <span>Perusahaan
-            @if ($aktif_not == '0')
+            {{-- @if ($aktif_not == '0')
 
             @else
                 <span class="badge text-bg-danger">{{$aktif_not}}</span>
-            @endif
+            @endif --}}
         </span>
         </a>
       </li>
@@ -182,7 +182,7 @@
     </ul>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="/admin/buku-registrasi">
             <i class="bi bi-book"></i>
           <span>Buku Registrasi</span>
         </a>

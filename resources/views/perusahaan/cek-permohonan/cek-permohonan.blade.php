@@ -507,7 +507,7 @@
                                                     <span class="badge rounded-pill text-bg-success">Diterima</span>
                                                 </div></td>
                                                 <td><div class="text-center">{{$item->phk_status->keterangan}}</div></td>
-                                                <td><div class="text-center"><a href="/storage/{{$item->phk_perusahaan->id}}/phk/sk/{{$item->phk_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan"><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
+                                                <td><div class="text-center"><a href="/storage/{{$item->phk_perusahaan->id}}/phk/sk/{{$item->phk_status->sk}}" class="btn btn-success btn-sm" title="Surat Keputusan" download><i class="bi bi-cloud-arrow-down-fill"></i></a></div></td>
                                             @elseif ($item->phk_status->id_status == '4')
                                                 <td><div class="text-center">
                                                     <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>

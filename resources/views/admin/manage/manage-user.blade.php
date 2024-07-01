@@ -74,8 +74,7 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-primary" id=""><i class="bi bi-info-circle-fill"></i></a>
-                                <a title="Detail" href="detail-perusahaan/{{$item->id}}" class="btn btn-danger" id=""><i class="bi bi-trash-fill"></i></a>
+                                <button title="Detail" data-user-id="{{$item->id}}" class="btn btn-danger delete-button"><i class="bi bi-trash-fill"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -89,21 +88,30 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="tambahPegLabel">Tambah Mahasiswa</h1>
+          <h1 class="modal-title fs-5" id="tambahPegLabel">Tambah Pegawai</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <form action="" method="POST">
+        <form action="/admin/pegawai/store" method="POST">
             @csrf
+            <input type="hidden" value="Mediator HI" name="jabatan">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input name="email" type="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input name="password" type="password" class="form-control">
+            </div>
             <div class="mb-3">
                 <label class="form-label">NIP</label>
-                <input name="nim" type="text" class="form-control">
+                <input name="nip" type="text" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Nama Pegawai</label>
-                <input name="nama" type="text" class="form-control">
+                <input name="nama_pegawai" type="text" class="form-control">
             </div>
-            <div class="mb-3">
+            <div class="mb-4">
                 <label class="form-label">Jenis_Kelamin</label>
                 <select class="form-select" name="jenis_kelamin" required>
                     <option value="L">Laki-laki</option>
@@ -121,5 +129,27 @@
       </div>
     </div>
 </div>
+
+<script>
+    document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const userId = this.getAttribute('data-user-id');
+
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: 'Anda akan menghapus user ini!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Tidak, batalkan'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `/admin/delete-pegawai/${userId}`;
+                }
+            });
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @endsection

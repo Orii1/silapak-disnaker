@@ -14,6 +14,8 @@
     </nav>
 </div>
 
+
+
 <div class="card mb-3">
     <div class="card-body">
         <ul class="mt-1 nav nav-tabs nav-tabs-bordered">
@@ -45,7 +47,7 @@
 
               <li class="nav-item">
                 <div class="">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pendaftaranlkb">Pendaftaran LKB</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pendaftaranlks">Pendaftaran LKS</button>
                 </div>
               </li>
 
@@ -75,33 +77,27 @@
                 <th>Nomor</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
-                <th>Status</th>
+                <th>Tanggal SK Disahkan</th>
+                <th>Masa Aktivasi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($data_pp as $item)
             <tr>
-                <td>1</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 1</td>
-                <td><span class="badge bg-success">Diterima</span></td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->pp_perusahaan->nama_perusahaan}}</td>
+                <td>{{$item->peruntukan}}</td>
+                <td>{{ $item->pp_status->updated_at->isoFormat('D MMMM Y') }}</td>
+                <td><span class="badge bg-info">2 Tahun</span></td>
                 <td>
                     <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
+                        <i class="fas fa-info-circle"></i> Detail
                     </a>
                 </td>               
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 2</td>
-                <td><span class="badge bg-success">Diterima</span></td>
-                <td>
-                    <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
-                    </a>
-                </td>               
-            </tr>
+            @endforeach
+          
             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
         </tbody>
         </table>
@@ -114,33 +110,26 @@
                 <th>Nomor</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
-                <th>Status</th>
+                <th>Tanggal SK Disahkan</th>
+                <th>Masa Aktivasi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($data_pkb as $item)
             <tr>
-                <td>1</td>
-                <td>Nama Perusahaan 1312</td>
-                <td>Peruntukkan 21</td>
-                <td><span class="badge bg-success">Diterima</span></td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->pkb_perusahaan->nama_perusahaan}}</td>
+                <td>{{$item->peruntukan}}</td>
+                <td>{{ $item->pkb_status->updated_at->isoFormat('D MMMM Y') }}</td>
+                <td><span class="badge bg-info">2 Tahun</span></td>
                 <td>
                     <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
+                        <i class="fas fa-info-circle"></i> Detail
                     </a>
                 </td>               
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 2</td>
-                <td><span class="badge bg-success">Diterima</span></td>
-                <td>
-                    <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
-                    </a>
-                </td>               
-            </tr>
+            @endforeach
             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
         </tbody>
         </table>
@@ -153,33 +142,27 @@
                 <th>Nomor</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
-                <th>Status</th>
+                <th>Tanggal SK Disahkan</th>
+                <th>Masa Aktivasi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+             @foreach ($data_pkwt as $item)
             <tr>
-                <td>1</td>
-                <td>Nama Perusahaan 1312</td>
-                <td>Peruntukkan 21</td>
-                <td><span class="badge bg-success">Diterima</span></td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->pkwt_perusahaan->nama_perusahaan}}</td>
+                <td>{{$item->peruntukan}}</td>
+                <td>{{ $item->pkwt_status->updated_at->isoFormat('D MMMM Y') }}</td>
+                <td><span class="badge bg-info">2 Tahun</span></td>
                 <td>
                     <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
+                        <i class="fas fa-info-circle"></i> Detail
                     </a>
                 </td>               
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 2</td>
-                <td><span class="badge bg-success">Diterima</span></td>
-                <td>
-                    <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
-                    </a>
-                </td>               
-            </tr>
+            @endforeach
+            
             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
         </tbody>
         </table>
@@ -192,72 +175,59 @@
                 <th>Nomor</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
-                <th>Status</th>
+                <th>Tanggal SK Disahkan</th>
+                <th>Masa Aktivasi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+             @foreach ($data_spsb as $item)
             <tr>
-                <td>1</td>
-                <td>Nama Perusahaan 1312</td>
-                <td>Peruntukkan 21</td>
-                <td><span class="badge bg-success">Diterima</span></td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->spsb_perusahaan->nama_perusahaan}}</td>
+                <td>{{$item->peruntukan}}</td>
+                <td>{{ $item->spsb_status->updated_at->isoFormat('D MMMM Y') }}</td>
+                <td><span class="badge bg-info">2 Tahun</span></td>
                 <td>
                     <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
+                        <i class="fas fa-info-circle"></i> Detail
                     </a>
                 </td>               
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 2</td>
-                <td><span class="badge bg-success">Diterima</span></td>
-                <td>
-                    <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
-                    </a>
-                </td>               
-            </tr>
+            @endforeach
+            
             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
         </tbody>
         </table>
     </div>
 
-    <div class="tab-pane fade" id="pendaftaranlkb">
+    <div class="tab-pane fade" id="pendaftaranlks">
         <table class="table table-striped">
         <thead>
             <tr>
                 <th>Nomor</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
-                <th>Status</th>
+                <th>Tanggal SK Disahkan</th>
+                <th>Masa Aktivasi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($data_lks as $item)
             <tr>
-                <td>1</td>
-                <td>Nama Perusahaan 1312</td>
-                <td>Peruntukkan 21</td>
-                <td><span class="badge bg-success">Diterima</span></td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->lks_perusahaan->nama_perusahaan}}</td>
+                <td>{{$item->peruntukan}}</td>
+                <td>{{ $item->lks_status->updated_at->isoFormat('D MMMM Y') }}</td>
+                <td><span class="badge bg-info">2 Tahun</span></td>
                 <td>
                     <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
+                        <i class="fas fa-info-circle"></i> Detail
                     </a>
                 </td>               
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 2</td>
-                <td><span class="badge bg-success">Diterima</span></td>
-                <td>
-                    <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
-                    </a>
-                </td>               
-            </tr>
+            @endforeach
             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
         </tbody>
         </table>
@@ -270,33 +240,27 @@
                 <th>Nomor</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
-                <th>Status</th>
+                <th>Tanggal SK Disahkan</th>
+                <th>Masa Aktivasi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+             @foreach ($data_hi as $item)
             <tr>
-                <td>1</td>
-                <td>Nama Perusahaan 1312</td>
-                <td>Peruntukkan 21</td>
-                <td><span class="badge bg-success">Diterima</span></td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->hi_perusahaan->nama_perusahaan}}</td>
+                <td>{{$item->peruntukan}}</td>
+                <td>{{ $item->hi_status->updated_at->isoFormat('D MMMM Y') }}</td>
+                <td><span class="badge bg-info">2 Tahun</span></td>
                 <td>
                     <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
+                        <i class="fas fa-info-circle"></i> Detail
                     </a>
                 </td>               
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 2</td>
-                <td><span class="badge bg-success">Diterima</span></td>
-                <td>
-                    <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
-                    </a>
-                </td>               
-            </tr>
+            @endforeach
+            
             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
         </tbody>
         </table>
@@ -309,33 +273,27 @@
                 <th>Nomor</th>
                 <th>Nama Perusahaan</th>
                 <th>Peruntukkan</th>
-                <th>Status</th>
+                <th>Tanggal SK Disahkan</th>
+                <th>Masa Aktivasi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($data_phk as $item)
             <tr>
-                <td>1</td>
-                <td>PT SINAR MAS</td>
-                <td>Peruntukkan 21</td>
-                <td><span class="badge bg-success">Diterima</span></td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$item->phk_perusahaan->nama_perusahaan}}</td>
+                <td>{{$item->peruntukan}}</td>
+                <td>{{ $item->phk_status->updated_at->isoFormat('D MMMM Y') }}</td>
+                <td><span class="badge bg-info">2 Tahun</span></td>
                 <td>
                     <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
+                        <i class="fas fa-info-circle"></i> Detail
                     </a>
                 </td>               
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nama Perusahaan 1</td>
-                <td>Peruntukkan 2</td>
-                <td><span class="badge bg-success">Diterima</span></td>
-                <td>
-                    <a href="/kabid/monitoring/detailpermohonan" >
-                        <i class="fas fa-info-circle"></i> Informasi
-                    </a>
-                </td>               
-            </tr>
+            @endforeach
+            
             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
         </tbody>
         </table>

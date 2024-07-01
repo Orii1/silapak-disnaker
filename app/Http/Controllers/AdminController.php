@@ -24,37 +24,78 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        // $tolak_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
-        //     $query->where('id_status', '4');
-        // })->count();
-        // $tolak_pkb = Pendaftaranpkb::whereHas('pkb_status')->where('id_status', '4')->count();
-        // $tolak_pkwt = Pendaftaranpkwt::whereHas('pkwt_status')->where('id_status', '4')->count();
-        // $tolak_spsb = Pencatatanspsb::whereHas('spsb_status')->where('id_status', '4')->count();
-        // $tolak_lks = Pendaftaranlks::whereHas('lks_status')->where('id_status', '4')->count();
-        // $tolak_hi = Pencatatanperselihan::whereHas('hi_status')->where('id_status', '4')->count();
-        // $tolak_phk = Pelaporanphk::whereHas('phk_status')->where('id_status', '4')->count();
+        $tolak_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->where('id_status', '4');
+        })->count();
+        $tolak_pkb = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->where('id_status', '4');
+        })->count();
+        $tolak_pkwt = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->where('id_status', '4');
+        })->count();
+        $tolak_spsb = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->where('id_status', '4');
+        })->count();
+        $tolak_lks = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->where('id_status', '4');
+        })->count();
+        $tolak_hi = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->where('id_status', '4');
+        })->count();
+        $tolak_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->where('id_status', '4');
+        })->count();
 
-        // $total_tolak = $tolak_pp + $tolak_pkb + $tolak_pkwt + $tolak_spsb + $tolak_lks + $tolak_hi + $tolak_phk;
+        $total_tolak = $tolak_pp + $tolak_pkb + $tolak_pkwt + $tolak_spsb + $tolak_lks + $tolak_hi + $tolak_phk;
 
-        // $terima_pp = Pengesahanpp::whereHas('pp_status')->where('id_status', '3')->count();
-        // $terima_pkb = Pendaftaranpkb::whereHas('pkb_status')->where('id_status', '3')->count();
-        // $terima_pkwt = Pendaftaranpkwt::whereHas('pkwt_status')->where('id_status', '3')->count();
-        // $terima_spsb = Pencatatanspsb::whereHas('spsb_status')->where('id_status', '3')->count();
-        // $terima_lks = Pendaftaranlks::whereHas('lks_status')->where('id_status', '3')->count();
-        // $terima_hi = Pencatatanperselihan::whereHas('hi_status')->where('id_status', '3')->count();
-        // $terima_phk = Pelaporanphk::whereHas('phk_status')->where('id_status', '3')->count();
 
-        // $total_terima = $terima_pp + $terima_pkb + $terima_pkwt + $terima_spsb + $terima_lks + $terima_hi + $terima_phk;
+        $terima_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->where('id_status', '3');
+        })->count();
+        $terima_pkb = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->where('id_status', '3');
+        })->count();
+        $terima_pkwt = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->where('id_status', '3');
+        })->count();
+        $terima_spsb = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->where('id_status', '3');
+        })->count();
+        $terima_lks = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->where('id_status', '3');
+        })->count();
+        $terima_hi = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->where('id_status', '3');
+        })->count();
+        $terima_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->where('id_status', '3');
+        })->count();
 
-        // $pp = Pengesahanpp::whereHas('pp_status')->where('id_status', '1')->count();
-        // $pkb = Pendaftaranpkb::whereHas('pkb_status')->where('id_status', '1')->count();
-        // $pkwt = Pendaftaranpkwt::whereHas('pkwt_status')->where('id_status', '1')->count();
-        // $spsb = Pencatatanspsb::whereHas('spsb_status')->where('id_status', '1')->count();
-        // $lks = Pendaftaranlks::whereHas('lks_status')->where('id_status', '1')->count();
-        // $hi = Pencatatanperselihan::whereHas('hi_status')->where('id_status', '1')->count();
-        // $phk = Pelaporanphk::whereHas('phk_status')->where('id_status', '1')->count();
+        $total_terima = $terima_pp + $terima_pkb + $terima_pkwt + $terima_spsb + $terima_lks + $terima_hi + $terima_phk;
 
-        // $total = $pp + $pkb + $pkwt + $spsb + $lks + $hi + $phk;
+        $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_pkb = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_pkwt = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_spsb = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_lks = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_hi = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+
+        $total_konfir = $konfir_pp + $konfir_pkb + $konfir_pkwt + $konfir_spsb + $konfir_lks + $konfir_hi + $konfir_phk;
 
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -77,12 +118,15 @@ class AdminController extends Controller
         $hi_all = Pencatatanperselihan::all()->count();
         $phk_all = Pelaporanphk::all()->count();
 
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+
         return view('/admin/dashboard', compact(
             'datestring',
             'dayname',
-            // 'total_tolak',
-            // 'total_terima',
-            // 'total',
+            'total_tolak',
+            'total_terima',
+            'total_konfir',
+            'aktif_not',
             // 'pp_not',
             // 'pkb_not',
             // 'pkwt_not',
@@ -103,6 +147,8 @@ class AdminController extends Controller
     public function company()
     {
         $perusahaan = User::where('id_role', '4')->get();
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -110,14 +156,14 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/perusahaan/data-perusahaan', compact('perusahaan'));
+        return view('/admin/perusahaan/data-perusahaan', compact('perusahaan', 'aktif_not'));
     }
 
     public function profile()
     {
 
         $profile = User::where('id', '1')->get();
-
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -125,7 +171,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/profile/profileadmin', compact('profile'));
+        return view('/admin/profile/profileadmin', compact('profile', 'aktif_not'));
     }
 
     public function change_password(Request $request, $id)
@@ -166,8 +212,56 @@ class AdminController extends Controller
     public function manage_user()
     {
         $user = User::where('id_role', '2')->get();
-        return view('admin.manage.manage-user', compact('user'));
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('admin.manage.manage-user', compact('user', 'aktif_not'));
     }
+
+    public function user_store(Request $request)
+    {
+        $validatedata = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            'nip' => 'required',
+            'nama_pegawai' => 'required',
+            'jenis_kelamin' => 'required',
+            'agama' => 'required',
+        ], [
+            'required' => 'Field :attribute wajib diisi.'
+        ]);
+
+        if ($validatedata) {
+            $user = User::create([
+                'id_role' => '2',
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'status_akun' => 'active',
+            ]);
+
+            Pegawai::create([
+                'id_user' => $user->id,
+                'nip' => $request->nip,
+                'nama_pegawai' => $request->nama_pegawai,
+                'jabatan' => $request->jabatan,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'agama' => $request->agama,
+            ]);
+            toastr()->success('Pegawai Berhasil Ditambah!');
+            return redirect('/admin/manajemen-user');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
+    }
+
+    public function user_delete($id)
+    {
+        $user = User::findOrFail($id);
+
+        Pegawai::where('id_user', $user->id)->delete();
+        $user->delete();
+        toastr()->success('Pegawai Berhasil Dihapus!');
+        return redirect('/admin/manajemen-user');
+    }
+
 
     public function detail_perusahaan($id)
     {
@@ -176,6 +270,8 @@ class AdminController extends Controller
         $lat = $detail->user_perusahaan->latitude;
         $lng = $detail->user_perusahaan->longtitude;
 
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -183,7 +279,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/perusahaan/detail-perusahaan', compact('detail', 'lat', 'lng'));
+        return view('/admin/perusahaan/detail-perusahaan', compact('detail', 'lat', 'lng', 'aktif_not'));
     }
 
     public function permohonan_pp()
@@ -230,7 +326,9 @@ class AdminController extends Controller
                 $query->where('id_status', '4');
             }
         )->orderBy('created_at', 'desc')->get();
-        return view('/admin/pengesahan-pp/permohonan-pengesahan-pp', compact('pp_konfir', 'pp_proses', 'pp_terima', 'pp_tolak', 'pp_done'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pengesahan-pp/permohonan-pengesahan-pp', compact('aktif_not', 'pp_konfir', 'pp_proses', 'pp_terima', 'pp_tolak', 'pp_done'));
     }
 
     public function permohonan_pp_show($id)
@@ -244,13 +342,17 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pengesahan-pp/detail', compact('data'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pengesahan-pp/detail', compact('data', 'aktif_not'));
     }
 
     public function permohonan_pp_konfir($id_pp)
     {
         $data = Pengesahanpp::find($id_pp);
         $mediator = Pegawai::all();
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -258,7 +360,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pengesahan-pp/konfirmasi', compact('data', 'mediator'));
+        return view('/admin/pengesahan-pp/konfirmasi', compact('data', 'mediator', 'aktif_not'));
     }
 
     public function permohonan_pp_proses(Request $request, $id)
@@ -368,13 +470,15 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-pkb/permohonan-pendaftaran-pkb', compact('pkb_proses', 'pkb_konfir', 'pkb_done', 'pkb_terima', 'pkb_tolak'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pendaftaran-pkb/permohonan-pendaftaran-pkb', compact('aktif_not', 'pkb_proses', 'pkb_konfir', 'pkb_done', 'pkb_terima', 'pkb_tolak'));
     }
 
     public function pendaftaran_pkb_show($id)
     {
         $data = Pendaftaranpkb::find($id);
-
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -382,13 +486,14 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-pkb/detail', compact('data'));
+        return view('/admin/pendaftaran-pkb/detail', compact('data', 'aktif_not'));
     }
 
     public function pendaftaran_pkb_konfir($id_pkb)
     {
         $data = Pendaftaranpkb::find($id_pkb);
         $mediator = Pegawai::all();
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -396,7 +501,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-pkb/konfirmasi', compact('data', 'mediator'));
+        return view('/admin/pendaftaran-pkb/konfirmasi', compact('data', 'mediator', 'aktif_not'));
     }
 
     public function pendaftaran_pkb_proses(Request $request, $id)
@@ -425,16 +530,6 @@ class AdminController extends Controller
         }else {
             return redirect('')->withErrors($validatedata)->withInput();
         }
-    }
-
-    public function pendaftaran_pkb_update(Request $request, $id)
-    {
-        $permohonanpkb = Pendaftaranpkb::find($id);
-
-        $permohonanpkb->keterangan = $request->keterangan;
-        $permohonanpkb->save();
-        toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
-        return redirect('/admin/permohonan-pendaftaran-pkb');
     }
 
     public function pendaftaran_pkb_terima(Request $request, $id_pkb)
@@ -469,17 +564,6 @@ class AdminController extends Controller
         } else {
             return redirect('')->withErrors($validatedata)->withInput();
         }
-    }
-
-    public function pendaftaran_pkb_tolak(Request $request, $id)
-    {
-        $pendaftaranpkb = Pendaftaranpkb::find($id);
-        $pendaftaranpkb->pesan = $request->pesan;
-        $pendaftaranpkb->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
-        $pendaftaranpkb->status = '2';
-        $pendaftaranpkb->save();
-        toastr()->success('Permohonan Berhasil Dikembalikan!');
-        return redirect('/admin/permohonan-pendaftaran-pkb');
     }
 
 
@@ -527,7 +611,9 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-pkwt/permohonan-pendaftaran-pkwt', compact('pkwt_proses', 'pkwt_konfir', 'pkwt_done', 'pkwt_terima', 'pkwt_tolak'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pendaftaran-pkwt/permohonan-pendaftaran-pkwt', compact('aktif_not', 'pkwt_proses', 'pkwt_konfir', 'pkwt_done', 'pkwt_terima', 'pkwt_tolak'));
     }
 
     public function pendaftaran_pkwt_konfir($id_pkwt)
@@ -541,7 +627,9 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-pkwt/konfirmasi', compact('data', 'mediator'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pendaftaran-pkwt/konfirmasi', compact('data', 'mediator', 'aktif_not'));
     }
 
     public function pendaftaran_pkwt_proses(Request $request, $id)
@@ -575,6 +663,7 @@ class AdminController extends Controller
     public function pendaftaran_pkwt_show($id)
     {
         $data = Pendaftaranpkwt::find($id);
+        $aktif_not = User::where('status_akun', 'inactive')->count();
 
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -583,7 +672,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-pkwt/detail', compact('data'));
+        return view('/admin/pendaftaran-pkwt/detail', compact('data', 'aktif_not'));
     }
 
     public function pendaftaran_pkwt_terima(Request $request, $id_pkwt)
@@ -665,7 +754,9 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pencatatan-spsb/permohonan-pencatatan-spsb', compact('spsb_proses', 'spsb_done', 'spsb_konfir', 'spsb_terima', 'spsb_tolak',));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pencatatan-spsb/permohonan-pencatatan-spsb', compact('aktif_not', 'spsb_proses', 'spsb_done', 'spsb_konfir', 'spsb_terima', 'spsb_tolak',));
     }
 
     public function pencatatan_spsb_konfir($id_spsb)
@@ -709,20 +800,10 @@ class AdminController extends Controller
         }
     }
 
-    public function pencatatan_spsb_update(Request $request, $id)
-    {
-        $pencatatanspsb = Pencatatanspsb::find($id);
-
-        $pencatatanspsb->keterangan = $request->keterangan;
-        $pencatatanspsb->save();
-        toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
-        return redirect('/admin/permohonan-pencatatan-spsb');
-    }
-
     public function pencatatan_spsb_show($id)
     {
         $data = Pencatatanspsb::find($id);
-
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -730,7 +811,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pencatatan-spsb/detail', compact('data'));
+        return view('/admin/pencatatan-spsb/detail', compact('data', 'aktif_not'));
     }
 
     public function pencatatan_spsb_terima(Request $request, $id_spsb)
@@ -765,17 +846,6 @@ class AdminController extends Controller
         } else {
             return redirect('')->withErrors($validatedata)->withInput();
         }
-    }
-
-    public function pencatatan_spsb_tolak(Request $request, $id)
-    {
-        $pencatatanspsb = Pencatatanspsb::find($id);
-        $pencatatanspsb->pesan = $request->pesan;
-        $pencatatanspsb->status = '2';
-        $pencatatanspsb->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
-        $pencatatanspsb->save();
-        toastr()->success('Permohonan Berhasil Dikembalikan!');
-        return redirect('/admin/permohonan-pencatatan-spsb');
     }
 
 
@@ -823,7 +893,9 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-lks-bipartit/permohonan-pendaftaran-lks', compact('lks_proses', 'lks_done', 'lks_konfir', 'lks_terima', 'lks_tolak'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pendaftaran-lks-bipartit/permohonan-pendaftaran-lks', compact('aktif_not', 'lks_proses', 'lks_done', 'lks_konfir', 'lks_terima', 'lks_tolak'));
     }
 
     public function pendaftaran_lks_konfir($id_lks)
@@ -837,7 +909,8 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-lks-bipartit/konfirmasi', compact('data', 'mediator'));
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pendaftaran-lks-bipartit/konfirmasi', compact('aktif_not', 'data', 'mediator'));
     }
 
 
@@ -870,20 +943,10 @@ class AdminController extends Controller
         }
     }
 
-    public function pendaftaran_lks_update(Request $request, $id)
-    {
-        $pendaftaranlks = Pendaftaranlks::find($id);
-
-        $pendaftaranlks->keterangan = $request->keterangan;
-        $pendaftaranlks->save();
-        toastr()->info('Keterangan Pemrosesan Berhasil Diperbaharui!');
-        return redirect('/admin/permohonan-pendaftaran-lks');
-    }
-
     public function pendaftaran_lks_show($id)
     {
         $data = Pendaftaranlks::find($id);
-
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -891,7 +954,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pendaftaran-lks-bipartit/detail', compact('data'));
+        return view('/admin/pendaftaran-lks-bipartit/detail', compact('aktif_not', 'data'));
     }
 
     public function pendaftaran_lks_terima(Request $request, $id_lks)
@@ -927,18 +990,6 @@ class AdminController extends Controller
             return redirect('')->withErrors($validatedata)->withInput();
         }
     }
-
-    public function pendaftaran_lks_tolak(Request $request, $id)
-    {
-        $pendaftaranlks = Pendaftaranlks::find($id);
-        $pendaftaranlks->pesan = $request->pesan;
-        $pendaftaranlks->status = '2';
-        $pendaftaranlks->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai Pesan';
-        $pendaftaranlks->save();
-        toastr()->success('Permohonan Berhasil Dikembalikan!');
-        return redirect('/admin/permohonan-pendaftaran-lks');
-    }
-
 
     public function pencatatan_hi()
     {
@@ -983,7 +1034,9 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pencatatan-penyelesaian-hi/permohonan-pencatatan-penyelesaian-hi', compact('hi_proses', 'hi_done', 'hi_konfir', 'hi_terima', 'hi_tolak'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pencatatan-penyelesaian-hi/permohonan-pencatatan-penyelesaian-hi', compact('aktif_not', 'hi_proses', 'hi_done', 'hi_konfir', 'hi_terima', 'hi_tolak'));
     }
 
     public function pencatatan_hi_konfir($id_hi)
@@ -997,7 +1050,8 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pencatatan-penyelesaian-hi/konfirmasi', compact('data', 'mediator'));
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pencatatan-penyelesaian-hi/konfirmasi', compact('aktif_not', 'data', 'mediator'));
     }
 
     public function pencatatan_hi_proses(Request $request, $id)
@@ -1029,20 +1083,10 @@ class AdminController extends Controller
         }
     }
 
-    public function pencatatan_hi_update(Request $request, $id)
-    {
-        $pencatatanhi = Pencatatanperselihan::find($id);
-
-        $pencatatanhi->keterangan = $request->keterangan;
-        $pencatatanhi->save();
-        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
-        return redirect('/admin/permohonan-pencatatan-hi');
-    }
-
     public function pencatatan_hi_show($id)
     {
         $data = Pencatatanperselihan::find($id);
-
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -1050,7 +1094,8 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pencatatan-penyelesaian-hi/detail', compact('data'));
+
+        return view('/admin/pencatatan-penyelesaian-hi/detail', compact('aktif_not', 'data'));
     }
 
     public function pencatatan_hi_terima(Request $request, $id_hi)
@@ -1086,18 +1131,6 @@ class AdminController extends Controller
             return redirect('')->withErrors($validatedata)->withInput();
         }
     }
-
-    public function pencatatan_hi_tolak(Request $request, $id)
-    {
-        $penyelesaianhi = Pencatatanperselihan::find($id);
-        $penyelesaianhi->pesan = $request->pesan;
-        $penyelesaianhi->status = '2';
-        $penyelesaianhi->keterangan = 'Silahkan Revisi beberapa persyaratan sesuai pesan';
-        $penyelesaianhi->save();
-        toastr()->success('Permohonan Berhasil Dikembalikan!');
-        return redirect('/admin/permohonan-pencatatan-hi');
-    }
-
 
     public function pelaporan_phk()
     {
@@ -1142,13 +1175,16 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pelaporan-phk/permohonan-pelaporan-phk', compact('phk_proses', 'phk_done', 'phk_konfir', 'phk_terima', 'phk_tolak'));
+
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pelaporan-phk/permohonan-pelaporan-phk', compact('aktif_not', 'phk_proses', 'phk_done', 'phk_konfir', 'phk_terima', 'phk_tolak'));
     }
 
     public function pelaporan_phk_konfir($id_phk)
     {
         $data = Pelaporanphk::find($id_phk);
         $mediator = Pegawai::all();
+        
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -1156,7 +1192,8 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pelaporan-phk/konfirmasi', compact('data','mediator'));
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pelaporan-phk/konfirmasi', compact('data', 'mediator', 'aktif_not'));
     }
 
     public function pelaporan_phk_proses(Request $request, $id)
@@ -1187,16 +1224,6 @@ class AdminController extends Controller
         }
     }
 
-    public function pelaporan_phk_update(Request $request, $id)
-    {
-        $pelaporanphk = Pelaporanphk::find($id);
-
-        $pelaporanphk->keterangan = $request->keterangan;
-        $pelaporanphk->save();
-        toastr()->success('Permohonan Berhasil Dikonfirmasi, Silahkan untuk diproses lebih lanjut!');
-        return redirect('/admin/permohonan-pelaporan-phk');
-    }
-
     public function pelaporan_phk_show($id)
     {
         $data = Pelaporanphk::find($id);
@@ -1208,7 +1235,8 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('/admin/pelaporan-phk/detail', compact('data'));
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('/admin/pelaporan-phk/detail', compact('data', 'aktif_not'));
     }
 
     public function pelaporan_phk_terima(Request $request, $id_phk)
@@ -1255,7 +1283,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-
+        $aktif_not = User::where('status_akun', 'inactive')->count();
         $asset_pp = Asset::find('1');
         $asset_pkb = Asset::find('2');
         $asset_pkwt = Asset::find('3');
@@ -1263,7 +1291,7 @@ class AdminController extends Controller
         $asset_lks = Asset::find('5');
         $asset_hi = Asset::find('6');
         $asset_phk = Asset::find('7');
-        return view('/admin/asset/asset', compact('asset_pp', 'asset_pkb', 'asset_pkwt', 'asset_spsb', 'asset_lks', 'asset_hi', 'asset_phk'));
+        return view('/admin/asset/asset', compact('aktif_not', 'asset_pp', 'asset_pkb', 'asset_pkwt', 'asset_spsb', 'asset_lks', 'asset_hi', 'asset_phk'));
     }
 
     public function alur_perizinan(Request $request, $id)
@@ -1464,6 +1492,27 @@ class AdminController extends Controller
 
     public function buku_registrasi()
     {
+        $data_pp = Pengesahanpp::whereHas('pp_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_pkb = Pendaftaranpkb::whereHas('pkb_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_pkwt = Pendaftaranpkwt::whereHas('pkwt_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_spsb = Pencatatanspsb::whereHas('spsb_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_lks = Pendaftaranlks::whereHas('lks_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_hi = Pencatatanperselihan::whereHas('hi_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
+        $data_phk = Pelaporanphk::whereHas('phk_status', function ($query){
+            $query->where('id_status',' 3');
+        })->get();
         // $perusahaan = User::where('id_role', '4')->get();
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -1472,7 +1521,7 @@ class AdminController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-        return view('admin/buku-registrasi/buku-registrasi');
+        return view('admin/buku-registrasi/buku-registrasi', compact('data_pp', 'data_pkb','data_pkwt','data_spsb','data_lks','data_hi','data_phk'));
     }
 
 }

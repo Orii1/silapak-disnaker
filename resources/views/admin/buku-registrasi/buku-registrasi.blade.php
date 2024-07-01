@@ -71,7 +71,7 @@
 
 <div class="tab-content">
     <div class="tab-pane fade show active profile-overview" id="pengesahanpp">
-        <table class="table table-striped">
+        <table class="table ">
         <thead>
             <tr>
                 <th>Nomor</th>
@@ -104,7 +104,7 @@
     </div>
 
     <div class="tab-pane fade" id="pendaftaranpkb">
-        <table class="table table-striped">
+        <table class="table ">
         <thead>
             <tr>
                 <th>Nomor</th>
@@ -136,7 +136,7 @@
     </div>
 
     <div class="tab-pane fade" id="pendaftaranpkwt">
-        <table class="table table-striped">
+        <table class="table ">
         <thead>
             <tr>
                 <th>Nomor</th>
@@ -169,7 +169,7 @@
     </div>
 
     <div class="tab-pane fade" id="pencatatanspsb">
-        <table class="table table-striped">
+        <table class="table ">
         <thead>
             <tr>
                 <th>Nomor</th>
@@ -202,7 +202,7 @@
     </div>
 
     <div class="tab-pane fade" id="pendaftaranlks">
-        <table class="table table-striped">
+        <table class="table ">
         <thead>
             <tr>
                 <th>Nomor</th>
@@ -234,7 +234,7 @@
     </div>
 
     <div class="tab-pane fade" id="p3hi">
-        <table class="table table-striped">
+        <table class="table ">
         <thead>
             <tr>
                 <th>Nomor</th>
@@ -267,7 +267,7 @@
     </div>
 
     <div class="tab-pane fade" id="pelaporanphk">
-        <table class="table table-striped">
+        <table class="table ">
         <thead>
             <tr>
                 <th>Nomor</th>

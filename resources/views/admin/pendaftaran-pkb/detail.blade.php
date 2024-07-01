@@ -45,13 +45,13 @@
                             @if ($data->pkb_status->id_status == '3')
                             <div class="">
                                 <div class="">
-                                    <label for="">Permohonan Telah Selesai. Diselesaikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}</label>
+                                    <label for="">Permohonan Telah Selesai. Diselesaikan pada tanggal {{ $data->pp_status->updated_at->locale('id')->isoFormat('D MMMM Y') }}</label>
                                 </div>
                             </div>
                             @elseif ($data->pkb_status->id_status == '4')
                             <div class="">
                                 <div class="">
-                                    <label for="">Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{$data->updated_at->isoFormat('D MMMM Y')}}, Menunggu Pemohon Memperbaiki Persyaratan</label>
+                                    <label for="">Permohonan Telah Dikembalikan. Dikembalikan pada tanggal {{ $data->pp_status->updated_at->locale('id')->isoFormat('D MMMM Y') }}, Menunggu Pemohon Memperbaiki Persyaratan</label>
                                 </div>
                             </div>
                             @elseif ($data->pkb_status->id_status == '2')

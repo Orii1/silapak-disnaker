@@ -195,8 +195,8 @@
         </a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" id="logout-button">
+      <li class="nav-item" id="logout-button">
+        <a class="nav-link collapsed">
             <i class="bi bi-box-arrow-right"></i>
           <span>Logout</span>
         </a>

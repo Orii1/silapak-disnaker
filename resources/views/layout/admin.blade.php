@@ -87,7 +87,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="/admin/data-perusahaan">
             <i class="bi bi-building"></i>
-          <span>Perusahaan</span>
+          <span>Perusahaan
+            @if ($aktif_not == '0')
+
+            @else
+                <span class="badge text-bg-danger">{{$aktif_not}}</span>
+            @endif
+        </span>
         </a>
       </li>
 
@@ -176,7 +182,7 @@
     </ul>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/asset">
+        <a class="nav-link collapsed" href="#">
             <i class="bi bi-book"></i>
           <span>Buku Registrasi</span>
         </a>

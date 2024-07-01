@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card-title">
-                            <p class="text-success mb-0" style="font-size: 25px;"></p>
+                            <p class="text-success mb-0" style="font-size: 25px;">{{$total_terima}}</p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card-title">
-                            <p class="text-danger mb-0" style="font-size: 25px;"></p>
+                            <p class="text-danger mb-0" style="font-size: 25px;">{{$total_tolak}}</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card-title">
-                            <p class="text-info mb-0" style="font-size: 25px;"></p>
+                            <p class="text-info mb-0" style="font-size: 25px;">{{$total_konfir}}</p>
                         </div>
                     </div>
                 </div>

@@ -48,31 +48,10 @@
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                   <h5 class="card-title">Tentang</h5>
                   <p class="small">Admin merupakan seorang yang mengelola website serta melakukan pemantauan dari aktivitas yang dilakukan pada website yang dikelola. Serta memberikan <i>Feedback</i> (umpan balik) bagi pengguna website atau pengaju permohonan.</p>
-                   @foreach ($profile as $p )
-                   <h5 class="card-title">Detail Profile</h5>
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label ">Nama</div>
-                     <div class="col-lg-9 col-md-8">{{$p->name}}</div>
-                   </div>
-
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label">Alamat</div>
-                     <div class="col-lg-9 col-md-8">{{$p->address}}</div>
-                   </div>
-
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label">Dari</div>
-                     <div class="col-lg-9 col-md-8">{{$p->owner}}</div>
-                   </div>
-
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label">Email</div>
-                     <div class="col-lg-9 col-md-8">{{$p->email}}</div>
-                   </div>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form action="/admin/change-password/{{$p->id}}" method="POST">
+                  <form action="/admin/change-password/1" method="POST">
                     @csrf
                     @if (Session('error'))
                         <div class="alert alert-danger">
@@ -114,7 +93,6 @@
                   </form>
 
                 </div>
-                @endforeach
               </div>
 
             </div>

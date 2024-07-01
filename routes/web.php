@@ -164,6 +164,8 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/download/data-perusahaan/{id}', [AdminController::class, 'download_data_perusahaan']);
     Route::get('/aktivasi-user/{id}', [AdminController::class, 'aktivasi_user']);
     Route::get('/admin/manajemen-user', [AdminController::class, 'manage_user']);
+    Route::post('/admin/pegawai/store', [AdminController::class, 'user_store']);
+    Route::get('/admin/delete-pegawai/{id}', [AdminController::class, 'user_delete']);
 
 
     // PP

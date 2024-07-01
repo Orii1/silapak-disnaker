@@ -106,9 +106,13 @@
                             <div class="text-start">
                             <b>Draft Surat Keputusan</b>
                                 <p>
+                                    @if ($data->pp_status->id_status == "4")
+                                    -
+                                    @else
                                     <a href="/storage/{{$data->pp_perusahaan->id}}/pp/sk/{{$data->pp_status->sk}}" class="btn btn-success" target="_blank">
                                         <i class="bi bi-file-earmark-medical-fill"></i>
                                     </a>
+                                    @endif
                                 </p>
                             </div>
                         </td>

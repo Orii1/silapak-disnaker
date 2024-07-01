@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\EditSubmissionController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\KabidController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MediatorController;
 use App\Http\Controllers\SocialController;
@@ -258,6 +259,15 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     // END ADMIN ROUTE
 });
 
+// KABID
+
+Route::get('/kabid/dashboard', [KabidController::class, 'dashboard']);
+Route::get('/kabid/monitoring', [KabidController::class, 'monitoring']);
+Route::get('/kabid/profile', [KabidController::class, 'profile']);
+Route::get('/kabid/rekapitulasi', [KabidController::class, 'rekapitulasi']);
+Route::get('/kabid/monitoring/detailpermohonan', [KabidController::class, 'detailpermohonan']);
+
+// END KABID ROUTE
 Route::get('/map', function () {
     return view('/map');
 });

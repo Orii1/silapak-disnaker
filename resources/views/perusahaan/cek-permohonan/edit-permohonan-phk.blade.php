@@ -107,7 +107,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Permohonan pelaporan PHK</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>
@@ -135,7 +135,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Surat pemberitahuan PHK dari pengusaha ke pekerja / buruh</label><br>
-                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>
@@ -163,7 +163,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Surat tanggapan atas pemberitahuan dari pengusaha oleh pekerja / buruh</label><br>
-                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>
@@ -191,7 +191,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Perjanjian bersama Bipartit (jika terjadi kesepakatan / jika pekerja / buruh tidak menolak PHK)</label><br>
-                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>

@@ -76,7 +76,7 @@
                             </ul>
                         </div>
                         @endif
-                        
+
                         <table class="table align-middle mb-1 bg-white">
                             <thead class="bg-light">
                                 <tr>
@@ -107,7 +107,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Permohonan pencatatan LKS Bipartit</label><br>
-                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>
@@ -135,7 +135,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Daftar nama susunan pengurus LKS Bipartit</label><br>
-                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>
@@ -163,7 +163,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Berita acara pembentukan LKS Bipartit</label><br>
-                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>
@@ -191,7 +191,7 @@
                                     <td>
                                         <div class="text-center">
                                             <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                            <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                         </div>
                                     </td>
                                     <td>

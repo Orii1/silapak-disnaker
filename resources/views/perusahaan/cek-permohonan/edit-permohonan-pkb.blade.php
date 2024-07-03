@@ -107,7 +107,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -135,7 +135,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -161,7 +161,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -187,7 +187,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Permohonan pendaftaran PKB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -213,7 +213,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -239,7 +239,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PKB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -265,7 +265,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Draft PKB sebanyak 3 eksemplar yang sudah diparaf oleh pimpinan dan ketua SP /SB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>

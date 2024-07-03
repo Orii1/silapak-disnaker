@@ -14,7 +14,7 @@
     </nav>
 </div>
 
-<div class="container-fluid">
+<div class="card">
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12">
@@ -35,7 +35,7 @@
                                 </tr>
                             </div>
                         </td>
-                        
+
                         <td>
                             <div id="visiContent">
                                 <b>Keterangan</b>
@@ -55,13 +55,13 @@
                             @elseif ($data->pp_status->id_status == '2')
                                 <div class="">
                                     <div class="">
-                                        <label for="">{{$data->pp_status->keterangan}}<br> 
+                                        <label for="">{{$data->pp_status->keterangan}}<br>
                                     </div>
                                 </div>
                             @else
                             <div class="">
                                 <div class="">
-                                    <label for="">Menunggu Konfirmasi Admin<br> 
+                                    <label for="">Menunggu Konfirmasi Admin<br>
                                 </div>
                             </div>
                             @endif
@@ -110,29 +110,19 @@
 </div>
 @endif
 
-<div class="mt-4">
-    <table class="table table-bordered">
-        <thead class="bg-light">
-            <tr>
-                <th>
-                    <div class="text-center">
-                        No
-                    </div>
-                </th>
-                <th>
-                    <div class="text-center">
-                        Persyaratan
-                    </div>
-                </th>
-                <th class="col-3">
-                    <div class="text-center">
-                        File
-                    </div>
-                </th>
-            </tr>
-            </thead>
-
-            <tbody>
+<div class="card">
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered text-center" style="background-color: white;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Persyaratan</th>
+                            <th>File</th>
+                        </tr>
+                    </thead>
+                   <tbody>
                 <tr>
                     <td>
                         <div class="text-center">
@@ -150,7 +140,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -171,7 +160,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -193,7 +181,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->fc_sertifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -215,7 +202,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->permohonan_pengesahan_pp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -237,7 +223,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->surat_pernyataan_saran_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -259,7 +244,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->surat_pernyataan_belum_terbentuk_spsb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -281,7 +265,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -303,7 +286,6 @@
                             <a href="/storage/{{$data->pp_perusahaan->id}}/pp/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
                                 <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
                             </a>
-
                         </div>
                     </td>
                 </tr>
@@ -328,8 +310,10 @@
                         </div>
                     </td>
                 </tr>
-            </tbody>
-    </table>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="modal fade" id="konfirmasi" tabindex="-1" aria-labelledby="konfirmasiLabel" aria-hidden="true">

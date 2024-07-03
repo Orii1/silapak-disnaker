@@ -12,7 +12,7 @@
     </nav>
 </div>
 
-<div class="container-fluid">
+<div class="card">
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12">
@@ -33,7 +33,7 @@
                                 </tr>
                             </div>
                         </td>
-                        
+
                         <td>
                             <div id="visiContent">
                                 <b>Keterangan</b>
@@ -53,13 +53,13 @@
                             @elseif ($data->lks_status->id_status == '2')
                                 <div class="">
                                     <div class="">
-                                        <label for="">{{$data->lks_status->keterangan}}<br> 
+                                        <label for="">{{$data->lks_status->keterangan}}<br>
                                     </div>
                                 </div>
                             @else
                             <div class="">
                                 <div class="">
-                                    <label for="">Menunggu Konfirmasi Admin<br> 
+                                    <label for="">Menunggu Konfirmasi Admin<br>
                                 </div>
                             </div>
                             @endif
@@ -98,110 +98,112 @@
     <a class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#konfirmasi" style="color: white;"> <b>Konfirmasi</b></a>
 </div>
 
-<div class="mt-4">
-    <table class="table table-bordered">
-        <thead class="bg-light">
-            <tr>
-                <th>
-                    <div class="text-center">
-                        No
-                    </div>
-                </th>
-                <th>
-                    <div class="text-center">
-                        Persyaratan
-                    </div>
-                </th>
-                <th class="col-3">
-                    <div class="text-center">
-                        File
-                    </div>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="text-center">
-                        1
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <label for="">Permohonan pencatatan LKS Bipartit</label><br>
+<div class="card">
+    <div class="my-3 mx-3">
+        <table class="table table-bordered">
+            <thead class="bg-light">
+                <tr>
+                    <th>
+                        <div class="text-center">
+                            No
+                        </div>
+                    </th>
+                    <th>
+                        <div class="text-center">
+                            Persyaratan
+                        </div>
+                    </th>
+                    <th class="col-3">
+                        <div class="text-center">
+                            File
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="text-center">
+                            1
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <label for="">Permohonan pencatatan LKS Bipartit</label><br>
 
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->permohonan_pencatatan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="text-center">
-                        2
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <label for="">Daftar nama susunan pengurus LKS Bipartit</label><br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->permohonan_pencatatan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="text-center">
+                            2
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <label for="">Daftar nama susunan pengurus LKS Bipartit</label><br>
 
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->daftar_susunan_pengurus_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="text-center">
-                        3
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <label for="">Berita acara pembentukan LKS Bipartit</label><br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->daftar_susunan_pengurus_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="text-center">
+                            3
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <label for="">Berita acara pembentukan LKS Bipartit</label><br>
 
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->berita_acara_pembentukan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="text-center">
-                        4
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <label for="">Fotocopy WLKP yang masih berlaku</label><br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->berita_acara_pembentukan_lks_bipartit}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="text-center">
+                            4
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <label for="">Fotocopy WLKP yang masih berlaku</label><br>
 
-                    </div>
-                </td>
-                <td>
-                    <div class="text-center">
-                        <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                            <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <a href="/storage/{{$data->lks_perusahaan->id}}/lks/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="modal fade" id="konfirmasi" tabindex="-1" aria-labelledby="konfirmasiLabel" aria-hidden="true">

@@ -14,7 +14,7 @@
     </nav>
 </div>
 
-<div class="container-fluid">
+<div class="card">
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12">
@@ -35,7 +35,7 @@
                                 </tr>
                             </div>
                         </td>
-                        
+
                         <td>
                             <div id="visiContent">
                                 <b>Keterangan</b>
@@ -55,13 +55,13 @@
                             @elseif ($data->pkb_status->id_status == '2')
                                 <div class="">
                                     <div class="">
-                                        <label for="">{{$data->pkb_status->keterangan}}<br> 
+                                        <label for="">{{$data->pkb_status->keterangan}}<br>
                                     </div>
                                 </div>
                             @else
                             <div class="">
                                 <div class="">
-                                    <label for="">Menunggu Konfirmasi Admin<br> 
+                                    <label for="">Menunggu Konfirmasi Admin<br>
                                 </div>
                             </div>
                             @endif
@@ -100,170 +100,178 @@
     <a class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#konfirmasi" style="color: white;"> <b>Konfirmasi</b></a>
 </div>
 
-<div class="mt-4">
-    <table class="table table-bordered">
-        <thead class="bg-light">
-            <tr>
-                <th>
-                    <div class="text-center">
-                        No
-                    </div>
-                </th>
-                <th>
-                    <div class="text-center">
-                        Persyaratan
-                    </div>
-                </th>
-                <th class="col-3">
-                    <div class="text-center">
-                        File
-                    </div>
-                </th>
-            </tr>
-            </thead>
-
-            <tbody>
+<div class="card">
+    <div class="mt-4 mx-3">
+        <table class="table table-bordered">
+            <thead class="bg-light">
                 <tr>
-                    <td>
+                    <th>
                         <div class="text-center">
-                            1
+                            No
                         </div>
-                    </td>
-                    <td>
+                    </th>
+                    <th>
                         <div class="text-center">
-                            <label for="">Fotocopy WLKP yang masih berlaku</label><br>
+                            Persyaratan
                         </div>
-                    </td>
-                    <td>
+                    </th>
+                    <th class="col-3">
                         <div class="text-center">
-                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
+                            File
                         </div>
-                    </td>
+                    </th>
                 </tr>
+                </thead>
 
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            2
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Fotocopy WLKP yang masih berlaku</label><br>
 
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            3
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            4
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Permohonan pendaftaran PKB</label><br>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                2
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            5
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                3
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
 
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            6
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PP</label><br>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/{{$data->fc_setifikat_peserta_bpjs_ketenagakerjaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            7
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Draft PKB sebanyak 3 eksemplar yang sudah diparaf oleh pimpinan dan ketua SP /SB</label><br>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->id_perusahaan}}/pkb/{{$data->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-    </table>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                4
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Permohonan pendaftaran PKB</label><br>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/{{$data->permohonan_pendaftaran_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                5
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/{{$data->surat_pernyataan_struktur_skala_upah}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                6
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PKB</label><br>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/{{$data->struktur_skala_upah_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                7
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Draft PKB sebanyak 3 eksemplar yang sudah diparaf oleh pimpinan dan ketua SP /SB</label><br>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/{{$data->draft_pkb}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="modal fade" id="konfirmasi" tabindex="-1" aria-labelledby="konfirmasiLabel" aria-hidden="true">

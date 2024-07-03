@@ -99,7 +99,14 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Permohonan</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>
+            Permohonan
+            @if ($konfir_pp or $konfir_pkb or $konfir_pkwt or $konfir_spsb or $konfir_lks or $konfir_hi or $konfir_phk == "0")
+
+            @else
+            <span class="badge text-bg-danger">-</span>
+            @endif
+        </span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>

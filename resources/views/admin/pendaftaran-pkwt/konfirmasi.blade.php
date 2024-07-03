@@ -12,7 +12,7 @@
     </nav>
 </div>
 
-<div class="container-fluid">
+<div class="card">
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12">
@@ -33,7 +33,7 @@
                                 </tr>
                             </div>
                         </td>
-                        
+
                         <td>
                             <div id="visiContent">
                                 <b>Keterangan</b>
@@ -53,18 +53,18 @@
                             @elseif ($data->pkwt_status->id_status == '2')
                                 <div class="">
                                     <div class="">
-                                        <label for="">{{$data->pkwt_status->keterangan}}<br> 
+                                        <label for="">{{$data->pkwt_status->keterangan}}<br>
                                     </div>
                                 </div>
                             @else
                             <div class="">
                                 <div class="">
-                                    <label for="">Menunggu Konfirmasi Admin<br> 
+                                    <label for="">Menunggu Konfirmasi Admin<br>
                                 </div>
                             </div>
                             @endif
                         </td>
-                        
+
                         <td>
                             <b>Status</b>
                                 @if ($data->pkwt_status->id_status == "2")
@@ -99,158 +99,159 @@
     <a class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#konfirmasi" style="color: white;"> <b>Konfirmasi</b></a>
 </div>
 
-<div class="mt-4">
-    <table class="table table-bordered">
-        <thead class="bg-light">
-            <tr>
-                <th>
-                    <div class="text-center">
-                        No
-                    </div>
-                </th>
-                <th>
-                    <div class="text-center">
-                        Persyaratan
-                    </div>
-                </th>
-                <th class="col-3">
-                    <div class="text-center">
-                        File
-                    </div>
-                </th>
-            </tr>
-            </thead>
-
-            <tbody>
+<div class="card">
+    <div class="my-3 mx-3">
+        <table class="table table-bordered">
+            <thead class="bg-light">
                 <tr>
-                    <td>
+                    <th>
                         <div class="text-center">
-                            1
+                            No
                         </div>
-                    </td>
-                    <td>
+                    </th>
+                    <th>
                         <div class="text-center">
-                            <label for="">Surat permohonan pencacatan PKWT</label><br>
-
+                            Persyaratan
                         </div>
-                    </td>
-                    <td>
+                    </th>
+                    <th class="col-3">
                         <div class="text-center">
-                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
+                            File
                         </div>
-                    </td>
+                    </th>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            2
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Daftar nama pekerja / buruh yang di PKWT</label><br>
+                </thead>
 
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            3
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Asli PKWT yang sudah ditandatangani oleh para pihak (pengusaha dan pekerja)</label><br>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Surat permohonan pencacatan PKWT</label><br>
 
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            4
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Fotocopy WLKP yang masih berlaku</label><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->srt_permohonan_pencatatan_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                2
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Daftar nama pekerja / buruh yang di PKWT</label><br>
 
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="text-center">
-                            5
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <label for="">Fotocopy akta pendirian Perusahaan</label><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->daftar_nama_pekerja_pkwt}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                3
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Asli PKWT yang sudah ditandatangani oleh para pihak (pengusaha dan pekerja)</label><br>
 
-                        </div>
-                    </td>
-                    <td>
-                        <div class="text-center">
-                            <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
-                                <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-    </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->pkwt_asli}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                4
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Fotocopy WLKP yang masih berlaku</label><br>
 
-    <div class="modal fade" id="konfirmasi" tabindex="-1" aria-labelledby="konfirmasiLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="konfirmasiLabel">Konfirmasi Permohonan</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="/konfirmasi/permohonan-pkwt/{{$data->id_pkwt}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <label class="mb-3">Pilih Mediator untuk mengecek persyaratan pemohon</label>
-                    <select class="form-select" name="id_pegawai" required>
-                        <option selected disabled>Pilih Mediator</option>
-                        @foreach ($mediator as $item)
-                            <option value="{{$item->id_pegawai}}">{{$item->nama_pegawai}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-            </form>
-          </div>
-        </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->fc_wlkp}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="text-center">
+                                5
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <label for="">Fotocopy akta pendirian Perusahaan</label><br>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-center">
+                                <a href="/storage/{{$data->pkwt_perusahaan->id}}/pkwt/{{$data->fc_akta_pendirian_perusahaan}}" target="_blank" class="btn btn-warning" style="color: rgb(255, 235, 20);">
+                                    <i class="bi bi-eye-fill" style="height:100px;color: white;"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
     </div>
+</div>
 
+<div class="modal fade" id="konfirmasi" tabindex="-1" aria-labelledby="konfirmasiLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="konfirmasiLabel">Konfirmasi Permohonan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/konfirmasi/permohonan-pkwt/{{$data->id_pkwt}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <label class="mb-3">Pilih Mediator untuk mengecek persyaratan pemohon</label>
+                <select class="form-select" name="id_pegawai" required>
+                    <option selected disabled>Pilih Mediator</option>
+                    @foreach ($mediator as $item)
+                        <option value="{{$item->id_pegawai}}">{{$item->nama_pegawai}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+        </form>
+      </div>
+    </div>
 </div>
 @endsection

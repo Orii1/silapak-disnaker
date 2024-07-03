@@ -137,7 +137,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Permohonan pencatatan Penyelesaian Perseslisihan Hubungan Industrial</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -156,7 +156,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Surat permohonan permintaan perundingan Bipartit</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -175,7 +175,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Daftar hadir perundingan bipartit</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -194,7 +194,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Risalah perundingan bipartit</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>

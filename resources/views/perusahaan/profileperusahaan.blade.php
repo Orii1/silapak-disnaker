@@ -18,7 +18,7 @@
                 <img src="../../assets/img/company-icon.png" class="rounded mx-auto d-block" alt="" style="height: 130px;">
                 <div class="text-center">
                     <div class="mb-3">
-                        <b>{{$user->name}}</b>
+                        <b>{{$user->user_perusahaan->nama_perusahaan}}</b>
                     </div>
                 </div>
             </div>

@@ -113,10 +113,10 @@
                         <td>
                             <div class="text-start">
                             <b>Surat Keputusan</b>
-                                <p>
-                                    <a href="path/to/your/file.zip" class="btn btn-primary" download>
+                                <p>-
+                                    {{-- <a href="path/to/your/file.zip" class="btn btn-primary" download>
                                         <i class="fa fa-download"></i> Download File
-                                    </a>
+                                    </a> --}}
                                 </p>
                             </div>
                         </td>   

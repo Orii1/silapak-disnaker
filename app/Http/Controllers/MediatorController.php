@@ -25,7 +25,23 @@ class MediatorController extends Controller
         $now->setLocale('id');
         $datestring = $now->isoFormat('D MMMM Y');
         $dayname = $now->translatedFormat('l');
-        return view('mediator.home.home',compact('datestring','dayname'));
+        $pp_all = Pengesahanpp::all()->count();
+        $pkb_all = Pendaftaranpkb::all()->count();
+        $pkwt_all = Pendaftaranpkwt::all()->count();
+        $spsb_all = Pencatatanspsb::all()->count();
+        $lks_all = Pendaftaranlks::all()->count();
+        $hi_all = Pencatatanperselihan::all()->count();
+        $phk_all = Pelaporanphk::all()->count();
+
+        // $aktif_not = User::where('status_akun', 'inactive')->count();
+        return view('mediator.home.home',compact('datestring','dayname',
+            'pp_all',
+            'pkb_all',
+            'pkwt_all',
+            'spsb_all',
+            'lks_all',
+            'hi_all',
+            'phk_all'));
     }
 
     public function profile()

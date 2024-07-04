@@ -2,7 +2,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="hasil_ppLabel">Upload Surat Keputusan</h1>
+          <h1 class="modal-title fs-5" id="hasil_ppLabel">Hasil Pemeriksaan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/mediator/permohonan-pengesahan-pp/hasil/{{$data->id_pp}}" method="POST" enctype="multipart/form-data">
@@ -29,7 +29,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="hasil_pkbLabel">Upload Surat Keputusan</h1>
+          <h1 class="modal-title fs-5" id="hasil_pkbLabel">Hasil Pemeriksaan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/mediator/permohonan-pendaftaran-pkb/hasil/{{$data->id_pkb}}" method="POST" enctype="multipart/form-data">
@@ -56,7 +56,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="hasil_pkwtLabel">Upload Surat Keputusan</h1>
+          <h1 class="modal-title fs-5" id="hasil_pkwtLabel">Hasil Pemeriksaan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/mediator/permohonan-pendaftaran-pkwt/hasil/{{$data->id_pkwt}}" method="POST" enctype="multipart/form-data">
@@ -83,7 +83,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="hasil_spsbLabel">Upload Surat Keputusan</h1>
+          <h1 class="modal-title fs-5" id="hasil_spsbLabel">Hasil Pemeriksaan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/mediator/permohonan-pencatatan-spsb/hasil/{{$data->id_spsb}}" method="POST" enctype="multipart/form-data">
@@ -110,7 +110,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="hasil_lksLabel">Upload Surat Keputusan</h1>
+          <h1 class="modal-title fs-5" id="hasil_lksLabel">Hasil Pemeriksaan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/mediator/permohonan-pendaftaran-lks/hasil/{{$data->id_lks}}" method="POST" enctype="multipart/form-data">
@@ -137,7 +137,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="hasil_hiLabel">Upload Surat Keputusan</h1>
+          <h1 class="modal-title fs-5" id="hasil_hiLabel">Hasil Pemeriksaan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/mediator/permohonan-pencatatan-hi/hasil/{{$data->id_hi}}" method="POST" enctype="multipart/form-data">
@@ -164,7 +164,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="hasil_phkLabel">Upload Surat Keputusan</h1>
+          <h1 class="modal-title fs-5" id="hasil_phkLabel">Hasil Pemeriksaan</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/mediator/permohonan-pelaporan-phk/hasil/{{$data->id_phk}}" method="POST" enctype="multipart/form-data">

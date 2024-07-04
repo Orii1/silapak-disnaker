@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card-title">
-                            <p class="text-success mb-0" style="font-size: 25px;"></p>
+                            <p class="text-success mb-0" style="font-size: 25px;">7</p>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card-title">
-                            <p class="text-danger mb-0" style="font-size: 25px;"></p>
+                            <p class="text-danger mb-0" style="font-size: 25px;">10</p>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
             <div class="card-body">
               <h5 class="card-title">Permohonan Masuk</h5>
               <div id="barChart"></div>
-              {{-- <script>
+              <script>
                     var pp = {{$pp_all}}
                     var pkb = {{$pkb_all}}
                     var pkwt = {{$pkwt_all}}
@@ -136,7 +136,7 @@
                         }
                   }).render();
                 });
-              </script> --}}
+              </script>
             </div>
           </div>
     </div>

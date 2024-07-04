@@ -45,7 +45,7 @@
 
                       <li class="nav-item">
                         <div class="">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pendaftaranlks">Pendaftaran LKB</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pendaftaranlks">Pendaftaran LKS</button>
                         </div>
                       </li>
 
@@ -101,7 +101,7 @@
                                     </td>
                                     <td>
                                         <div class="text-start">
-                                            <a title="Detail" href="{{$item->id_pp}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
+                                            <a title="Detail" href="/kabid/monitoring-pp/{{$item->id_pp}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -146,7 +146,7 @@
                                     </td>
                                     <td>
                                         <div class="text-start">
-                                            <a title="Detail" href="{{$item->id_pkb}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
+                                            <a title="Detail" href="/kabid/monitoring-pkb/{{$item->id_pkb}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -191,7 +191,7 @@
                                     </td>
                                     <td>
                                        <div class="text-start">
-                                            <a title="Detail" href="{{$item->id_pkwt}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
+                                            <a title="Detail" href="/kabid/monitoring-pkwt/{{$item->id_pkwt}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -236,7 +236,7 @@
                                     </td>
                                     <td>
                                         <div class="text-start">
-                                            <a title="Detail" href="{{$item->id_spsb}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
+                                            <a title="Detail" href="/kabid/monitoring-spsb/{{$item->id_spsb}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -281,7 +281,7 @@
                                     </td>
                                     <td>
                                         <div class="text-start">
-                                            <a title="Detail" href="{{$item->id_lks}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
+                                            <a title="Detail" href="/kabid/monitoring-lks/{{$item->id_lks}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -326,7 +326,7 @@
                                 </td>
                                 <td>
                                     <div class="text-start">
-                                        <a title="Detail" href="{{$item->id_hi}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
+                                        <a title="Detail" href="/kabid/monitoring-hi/{{$item->id_hi}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -371,7 +371,7 @@
                                 </td>
                                 <td>
                                     <div class="text-start">
-                                        <a title="Detail" href="{{$item->id_phk}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
+                                        <a title="Detail" href="/kabid/monitoring-phk/{{$item->id_phk}}" class="btn btn-primary btn-sm" id=""><i class="bi bi-info-circle-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>

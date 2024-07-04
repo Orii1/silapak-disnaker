@@ -109,7 +109,7 @@ class MediatorController extends Controller
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;
-            $sk->keterangan = 'SK sedang di tanda tangan';
+            $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
             return redirect('/mediator/permohonan-pengesahan-pp')->with('pdfPath', $pdfPath);
         } else {
@@ -180,7 +180,7 @@ class MediatorController extends Controller
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;
-            $sk->keterangan = 'SK sedang di tanda tangan';
+            $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
             return redirect('/mediator/permohonan-pendaftaran-pkb')->with('pdfPath', $pdfPath);
         } else {
@@ -251,7 +251,7 @@ class MediatorController extends Controller
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;
-            $sk->keterangan = 'SK sedang di tanda tangan';
+            $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
             return redirect('/mediator/permohonan-pendaftaran-pkwt')->with('pdfPath', $pdfPath);
         } else {
@@ -322,7 +322,7 @@ class MediatorController extends Controller
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;
-            $sk->keterangan = 'SK sedang di tanda tangan';
+            $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
             return redirect('/mediator/permohonan-pencatatan-spsb')->with('pdfPath', $pdfPath);
         } else {
@@ -394,7 +394,7 @@ class MediatorController extends Controller
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;
-            $sk->keterangan = 'SK sedang di tanda tangan';
+            $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
             return redirect('/mediator/permohonan-pendaftaran-lks')->with('pdfPath', $pdfPath);
         } else {
@@ -466,7 +466,7 @@ class MediatorController extends Controller
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;
-            $sk->keterangan = 'SK sedang di tanda tangan';
+            $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
             return redirect('/mediator/permohonan-pencatatan-hi')->with('pdfPath', $pdfPath);
         } else {
@@ -538,7 +538,7 @@ class MediatorController extends Controller
             Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
             $sk->sk = $pdfname;
-            $sk->keterangan = 'SK sedang di tanda tangan';
+            $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
             return redirect('/mediator/permohonan-pelaporan-phk')->with('pdfPath', $pdfPath);
         } else {

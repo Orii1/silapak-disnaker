@@ -266,8 +266,17 @@ Route::middleware(['auth', 'UserAkses:3'])->group(function () {
     Route::get('/kabid/profile', [KabidController::class, 'profile']);
     Route::get('/kabid/rekapitulasi', [KabidController::class, 'rekapitulasi']);
     Route::get('/kabid/monitoring/detailpermohonan', [KabidController::class, 'detailpermohonan']);
+
+    Route::get('/kabid/monitoring-pp/{id}', [KabidController::class, 'monitor_pp']);
+    Route::get('/kabid/monitoring-pkb/{id}', [KabidController::class, 'monitor_pkb']);
+    Route::get('/kabid/monitoring-pkwt/{id}', [KabidController::class, 'monitor_pkwt']);
+    Route::get('/kabid/monitoring-spsb/{id}', [KabidController::class, 'monitor_spsb']);
+    Route::get('/kabid/monitoring-lks/{id}', [KabidController::class, 'monitor_lks']);
+    Route::get('/kabid/monitoring-hi/{id}', [KabidController::class, 'monitor_hi']);
+    Route::get('/kabid/monitoring-phk/{id}', [KabidController::class, 'monitor_phk']);
 });
 // END KABID ROUTE
+
 Route::get('/map', function () {
     return view('/map');
 });

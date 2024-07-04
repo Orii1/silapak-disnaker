@@ -95,7 +95,7 @@
                                         <label for=""><b>Surat Keputusan Izin Usaha (Nomor dan Tanggal Surat) </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <div class="row">
                                             <div class="col-6">
-                                                <input type="text" name="nomor_surat_izin_usaha" id="number_letter" class="form-control" placeholder="Nomor Surat" value="{{$user->user_perusahaan->nomor_surat_izin_usaha}}" required>
+                                                <input type="text" name="nomor_surat_izin_usaha" id="number_letter" class="form-control" placeholder="Nomor Surat" value="{{$user->user_perusahaan->nomor_surat_izin_usaha}}" required oninput="validateNumber(this)">
                                             </div>
                                             <div class="col-6">
                                                 <input type="date" name="tgl_surat_izin_usaha" id="date_latter" class="form-control" placeholder="Tanggal Surat" value="{{$user->user_perusahaan->tgl_surat_izin_usaha}}" required>
@@ -112,12 +112,12 @@
                                                         <div class="col-md-6">
                                                             <div class="text-center">
                                                                 <div class="mt-2">
-                                                                    Laki laki
+                                                                    Laki-laki
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
-                                                            <input type="text" name="laki_laki" id="men" class="form-control" value="{{$user->user_perusahaan->laki_laki}}" required>
+                                                        <div class="col-5">
+                                                            <input type="text" name="laki_laki" id="men" class="form-control" value="{{ $user->user_perusahaan->laki_laki }}" required oninput="validateNumber(this)">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -130,8 +130,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
-                                                            <input type="text" name="laki" id="woman" class="form-control" value="{{$user->user_perusahaan->perempuan}}" required>
+                                                        <div class="col-5">
+                                                            <input type="text" name="perempuan" id="woman" class="form-control" value="{{$user->user_perusahaan->perempuan}}" required oninput="validateNumber(this)">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -152,8 +152,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
-                                                            <input type="text" name="pkwt" id="pkwt" class="form-control"  value="{{$user->user_perusahaan->pkwt}}" required>
+                                                        <div class="col-5">
+                                                            <input type="text" name="pkwt" id="pkwt" class="form-control"  value="{{$user->user_perusahaan->pkwt}}" required oninput="validateNumber(this)">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -166,8 +166,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
-                                                            <input type="text" name="outsourcing" id="outsourcing" class="form-control" value="{{$user->user_perusahaan->outsourcing}}" required>
+                                                        <div class="col-5">
+                                                            <input type="text" name="outsourcing" id="outsourcing" class="form-control" value="{{$user->user_perusahaan->outsourcing}}" required oninput="validateNumber(this)">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -180,8 +180,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
-                                                            <input type="text" name="wna" id="wna" class="form-control" value="{{$user->user_perusahaan->wna}}" required>
+                                                        <div class="col-5">
+                                                            <input type="text" name="wna" id="wna" class="form-control" value="{{$user->user_perusahaan->wna}}" required oninput="validateNumber(this)">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -191,11 +191,11 @@
 
                                     <div class="mb-4">
                                         <label for=""><b>Nomor Kepesertaan BPJS Ketenagakerjaan </b><label style="color: red; font-size: 15px;"> *</label></label>
-                                        <input type="text" name="no_bpjs_ketenagakerjaan" id="number_ketenagakerjaan" class="form-control"  value="{{$user->user_perusahaan->no_bpjs_ketenagakerjaan}}" required>
+                                        <input type="text" name="no_bpjs_ketenagakerjaan" id="number_ketenagakerjaan" class="form-control"  value="{{$user->user_perusahaan->no_bpjs_ketenagakerjaan}}" required oninput="validateNumber(this)">
                                     </div>
                                     <div class="mb-4">
                                         <label for=""><b>Nomor Kepesertaan BPJS Kesehatan </b><label style="color: red; font-size: 15px;"> *</label></label>
-                                        <input type="text" name="no_bpjs_kesehatan" id="number_kesehatan" class="form-control"  value="{{$user->user_perusahaan->no_bpjs_kesehatan}}" required>
+                                        <input type="text" name="no_bpjs_kesehatan" id="number_kesehatan" class="form-control"  value="{{$user->user_perusahaan->no_bpjs_kesehatan}}" required oninput="validateNumber(this)">
                                     </div>
 
                                     <div class="d-flex align-content-center flex-wrap mb-0">
@@ -227,4 +227,10 @@
         </div>
     </div>
 </div>
+<script>
+    function validateNumber(input) {
+        // Menghapus semua karakter selain angka
+        input.value = input.value.replace(/[^0-9]/g, '');
+    }
+    </script>
 @endsection

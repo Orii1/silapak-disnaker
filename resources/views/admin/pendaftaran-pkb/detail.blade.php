@@ -310,6 +310,7 @@
                     <div class="modal-body">
                         <label class="mb-2">Surat Keputusan yang sudah di tanda tangan</label>
                         <input class="form-control" type="file" id="sk" name="sk"></input>
+                        <label style="color: red;"><i>(tipe file .pdf | Max : 2 MB)</i></label>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -86,7 +86,7 @@
                                     <label class="ms-2" for="type" style="font-size: 13px;"><b>Surat Keputusan Izin Usaha (Nomor Tanggal Surat) </b><label style="color: red; font-size: 15px;"> *</label></label>
                                     <div class="row">
                                         <div class="col-6">
-                                            <input type="text" name="nomor_surat_izin_usaha" id="nomor_surat_izin_usaha" class="form-control" placeholder="Nomor Surat" value="" required>
+                                            <input type="text" name="nomor_surat_izin_usaha" id="nomor_surat_izin_usaha" class="form-control" placeholder="Nomor Surat" value="" required oninput="validateNumber(this)">
                                         </div>
                                         <div class="col-6">
                                             <input type="date" name="tgl_surat_izin_usaha" id="tgl_surat_izin_usaha" class="form-control" placeholder="Tanggal Surat" value="" required>
@@ -113,11 +113,11 @@
                           <div class="row">
                             <div class="col-10 mb-4 ms-3">
                                 <label class="ms-2" for="no_bpjs_ketenagakerjaan" style="font-size: 13px;"><b>Nomor BPJS Ketenagakerjaan </b><label style="color: red; font-size: 15px;"> *</label></label>
-                                <input type="text" name="no_bpjs_ketenagakerjaan" id="no_bpjs_ketenagakerjaan" placeholder="Nomor BPJS Ketenagakerjaan" class="form-control" required/>
+                                <input type="text" name="no_bpjs_ketenagakerjaan" id="no_bpjs_ketenagakerjaan" placeholder="Nomor BPJS Ketenagakerjaan" class="form-control" required oninput="validateNumber(this)"/>
                             </div>
                             <div class="col-10 mb-4 ms-3">
                                 <label class="ms-2" for="no_bpjs_kesehatan" style="font-size: 13px;"><b>Nomor BPJS Kesehatan </b><label style="color: red; font-size: 15px;"> *</label></label>
-                                <input type="text" name="no_bpjs_kesehatan" id="no_bpjs_kesehatan" placeholder="Nomor BPJS Kesehatan" class="form-control" required/>
+                                <input type="text" name="no_bpjs_kesehatan" id="no_bpjs_kesehatan" placeholder="Nomor BPJS Kesehatan" class="form-control" required oninput="validateNumber(this)"/>
                             </div>
                             <div class="col-10 mb-4 ms-3">
                                 <label class="ms-2" for="" style="font-size: 13px;"><b>Jumlah Tenaga Kerja </b><label style="color: red; font-size: 15px;"> *</label></label>
@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                     <div class="col-3 mb-2">
-                                        <input type="text" name="laki_laki" id="laki_laki" class="form-control" value="" required>
+                                        <input type="text" name="laki_laki" id="laki_laki" class="form-control" value="" required oninput="validateNumber(this)">
                                     </div>
                                     <div class="col-md-6">
                                         <div class="text-center">
@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                     <div class="col-3 mb-5">
-                                        <input type="text" name="perempuan" id="perempuan" class="form-control" value="" required>
+                                        <input type="text" name="perempuan" id="perempuan" class="form-control" value="" required oninput="validateNumber(this)">
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
                                         </div>
                                     </div>
                                     <div class="col-3 mb-2">
-                                        <input type="text" name="pkwt" id="pkwt" class="form-control" value="" required>
+                                        <input type="text" name="pkwt" id="pkwt" class="form-control" value="" required oninput="validateNumber(this)">
                                     </div>
                                     <div class="col-md-6">
                                         <div class="text-center">
@@ -170,7 +170,7 @@
                                         </div>
                                     </div>
                                     <div class="col-3 mb-2">
-                                        <input type="text" name="outsourcing" id="outsourcing" class="form-control" value="" required>
+                                        <input type="text" name="outsourcing" id="outsourcing" class="form-control" value="" required oninput="validateNumber(this)">
                                     </div>
                                     <div class="col-md-6">
                                         <div class="text-center">
@@ -180,7 +180,7 @@
                                         </div>
                                     </div>
                                     <div class="col-3 mb-2">
-                                        <input type="text" name="wna" id="wna" class="form-control" value="" required>
+                                        <input type="text" name="wna" id="wna" class="form-control" value="" required oninput="validateNumber(this)">
                                     </div>
                                 </div>
                             </div>
@@ -193,6 +193,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <input class="form-control form-control-sm" type="hidden" name="longtitude" id="lng" readonly>
+                                </div>
+                                <div class="col-12">
+                                    <i class="mt-0 card-title" style="font-size: 11px">*) Mohon dicek kembali lokasi perusahaan Anda, jika tidak sesuai silahkan refresh browser atau ganti jaringan anda.</i>
                                 </div>
                             </div>
                         </div>
@@ -230,6 +233,11 @@
         document.getElementById('form2').style.transform = 'translateX(100%)';
         document.getElementById('progress').style.width = '50%';
     });
+    function validateNumber(input) {
+        // Menghapus semua karakter selain angka
+        input.value = input.value.replace(/[^0-9]/g, '');
+    }
+    
 </script>
 
 @endsection

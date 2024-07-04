@@ -195,7 +195,7 @@
                                     <input class="form-control form-control-sm" type="hidden" name="longtitude" id="lng" readonly>
                                 </div>
                                 <div class="col-12">
-                                    <i class="mt-0 card-title" style="font-size: 11px">*) Mohon dicek kembali lokasi perusahaan Anda, jika tidak sesuai silahkan refresh browser atau ganti jaringan anda.</i>
+                                    <i class="mt-0 card-title" style="font-size: 11px">*) Mohon untuk mengijinkan website ini mengakses lokasi agar mendapatkan alamat perusahaan secara otomatis </i>
                                 </div>
                             </div>
                         </div>

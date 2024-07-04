@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="row text-start">
                                     <div class="disabled-text">
-                                        Diajukan pada tanggal : {{$item->updated_at->isoFormat('D MMMM Y')}}
+                                        Diajukan pada tanggal : {{$item->updated_at->locale('id')->isoFormat('D MMMM Y')}}
                                     </div>
                                 </div>
                             </div>

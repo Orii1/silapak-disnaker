@@ -12,7 +12,7 @@
     </nav>
 </div>
 
-<div class="container-fluid">
+<div class="card">
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12">
@@ -33,7 +33,7 @@
                                 </tr>
                             </div>
                         </td>
-                        
+
                         <td>
                             <div id="visiContent">
                                 <b>Keterangan</b>
@@ -53,38 +53,38 @@
                             @elseif ($data->pp_status->id_status == '2')
                                 <div class="">
                                     <div class="">
-                                        <label for="">{{$data->pp_status->keterangan}}<br> 
+                                        <label for="">{{$data->pp_status->keterangan}}<br>
                                     </div>
                                 </div>
                             @else
                                 <div class="">
                                     <div class="">
-                                        <label for="">Menunggu Konfirmasi Admin<br> 
+                                        <label for="">Menunggu Konfirmasi Admin<br>
                                     </div>
                                 </div>
                             @endif
                         </td>
                         <td>
                             <b>Status</b>
-                                @if ($data->pp_status->id_status == "2")
+                            @if ($data->pp_status->id_status == "2")
+                            <div class="text-start">
+                                <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
+                            </div>
+                            @elseif ($data->pp_status->id_status == "3")
                                 <div class="text-start">
-                                    <span class="badge rounded-pill text-bg-warning"><label style="color: white;">Diproses</label></span>
+                                    <span class="badge rounded-pill text-bg-success">Diterima</span>
                                 </div>
-                                @elseif ($data->pp_status->id_status == "3")
-                                    <div class="text-start">
-                                        <span class="badge rounded-pill text-bg-success">Diterima</span>
-                                    </div>
-                                @elseif ($data->pp_status->id_status == '4')
-                                    <div class="text-start">
-                                        <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
-                                    </div>
-                                @elseif ($data->pp_status->id_status == '1')
-                                    <div class="text-start">
-                                        <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
-                                    </div>
-                                @else
-                                    <div class="text-start">Status Tidak Diketahui</div>
-                                @endif
+                            @elseif ($data->pp_status->id_status == '4')
+                                <div class="text-start">
+                                    <span class="badge rounded-pill text-bg-danger">Dikembalikan</span>
+                                </div>
+                            @elseif ($data->pp_status->id_status == '1')
+                                <div class="text-start">
+                                    <span class="badge rounded-pill text-bg-info"><label style="color: white;">Menunggu Konfirmasi</label></span>
+                                </div>
+                            @else
+                                <div class="text-start">Status Tidak Diketahui</div>
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -111,15 +111,7 @@
                             @endif
                         </td>
                         <td>
-                            <div class="text-start">
-                            <b>Surat Keputusan</b>
-                                <p>
-                                    <a href="path/to/your/file.zip" class="btn btn-primary" download>
-                                        <i class="fa fa-download"></i> Download File
-                                    </a>
-                                </p>
-                            </div>
-                        </td>   
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -127,12 +119,12 @@
     </div>
 </div>
 
-                            @if ($data->pp_status->status_cek->hasil_pengecekan == 'Belum di Periksa')
-                            @include('layout.modal')
-                            <div class="mb-2 mx-2">
-                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#hasil_pp"><i class="bi bi-file-earmark-bar-graph-fill" style="height:100px;color: wppte;"></i> Hasil Periksa</a>
-                            </div>
-                            @endif
+@if ($data->pp_status->status_cek->hasil_pengecekan == 'Belum di Periksa')
+@include('layout.modal')
+<div class="mb-2 mx-2">
+    <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#hasil_pp"><i class="bi bi-file-earmark-bar-graph-fill" style="height:100px;color: wppte;"></i> Hasil Periksa</a>
+</div>
+@endif
 
 <div class="card">
     <div class="mx-3 my-3">

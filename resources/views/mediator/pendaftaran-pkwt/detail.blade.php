@@ -12,7 +12,7 @@
     </nav>
 </div>
 
-<div class="container-fluid">
+<div class="card">
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-12">
@@ -33,7 +33,7 @@
                                 </tr>
                             </div>
                         </td>
-                        
+
                         <td>
                             <div id="visiContent">
                                 <b>Keterangan</b>
@@ -53,13 +53,13 @@
                             @elseif ($data->pkwt_status->id_status == '2')
                                 <div class="">
                                     <div class="">
-                                        <label for="">{{$data->pkwt_status->keterangan}}<br> 
+                                        <label for="">{{$data->pkwt_status->keterangan}}<br>
                                     </div>
                                 </div>
                             @else
                                 <div class="">
                                     <div class="">
-                                        <label for="">Menunggu Konfirmasi Admin<br> 
+                                        <label for="">Menunggu Konfirmasi Admin<br>
                                     </div>
                                 </div>
                             @endif
@@ -111,15 +111,8 @@
                             @endif
                         </td>
                         <td>
-                            <div class="text-start">
-                            <b>Surat Keputusan</b>
-                                <p>
-                                    <a href="path/to/your/file.zip" class="btn btn-primary" download>
-                                        <i class="fa fa-download"></i> Download File
-                                    </a>
-                                </p>
-                            </div>
-                        </td>   
+
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -127,12 +120,12 @@
     </div>
 </div>
 
-                            @if ($data->pkwt_status->status_cek->hasil_pengecekan == 'Belum di Periksa')
-                            @include('layout.modal')
-                            <div class="mb-2 mx-2">
-                                <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#hasil_pkwt"><i class="bi bi-file-earmark-bar-graph-fill" style="height:100px;color: wpkwtte;"></i> Hasil Periksa</a>
-                            </div>
-                            @endif
+@if ($data->pkwt_status->status_cek->hasil_pengecekan == 'Belum di Periksa')
+@include('layout.modal')
+<div class="mb-2 mx-2">
+    <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#hasil_pkwt"><i class="bi bi-file-earmark-bar-graph-fill" style="height:100px;color: wpkwtte;"></i> Hasil Periksa</a>
+</div>
+@endif
 
 <div class="card">
     <div class="mx-3 my-3">

@@ -131,7 +131,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
-                                                            <input type="text" name="laki" id="woman" class="form-control" value="{{$user->user_perusahaan->perempuan}}" required>
+                                                            <input type="text" name="perempuan" id="woman" class="form-control" value="{{$user->user_perusahaan->perempuan}}" required>
                                                         </div>
                                                     </div>
                                                 </div>

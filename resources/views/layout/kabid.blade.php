@@ -81,7 +81,7 @@
         </a>
       </li>
 
-      
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/kabid/monitoring">
@@ -97,10 +97,10 @@
         </a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed " href="/logout">
+      <li class="nav-item" id="logout-button">
+        <a class="nav-link collapsed">
             <i class="bi bi-box-arrow-right"></i>
-          <span>Log Out</span>
+          <span>Logout</span>
         </a>
       </li>
 
@@ -127,6 +127,25 @@
   <script src="../../assets/js/mainadmin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <script>
+    document.getElementById('logout-button').addEventListener('click', function() {
+    Swal.fire({
+        title: 'Apakah Anda yakin ingin keluar?',
+        text: "Anda akan keluar dari akun ini.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Ya, keluar',
+        cancelButtonText: 'Tidak, batalkan',
+        reverseButtons: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/logout';
+            }
+        });
+    });
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

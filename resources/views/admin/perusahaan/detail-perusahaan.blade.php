@@ -81,7 +81,7 @@
                                     <div class="row">
                                         <div class="label">Surat Keputusan Izin Usaha</div><br>
                                         <label>No : {{$detail->user_perusahaan->nomor_surat_izin_usaha}}</label>
-                                        <label>Tanggal : {{$detail->tgl_surat_izin_usaha}}</label>
+                                        <label>Tanggal : {{$detail->user_perusahaan->tgl_surat_izin_usaha}}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

@@ -96,7 +96,7 @@ class KabidController extends Controller
     public function profile()
     {
 
-        $profile = User::where('id', '1')->get();
+        $profile = User::where('id', '4')->get();
 
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -108,8 +108,9 @@ class KabidController extends Controller
         return view('/kabid/profile/profilekabid', compact('profile'));
     }
 
-    public function monitoring(){
-       
+    public function monitoring()
+    {
+
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
         // $pkwt_not = Pendaftaranpkwt::where('status', '3')->count();
@@ -117,11 +118,26 @@ class KabidController extends Controller
         // $lks_not = Pendaftaranlks::where('status', '3')->count();
         // $hi_not = Pencatatanperselihan::where('status', '3')->count();
         // $phk_not = Pelaporanphk::where('status', '3')->count();
-    return view('/kabid/monitoring/monitoring');
+        $pp = Pengesahanpp::all();
+        $pkb = Pendaftaranpkb::all();
+        $pkwt = Pendaftaranpkwt::all();
+        $spsb = Pencatatanspsb::all();
+        $lks = Pendaftaranlks::all();
+        $hi = Pencatatanperselihan::all();
+        $phk = Pelaporanphk::all();
+        return view('/kabid/monitoring/monitoring', compact(
+            'pp',
+            'pkb',
+            'pkwt',
+            'spsb',
+            'lks',
+            'hi',
+            'phk'
+        ));
     }
 
     public function rekapitulasi(){
-       
+
 
         // $pp_not = Pengesahanpp::where('status', '3')->count();
         // $pkb_not = Pendaftaranpkb::where('status', '3')->count();
@@ -134,7 +150,7 @@ class KabidController extends Controller
     }
 
     public function detailpermohonan(){
-       
+
 
         $pp_not = Pengesahanpp::where('status', '3')->count();
         $pkb_not = Pendaftaranpkb::where('status', '3')->count();

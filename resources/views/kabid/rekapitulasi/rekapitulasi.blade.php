@@ -59,7 +59,7 @@
                                 <td><span class="badge bg-danger">{{$tolak_pkb}}</span></td>
                                 <td>
                                     <div class="text-center">
-                                        <a title="Detail" href="" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                                        <a title="Detail" href="/kabid/rekapitulasi-pkb" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -72,7 +72,7 @@
                                 <td><span class="badge bg-danger">{{$tolak_pkwt}}</span></td>
                                 <td>
                                     <div class="text-center">
-                                        <a title="Detail" href="" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                                        <a title="Detail" href="/kabid/rekapitulasi-pkwt" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>

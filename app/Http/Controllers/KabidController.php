@@ -211,7 +211,21 @@ class KabidController extends Controller
         return view('kabid.rekapitulasi.rekap-pp', compact('rekap_pp'));
     }
 
-    public function filterByMonth(Request $request)
+    public function rekap_pkb()
+    {
+        $rekap_pkb = Pendaftaranpkb::all();
+        return view('kabid.rekapitulasi.rekap-pkb', compact('rekap_pkb'));
+    }
+
+    public function rekap_pkwt()
+    {
+        $rekap_pkwt = Pendaftaranpkwt::all();
+        return view('kabid.rekapitulasi.rekap-pkwt', compact('rekap_pkwt'));
+    }
+
+
+    // PP
+    public function filterByMonth_pp(Request $request)
     {
         $month = $request->input('month');
 
@@ -223,10 +237,10 @@ class KabidController extends Controller
             $filteredRecords = Pengesahanpp::with('pp_perusahaan', 'pp_status')->get();
         }
 
-        return view('partials.filtered-records', compact('filteredRecords'));
+        return view('partials.filtered-records-pp', compact('filteredRecords'));
     }
 
-    public function generatePDF(Request $request)
+    public function generatePDF_pp(Request $request)
     {
         $month = $request->input('month');
 
@@ -239,5 +253,53 @@ class KabidController extends Controller
         $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-pp', compact('filteredRecords'));
 
         return $pdf->download('Permohonan-PP-' . $month . '.pdf');
+    }
+
+
+    // PKB
+    public function filterByMonth_pkb(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            // Filter data berdasarkan bulan yang dipilih
+            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)->with('pkb_perusahaan', 'pkb_status')->get();
+        } else {
+            // Jika tidak ada bulan yang dipilih, ambil semua data
+            $filteredRecords = Pendaftaranpkb::with('pkb_perusahaan', 'pkb_status')->get();
+        }
+
+        return view('partials.filtered-records-pkb', compact('filteredRecords'));
+    }
+
+    public function generatePDF_pkb(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)->with('pkb_perusahaan', 'pkb_status')->get();
+        } else {
+            $filteredRecords = Pendaftaranpkb::with('pkb_perusahaan', 'pkb_status')->get();
+        }
+
+        $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-pkb', compact('filteredRecords'));
+
+        return $pdf->download('Permohonan-pkb-' . $month . '.pdf');
+    }
+
+
+    // PKWT
+    public function filterByMonth_pkwt(Request $request)
+    {
+        $month = $request->input('month');
+        if ($month) {
+            // Filter data berdasarkan bulan yang dipilih
+            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)->with('pkwt_perusahaan', 'pkwt_status')->get();
+        } else {
+            // Jika tidak ada bulan yang dipilih, ambil semua data
+            $filteredRecords = Pendaftaranpkwt::with('pkwt_perusahaan', 'pkwt_status')->get();
+        }
+
+        return view('partials.filtered-records-pkwt', compact('filteredRecords'));
     }
 }

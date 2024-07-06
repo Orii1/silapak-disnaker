@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Rekapitulasi Permohonan Pengesahan Peraturan Perusahaan</h1>
+    <h1>Rekapitulasi Permohonan Pendaftaran Kerja Bersama</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/kabid/dashboard">Home</a></li>
-        <li class="breadcrumb-item active">Rekapitulasi Permohonan Pengesahan Peraturan Perusahaan</li>
+        <li class="breadcrumb-item active">Rekapitulasi Permohonan Pendaftaran Kerja Bersama</li>
       </ol>
     </nav>
 </div>
@@ -60,20 +60,20 @@
                 </tr>
             </thead>
             <tbody id="tableBody">
-                @foreach ($rekap_pp as $item)
+                @foreach ($rekap_pkb as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$item->pp_perusahaan->nama_perusahaan}}</td>
+                        <td>{{$item->pkb_perusahaan->nama_perusahaan}}</td>
                         <td>{{$item->peruntukan}}</td>
                         <td>{{$item->updated_at->locale('id')->isoFormat('D MMMM Y')}}</td>
                         <td>
-                            @if ($item->pp_status->id_status == '1')
+                            @if ($item->pkb_status->id_status == '1')
                                 <span class="badge bg-info">Menunggu Konfirmasi</span>
-                            @elseif ($item->pp_status->id_status == '2')
+                            @elseif ($item->pkb_status->id_status == '2')
                                 <span class="badge bg-warning">Diproses</span>
-                            @elseif ($item->pp_status->id_status == '3')
+                            @elseif ($item->pkb_status->id_status == '3')
                                 <span class="badge bg-success">Diterima</span>
-                            @elseif ($item->pp_status->id_status == '4')
+                            @elseif ($item->pkb_status->id_status == '4')
                                 <span class="badge bg-danger">Dikembalikan</span>
                             @endif
                         </td>
@@ -92,9 +92,8 @@
             e.preventDefault();
 
             var month = $('#month').val();
-
             $.ajax({
-                url: '{{ route('filter.by.month_pp') }}',
+                url: '{{ route('filter.by.month_pkb') }}',
                 type: 'GET',
                 data: {
                     month: month
@@ -110,7 +109,7 @@
 
         $('#generatePDF').on('click', function() {
             var month = $('#month').val();
-            window.location.href = '{{ route('generate.pdf_pp') }}?month=' + month;
+            window.location.href = '{{ route('generate.pdf_pkb') }}?month=' + month;
         });
     });
 </script>

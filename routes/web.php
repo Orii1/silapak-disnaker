@@ -275,10 +275,18 @@ Route::middleware(['auth', 'UserAkses:3'])->group(function () {
     Route::get('/kabid/monitoring-hi/{id}', [KabidController::class, 'monitor_hi']);
     Route::get('/kabid/monitoring-phk/{id}', [KabidController::class, 'monitor_phk']);
 
-    Route::get('/kabid/rekapitulasi-pp', [KabidController::class, 'rekap_pp']);
 
-    Route::get('/kabid/filter-by-month', [KabidController::class, 'filterByMonth'])->name('filter.by.month');
-    Route::get('/kabid/generate-pdf', [KabidController::class, 'generatePDF'])->name('generate.pdf');
+    Route::get('/kabid/rekapitulasi-pp', [KabidController::class, 'rekap_pp']);
+    Route::get('/kabid/filter-by-month-pp', [KabidController::class, 'filterByMonth_pp'])->name('filter.by.month_pp');
+    Route::get('/kabid/generate-pdf-pp', [KabidController::class, 'generatePDF_pp'])->name('generate.pdf_pp');
+
+    Route::get('/kabid/rekapitulasi-pkb', [KabidController::class, 'rekap_pkb']);
+    Route::get('/kabid/filter-by-month-pkb', [KabidController::class, 'filterByMonth_pkb'])->name('filter.by.month_pkb');
+    Route::get('/kabid/generate-pdf-pkb', [KabidController::class, 'generatePDF_pkb'])->name('generate.pdf_pkb');
+
+    Route::get('/kabid/rekapitulasi-pkwt', [KabidController::class, 'rekap_pkwt']);
+    Route::get('/kabid/filter-by-month-pkwt', [KabidController::class, 'filterByMonth_pkwt'])->name('filter.by.month_pkwt');
+    Route::get('/kabid/generate-pdf-pkwt', [KabidController::class, 'generatePDF_pkwt'])->name('generate.pdf_pkwt');
 });
 // END KABID ROUTE
 

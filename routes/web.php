@@ -274,6 +274,10 @@ Route::middleware(['auth', 'UserAkses:3'])->group(function () {
     Route::get('/kabid/monitoring-lks/{id}', [KabidController::class, 'monitor_lks']);
     Route::get('/kabid/monitoring-hi/{id}', [KabidController::class, 'monitor_hi']);
     Route::get('/kabid/monitoring-phk/{id}', [KabidController::class, 'monitor_phk']);
+
+    Route::get('/kabid/rekapitulasi-pp', [KabidController::class, 'rekap_pp']);
+
+    Route::get('/kabid/filter-by-month', [KabidController::class, 'filterByMonth'])->name('filter.by.month');
 });
 // END KABID ROUTE
 

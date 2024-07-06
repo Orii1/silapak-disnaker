@@ -26,7 +26,7 @@ class TestEmail extends Mailable
     public function build()
     {
         return $this->from('Silakhi@koperasibanjarbaru.com')
-                    ->subject('Test Email')
+                    ->subject('Aktivasi Akun')
                     ->view('emails.test');
     }
 }

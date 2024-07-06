@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestEmail;
 use App\Models\Asset;
 use App\Models\DetailPengecekan;
 use App\Models\Pegawai;
@@ -17,6 +18,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
@@ -247,6 +249,7 @@ class AdminController extends Controller
         if ($user) {
             $user->status_akun = 'active';
             $user->save();
+            Mail::to($user->email)->send(new TestEmail());
             return redirect()->back()->with('success', 'User berhasil diaktifkan.');
         } else {
             return redirect()->back()->with('error', 'User tidak ditemukan.');

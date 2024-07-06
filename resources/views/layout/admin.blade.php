@@ -101,10 +101,9 @@
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>
             Permohonan
-            @if ($konfir_pp or $konfir_pkb or $konfir_pkwt or $konfir_spsb or $konfir_lks or $konfir_hi or $konfir_phk == "0")
-
+            @if ($konfir_pp == "0" || $konfir_pkb == "0" || $konfir_pkwt == "0" || $konfir_spsb == "0" || $konfir_lks == "0" || $konfir_hi == "0" || $konfir_phk == "0")
             @else
-            <span class="badge text-bg-danger">-</span>
+                <span class="badge text-bg-danger">-</span>
             @endif
         </span><i class="bi bi-chevron-down ms-auto"></i>
         </a>

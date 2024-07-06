@@ -223,6 +223,30 @@ class KabidController extends Controller
         return view('kabid.rekapitulasi.rekap-pkwt', compact('rekap_pkwt'));
     }
 
+    public function rekap_spsb()
+    {
+        $rekap_spsb = Pencatatanspsb::all();
+        return view('kabid.rekapitulasi.rekap-spsb', compact('rekap_spsb'));
+    }
+
+    public function rekap_lks()
+    {
+        $rekap_lks = Pendaftaranlks::all();
+        return view('kabid.rekapitulasi.rekap-lks', compact('rekap_lks'));
+    }
+
+    public function rekap_hi()
+    {
+        $rekap_hi = Pencatatanperselihan::all();
+        return view('kabid.rekapitulasi.rekap-hi', compact('rekap_hi'));
+    }
+
+    public function rekap_phk()
+    {
+        $rekap_phk = Pelaporanphk::all();
+        return view('kabid.rekapitulasi.rekap-phk', compact('rekap_phk'));
+    }
+
 
     // PP
     public function filterByMonth_pp(Request $request)
@@ -301,5 +325,144 @@ class KabidController extends Controller
         }
 
         return view('partials.filtered-records-pkwt', compact('filteredRecords'));
+    }
+
+    public function generatePDF_pkwt(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)->with('pkwt_perusahaan', 'pkwt_status')->get();
+        } else {
+            $filteredRecords = Pendaftaranpkwt::with('pkwt_perusahaan', 'pkwt_status')->get();
+        }
+
+        $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-pkwt', compact('filteredRecords'));
+
+        return $pdf->download('Permohonan-pkwt-' . $month . '.pdf');
+    }
+
+
+    // SPSB
+    public function filterByMonth_spsb(Request $request)
+    {
+        $month = $request->input('month');
+        if ($month) {
+            // Filter data berdasarkan bulan yang dipilih
+            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)->with('spsb_perusahaan', 'spsb_status')->get();
+        } else {
+            // Jika tidak ada bulan yang dipilih, ambil semua data
+            $filteredRecords = Pencatatanspsb::with('spsb_perusahaan', 'spsb_status')->get();
+        }
+
+        return view('partials.filtered-records-spsb', compact('filteredRecords'));
+    }
+
+    public function generatePDF_spsb(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)->with('spsb_perusahaan', 'spsb_status')->get();
+        } else {
+            $filteredRecords = Pencatatanspsb::with('spsb_perusahaan', 'spsb_status')->get();
+        }
+
+        $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-spsb', compact('filteredRecords'));
+
+        return $pdf->download('Permohonan-spsb-' . $month . '.pdf');
+    }
+
+
+    // LKS
+    public function filterByMonth_lks(Request $request)
+    {
+        $month = $request->input('month');
+        if ($month) {
+            // Filter data berdasarkan bulan yang dipilih
+            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)->with('lks_perusahaan', 'lks_status')->get();
+        } else {
+            // Jika tidak ada bulan yang dipilih, ambil semua data
+            $filteredRecords = Pendaftaranlks::with('lks_perusahaan', 'lks_status')->get();
+        }
+
+        return view('partials.filtered-records-lks', compact('filteredRecords'));
+    }
+
+    public function generatePDF_lks(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)->with('lks_perusahaan', 'lks_status')->get();
+        } else {
+            $filteredRecords = Pendaftaranlks::with('lks_perusahaan', 'lks_status')->get();
+        }
+
+        $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-lks', compact('filteredRecords'));
+
+        return $pdf->download('Permohonan-lks-' . $month . '.pdf');
+    }
+
+
+    // HI
+    public function filterByMonth_hi(Request $request)
+    {
+        $month = $request->input('month');
+        if ($month) {
+            // Filter data berdasarkan bulan yang dipilih
+            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)->with('hi_perusahaan', 'hi_status')->get();
+        } else {
+            // Jika tidak ada bulan yang dipilih, ambil semua data
+            $filteredRecords = Pencatatanperselihan::with('hi_perusahaan', 'hi_status')->get();
+        }
+
+        return view('partials.filtered-records-hi', compact('filteredRecords'));
+    }
+
+    public function generatePDF_hi(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)->with('hi_perusahaan', 'hi_status')->get();
+        } else {
+            $filteredRecords = Pencatatanperselihan::with('hi_perusahaan', 'hi_status')->get();
+        }
+
+        $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-hi', compact('filteredRecords'));
+
+        return $pdf->download('Permohonan-hi-' . $month . '.pdf');
+    }
+
+
+    // HI
+    public function filterByMonth_phk(Request $request)
+    {
+        $month = $request->input('month');
+        if ($month) {
+            // Filter data berdasarkan bulan yang dipilih
+            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)->with('phk_perusahaan', 'phk_status')->get();
+        } else {
+            // Jika tidak ada bulan yang dipilih, ambil semua data
+            $filteredRecords = Pelaporanphk::with('phk_perusahaan', 'phk_status')->get();
+        }
+
+        return view('partials.filtered-records-phk', compact('filteredRecords'));
+    }
+
+    public function generatePDF_phk(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)->with('phk_perusahaan', 'phk_status')->get();
+        } else {
+            $filteredRecords = Pelaporanphk::with('phk_perusahaan', 'phk_status')->get();
+        }
+
+        $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-phk', compact('filteredRecords'));
+
+        return $pdf->download('Permohonan-phk-' . $month . '.pdf');
     }
 }

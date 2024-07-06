@@ -85,7 +85,7 @@
                                 <td><span class="badge bg-danger">{{$tolak_spsb}}</span></td>
                                 <td>
                                     <div class="text-center">
-                                        <a title="Detail" href="" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                                        <a title="Detail" href="/kabid/rekapitulasi-spsb" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -98,7 +98,7 @@
                                 <td><span class="badge bg-danger">{{$tolak_lks}}</span></td>
                                 <td>
                                     <div class="text-center">
-                                        <a title="Detail" href="" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                                        <a title="Detail" href="/kabid/rekapitulasi-lks" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -111,7 +111,7 @@
                                 <td><span class="badge bg-danger">{{$tolak_hi}}</span></td>
                                 <td>
                                     <div class="text-center">
-                                        <a title="Detail" href="" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                                        <a title="Detail" href="/kabid/rekapitulasi-hi" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -124,7 +124,7 @@
                                 <td><span class="badge bg-danger">{{$tolak_phk}}</span></td>
                                 <td>
                                     <div class="text-center">
-                                        <a title="Detail" href="" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                                        <a title="Detail" href="/kabid/rekapitulasi-phk" class="btn btn-primary btn-sm" id=""><i class="bi bi-arrow-right-square-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>

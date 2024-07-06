@@ -86,7 +86,11 @@
                             <div class="text-start">
                             <b>Nama Mediator</b>
                                 <p>
-                                    {{$data->phk_status->status_cek->pengecekan_pegawai->nama_pegawai}}
+                                    @if ($data->phk_status->id_status == "1")
+                                    -
+                                    @else
+                                        {{$data->phk_status->status_cek->pengecekan_pegawai->nama_pegawai}}
+                                    @endif
                                 </p>
                             </div>
                         </td>
@@ -94,12 +98,16 @@
                             <div class="text-start">
                             <b>Surat Keputusan</b>
                                 <p>
-                                    @if ($data->phk_status->id_status == "2"OR"3" AND $data->phk_status->status_cek->hasil_pengecekan == "Dokumen Valid")
-                                        <a href="/storage/{{$data->phk_perusahaan->id}}/phk/sk/{{$data->phk_status->sk}}" class="btn btn-success" target="_blank">
-                                            <i class="bi bi-file-earmark-medical-fill"></i>
-                                        </a>
-                                    @else
+                                    @if ($data->phk_status->id_status == "1")
                                     -
+                                    @else
+                                        @if ($data->phk_status->id_status == "2"OR"3" AND $data->phk_status->status_cek->hasil_pengecekan == "Dokumen Valid")
+                                            <a href="/storage/{{$data->phk_perusahaan->id}}/phk/sk/{{$data->phk_status->sk}}" class="btn btn-success" target="_blank">
+                                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                            </a>
+                                        @else
+                                        -
+                                        @endif
                                     @endif
                                 </p>
                             </div>

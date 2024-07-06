@@ -14,6 +14,8 @@ use App\Models\Pengesahanpp;
 
 use Carbon\Carbon;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade as PDF;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 class KabidController extends Controller
 {
@@ -222,5 +224,20 @@ class KabidController extends Controller
         }
 
         return view('partials.filtered-records', compact('filteredRecords'));
+    }
+
+    public function generatePDF(Request $request)
+    {
+        $month = $request->input('month');
+
+        if ($month) {
+            $filteredRecords = Pengesahanpp::whereMonth('updated_at', $month)->with('pp_perusahaan', 'pp_status')->get();
+        } else {
+            $filteredRecords = Pengesahanpp::with('pp_perusahaan', 'pp_status')->get();
+        }
+
+        $pdf = FacadePdf::loadView('kabid.rekapitulasi.pdf.filter-pp', compact('filteredRecords'));
+
+        return $pdf->download('Permohonan-PP-' . $month . '.pdf');
     }
 }

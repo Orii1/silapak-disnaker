@@ -278,6 +278,7 @@ Route::middleware(['auth', 'UserAkses:3'])->group(function () {
     Route::get('/kabid/rekapitulasi-pp', [KabidController::class, 'rekap_pp']);
 
     Route::get('/kabid/filter-by-month', [KabidController::class, 'filterByMonth'])->name('filter.by.month');
+    Route::get('/kabid/generate-pdf', [KabidController::class, 'generatePDF'])->name('generate.pdf');
 });
 // END KABID ROUTE
 

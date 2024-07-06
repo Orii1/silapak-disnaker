@@ -11,8 +11,8 @@
     </nav>
 </div>
 
-<div class="card mb-2">
-    <div class="mx-2 my-2">
+<div class="card mb-3">
+    <div class="mx-2">
         <div class="row">
             <div class="mt-2">
                 <div class="row">
@@ -35,8 +35,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-3">
-                        <button type="button" class="btn btn-danger mb-2">
+                    <div class="text-end col-3">
+                        <button type="button" class="btn btn-danger mb-2" id="generatePDF">
                             <i class="bi bi-printer"></i> Cetak PDF
                         </button>
                     </div>
@@ -45,6 +45,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="card">
     <div class="mx-2 mx-2">
@@ -86,26 +87,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-     $(document).ready(function() {
-            $('#filterForm').on('submit', function(e) {
-                e.preventDefault();
+    $(document).ready(function() {
+        $('#filterForm').on('submit', function(e) {
+            e.preventDefault();
 
-                var month = $('#month').val();
+            var month = $('#month').val();
 
-                $.ajax({
-                    url: '{{ route('filter.by.month') }}',
-                    type: 'GET',
-                    data: {
-                        month: month
-                    },
-                    success: function(response) {
-                        $('#tableBody').html(response);
-                    },
-                    error: function(xhr) {
-                        console.log(xhr.responseText);
-                    }
-                });
+            $.ajax({
+                url: '{{ route('filter.by.month') }}',
+                type: 'GET',
+                data: {
+                    month: month
+                },
+                success: function(response) {
+                    $('#tableBody').html(response);
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText);
+                }
             });
         });
+
+        $('#generatePDF').on('click', function() {
+            var month = $('#month').val();
+            window.location.href = '{{ route('generate.pdf') }}?month=' + month;
+        });
+    });
 </script>
 @endsection

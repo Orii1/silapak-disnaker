@@ -1,6 +1,3 @@
-<!-- Change values in the template and pass { {variables} } with API call -->
-<!-- Feel free to adjust it to your needs and delete all these comments-->
-<!-- Also adapt TXT version of this email -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -131,7 +128,7 @@
                 <td style="padding: 24px 0 48px; font-size: 0px;">
                   <!--[if mso | IE]>      <table role="presentation" border="0" cellpadding="0" cellspacing="0">        <tr>          <td style="vertical-align:top;width:300px;">      <![endif]-->
                   <div class="outlook-group-fix" style="padding: 0 0 20px 0; vertical-align: top; display: inline-block; text-align: center; width:100%;">
-                    <span style="padding: 0; font-size: 11px; line-height: 15px; font-weight: normal; color: #8B949F;">Company Legal Name<br/>Company Physical Address</span>
+                    <span style="padding: 0; font-size: 11px; line-height: 15px; font-weight: normal; color: #8B949F;">Kota Banjarbaru<br/>MFA/MN</span>
                   </div>
                   <!--[if mso | IE]>      </td></tr></table>      <![endif]-->
                 </td>

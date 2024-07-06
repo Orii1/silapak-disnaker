@@ -86,7 +86,7 @@
                                     <label class="ms-2" for="type" style="font-size: 13px;"><b>Surat Keputusan Izin Usaha (Nomor Tanggal Surat) </b><label style="color: red; font-size: 15px;"> *</label></label>
                                     <div class="row">
                                         <div class="col-6">
-                                            <input type="text" name="nomor_surat_izin_usaha" id="nomor_surat_izin_usaha" class="form-control" placeholder="Nomor Surat" value="" required oninput="validateNumber(this)">
+                                            <input type="text" name="nomor_surat_izin_usaha" id="nomor_surat_izin_usaha" class="form-control" placeholder="Nomor Surat" value="" required>
                                         </div>
                                         <div class="col-6">
                                             <input type="date" name="tgl_surat_izin_usaha" id="tgl_surat_izin_usaha" class="form-control" placeholder="Tanggal Surat" value="" required>

@@ -95,7 +95,7 @@
                                         <label for=""><b>Surat Keputusan Izin Usaha (Nomor dan Tanggal Surat) </b><label style="color: red; font-size: 15px;"> *</label></label>
                                         <div class="row">
                                             <div class="col-6">
-                                                <input type="text" name="nomor_surat_izin_usaha" id="number_letter" class="form-control" placeholder="Nomor Surat" value="{{$user->user_perusahaan->nomor_surat_izin_usaha}}" required oninput="validateNumber(this)">
+                                                <input type="text" name="nomor_surat_izin_usaha" id="number_letter" class="form-control" placeholder="Nomor Surat" value="{{$user->user_perusahaan->nomor_surat_izin_usaha}}" required>
                                             </div>
                                             <div class="col-6">
                                                 <input type="date" name="tgl_surat_izin_usaha" id="date_latter" class="form-control" placeholder="Tanggal Surat" value="{{$user->user_perusahaan->tgl_surat_izin_usaha}}" required>

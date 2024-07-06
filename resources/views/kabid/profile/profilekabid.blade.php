@@ -106,7 +106,7 @@
                       </div>
                     </div>
 
-                    <div class="mt-4">
+                    <div class="mt-4 mb-4">
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Ganti Password</button>
                         </div>

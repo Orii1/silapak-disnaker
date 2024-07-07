@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card-title">
-                            <p class="text-success mb-0" style="font-size: 25px;">7</p>
+                            <p class="text-success mb-0" style="font-size: 25px;">{{$permohonan_done}}</p>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card-title">
-                            <p class="text-danger mb-0" style="font-size: 25px;">10</p>
+                            <p class="text-danger mb-0" style="font-size: 25px;">{{$permohonan_med}}</p>
                         </div>
                     </div>
                 </div>

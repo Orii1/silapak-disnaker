@@ -40,6 +40,60 @@ class MediatorController extends Controller
             });
         })
         ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $permohonan_med = DetailPengecekan::where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+        ->where('hasil_pengecekan', 'Belum di Periksa')->count();
+        $permohonan_done = DetailPengecekan::where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+        ->where('hasil_pengecekan', '<>', 'Belum di Periksa')->count();
+
         return view('mediator.home.home', compact(
             'datestring',
             'dayname',
@@ -50,7 +104,15 @@ class MediatorController extends Controller
             'lks_all',
             'hi_all',
             'phk_all',
-            'pp_not'
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+            'permohonan_med',
+            'permohonan_done'
         ));
     }
 
@@ -112,8 +174,8 @@ class MediatorController extends Controller
 
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_pp->pp_perusahaan;
-
-            $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
+            $nomor = $data->pengecekan_detail->id_detail_status;
+            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-pp' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/pp/sk/' . $pdfname;

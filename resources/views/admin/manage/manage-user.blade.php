@@ -28,17 +28,17 @@
                     </th>
                     <th>
                         <div class="text-center">
+                            NIP
+                        </div>
+                    </th>
+                    <th>
+                        <div class="text-center">
                             Jabatan
                         </div>
                     </th>
                     <th>
                         <div class="text-center">
                             Jenis Kelamin
-                        </div>
-                    </th>
-                    <th>
-                        <div class="text-center">
-                            Agama
                         </div>
                     </th>
                     <th>
@@ -59,6 +59,9 @@
                                 </div>
                             </div>
                         </td>
+                        <td class="text-center">
+                            {{$item->user_pegawai->nip}}
+                        </td>
                         <td>
                             <div class="text-center">
                                 {{$item->user_pegawai->jabatan}}
@@ -69,12 +72,10 @@
                                 {{$item->user_pegawai->jenis_kelamin}}
                             </div>
                         </td>
-                        <td class="text-center">
-                            {{$item->user_pegawai->agama}}
-                        </td>
                         <td>
                             <div class="text-center">
-                                <button title="Detail" data-user-id="{{$item->id}}" class="btn btn-danger delete-button"><i class="bi bi-trash-fill"></i></button>
+                                <a title="Detail" href="/admin/edit-pegawai/{{$item->id}}" class="btn btn-primary"><i class="bi bi-info-square-fill"></i></a>
+                                <button title="Hapus" data-user-id="{{$item->id}}" class="btn btn-danger delete-button"><i class="bi bi-trash-fill"></i></button>
                             </div>
                         </td>
                     </tr>

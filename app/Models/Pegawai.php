@@ -19,7 +19,4 @@ class Pegawai extends Model
         'jenis_kelamin',
         'agama',
     ];
-
-    
-
 }

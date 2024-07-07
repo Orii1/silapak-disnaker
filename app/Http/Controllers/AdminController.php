@@ -342,6 +342,79 @@ class AdminController extends Controller
         return redirect('/admin/manajemen-user');
     }
 
+    public function user_edit($id)
+    {
+        $data = User::find($id);
+
+        $user = User::where('id_role', '2')->get();
+        $aktif_not = User::where('status_akun', 'inactive')->count();
+
+        $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_pkb = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_pkwt = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_spsb = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_lks = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_hi = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+        $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->where('id_status', '1');
+        })->count();
+
+        return view('/admin/manage/edit-user', compact(
+            'data',
+            'aktif_not',
+            'konfir_pp',
+            'konfir_pkb',
+            'konfir_pkwt',
+            'konfir_spsb',
+            'konfir_lks',
+            'konfir_hi',
+            'konfir_phk',
+        ));
+    }
+
+    public function user_update(Request $request, $id)
+    {
+        $validatedata = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            'nip' => 'required',
+            'nama_pegawai' => 'required',
+            'jenis_kelamin' => 'required',
+            'agama' => 'required',
+        ], [
+            'required' => 'Field :attribute wajib diisi.'
+        ]);
+        if ($validatedata) {
+            $data = User::findOrFail($id);
+            $data->update([
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $data->user_pegawai->update([
+                'nip' => $request->nip,
+                'nama_pegawai' => $request->nama_pegawai,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'agama' => $request->agama
+            ]);
+            toastr()->success('Data Pegawai Berhasil di Perbarui!');
+            return redirect('/admin/manajemen-user');
+        } else {
+            return redirect('')->withErrors($validatedata)->withInput();
+        }
+    }
 
     public function detail_perusahaan($id)
     {

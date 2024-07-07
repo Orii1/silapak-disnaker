@@ -83,15 +83,15 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            @if ($pp_not == "0")
+            {{-- @if ($pp_not == "0") --}}
             <a class="position-relative" href="/mediator/permohonan-pengesahan-pp">
                 <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan
             </a>
-            @else
+            {{-- @else
             <a class="position-relative" href="/mediator/permohonan-pengesahan-pp">
                 <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan<span class="badge text-bg-danger">{{$pp_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
             {{-- @if ($pkb_not == "0") --}}

@@ -82,14 +82,6 @@ Route::middleware(['auth', 'UserAkses:4'])->group(function () {
     Route::put('/dashboard/profileperusahaan/{id}', [CompanyController::class, 'update']);
     Route::get('/cek-permohonan/{id}', [CompanyController::class, 'submission_check']);
 
-    // Verify Email Route
-    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-        $request->fulfill();
-
-        return redirect('/perusahaan/dashboard');
-    })->middleware(['auth', 'signed'])->name('verification.verify');
-    // END Verify Email Route
-
     // Edit PP
     Route::get('/edit-permohonan-pp/{id}', [CompanyController::class, 'edit_pp_submission']);
     Route::put('/edit-permohonan-pp/{id}', [EditSubmissionController::class, 'update_pp_submission']);
@@ -167,6 +159,8 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/admin/manajemen-user', [AdminController::class, 'manage_user']);
     Route::post('/admin/pegawai/store', [AdminController::class, 'user_store']);
     Route::get('/admin/delete-pegawai/{id}', [AdminController::class, 'user_delete']);
+    Route::get('/admin/edit-pegawai/{id}', [AdminController::class, 'user_edit']);
+    Route::put('/admin/pegawai/update/{id}', [AdminController::class, 'user_update']);
 
 
     // PP

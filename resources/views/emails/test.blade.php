@@ -91,7 +91,7 @@
                     <tbody>
                       <tr>
                         <td style="padding: 0 0 24px 0; font-size: 18px; line-height: 150%; font-weight: bold; color: #000000; letter-spacing: 0.01em;">
-                          Selamat Datang! <br> Akun Anda Telah di Aktifasi
+                          Selamat Datang {{$user->user_perusahaan->nama_perusahaan}}! <br> Akun Anda Telah di Aktifasi
                         </td>
                       </tr>
                       <tr>
@@ -101,7 +101,7 @@
                       </tr>
                       <tr>
                         <td style="padding: 0 0 24px 0;">
-                          <a class="button" href="#" title="Reset Password" style="width: 100%; background: #4C83EE; text-decoration: none; display: inline-block; padding: 10px 0; color: #fff; font-size: 14px; line-height: 21px; text-align: center; font-weight: bold; border-radius: 7px;">Klik untuk menuju Dashboard</a>
+                          <a class="button" href="/login" title="Login" style="width: 100%; background: #4C83EE; text-decoration: none; display: inline-block; padding: 10px 0; color: #fff; font-size: 14px; line-height: 21px; text-align: center; font-weight: bold; border-radius: 7px;">Klik untuk menuju Dashboard</a>
                         </td>
                       </tr>
                       <tr>

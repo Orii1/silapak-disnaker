@@ -249,7 +249,7 @@ class AdminController extends Controller
         if ($user) {
             $user->status_akun = 'active';
             $user->save();
-            Mail::to($user->email)->send(new TestEmail());
+            Mail::to($user->email)->send(new TestEmail($user));
             return redirect()->back()->with('success', 'User berhasil diaktifkan.');
         } else {
             return redirect()->back()->with('error', 'User tidak ditemukan.');

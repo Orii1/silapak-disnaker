@@ -18,15 +18,20 @@ class TestEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $user;
+
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     public function build()
     {
         return $this->from('Silakhi@koperasibanjarbaru.com')
                     ->subject('Aktivasi Akun')
-                    ->view('emails.test');
+                    ->view('emails.test')->with([
+                        'user' => $this->user,
+                    ]);
     }
 }

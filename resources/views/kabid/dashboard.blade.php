@@ -44,47 +44,11 @@
     <div class="col-xxl-4">
         <div class="card">
             <div class="card-title mx-4" id="current-time">
-                <!-- Waktu saat ini akan ditampilkan di sini -->
+
             </div>
         </div>
     </div>
 </div>
-
-<!-- Menambahkan informasi tentang mediator -->
-<div class="row mt-1">
-    <div class="col-12">
-        <div class="card shadow-sm">
-            <div class="card-header card-title mx-4">
-                <h5 class="mb-0"><b>Informasi Permohonan Mediator</b></h5>
-            </div>
-            <div class="card-body">
-                <div class="list-group">
-                    <!-- Contoh data mediator -->
-                    <div class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        <span style="font-size: 1.02em;">
-                            <i class="bi bi-person-circle me-2"></i>
-                            <strong>Mediator 1</strong>
-                        </span>
-                        <span class="badge bg-primary rounded-pill" style="font-size: 1.02em;">
-                            5 permohonan sedang diperiksa
-                        </span>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-between align-items-center border-0">
-                        <span style="font-size: 1.02em;">
-                            <i class="bi bi-person-circle me-2"></i>
-                            <strong>Mediator 2</strong>
-                        </span>
-                        <span class="badge bg-primary rounded-pill" style="font-size: 1.02em;">
-                            3 permohonan sedang diperiksa
-                        </span>
-                    </div>
-                    <!-- Tambahkan data mediator lainnya di sini -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="row">
     <div class="col-xxl-12">

@@ -109,9 +109,13 @@
                                     @if ($data->pp_status->id_status == "4")
                                     -
                                     @else
-                                    <a href="/storage/{{$data->pp_perusahaan->id}}/pp/sk/{{$data->pp_status->sk}}" class="btn btn-success" target="_blank">
-                                        <i class="bi bi-file-earmark-medical-fill"></i>
-                                    </a>
+                                        @if ($data->pp_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
+                                        -
+                                        @else
+                                            <a href="/storage/{{$data->pp_perusahaan->id}}/pp/sk/{{$data->pp_status->sk}}" class="btn btn-success" target="_blank">
+                                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                            </a>
+                                        @endif
                                     @endif
                                 </p>
                             </div>

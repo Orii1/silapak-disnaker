@@ -104,11 +104,19 @@
                         </td>
                         <td>
                             <div class="text-start">
-                            <b>Surat Keputusan</b>
+                            <b>Draft Surat Keputusan</b>
                                 <p>
-                                    <a href="/storage/{{$data->lks_perusahaan->id}}/lks/sk/{{$data->lks_status->sk}}" class="btn btn-success" target="_blank">
-                                        <i class="bi bi-file-earmark-medical-fill"></i>
-                                    </a>
+                                    @if ($data->lks_status->id_status == "4")
+                                    -
+                                    @else
+                                        @if ($data->lks_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
+                                        -
+                                        @else
+                                            <a href="/storage/{{$data->lks_perusahaan->id}}/lks/sk/{{$data->lks_status->sk}}" class="btn btn-success" target="_blank">
+                                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                            </a>
+                                        @endif
+                                    @endif
                                 </p>
                             </div>
                         </td>

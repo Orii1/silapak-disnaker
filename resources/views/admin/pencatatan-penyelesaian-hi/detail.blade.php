@@ -101,11 +101,17 @@
                         <td>
                             <div class="text-start">
                             <b>Surat Keputusan</b>
-                                <p>
+                            @if ($data->hi_status->id_status == "4")
+                            -
+                            @else
+                                @if ($data->hi_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
+                                -
+                                @else
                                     <a href="/storage/{{$data->hi_perusahaan->id}}/perselisihan_hi/sk/{{$data->hi_status->sk}}" class="btn btn-success" target="_blank">
                                         <i class="bi bi-file-earmark-medical-fill"></i>
                                     </a>
-                                </p>
+                                @endif
+                            @endif
                             </div>
                         </td>
                     </tr>

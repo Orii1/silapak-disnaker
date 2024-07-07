@@ -105,9 +105,17 @@
                             <div class="text-start">
                             <b>Draft Surat Keputusan</b>
                                 <p>
-                                    <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/sk/{{$data->pkb_status->sk}}" class="btn btn-success" target="_blank">
-                                        <i class="bi bi-file-earmark-medical-fill"></i>
-                                    </a>
+                                    @if ($data->pkb_status->id_status == "4")
+                                    -
+                                    @else
+                                        @if ($data->pkb_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
+                                        -
+                                        @else
+                                            <a href="/storage/{{$data->pkb_perusahaan->id}}/pkb/sk/{{$data->pkb_status->sk}}" class="btn btn-success" target="_blank">
+                                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                            </a>
+                                        @endif
+                                    @endif
                                 </p>
                             </div>
                         </td>

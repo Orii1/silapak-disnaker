@@ -3,6 +3,19 @@
 @section('title')
 
 @section('content')
+<script>
+    function updateTime() {
+        const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const now = new Date();
+        const formattedTime = now.toLocaleTimeString('id-ID', options);
+        document.getElementById('current-time').innerText = 'Pukul : ' + formattedTime;
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        updateTime();
+        setInterval(updateTime, 1000);
+    });
+</script>
 
 <div class="pagetitle">
     <h1>Dashboard</h1>
@@ -15,17 +28,24 @@
 </div>
 
 <div class="row">
-    <div class="col-xxl-6">
+    <div class="col-xxl-4">
         <div class="card">
             <div class="card-title mx-4">
                 Selamat datang Admin
             </div>
         </div>
     </div>
-    <div class="col-xxl-6">
+    <div class="col-xxl-4">
         <div class="card">
             <div class="card-title mx-4">
                 {{$dayname}}, {{$datestring}}
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-4">
+        <div class="card">
+            <div class="card-title mx-4" id="current-time">
+                <!-- Waktu saat ini akan ditampilkan di sini -->
             </div>
         </div>
     </div>

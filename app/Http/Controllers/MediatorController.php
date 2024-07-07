@@ -33,15 +33,25 @@ class MediatorController extends Controller
         $hi_all = Pencatatanperselihan::all()->count();
         $phk_all = Pelaporanphk::all()->count();
 
-        // $aktif_not = User::where('status_akun', 'inactive')->count();
-        return view('mediator.home.home',compact('datestring','dayname',
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.home.home', compact(
+            'datestring',
+            'dayname',
             'pp_all',
             'pkb_all',
             'pkwt_all',
             'spsb_all',
             'lks_all',
             'hi_all',
-            'phk_all'));
+            'phk_all',
+            'pp_not'
+        ));
     }
 
     public function profile()
@@ -72,7 +82,8 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        return view('mediator.pengesahan-pp.pengesahan-pp', compact('pp', 'pp_done'));
+        $pp_not = $pp->count();
+        return view('mediator.pengesahan-pp.pengesahan-pp', compact('pp', 'pp_done', 'pp_not'));
     }
 
     public function pengesahan_pp_show($id)

@@ -91,7 +91,7 @@
             <a class="position-relative" href="/mediator/permohonan-pengesahan-pp">
                 <i class="bi bi-circle"></i>Pengesahan Peraturan Perusahaan<span class="badge text-bg-danger">{{$pp_not}}</span>
             </a>
-            @endif
+            @endif --}}
           </li>
           <li>
             {{-- @if ($pkb_not == "0") --}}

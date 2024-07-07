@@ -48,31 +48,10 @@
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                   <h5 class="card-title">Tentang</h5>
                   <p class="small">Kepala Bidang merupakan pemimpin yang bertanggung jawab atas pengelolaan dan pengembangan suatu bidang kerja atau sektor tertentu di sebuah organisasi atau lembaga. Mereka memiliki peran strategis dalam mengkoordinasikan berbagai kegiatan, mengawasi pelaksanaan kebijakan, dan memastikan pencapaian tujuan yang telah ditetapkan dalam bidang kerja yang mereka pimpin.</p>
-                   @foreach ($profile as $p )
-                   <h5 class="card-title">Detail Profile</h5>
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label ">Nama</div>
-                     <div class="col-lg-9 col-md-8">{{$p->name}}</div>
-                   </div>
-
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label">Alamat</div>
-                     <div class="col-lg-9 col-md-8">{{$p->address}}</div>
-                   </div>
-
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label">Dari</div>
-                     <div class="col-lg-9 col-md-8">{{$p->owner}}</div>
-                   </div>
-
-                   <div class="row">
-                     <div class="col-lg-3 col-md-4 label">Email</div>
-                     <div class="col-lg-9 col-md-8">{{$p->email}}</div>
-                   </div>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form action="/admin/change-password/{{$p->id}}" method="POST">
+                  <form action="#" method="POST">
                     @csrf
                     @if (Session('error'))
                         <div class="alert alert-danger">
@@ -114,7 +93,6 @@
                   </form>
 
                 </div>
-                @endforeach
               </div>
 
             </div>

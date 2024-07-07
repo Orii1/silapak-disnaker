@@ -31,7 +31,7 @@
         <div class="title">
             <p>SURAT KEPUTUSAN</p>
             <p>KEPALA DINAS TENAGA KERJA KOTA BATAM</p>
-            <p>NOMOR : </p>
+            <p>NOMOR : {{$nomor}}</p>
             <p>TENTANG PENGESAHAN PERATURAN PERUSAHAAN</p>
             <p>{{$profile->nama_perusahaan}}</p>
         </div>

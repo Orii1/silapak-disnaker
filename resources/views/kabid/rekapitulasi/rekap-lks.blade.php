@@ -37,7 +37,7 @@
                     </div>
                     <div class="text-end col-3">
                         <button type="button" class="btn btn-danger mb-2" id="generatePDF">
-                            <i class="bi bi-printer"></i> Cetak PDF
+                            <i class="bi bi-printer"></i> PDF
                         </button>
                     </div>
                 </div>

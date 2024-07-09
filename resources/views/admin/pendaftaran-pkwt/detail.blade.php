@@ -128,9 +128,13 @@
 </div>
 
 @if ($data->pkwt_status->id_status == "2")
-<div class="mb-2">
-    <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-file-earmark-medical-fill"></i> Surat Keputusan</a>
-</div>
+    @if ($data->pkwt_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
+
+    @else
+        <div class="mb-2">
+            <a class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#terima"><i class="bi bi-file-earmark-medical-fill"></i> Surat Keputusan</a>
+        </div>
+    @endif
 @else
 
 @endif

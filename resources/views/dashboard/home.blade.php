@@ -225,7 +225,7 @@
             <p>Beberapa Sosial Media Kami</p>
             <div class="social-links mt-3">
               <a href="https://diskopukmnaker.banjarbarukota.go.id/" target="_blank" class="twitter"><i class='bx bxs-color'></i></a>
-              <a href="https://www.instagram.com/diskopukmnaker.banjarbaru/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/diskopumnaker.banjarbaru/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 

@@ -598,8 +598,8 @@ class MediatorController extends Controller
 
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_pkb->pkb_perusahaan;
-
-            $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
+            $nomor = $data->pengecekan_detail->id_detail_status;
+            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-pkb' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/pkb/sk/' . $pdfname;
@@ -800,8 +800,8 @@ class MediatorController extends Controller
 
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_pkwt->pkwt_perusahaan;
-
-            $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
+            $nomor = $data->pengecekan_detail->id_detail_status;
+            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-pkwt' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/pkwt/sk/' . $pdfname;
@@ -1009,8 +1009,8 @@ class MediatorController extends Controller
 
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_spsb->spsb_perusahaan;
-
-            $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
+            $nomor = $data->pengecekan_detail->id_detail_status;
+            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-spsb' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/spsb/sk/' . $pdfname;
@@ -1212,8 +1212,8 @@ class MediatorController extends Controller
 
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_lks->lks_perusahaan;
-
-            $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
+            $nomor = $data->pengecekan_detail->id_detail_status;
+            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-lks' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/lks/sk/' . $pdfname;
@@ -1416,8 +1416,8 @@ class MediatorController extends Controller
 
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_hi->hi_perusahaan;
-
-            $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
+            $nomor = $data->pengecekan_detail->id_detail_status;
+            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-hi' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/perselisihan_hi/sk/' . $pdfname;
@@ -1619,8 +1619,8 @@ class MediatorController extends Controller
 
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_phk->phk_perusahaan;
-
-            $pdf = pdf::loadView('pdf.pp', compact('profile'))->setPaper('a4');
+            $nomor = $data->pengecekan_detail->id_detail_status;
+            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-phk' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/phk/sk/' . $pdfname;

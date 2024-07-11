@@ -112,7 +112,7 @@ class AdminController extends Controller
         $hi_all = Pencatatanperselihan::all()->count();
         $phk_all = Pelaporanphk::all()->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         return view('/admin/dashboard', compact(
             'datestring',
@@ -142,7 +142,7 @@ class AdminController extends Controller
     {
         $perusahaan = User::where('id_role', '4')->get();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -183,7 +183,7 @@ class AdminController extends Controller
     {
 
         $profile = User::where('id', '1')->get();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -249,7 +249,7 @@ class AdminController extends Controller
         if ($user) {
             $user->status_akun = 'active';
             $user->save();
-            Mail::to($user->email)->send(new TestEmail($user));
+
             return redirect()->back()->with('success', 'User berhasil diaktifkan.');
         } else {
             return redirect()->back()->with('error', 'User tidak ditemukan.');
@@ -259,7 +259,8 @@ class AdminController extends Controller
     public function manage_user()
     {
         $user = User::where('id_role', '2')->get();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $kabid = User::where('id_role', '3')->get()->first();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -285,6 +286,7 @@ class AdminController extends Controller
 
         return view('admin.manage.manage-user', compact(
             'user',
+            'kabid',
             'aktif_not',
             'konfir_pp',
             'konfir_pkb',
@@ -336,18 +338,19 @@ class AdminController extends Controller
     {
         $user = User::findOrFail($id);
 
-        Pegawai::where('id_user', $user->id)->delete();
-        $user->delete();
-        toastr()->success('Pegawai Berhasil Dihapus!');
+        $user->status_akun = 'inactive';
+        $user->save();
+        toastr()->success('Akun Pegawai Berhasil Dinonaktifkan!');
         return redirect('/admin/manajemen-user');
     }
+
 
     public function user_edit($id)
     {
         $data = User::find($id);
 
         $user = User::where('id_role', '2')->get();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -423,7 +426,7 @@ class AdminController extends Controller
         $lat = $detail->user_perusahaan->latitude;
         $lng = $detail->user_perusahaan->longtitude;
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -522,7 +525,7 @@ class AdminController extends Controller
             }
         )->orderBy('created_at', 'desc')->get();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pengesahan-pp/permohonan-pengesahan-pp', compact(
             'aktif_not',
             'pp_konfir',
@@ -566,7 +569,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pengesahan-pp/detail', compact(
             'data',
             'aktif_not',
@@ -585,7 +588,7 @@ class AdminController extends Controller
         $data = Pengesahanpp::find($id_pp);
         $mediator = Pegawai::all();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
@@ -744,7 +747,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pendaftaran-pkb/permohonan-pendaftaran-pkb', compact(
             'aktif_not',
             'pkb_proses',
@@ -765,7 +768,7 @@ class AdminController extends Controller
     public function pendaftaran_pkb_show($id)
     {
         $data = Pendaftaranpkb::find($id);
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -806,7 +809,7 @@ class AdminController extends Controller
     {
         $data = Pendaftaranpkb::find($id_pkb);
         $mediator = Pegawai::all();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -965,7 +968,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pendaftaran-pkwt/permohonan-pendaftaran-pkwt', compact(
             'aktif_not',
             'pkwt_proses',
@@ -1010,7 +1013,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pendaftaran-pkwt/konfirmasi', compact(
             'data',
             'mediator',
@@ -1056,7 +1059,7 @@ class AdminController extends Controller
     public function pendaftaran_pkwt_show($id)
     {
         $data = Pendaftaranpkwt::find($id);
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -1186,7 +1189,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pencatatan-spsb/permohonan-pencatatan-spsb', compact(
             'aktif_not',
             'spsb_proses',
@@ -1273,7 +1276,7 @@ class AdminController extends Controller
     public function pencatatan_spsb_show($id)
     {
         $data = Pencatatanspsb::find($id);
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -1403,7 +1406,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pendaftaran-lks-bipartit/permohonan-pendaftaran-lks', compact(
             'aktif_not',
             'lks_proses',
@@ -1447,7 +1450,7 @@ class AdminController extends Controller
         $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pendaftaran-lks-bipartit/konfirmasi', compact(
             'aktif_not',
             'data',
@@ -1495,7 +1498,7 @@ class AdminController extends Controller
     public function pendaftaran_lks_show($id)
     {
         $data = Pendaftaranlks::find($id);
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -1624,7 +1627,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pencatatan-penyelesaian-hi/permohonan-pencatatan-penyelesaian-hi', compact(
             'aktif_not',
             'hi_proses',
@@ -1668,7 +1671,7 @@ class AdminController extends Controller
         $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pencatatan-penyelesaian-hi/konfirmasi', compact(
             'aktif_not',
             'data',
@@ -1715,7 +1718,7 @@ class AdminController extends Controller
     public function pencatatan_hi_show($id)
     {
         $data = Pencatatanperselihan::find($id);
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
 
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
@@ -1845,7 +1848,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pelaporan-phk/permohonan-pelaporan-phk', compact(
             'aktif_not',
             'phk_proses',
@@ -1889,7 +1892,7 @@ class AdminController extends Controller
         $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pelaporan-phk/konfirmasi', compact(
             'data',
             'mediator',
@@ -1957,7 +1960,7 @@ class AdminController extends Controller
         $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pelaporan-phk/detail', compact(
             'data',
             'aktif_not',
@@ -2030,7 +2033,7 @@ class AdminController extends Controller
             $query->where('id_status', '1');
         })->count();
 
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         $asset_pp = Asset::find('1');
         $asset_pkb = Asset::find('2');
         $asset_pkwt = Asset::find('3');
@@ -2255,7 +2258,7 @@ class AdminController extends Controller
 
     public function buku_registrasi()
     {
-        $aktif_not = User::where('status_akun', 'inactive')->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         $data_pp = Pengesahanpp::whereHas('pp_status', function ($query){
             $query->where('id_status',' 3');
         })->get();

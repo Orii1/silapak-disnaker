@@ -43,13 +43,18 @@
                     </th>
                     <th>
                         <div class="text-center">
+                            Status Akun
+                        </div>
+                    </th>
+                    <th>
+                        <div class="text-center">
                             Aksi
                         </div>
                     </th>
                 </tr>
             </thead>
-            @foreach ($user as $item)
-                <tbody>
+            <tbody>
+                @foreach ($user as $item)
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
@@ -73,14 +78,29 @@
                             </div>
                         </td>
                         <td>
+                            @if ($item->status_akun == 'inactive')
+                                <div class="text-center">
+                                    <span class="badge rounded-pill text-bg-danger"><label style="color: white;">Belum Aktif</label></span>
+                                </div>
+                            @else
+                                <div class="text-center">
+                                    <span class="badge rounded-pill text-bg-success"><label style="color: white;">Aktif</label></span>
+                                </div>
+                            @endif
+                        </td>
+                        <td>
                             <div class="text-center">
-                                <a title="Detail" href="/admin/edit-pegawai/{{$item->id}}" class="btn btn-primary"><i class="bi bi-info-square-fill"></i></a>
-                                <button title="Hapus" data-user-id="{{$item->id}}" class="btn btn-danger delete-button"><i class="bi bi-trash-fill"></i></button>
+                                @if ($item->status_akun == 'active')
+                                    <a title="Detail" href="/admin/edit-pegawai/{{$item->id}}" class="btn btn-primary"><i class="bi bi-info-square-fill"></i></a>
+                                    <button title="Nonaktifkan" data-user-id="{{$item->id}}" class="btn btn-danger delete-button"><i class="bi bi-person-fill-lock"></i></button>
+                                @else
+                                    <button title="Aktifkan" data-user-id="{{$item->id}}" class="btn btn-success activate"><i class="bi bi-person-fill-check"></i></button>
+                                @endif
                             </div>
                         </td>
                     </tr>
-                </tbody>
-            @endforeach
+                @endforeach
+            </tbody>
         </table>
     </div>
 </div>
@@ -138,10 +158,10 @@
 
             Swal.fire({
                 title: 'Apakah Anda yakin?',
-                text: 'Anda akan menghapus user ini!',
+                text: 'Anda akan menonaktifkan akun ini!',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Ya, hapus!',
+                confirmButtonText: 'Ya, nonaktifkan!',
                 cancelButtonText: 'Tidak, batalkan'
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -149,6 +169,25 @@
                 }
             });
         });
+    });
+
+    document.querySelectorAll('.activate').forEach(button => {
+          button.addEventListener('click', function() {
+              const userId = this.getAttribute('data-user-id');
+
+              Swal.fire({
+                  title: 'Apakah Anda yakin?',
+                  text: 'Anda akan mengaktifkan user ini!',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Ya, aktifkan!',
+                  cancelButtonText: 'Tidak, batalkan'
+              }).then((result) => {
+                  if (result.isConfirmed) {
+                      window.location.href = `/aktivasi-user/${userId}`;
+                  }
+              });
+          });
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

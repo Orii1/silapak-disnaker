@@ -17,6 +17,9 @@ use Carbon\Carbon;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class KabidController extends Controller
 {
@@ -49,9 +52,32 @@ class KabidController extends Controller
     }
     public function profile()
     {
-        $profile = User::where('id', '4')->get();
+        $profile = Auth::user();
 
         return view('/kabid/profile/profilekabid', compact('profile'));
+    }
+
+    public function change_password(Request $request, $id)
+    {
+        $password = $request->password;
+
+        $hashedpass = Auth::user()->password;
+
+        if (Hash::check($password, $hashedpass)) {
+            if ($request->newpassword == $request->renewpassword) {
+                $curpass = User::find($id);
+                $curpass->password = Hash::make($request->newpassword);
+                $curpass->save();
+                toastr()->info('Password Berhasil Diganti!');
+                return redirect()->back();
+            } else {
+                Session::flash('error', 'Password tidak sesuai!');
+                return redirect()->back();
+            }
+        } else {
+            Session::flash('invalid', 'Password saat ini salah!');
+            return redirect()->back();
+        }
     }
 
     public function monitoring()

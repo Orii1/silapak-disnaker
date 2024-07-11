@@ -10,11 +10,14 @@ use App\Models\Pencatatanspsb;
 use App\Models\Pendaftaranlks;
 use App\Models\Pencatatanperselihan;
 use App\Models\Pelaporanphk;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Database\DBAL\TimestampType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class MediatorController extends Controller
@@ -118,8 +121,97 @@ class MediatorController extends Controller
 
     public function profile()
     {
-        $mediator = Auth::user()->user_pegawai;
-        return view('mediator.profile.profilemediator',compact('mediator'));
+        $mediator = Auth::user();
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+            ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+            ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+            ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+            ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+            ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+            ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+            ->count();
+
+        return view('mediator.profile.profilemediator', compact(
+            'mediator',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
+    }
+
+    public function change_password(Request $request, $id)
+    {
+        $password = $request->password;
+
+        $hashedpass = Auth::user()->password;
+
+        if (Hash::check($password, $hashedpass)) {
+            if ($request->newpassword == $request->renewpassword) {
+                $curpass = User::find($id);
+                $curpass->password = Hash::make($request->newpassword);
+                $curpass->save();
+                toastr()->info('Password Berhasil Diganti!');
+                return redirect()->back();
+            } else {
+                Session::flash('error', 'Password tidak sesuai!');
+                return redirect()->back();
+            }
+        } else {
+            Session::flash('invalid', 'Password saat ini salah!');
+            return redirect()->back();
+        }
     }
 // PP
     public function pengesahan_pp()
@@ -144,14 +236,145 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        $pp_not = $pp->count();
-        return view('mediator.pengesahan-pp.pengesahan-pp', compact('pp', 'pp_done', 'pp_not'));
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+
+        return view('mediator.pengesahan-pp.pengesahan-pp', compact(
+            'pp',
+            'pp_done',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pengesahan_pp_show($id)
     {
         $data = Pengesahanpp::find($id);
-        return view('mediator.pengesahan-pp.detail', compact('data'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pengesahan-pp.detail', compact(
+            'data',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pengesahan_pp_hasil(Request $request, $id)
@@ -216,13 +439,143 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        return view('mediator.pendaftaran-pkb.permohonan-pendaftaran-pkb', compact('pkb', 'pkb_done'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pendaftaran-pkb.permohonan-pendaftaran-pkb', compact(
+            'pkb',
+            'pkb_done',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pendaftaran_pkb_show($id)
     {
         $data = pendaftaranpkb::find($id);
-        return view('mediator.pendaftaran-pkb.detail', compact('data'));
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pendaftaran-pkb.detail', compact(
+            'data',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pendaftaran_pkb_hasil(Request $request, $id)
@@ -287,13 +640,144 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        return view('mediator.pendaftaran-pkwt.permohonan-pendaftaran-pkwt', compact('pkwt', 'pkwt_done'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pendaftaran-pkwt.permohonan-pendaftaran-pkwt', compact(
+            'pkwt',
+            'pkwt_done',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pendaftaran_pkwt_show($id)
     {
         $data = pendaftaranpkwt::find($id);
-        return view('mediator.pendaftaran-pkwt.detail', compact('data'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pendaftaran-pkwt.detail', compact(
+            'data',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pendaftaran_pkwt_hasil(Request $request, $id)
@@ -358,13 +842,151 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        return view('mediator.pencatatan-spsb.permohonan-pencatatan-spsb', compact('spsb', 'spsb_done'));
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pencatatan-spsb.permohonan-pencatatan-spsb', compact(
+            'spsb',
+            'spsb_done',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pencatatan_spsb_show($id)
     {
         $data = pencatatanspsb::find($id);
-        return view('mediator.pencatatan-spsb.detail', compact('data'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pencatatan-spsb.detail', compact(
+            'data',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pencatatan_spsb_hasil(Request $request, $id)
@@ -430,13 +1052,144 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        return view('mediator.pendaftaran-lks-bipartit.permohonan-pendaftaran-lks', compact('lks', 'lks_done'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pendaftaran-lks-bipartit.permohonan-pendaftaran-lks', compact(
+            'lks',
+            'lks_done',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pendaftaran_lks_show($id)
     {
         $data = pendaftaranlks::find($id);
-        return view('mediator.pendaftaran-lks-bipartit.detail', compact('data'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pendaftaran-lks-bipartit.detail', compact(
+            'data',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pendaftaran_lks_hasil(Request $request, $id)
@@ -502,13 +1255,145 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        return view('mediator.pencatatan-penyelesaian-hi.permohonan-pencatatan-penyelesaian-hi', compact('hi', 'hi_done'));
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        return view('mediator.pencatatan-penyelesaian-hi.permohonan-pencatatan-penyelesaian-hi', compact(
+            'hi',
+            'hi_done',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pencatatan_hi_show($id)
     {
         $data = Pencatatanperselihan::find($id);
-        return view('mediator.pencatatan-penyelesaian-hi.detail', compact('data'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        return view('mediator.pencatatan-penyelesaian-hi.detail', compact(
+            'data',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pencatatan_hi_hasil(Request $request, $id)
@@ -574,13 +1459,144 @@ class MediatorController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        return view('mediator.pelaporan-phk.permohonan-pelaporan-phk', compact('phk', 'phk_done'));
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        return view('mediator.pelaporan-phk.permohonan-pelaporan-phk', compact(
+            'phk',
+            'phk_done',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pelaporan_phk_show($id)
     {
         $data = Pelaporanphk::find($id);
-        return view('mediator.pelaporan-phk.detail', compact('data'));
+
+        $pp_not = Pengesahanpp::whereHas('pp_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkb_not = Pendaftaranpkb::whereHas('pkb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $pkwt_not = Pendaftaranpkwt::whereHas('pkwt_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $spsb_not = Pencatatanspsb::whereHas('spsb_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $lks_not = Pendaftaranlks::whereHas('lks_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $hi_not = Pencatatanperselihan::whereHas('hi_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+
+        $phk_not = Pelaporanphk::whereHas('phk_status', function ($query) {
+            $query->whereHas('status_cek', function ($query) {
+                $query->where('id_pegawai', Auth::user()->user_pegawai->id_pegawai)
+                    ->where('hasil_pengecekan', 'Belum di Periksa');
+            });
+        })
+        ->count();
+        return view('mediator.pelaporan-phk.detail', compact(
+            'data',
+            'pp_not',
+            'pkb_not',
+            'pkwt_not',
+            'spsb_not',
+            'lks_not',
+            'hi_not',
+            'phk_not',
+        ));
     }
 
     public function pelaporan_phk_hasil(Request $request, $id)

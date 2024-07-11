@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form action="#" method="POST">
+                  <form action="/kabid/change-password/{{$profile->id}}" method="POST">
                     @csrf
                     @if (Session('error'))
                         <div class="alert alert-danger">

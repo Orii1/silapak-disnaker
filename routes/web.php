@@ -45,6 +45,7 @@ Route::post('/login', [LoginController::class, 'authenticating']);
 Route::middleware(['auth', 'UserAkses:2'])->group(function () {
     Route::get('/mediator/dashboard', [MediatorController::class, 'index']);
     Route::get('/mediator/profile', [MediatorController::class, 'profile']);
+    Route::post('/mediator/change-password/{id}', [MediatorController::class, 'change_password']);
     // PP
     Route::get('/mediator/permohonan-pengesahan-pp', [MediatorController::class, 'pengesahan_pp']);
     Route::get('/mediator/permohonan-pengesahan-pp/{id}', [MediatorController::class, 'pengesahan_pp_show']);
@@ -258,6 +259,7 @@ Route::middleware(['auth', 'UserAkses:3'])->group(function () {
     Route::get('/kabid/dashboard', [KabidController::class, 'dashboard']);
     Route::get('/kabid/monitoring', [KabidController::class, 'monitoring']);
     Route::get('/kabid/profile', [KabidController::class, 'profile']);
+    Route::post('/kabid/change-password/{id}', [KabidController::class, 'change_password']);
     Route::get('/kabid/rekapitulasi', [KabidController::class, 'rekapitulasi']);
     Route::get('/kabid/monitoring/detailpermohonan', [KabidController::class, 'detailpermohonan']);
 

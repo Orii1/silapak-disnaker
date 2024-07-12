@@ -14,23 +14,28 @@ class SocialController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    public function googleCallback()
+    public function googleCallback(Request $request)
     {
-        $user = Socialite::driver('google')->user();
+        try {
+            $user = Socialite::driver('google')->user();
 
-        $existingUser = User::where('email', $user->getEmail())->first();
+            $existingUser = User::where('email', $user->getEmail())->first();
 
-        if ($existingUser) {
-            if ($existingUser->status_akun == 'active') {
-                Auth::login($existingUser);
-                toastr()->success('Berhasil Login, Selamat Datang ' . $existingUser->user_perusahaan->nama_perusahaan . '!');
-                return redirect('/perusahaan/dashboard');
+            if ($existingUser) {
+                if ($existingUser->status_akun == 'active') {
+                    Auth::login($existingUser);
+                    toastr()->success('Berhasil Login, Selamat Datang ' . $existingUser->user_perusahaan->nama_perusahaan . '!');
+                    return redirect('/perusahaan/dashboard');
+                } else {
+                    return redirect('/aktivasi-user');
+                }
             } else {
-                return redirect('/aktivasi-user');
+                return view('login.register', compact('user'));
             }
-        } else {
-            return view('login.register', compact('user'));
+        } catch (\Exception $e) {
+            // Tangani error di sini, misalnya jika pengguna membatalkan otorisasi
+            return redirect('/login')->with('error', 'Login gagal atau dibatalkan');
         }
-
     }
+
 }

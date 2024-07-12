@@ -49,69 +49,70 @@
                  <h5 class="card-title">Detail Profile</h5>
                  <div class="row">
                    <div class="col-lg-3 col-md-4 label ">Nama</div>
-                   <div class="col-lg-9 col-md-8">{{$mediator->nama_pegawai}}</div>
+                   <div class="col-lg-9 col-md-8">{{$mediator->user_pegawai->nama_pegawai}}</div>
                  </div>
 
                  <div class="row">
                    <div class="col-lg-3 col-md-4 label">NIP</div>
-                   <div class="col-lg-9 col-md-8">{{$mediator->nip}}</div>
+                   <div class="col-lg-9 col-md-8">{{$mediator->user_pegawai->nip}}</div>
                  </div>
 
                  <div class="row">
                    <div class="col-lg-3 col-md-4 label">Agama</div>
-                   <div class="col-lg-9 col-md-8">{{$mediator->agama}}</div>
+                   <div class="col-lg-9 col-md-8">{{$mediator->user_pegawai->agama}}</div>
                  </div>
 
                  <div class="row">
                    <div class="col-lg-3 col-md-4 label">Jenis Kelamin</div>
-                   <div class="col-lg-9 col-md-8">{{$mediator->jenis_kelamin}}</div>
+                   <div class="col-lg-9 col-md-8">{{$mediator->user_pegawai->jenis_kelamin}}</div>
                  </div>
+              </div>
+
+              <div class="tab-pane fade pt-3" id="profile-change-password">
+                <form action="/mediator/change-password/{{$mediator->id}}" method="POST">
+                  @csrf
+                  @if (Session('error'))
+                      <div class="alert alert-danger">
+                          {{Session('error')}}
+                      </div>
+                  @endif
+
+                  @if (Session('invalid'))
+                      <div class="alert alert-danger">
+                          {{Session('invalid')}}
+                      </div>
+                  @endif
+                  <div class="row mb-3">
+                    <label for="currentPassword" class="col-md-4 col-lg-5 col-form-label">Password Sekarang</label>
+                    <div class="col-md-8 col-lg-7">
+                      <input name="password" type="password" class="form-control" id="currentPassword">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="newpassword" class="col-md-4 col-lg-5 col-form-label">Password Baru</label>
+                    <div class="col-md-8 col-lg-7">
+                      <input name="newpassword" type="password" class="form-control" id="newpassword">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="renewPassword" class="col-md-4 col-lg-5 col-form-label">Masukan Lagi Password Baru</label>
+                    <div class="col-md-8 col-lg-7">
+                      <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                    </div>
+                  </div>
+
+                  <div class="mt-4 mb-4">
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-primary">Ganti Password</button>
+                      </div>
+                  </div>
+                </form>
+
               </div>
             </div>
 
-            <div class="tab-pane fade pt-3" id="profile-change-password">
-              <form action="/mediator/change-password/1" method="POST">
-                @csrf
-                @if (Session('error'))
-                    <div class="alert alert-danger">
-                        {{Session('error')}}
-                    </div>
-                @endif
-
-                @if (Session('invalid'))
-                    <div class="alert alert-danger">
-                        {{Session('invalid')}}
-                    </div>
-                @endif
-                <div class="row mb-3">
-                  <label for="currentPassword" class="col-md-4 col-lg-5 col-form-label">Password Sekarang</label>
-                  <div class="col-md-8 col-lg-7">
-                    <input name="password" type="password" class="form-control" id="currentPassword">
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <label for="newpassword" class="col-md-4 col-lg-5 col-form-label">Password Baru</label>
-                  <div class="col-md-8 col-lg-7">
-                    <input name="newpassword" type="password" class="form-control" id="newpassword">
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <label for="renewPassword" class="col-md-4 col-lg-5 col-form-label">Masukan Lagi Password Baru</label>
-                  <div class="col-md-8 col-lg-7">
-                    <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                  </div>
-                </div>
-
-                <div class="mt-4 mb-4">
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Ganti Password</button>
-                    </div>
-                </div>
-              </form>
-
-            </div>
 
           </div>
         </div>

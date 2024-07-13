@@ -1,7 +1,17 @@
 @extends('layout.header2')
 
 @section('content')
-
+<style>
+    .error-message {
+        display: none;
+        color: white;
+        background-color: #dc3545;
+        padding: 2px;
+        border-radius: 5px;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+</style>
 <div class="pagetitle-company">
     <h1>Ajuan Permohonan</h1>
     <nav>
@@ -81,7 +91,7 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active profile-overview" id="persyaratan">
                     <div class="mt-4 mb-5">
-                        <form action="/permohonan/pendaftaran-pkb" method="POST" enctype="multipart/form-data">
+                        <form id="file-upload-form" action="/permohonan/pendaftaran-pkb" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         @if ($errors->any())
@@ -145,7 +155,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="fc_wlkp" required>
+                                                <input type="file" class="form-control" name="fc_wlkp" id="file1" required>
+                                                <div class="error-message" id="error-message-1">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
                                     </tr>
@@ -164,7 +175,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" id="">
+                                                <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" id="file2">
+                                                <div class="error-message" id="error-message-2">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
                                     </tr>
@@ -183,7 +195,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="fc_setifikat_peserta_bpjs_ketenagakerjaan" id="">
+                                                <input type="file" class="form-control" name="fc_setifikat_peserta_bpjs_ketenagakerjaan" id="file3">
+                                                <div class="error-message" id="error-message-3">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
                                     </tr>
@@ -202,7 +215,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="permohonan_pendaftaran_pkb" id="">
+                                                <input type="file" class="form-control" name="permohonan_pendaftaran_pkb" id="file4">
+                                                <div class="error-message" id="error-message-4">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
                                     </tr>
@@ -221,7 +235,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" id="">
+                                                <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" id="file5">
+                                                <div class="error-message" id="error-message-5">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
                                     </tr>
@@ -240,7 +255,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="struktur_skala_upah_asli" id="">
+                                                <input type="file" class="form-control" name="struktur_skala_upah_asli" id="file6">
+                                                <div class="error-message" id="error-message-6">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
                                     </tr>
@@ -259,7 +275,8 @@
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="draft_pkb" id="">
+                                                <input type="file" class="form-control" name="draft_pkb" id="file7">
+                                                <div class="error-message" id="error-message-7">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
                                     </tr>
@@ -353,4 +370,63 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('file-upload-form').addEventListener('submit', function(event) {
+        const validExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+        const files = [
+            { input: document.getElementById('file1'), error: document.getElementById('error-message-1') },
+            { input: document.getElementById('file2'), error: document.getElementById('error-message-2') },
+            { input: document.getElementById('file3'), error: document.getElementById('error-message-3') },
+            { input: document.getElementById('file4'), error: document.getElementById('error-message-4') },
+            { input: document.getElementById('file5'), error: document.getElementById('error-message-5') },
+            { input: document.getElementById('file6'), error: document.getElementById('error-message-6') },
+            { input: document.getElementById('file7'), error: document.getElementById('error-message-7') }
+        ];
+
+        let invalidFile = false;
+
+        files.forEach(file => {
+            if (file.input.files[0]) {
+                const fileExtension = file.input.files[0].name.split('.').pop().toLowerCase();
+                if (!validExtensions.includes(fileExtension)) {
+                    file.error.style.display = 'block';
+                    invalidFile = true;
+                } else {
+                    file.error.style.display = 'none';
+                }
+            }
+        });
+
+        if (invalidFile) {
+            event.preventDefault();
+        }
+    });
+
+    const fileInputs = [
+        { input: document.getElementById('file1'), error: document.getElementById('error-message-1') },
+        { input: document.getElementById('file2'), error: document.getElementById('error-message-2') },
+        { input: document.getElementById('file3'), error: document.getElementById('error-message-3') },
+        { input: document.getElementById('file4'), error: document.getElementById('error-message-4') },
+        { input: document.getElementById('file5'), error: document.getElementById('error-message-5') },
+        { input: document.getElementById('file6'), error: document.getElementById('error-message-6') },
+        { input: document.getElementById('file7'), error: document.getElementById('error-message-7') }
+    ];
+
+    fileInputs.forEach(file => {
+        file.input.addEventListener('change', function() {
+            const validExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+            const selectedFile = file.input.files[0];
+            if (selectedFile) {
+                const fileExtension = selectedFile.name.split('.').pop().toLowerCase();
+                if (!validExtensions.includes(fileExtension)) {
+                    file.error.style.display = 'block';
+                    file.input.value = ''; // Mengosongkan input file jika tipe file tidak valid
+                } else {
+                    file.error.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
+
 @endsection

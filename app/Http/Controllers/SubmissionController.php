@@ -363,7 +363,7 @@ class SubmissionController extends Controller
     public function pendaftaran_lks_store(Request $request)
     {
         $user = Auth::user()->user_perusahaan;
-
+       
         $validatedata = $request->validate([
             'peruntukan' => 'required',
             'permohonan_pencatatan_lks_bipartit' => 'required|mimes:png,jpg,pdf|file',

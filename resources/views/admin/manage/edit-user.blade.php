@@ -31,6 +31,7 @@
                         </ul>
                     </div>
                 @endif
+                <input type="hidden" value="{{$data->user_pegawai->id_pegawai}}" name="id_pegawai">
                 <input type="hidden" value="Mediator HI" name="jabatan">
                 <div class="row">
                     <div class="col-md-6">

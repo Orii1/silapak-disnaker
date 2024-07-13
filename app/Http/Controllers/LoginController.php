@@ -14,15 +14,19 @@ class LoginController extends Controller
     public function authenticating(Request $request)
     {
         if (Auth::attempt($request->only('email','password'))){
-            $user_role = Auth::user()->id_role;
-            if ($user_role == '1') {
+            $user = Auth::user();
+            if ($user->id_role == '1') {
                 toastr()->success('Berhasil Login, Selamat Datang Admin!');
                 return redirect('/admin/dashboard');
-            } else if ($user_role == '2') {
-                $user = Auth::user()->user_pegawai;
-                toastr()->success('Berhasil Login, Selamat Datang ' . $user->nama_pegawai . '!');
-                return redirect('/mediator/dashboard');
-            } else if ($user_role == '3') {
+            } else if ($user->id_role == '2') {
+                if ($user->status_akun == 'active') {
+                    $user = Auth::user()->user_pegawai;
+                    toastr()->success('Berhasil Login, Selamat Datang ' . $user->nama_pegawai . '!');
+                    return redirect('/mediator/dashboard');
+                } else {
+                    return redirect('/aktivasi-user');
+                }
+            } else if ($user->id_role == '3') {
                 toastr()->success('Berhasil Login, Selamat Datang Kepala Bidang HI!');
                 return redirect('/kabid/dashboard');
             }

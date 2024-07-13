@@ -407,6 +407,7 @@ class AdminController extends Controller
             ]);
 
             $data->user_pegawai->update([
+                'id_pegawai' => $request->id_pegawai,
                 'nip' => $request->nip,
                 'nama_pegawai' => $request->nama_pegawai,
                 'jenis_kelamin' => $request->jenis_kelamin,

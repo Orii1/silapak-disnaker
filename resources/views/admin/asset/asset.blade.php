@@ -351,6 +351,7 @@
                         <div class="row">
                             <div class="col-9 mb-4">
                                 <input type="file" name="alur_perizinan" class="my-1 form-control" required>
+                                <label style="color: red; font-size: 12px;">(tipe file .jpg/.png)</label>
                             </div>
                             <div class="col-3 mb-4">
                                 <button type="submit" class="btn btn-primary">Kirim</button>

@@ -2068,7 +2068,7 @@ class AdminController extends Controller
             'alur_perizinan' => 'required|mimes:png,jpg|file',
         ], [
             'required' => 'Field :attribute wajib diisi.',
-            'mimes' => 'File :attribute harus berupa format png, jpg, atau pdf.',
+            'mimes' => 'File :attribute harus berupa format png, jpg.',
             'file' => 'Field :attribute harus berupa file.',
         ]);
 
@@ -2082,7 +2082,7 @@ class AdminController extends Controller
             $pp_alur->alur_perizinan = $file1;
             $pp_alur->save();
 
-            toastr()->success('Alur Perizinan Berhail diperbarui!');
+            toastr()->success('Alur Perizinan Berhasil diperbarui!');
             return redirect('/admin/asset');
         } else {
             return redirect('')->withErrors($validatedata)->withInput();
@@ -2103,7 +2103,7 @@ class AdminController extends Controller
         $pp_dasar->dasar_hukum = $request->dasar_hukum;
         $pp_dasar->save();
 
-        toastr()->success('Dasar Hukum Berhail diperbarui!');
+        toastr()->success('Dasar Hukum Berhasil diperbarui!');
         return redirect('/admin/asset');
         } else {
             return redirect('')->withErrors($validatedata)->withInput();
@@ -2124,7 +2124,7 @@ class AdminController extends Controller
             $pp_durasi->durasi_pemrosesan = $request->durasi_pemrosesan;
             $pp_durasi->save();
 
-            toastr()->success('Durasi Pemrosesan Berhail diperbarui!');
+            toastr()->success('Durasi Pemrosesan Berhasil diperbarui!');
             return redirect('/admin/asset');
         } else {
             return redirect('')->withErrors($validatedata)->withInput();
@@ -2145,7 +2145,7 @@ class AdminController extends Controller
             $kontak->kontak = $request->kontak;
             $kontak->save();
 
-            toastr()->success('Kontak Berhail diperbarui!');
+            toastr()->success('Kontak Berhasil diperbarui!');
             return redirect('/admin/asset');
         } else {
             return redirect('')->withErrors($validatedata)->withInput();
@@ -2171,7 +2171,7 @@ class AdminController extends Controller
         $retribusi->retribusi = $file1;
         $retribusi->save();
 
-        toastr()->success('Retribusi Berhail diperbarui!');
+        toastr()->success('Retribusi Berhasil diperbarui!');
         return redirect('/admin/asset');
         } else {
             return redirect('')->withErrors($validatedata)->withInput();
@@ -2196,7 +2196,7 @@ class AdminController extends Controller
             $maklumat->maklumat = $file1;
             $maklumat->save();
 
-            toastr()->success('Maklumat Berhail diperbarui!');
+            toastr()->success('Maklumat Berhasil diperbarui!');
             return redirect('/admin/asset');
         }
     }
@@ -2219,7 +2219,7 @@ class AdminController extends Controller
             $visi_misi->visi_misi = $file1;
             $visi_misi->save();
 
-            toastr()->success('Visi dan Misi Berhail diperbarui!');
+            toastr()->success('Visi dan Misi Berhasil diperbarui!');
             return redirect('/admin/asset');
         }
     }
@@ -2242,7 +2242,7 @@ class AdminController extends Controller
             $motto->motto = $file1;
             $motto->save();
 
-            toastr()->success('Visi dan Misi Berhail diperbarui!');
+            toastr()->success('Motto Berhasil diperbarui!');
             return redirect('/admin/asset');
         }
     }

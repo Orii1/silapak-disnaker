@@ -1,7 +1,17 @@
 @extends('layout.header2')
 
 @section('content')
-
+<style>
+    .error-message {
+        display: none;
+        color: white;
+        background-color: #dc3545;
+        padding: 2px;
+        border-radius: 5px;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+</style>
 <div class="pagetitle-company">
     <h1>Ajuan Permohonan</h1>
     <nav>
@@ -79,142 +89,147 @@
             </ul>
 
             <div class="tab-content">
+    
                 <div class="tab-pane fade show active profile-overview" id="persyaratan">
                     <div class="mt-4 mb-5">
-                        <form action="/permohonan/pelaporan-pemutusan-hubungan-kerja" method="POST" enctype="multipart/form-data">
-                         @csrf
-
-                         @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-
-                         <div class="row mb-5">
-                            <div class="col-md-1 my-1 text-start">
-                                <label>Peruntukan :</label>
-                            </div>
-                            <div class="col-md-4 text-start">
-                                <select class="form-select" aria-label="Default select example" name="peruntukan" required>
-                                    <option disabled selected>Pilih Peruntukan</option>
-                                    <option value="Pelaporan PHK">Pelaporan PHK</option>
-                                </select>
-                            </div>
-                        </div>
-                         <div class="table-responsive">
-                            <table class="table align-middle mb-0 bg-white">
-                                <thead class="bg-light">
-                                    <tr>
-                                        <th>
-                                            <div class="text-center">
-                                                No
-                                            </div>
-                                        </th>
-                                        <th>
-                                            <div class="text-center">
-                                                Persyaratan
-                                            </div>
-                                        </th>
-                                        <th>
-                                            <div class="text-center">
-                                                File
-                                            </div>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="text-center">
-                                                1
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <label for="">Permohonan pelaporan PHK</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="permohonan_pelaporan_phk" id="">
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="text-center">
-                                                2
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <label for="">Surat pemberitahuan PHK dari pengusaha ke pekerja / buruh</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="surat_pemberitahuan_phk" id="">
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="text-center">
-                                                3
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <label for="">Surat tanggapan atas pemberitahuan dari pengusaha oleh pekerja / buruh</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="surat_tanggapan_pemberitahuan_phk" id="">
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="text-center">
-                                                4
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <label for="">Perjanjian bersama Bipartit (jika terjadi kesepakatan / jika pekerja / buruh tidak menolak PHK)</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <input type="file" class="form-control" name="pb_bipartit" id="">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="d-flex justify-content-center">
-                                <div class="d-grid gap-2 col-2 mt-5 mx-auto">
-                                    <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim</b></a></label></button>
+                        <form id="file-upload-form" action="/permohonan/pelaporan-pemutusan-hubungan-kerja" method="POST" enctype="multipart/form-data">
+                            @csrf
+                
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
+                            @endif
+                
+                            <div class="row mb-5">
+                                <div class="col-md-1 my-1 text-start">
+                                    <label>Peruntukan :</label>
+                                </div>
+                                <div class="col-md-4 text-start">
+                                    <select class="form-select" aria-label="Default select example" name="peruntukan" required>
+                                        <option disabled selected>Pilih Peruntukan</option>
+                                        <option value="Pelaporan PHK">Pelaporan PHK</option>
+                                    </select>
+                                </div>
+                                
                             </div>
-
-                         </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle mb-0 bg-white">
+                                    <thead class="bg-light">
+                                        <tr>
+                                            <th>
+                                                <div class="text-center">
+                                                    No
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="text-center">
+                                                    Persyaratan
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="text-center">
+                                                    File
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="text-center">
+                                                    1
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <label for="">Permohonan pelaporan PHK</label><br>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <input type="file" class="form-control" name="permohonan_pelaporan_phk" id="file1">
+                                                    <div class="error-message" id="error-message-1">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="text-center">
+                                                    2
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <label for="">Surat pemberitahuan PHK dari pengusaha ke pekerja / buruh</label><br>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <input type="file" class="form-control" name="surat_pemberitahuan_phk" id="file2">
+                                                    <div class="error-message" id="error-message-2">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="text-center">
+                                                    3
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <label for="">Surat tanggapan atas pemberitahuan dari pengusaha oleh pekerja / buruh</label><br>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <input type="file" class="form-control" name="surat_tanggapan_pemberitahuan_phk" id="file3">
+                                                    <div class="error-message" id="error-message-3">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="text-center">
+                                                    4
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <label for="">Perjanjian bersama Bipartit (jika terjadi kesepakatan / jika pekerja / buruh tidak menolak PHK)</label><br>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-center">
+                                                    <input type="file" class="form-control" name="pb_bipartit" id="file4">
+                                                    <div class="error-message" id="error-message-4">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                
+                                <div class="d-flex justify-content-center">
+                                    <div class="d-grid gap-2 col-2 mt-5 mx-auto">
+                                        <button class="btn btn-primary btn-block" id="btn" type="submit"><a style="color: #ffffff;"><b>Kirim</b></a></button>
+                                    </div>
+                                </div>
+                
+                            </div>
                         </form>
                     </div>
                 </div>
+                
+                
 
                 <div class="tab-pane fade pt-3" id="alur-perizinan">
                     <div class="text-center">
@@ -294,4 +309,60 @@
         </div>
     </div>
 </div>
+
+
+
+<script>
+    document.getElementById('file-upload-form').addEventListener('submit', function(event) {
+        const validExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+        const files = [
+            { input: document.getElementById('file1'), error: document.getElementById('error-message-1') },
+            { input: document.getElementById('file2'), error: document.getElementById('error-message-2') },
+            { input: document.getElementById('file3'), error: document.getElementById('error-message-3') },
+            { input: document.getElementById('file4'), error: document.getElementById('error-message-4') }
+        ];
+
+        let invalidFile = false;
+
+        files.forEach(file => {
+            if (file.input.files[0]) {
+                const fileExtension = file.input.files[0].name.split('.').pop().toLowerCase();
+                if (!validExtensions.includes(fileExtension)) {
+                    file.error.style.display = 'block';
+                    invalidFile = true;
+                } else {
+                    file.error.style.display = 'none';
+                }
+            }
+        });
+
+        if (invalidFile) {
+            event.preventDefault();
+        }
+    });
+
+    const fileInputs = [
+        { input: document.getElementById('file1'), error: document.getElementById('error-message-1') },
+        { input: document.getElementById('file2'), error: document.getElementById('error-message-2') },
+        { input: document.getElementById('file3'), error: document.getElementById('error-message-3') },
+        { input: document.getElementById('file4'), error: document.getElementById('error-message-4') }
+    ];
+
+    fileInputs.forEach(file => {
+        file.input.addEventListener('change', function() {
+            const validExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+            const selectedFile = file.input.files[0];
+            if (selectedFile) {
+                const fileExtension = selectedFile.name.split('.').pop().toLowerCase();
+                if (!validExtensions.includes(fileExtension)) {
+                    file.error.style.display = 'block';
+                    file.input.value = ''; // Mengosongkan input file jika tipe file tidak valid
+                } else {
+                    file.error.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
+
 @endsection

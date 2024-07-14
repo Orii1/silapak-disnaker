@@ -1233,9 +1233,11 @@ class AdminController extends Controller
         $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pencatatan-spsb/konfirmasi', compact(
             'data',
             'mediator',
+            'aktif_not',
             'konfir_pp',
             'konfir_pkb',
             'konfir_pkwt',

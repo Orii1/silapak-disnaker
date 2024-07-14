@@ -37,7 +37,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <div class="ms-2">
-            <a href="/admin/dashboard" class="logo d-flex align-items-center">
+            <a href="/mediator/dashboard" class="logo d-flex align-items-center">
                 <img src="../../assets/img/banjarbaru.png" alt="">
                 <div class="ms-2"><span class="d-none d-lg-block">SILAKHI</span></div>
             </a>
@@ -99,7 +99,7 @@
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama
             </a>
             @else
-            <a href="/admin/permohonan-pendaftaran-pkb">
+            <a href="/mediator/permohonan-pendaftaran-pkb">
                 <i class="bi bi-circle"></i>Pendaftaran Perjanjian Kerja Bersama<span class="badge text-bg-danger">{{$pkb_not}}</span>
             </a>
             @endif

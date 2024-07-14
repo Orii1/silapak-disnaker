@@ -150,7 +150,7 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Surat Permohonan Pencatatan SP/SB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
@@ -170,7 +170,7 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Fotocopy AD/ART Serikat Pekerja/Serikat Buruh</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
@@ -190,7 +190,7 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Daftar Nama Anggota Pembentuk SP/SB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
@@ -210,7 +210,7 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Daftar Nama Susunan Pengurus SP/SB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
@@ -230,7 +230,7 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Berita Acara Pembentukan SP/SB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>

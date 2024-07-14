@@ -151,7 +151,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -171,7 +171,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -191,12 +191,12 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy sertifikat kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan dan/atau bukti pembayaran iuran terakhir</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <input type="file" class="form-control" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" id="file3">
+                                                <input type="file" class="form-control" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" id="file3" required>
                                                 <div class="error-message" id="error-message-3">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                             </div>
                                         </td>
@@ -212,7 +212,7 @@
                                             <div class="text-center">
                                                 <label for="">Permohonan Pengesahan PP</label>
                                                     <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -233,7 +233,7 @@
                                             <div class="text-center">
                                                 <label for="">Surat pernyataan bahwa PP sudah dimintakan saran dan pertimbangan dari wakil pekerja, SP/SB</label>
                                                     <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -254,7 +254,7 @@
                                             <div class="text-center">
                                                 <label for="">Surat pernyataan bahwa di Perusahaan belum terbentuk SP/SB</label>
                                                     <a href="" class="btn btn-primary btn-sm" title="Template"><i class="bi bi-file-text-fill"></i></a><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -274,7 +274,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for=""> Surat pernyataan sudah / belum memiliki struktur upah dan skala upah dan sudah dilaksanakan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -294,7 +294,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Struktur upah dan skala upah asli untuk ditunjuk ke pegawai / petugas pengoreksi PP</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -314,7 +314,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Draft PP sebanyak 3 eksemplar yang sudah di paraf oleh pimpinan Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>

@@ -1,6 +1,17 @@
 @extends('layout.header2')
 
 @section('content')
+<style>
+    .error-message {
+        display: none;
+        color: white;
+        background-color: #dc3545;
+        padding: 2px;
+        border-radius: 5px;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+</style>
 <div class="pagetitle-company">
     <h1>Edit Permohonan Anda</h1>
     <nav>
@@ -63,7 +74,7 @@
         <div class="card-body">
             <div class="p-4">
                 <div class="table-responsivee">
-                    <form action="/edit-permohonan-pkb/{{$pendaftaranpkb->id_pkb}}" method="POST" enctype="multipart/form-data">
+                    <form id="file-upload-form" action="/edit-permohonan-pkb/{{$pendaftaranpkb->id_pkb}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
 
@@ -107,7 +118,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -119,7 +130,8 @@
                                                         </a>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="file" class="form-control" name="fc_wlkp" required>
+                                                        <input type="file" class="form-control" name="fc_wlkp" id="file1" required>
+                                                        <div class="error-message" id="error-message-1">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,7 +147,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy Akta Pendirian Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -146,7 +158,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" required>
+                                                    <input type="file" class="form-control" name="fc_akta_pendirian_perusahaan" id="file2" required>
+                                                    <div class="error-message" id="error-message-2">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -161,7 +174,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy sertifikat Kepesertaan BPJS Ketenagakerjaan dan BPJS Kesehatan serta Bukti Pembayaran iuran Kepesertaan terakhir</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -172,7 +185,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="fc_sertifikat_peserta_bpjs_ketenagakerjaan" required>
+                                                    <input type="file" class="form-control" name="fc_setifikat_peserta_bpjs_ketenagakerjaan" id="file3" required>
+                                                    <div class="error-message" id="error-message-3">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -187,7 +201,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Permohonan pendaftaran PKB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -198,7 +212,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="permohonan_pendaftaran_pkb" required>
+                                                    <input type="file" class="form-control" name="permohonan_pendaftaran_pkb" id="file4" required>
+                                                    <div class="error-message" id="error-message-4">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -213,7 +228,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Surat Pernyataan sudah / belum memiliki strutur skala upah dan sudah dilaksanakan di Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -224,7 +239,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" required>
+                                                    <input type="file" class="form-control" name="surat_pernyataan_struktur_skala_upah" id="file5" required>
+                                                    <div class="error-message" id="error-message-5">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -239,7 +255,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Struktur skala upah asli untuk diperlihatkan ke pegawai / petugas pengoreksi PKB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -250,7 +266,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="struktur_skala_upah_asli" required>
+                                                    <input type="file" class="form-control" name="struktur_skala_upah_asli" id="file6" required>
+                                                    <div class="error-message" id="error-message-6">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -265,7 +282,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Draft PKB sebanyak 3 eksemplar yang sudah diparaf oleh pimpinan dan ketua SP /SB</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -276,7 +293,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="file" class="form-control" name="draft_pkb" required>
+                                                    <input type="file" class="form-control" name="draft_pkb" id="file7" required>
+                                                    <div class="error-message" id="error-message-7">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -293,4 +311,62 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('file-upload-form').addEventListener('submit', function(event) {
+        const validExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+        const files = [
+            { input: document.getElementById('file1'), error: document.getElementById('error-message-1') },
+            { input: document.getElementById('file2'), error: document.getElementById('error-message-2') },
+            { input: document.getElementById('file3'), error: document.getElementById('error-message-3') },
+            { input: document.getElementById('file4'), error: document.getElementById('error-message-4') },
+            { input: document.getElementById('file5'), error: document.getElementById('error-message-5') },
+            { input: document.getElementById('file6'), error: document.getElementById('error-message-6') },
+            { input: document.getElementById('file7'), error: document.getElementById('error-message-7') }
+        ];
+
+        let invalidFile = false;
+
+        files.forEach(file => {
+            if (file.input.files[0]) {
+                const fileExtension = file.input.files[0].name.split('.').pop().toLowerCase();
+                if (!validExtensions.includes(fileExtension)) {
+                    file.error.style.display = 'block';
+                    invalidFile = true;
+                } else {
+                    file.error.style.display = 'none';
+                }
+            }
+        });
+
+        if (invalidFile) {
+            event.preventDefault();
+        }
+    });
+
+    const fileInputs = [
+        { input: document.getElementById('file1'), error: document.getElementById('error-message-1') },
+        { input: document.getElementById('file2'), error: document.getElementById('error-message-2') },
+        { input: document.getElementById('file3'), error: document.getElementById('error-message-3') },
+        { input: document.getElementById('file4'), error: document.getElementById('error-message-4') },
+        { input: document.getElementById('file5'), error: document.getElementById('error-message-5') },
+        { input: document.getElementById('file6'), error: document.getElementById('error-message-6') },
+        { input: document.getElementById('file7'), error: document.getElementById('error-message-7') }
+    ];
+
+    fileInputs.forEach(file => {
+        file.input.addEventListener('change', function() {
+            const validExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+            const selectedFile = file.input.files[0];
+            if (selectedFile) {
+                const fileExtension = selectedFile.name.split('.').pop().toLowerCase();
+                if (!validExtensions.includes(fileExtension)) {
+                    file.error.style.display = 'block';
+                    file.input.value = ''; // Mengosongkan input file jika tipe file tidak valid
+                } else {
+                    file.error.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
 @endsection

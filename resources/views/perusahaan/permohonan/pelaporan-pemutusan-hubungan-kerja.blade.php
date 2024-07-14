@@ -148,12 +148,12 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Permohonan pelaporan PHK</label><br>
-                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="permohonan_pelaporan_phk" id="file1">
+                                                    <input type="file" class="form-control" name="permohonan_pelaporan_phk" id="file1" required>
                                                     <div class="error-message" id="error-message-1">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </td>
@@ -167,12 +167,12 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Surat pemberitahuan PHK dari pengusaha ke pekerja / buruh</label><br>
-                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="surat_pemberitahuan_phk" id="file2">
+                                                    <input type="file" class="form-control" name="surat_pemberitahuan_phk" id="file2" required>
                                                     <div class="error-message" id="error-message-2">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </td>
@@ -186,12 +186,12 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Surat tanggapan atas pemberitahuan dari pengusaha oleh pekerja / buruh</label><br>
-                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="surat_tanggapan_pemberitahuan_phk" id="file3">
+                                                    <input type="file" class="form-control" name="surat_tanggapan_pemberitahuan_phk" id="file3" required>
                                                     <div class="error-message" id="error-message-3">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </td>
@@ -205,12 +205,12 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Perjanjian bersama Bipartit (jika terjadi kesepakatan / jika pekerja / buruh tidak menolak PHK)</label><br>
-                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="pb_bipartit" id="file4">
+                                                    <input type="file" class="form-control" name="pb_bipartit" id="file4" required>
                                                     <div class="error-message" id="error-message-4">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </td>

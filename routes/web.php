@@ -231,7 +231,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::get('/permohonan-pelaporan-phk/{id}', [AdminController::class, 'pelaporan_phk_show']);
     Route::post('/permohonan-phk/update/{id}', [AdminController::class, 'pelaporan_phk_update']);
     Route::post('/permohonan-phk/terima/{id}', [AdminController::class, 'pelaporan_phk_terima']);
-    Route::post('/permohonan-phk/tolak/{id}', [AdminController::class, 'pelaporan_phk_tolak']);
+    Route::post('/permohonan-phk/draft/{id}', [AdminController::class, 'draft_phk']);
     // END PHK
 
     // Asset

@@ -14,6 +14,7 @@ use App\Models\Pendaftaranpkb;
 use App\Models\Pendaftaranpkwt;
 use App\Models\Pengesahanpp;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -1973,6 +1974,34 @@ class AdminController extends Controller
             'konfir_hi',
             'konfir_phk',
         ));
+    }
+
+    public function draft_phk(Request $request, $id)
+    {
+        $data = DetailPengecekan::whereHas('pengecekan_detail', function ($query) use ($id) {
+            $query->whereHas('detail_phk', function ($query) use ($id) {
+                $query->where('id_phk', $id);
+            });
+        })->first();
+
+        $profile = $data->pengecekan_detail->detail_phk->phk_perusahaan;
+        $nomor = $data->pengecekan_detail->id_detail_status;
+        $nama = $request->nama;
+        $jabatan = $request->jabatan;
+        $nip = $request->nip;
+        $no_surat = $request->no_surat;
+        $tgl_surat = $request->tgl_surat;
+        $pdf = Pdf::loadView('pdf/phk', compact('profile', 'nomor', 'nama', 'jabatan', 'nip', 'no_surat', 'tgl_surat'))->setPaper('a4');
+
+        $pdfname = 'SK_' . $profile->nama_perusahaan . '-phk' . now()->timestamp . '.pdf';
+        $pdfPath = $profile->id . '/phk/sk/' . $pdfname;
+        Storage::put($pdfPath, $pdf->output());
+        $sk = $data->pengecekan_detail;
+        $sk->sk = $pdfname;
+        $sk->save();
+
+        toastr()->success('Draft Berhasil Dibuat!');
+        return redirect('/permohonan-pelaporan-phk/' . $id);
     }
 
     public function pelaporan_phk_terima(Request $request, $id_phk)

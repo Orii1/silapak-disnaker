@@ -92,6 +92,9 @@
                                 <p>
                                     {{$data->phk_status->status_cek->pengecekan_pegawai->nama_pegawai}}
                                 </p>
+                                <label>
+                                    Pesan : {{$data->phk_status->status_cek->pesan}}
+                                </label>
                             </div>
                         </td>
                         <td>
@@ -104,9 +107,13 @@
                                         @if ($data->phk_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
                                         -
                                         @else
-                                            <a href="/storage/{{$data->phk_perusahaan->id}}/phk/sk/{{$data->phk_status->sk}}" class="btn btn-success" target="_blank">
-                                                <i class="bi bi-file-earmark-medical-fill"></i>
-                                            </a>
+                                            @if (empty($data->phk_status->sk))
+                                                <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft"><i class="bi bi-file-earmark-medical-fill"></i> Buat Draft</a>
+                                            @else
+                                                <a href="/storage/{{$data->phk_perusahaan->id}}/phk/sk/{{$data->phk_status->sk}}" class="btn btn-success" target="_blank">
+                                                    <i class="bi bi-file-earmark-medical-fill"></i>
+                                                </a>
+                                            @endif
                                         @endif
                                     @endif
                                 </p>
@@ -144,6 +151,36 @@
                 <label class="mb-2">Surat Keputusan yang sudah di tanda tangan</label>
                 <input class="form-control" type="file" id="sk" name="sk"></input>
                 <label style="color: red;"><i>(tipe file .pdf | Max : 2 MB)</i></label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="draft" tabindex="-1" aria-labelledby="draftLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="draftLabel">Draft Surat Keputusan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/permohonan-phk/draft/{{$data->id_phk}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <label class="mb-2">Nama</label>
+                <input class="form-control mb-2" type="text" id="nama" name="nama" required>
+                <label class="mb-2">Jabatan</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="jabatan" required>
+                <label class="mb-2">NIP</label>
+                <input class="form-control mb-2" type="text" id="nip" name="nip" required>
+                <label class="mb-2">No Surat Permohonan PHK dari Perusahaan</label>
+                <input class="form-control mb-2" type="text" id="no_surat" name="no_surat" required>
+                <label class="mb-2">Tanggal Surat Permohonan PHK dari Perusahaan</label>
+                <input class="form-control mb-2" type="text" id="tgl_surat" name="tgl_surat" required>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -6,11 +6,9 @@
             </td>
             <td class="text">
                 <h1>PEMERINTAH KOTA BANJARBARU</h1>
-                <h2>DINAS KOPERASI DAN TENAGA KERJA KOTA BANJARBARU</h2>
-                <p>Jalan Soekarno Hatta, Trikora, Banjarbaru, Kalimantan Selatan</p>
-                <p>Telp: (0511) 6749523</p>
-                <p>E-mail Admin : <a href="">admin@diskopukmnaker.banjarbarukota.go.id</a> &nbsp; E-mail Dinas : <a
-                        href="">hubunganindustrialbjb@gmail.com</a>
+                <h2>DINAS KOPERASI USAHA MIKRO DAN TENAGA KERJA</h2>
+                <p>Alamat : Jalan Soekarno Hatta (Trikora) Telp: (0511) 6749523 Banjarbaru Kode Pos . 70712 Kalimantan Selatan</p>
+                <p>Website : <a href="">http://diskopukmnaker.banjarbaru.go.id/</a> Email : <a>admin@diskopukmnaker.banjarbaru.go.id</a>
                 </p>
             </td>
         </tr>

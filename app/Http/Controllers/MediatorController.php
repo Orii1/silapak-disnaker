@@ -1618,18 +1618,11 @@ class MediatorController extends Controller
         $hasil = $data->hasil_pengecekan;
 
         if ($hasil == "Dokumen Valid") {
-            $profile = $data->pengecekan_detail->detail_phk->phk_perusahaan;
-            $nomor = $data->pengecekan_detail->id_detail_status;
-            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
-
-            $pdfname = 'SK_' . $profile->nama_perusahaan . '-phk' . now()->timestamp . '.pdf';
-            $pdfPath = $profile->id . '/phk/sk/' . $pdfname;
-            Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
-            $sk->sk = $pdfname;
             $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
-            return redirect('/mediator/permohonan-pelaporan-phk')->with('pdfPath', $pdfPath);
+            toastr()->success('Hasil Pemeriksaan telah di rekam!');
+            return redirect('/mediator/permohonan-pelaporan-phk');
         } else {
             $hasil = $data->pengecekan_detail;
             $hasil->id_status = '4';

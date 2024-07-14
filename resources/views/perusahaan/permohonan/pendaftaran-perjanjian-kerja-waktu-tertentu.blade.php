@@ -146,7 +146,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Surat permohonan pencacatan PKWT</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -166,7 +166,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Daftar nama pekerja / buruh yang di PKWT</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -186,7 +186,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Asli PKWT yang sudah ditandatangani oleh para pihak (pengusaha dan pekerja)</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -206,7 +206,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>
@@ -226,7 +226,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <label for="">Fotocopy akta pendirian Perusahaan</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                             </div>
                                         </td>
                                         <td>

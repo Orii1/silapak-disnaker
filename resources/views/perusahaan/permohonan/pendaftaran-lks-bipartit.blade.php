@@ -147,14 +147,13 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Permohonan pencatatan LKS Bipartit</label><br>
-                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="permohonan_pencatatan_lks_bipartit" id="file1">
+                                                    <input type="file" class="form-control" name="permohonan_pencatatan_lks_bipartit" id="file1" required>
                                                     <div class="error-message" id="error-message-1">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
-
                                                 </div>
                                             </td>
                                         </tr>
@@ -168,12 +167,12 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Daftar nama susunan pengurus LKS Bipartit</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="daftar_susunan_pengurus_lks_bipartit" id="file2">
+                                                    <input type="file" class="form-control" name="daftar_susunan_pengurus_lks_bipartit" id="file2" required>
                                                     <div class="error-message" id="error-message-2">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </td>
@@ -188,12 +187,12 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Berita acara pembentukan LKS Bipartit</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="berita_acara_pembentukan_lks_bipartit" id="file3">
+                                                    <input type="file" class="form-control" name="berita_acara_pembentukan_lks_bipartit" id="file3" required>
                                                     <div class="error-message" id="error-message-3">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </td>
@@ -208,12 +207,12 @@
                                             <td>
                                                 <div class="text-center">
                                                     <label for="">Fotocopy WLKP yang masih berlaku</label><br>
-                                                <label style="color: red;"><i>(tipe file .pdf/.jpg/.png | Max : 2 MB)</i></label>
+                                                    <label style="color: red;"><i>(tipe file .pdf/.jpg/.jpeg/.png | Max : 2 MB)</i></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-center">
-                                                    <input type="file" class="form-control" name="fc_wlkp" id="file4">
+                                                    <input type="file" class="form-control" name="fc_wlkp" id="file4" required>
                                                     <div class="error-message" id="error-message-4">Tipe file tidak valid. Harap unggah file dengan format pdf, jpg, jpeg, atau png.</div>
                                                 </div>
                                             </td>

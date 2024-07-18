@@ -192,6 +192,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/permohonan-pkwt/update/{id}', [AdminController::class, 'pendaftaran_pkwt_update']);
     Route::post('/permohonan-pkwt/terima/{id}', [AdminController::class, 'pendaftaran_pkwt_terima']);
     Route::post('/permohonan-pkwt/tolak/{id}', [AdminController::class, 'pendaftaran_pkwt_tolak']);
+    Route::post('/permohonan-pkwt/draft/{id}', [AdminController::class, 'draft_pkwt']);
     // END PKWT
 
     // SPSB
@@ -202,6 +203,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/permohonan-spsb/update/{id}', [AdminController::class, 'pencatatan_spsb_update']);
     Route::post('/permohonan-spsb/terima/{id}', [AdminController::class, 'pencatatan_spsb_terima']);
     Route::post('/permohonan-spsb/tolak/{id}', [AdminController::class, 'pencatatan_spsb_tolak']);
+    Route::post('/permohonan-spsb/draft/{id}', [AdminController::class, 'draft_spsb']);
     // END SPSB
 
     // LKS
@@ -222,6 +224,7 @@ Route::middleware(['auth', 'UserAkses:1'])->group(function () {
     Route::post('/permohonan-hi/update/{id}', [AdminController::class, 'pencatatan_hi_update']);
     Route::post('/permohonan-hi/terima/{id}', [AdminController::class, 'pencatatan_hi_terima']);
     Route::post('/permohonan-hi/tolak/{id}', [AdminController::class, 'pencatatan_hi_tolak']);
+    Route::post('/permohonan-hi/draft/{id}', [AdminController::class, 'draft_hi']);
     // HI
 
     // PHK

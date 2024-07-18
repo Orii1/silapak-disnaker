@@ -32,7 +32,14 @@
 
                       <li class="nav-item">
                         <div class="mx-4">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#selesai">Selesai Diperiksa</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#selesai">
+                                Selesai Diperiksa
+                                @if ($pp_done->count() == "0")
+
+                                @else
+                                    <span class="badge text-bg-danger">{{$pp_done->count()}}</span>
+                                @endif
+                            </button>
                         </div>
                       </li>
 

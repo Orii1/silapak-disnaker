@@ -20,12 +20,20 @@
                         <form id="filterForm">
                             <div class="form-group mb-2 mr-3">
                                 <div class="row">
-                                    <div class="col-5">
-                                        <select name="status" id="month" class="form-control">
+                                    <div class="col-3">
+                                        <select name="status" id="month" class="form-select">
                                             <option value="">Semua Bulan</option>
                                             @foreach (range(1, 12) as $month)
                                                 <option value="{{ $month }}">{{ \Carbon\Carbon::create()->month($month)->locale('id')->isoFormat('MMMM') }}</option>
                                             @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select name="year" id="year" class="form-select">
+                                            <option value="">Semua Tahun</option>
+                                            @for ($year = date('Y'); $year >= 2023; $year--)
+                                                <option value="{{ $year }}">{{ $year }}</option>
+                                            @endfor
                                         </select>
                                     </div>
                                     <div class="col-3">
@@ -92,12 +100,14 @@
             e.preventDefault();
 
             var month = $('#month').val();
+            var year = $('#year').val();
 
             $.ajax({
                 url: '{{ route('filter.by.month_spsb') }}',
                 type: 'GET',
                 data: {
-                    month: month
+                    month: month,
+                    year: year
                 },
                 success: function(response) {
                     $('#tableBody').html(response);
@@ -110,7 +120,8 @@
 
         $('#generatePDF').on('click', function() {
             var month = $('#month').val();
-            window.location.href = '{{ route('generate.pdf_spsb') }}?month=' + month;
+            var year = $('#year').val();
+            window.location.href = '{{ route('generate.pdf_spsb') }}?month=' + month + '&year=' + year;
         });
     });
 </script>

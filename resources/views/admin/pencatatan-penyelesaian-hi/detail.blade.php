@@ -101,17 +101,23 @@
                         <td>
                             <div class="text-start">
                             <b>Surat Keputusan</b>
-                            @if ($data->hi_status->id_status == "4")
-                            -
-                            @else
-                                @if ($data->hi_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
+                            <p>
+                                @if ($data->hi_status->id_status == "4")
                                 -
                                 @else
-                                    <a href="/storage/{{$data->hi_perusahaan->id}}/perselisihan_hi/sk/{{$data->hi_status->sk}}" class="btn btn-success" target="_blank">
-                                        <i class="bi bi-file-earmark-medical-fill"></i>
-                                    </a>
+                                    @if ($data->hi_status->keterangan == "Permohonan Sedang dicek oleh Mediator")
+                                    -
+                                    @else
+                                        @if (empty($data->hi_status->sk))
+                                            <a class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft"><i class="bi bi-file-earmark-medical-fill"></i> Buat Draft</a>
+                                        @else
+                                            <a href="/storage/{{$data->hi_perusahaan->id}}/perselisihan_hi/sk/{{$data->hi_status->sk}}" class="btn btn-success" target="_blank">
+                                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                            </a>
+                                        @endif
+                                    @endif
                                 @endif
-                            @endif
+                            </p>
                             </div>
                         </td>
                     </tr>
@@ -146,6 +152,46 @@
                 <label class="mb-2">Surat Keputusan yang sudah di tanda tangan</label>
                 <input class="form-control" type="file" id="sk" name="sk"></input>
                 <label style="color: red;"><i>(tipe file .pdf | Max : 2 MB)</i></label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="draft" tabindex="-1" aria-labelledby="draftLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="draftLabel">Draft Surat Keputusan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/permohonan-hi/draft/{{$data->id_hi}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <label class="mb-2">Nomor</label>
+                <input class="form-control mb-2" type="text" id="nama" name="nomor_surat" required>
+                <label class="mb-2">Lampiran</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="lampiran" required>
+                <label class="mb-2">Penerima 1 (Pengusaha)</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="penerima1" required>
+                <label class="mb-2">Penerima 2 (Pekerja/Buruh/SP/SB)</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="penerima2" required>
+                <label class="mb-2">Nomor Surat Permohonan</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="no_permohonan" required>
+                <label class="mb-2">Tanggal Surat Permohonan</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="tgl_permohonan" required>
+                <label class="mb-2">Hari</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="hari" required>
+                <label class="mb-2">Tanggal</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="tanggal" required>
+                <label class="mb-2">Pukul</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="pukul" required>
+                <label class="mb-2">Tempat</label>
+                <input class="form-control mb-2" type="text" id="jabatan" name="tempat" required>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

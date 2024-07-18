@@ -1097,6 +1097,32 @@ class AdminController extends Controller
         ));
     }
 
+    public function draft_pkwt(Request $request, $id)
+    {
+        $data = DetailPengecekan::whereHas('pengecekan_detail', function ($query) use ($id) {
+            $query->whereHas('detail_pkwt', function ($query) use ($id) {
+                $query->where('id_pkwt', $id);
+            });
+        })->first();
+
+        $profile = $data->pengecekan_detail->detail_pkwt->pkwt_perusahaan;
+        $nomor = $data->pengecekan_detail->id_detail_status;
+        $no_pencatatan = $request->no_pencatatan;
+        $tgl_pencatatan = $request->tgl_pencatatan;
+        $tgl = $data->pengecekan_detail->detail_pkwt->updated_at->locale('id')->isoFormat('DD MMMM Y');
+        $pdf = Pdf::loadView('pdf/pkwt', compact('profile', 'nomor', 'no_pencatatan', 'tgl_pencatatan', 'tgl'))->setPaper('a4');
+
+        $pdfname = 'SK_' . $profile->nama_perusahaan . '-pkwt' . now()->timestamp . '.pdf';
+        $pdfPath = $profile->id . '/pkwt/sk/' . $pdfname;
+        Storage::put($pdfPath, $pdf->output());
+        $sk = $data->pengecekan_detail;
+        $sk->sk = $pdfname;
+        $sk->save();
+
+        toastr()->success('Draft Berhasil Dibuat!');
+        return redirect('/permohonan-pendaftaran-pkwt/' . $id);
+    }
+
     public function pendaftaran_pkwt_terima(Request $request, $id_pkwt)
     {
         $permohonanpkwt = Pendaftaranpkwt::find($id_pkwt);
@@ -1214,6 +1240,7 @@ class AdminController extends Controller
         $data = Pencatatanspsb::find($id_spsb);
         $mediator = Pegawai::all();
 
+
         $konfir_pp = Pengesahanpp::whereHas('pp_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
@@ -1235,6 +1262,8 @@ class AdminController extends Controller
         $konfir_phk = Pelaporanphk::whereHas('phk_status', function ($query) {
             $query->where('id_status', '1');
         })->count();
+
+        $aktif_not = User::where('status_akun', 'inactive')->where('id_role', '4')->count();
         return view('/admin/pencatatan-spsb/konfirmasi', compact(
             'data',
             'mediator',
@@ -1245,6 +1274,7 @@ class AdminController extends Controller
             'konfir_lks',
             'konfir_hi',
             'konfir_phk',
+            'aktif_not'
         ));
     }
 
@@ -1312,6 +1342,35 @@ class AdminController extends Controller
             'konfir_hi',
             'konfir_phk',
         ));
+    }
+
+    public function draft_spsb(Request $request, $id)
+    {
+        $data = DetailPengecekan::whereHas('pengecekan_detail', function ($query) use ($id) {
+            $query->whereHas('detail_spsb', function ($query) use ($id) {
+                $query->where('id_spsb', $id);
+            });
+        })->first();
+
+        $profile = $data->pengecekan_detail->detail_spsb->spsb_perusahaan;
+        $no_pencatatan = $request->no_pencatatan;
+        $tgl_pencatatan = $request->tgl_pencatatan;
+        $nama_sp = $request->nama_sp;
+        $alamat = $request->alamat_sekre;
+        $no_permohonan = $request->no_permohonan;
+        $tgl_permohonan = $request->tgl_permohonan;
+        $tgl = $data->pengecekan_detail->detail_spsb->updated_at->locale('id')->isoFormat('DD MMMM Y');
+        $pdf = Pdf::loadView('pdf/spsb', compact('no_pencatatan', 'tgl_pencatatan', 'tgl', 'nama_sp', 'alamat', 'no_permohonan', 'tgl_permohonan'))->setPaper('a4');
+
+        $pdfname = 'SK_' . $profile->nama_perusahaan . '-spsb' . now()->timestamp . '.pdf';
+        $pdfPath = $profile->id . '/spsb/sk/' . $pdfname;
+        Storage::put($pdfPath, $pdf->output());
+        $sk = $data->pengecekan_detail;
+        $sk->sk = $pdfname;
+        $sk->save();
+
+        toastr()->success('Draft Berhasil Dibuat!');
+        return redirect('/permohonan-pencatatan-spsb/' . $id);
     }
 
     public function pencatatan_spsb_terima(Request $request, $id_spsb)
@@ -1755,6 +1814,39 @@ class AdminController extends Controller
             'konfir_hi',
             'konfir_phk',
         ));
+    }
+
+    public function draft_hi(Request $request, $id)
+    {
+        $data = DetailPengecekan::whereHas('pengecekan_detail', function ($query) use ($id) {
+            $query->whereHas('detail_hi', function ($query) use ($id) {
+                $query->where('id_hi', $id);
+            });
+        })->first();
+
+        $profile = $data->pengecekan_detail->detail_hi->hi_perusahaan;
+        $nomor = $request->nomor_surat;
+        $lampiran = $request->lampiran;
+        $penerima1 = $request->penerima1;
+        $penerima2 = $request->penerima2;
+        $no_permohonan = $request->no_permohonan;
+        $tgl_permohonan = $request->tgl_permohonan;
+        $hari = $request->hari;
+        $tanggal = $request->tanggal;
+        $pukul = $request->pukul;
+        $tempat = $request->tempat;
+        $tgl = $data->pengecekan_detail->detail_hi->updated_at->locale('id')->isoFormat('DD MMMM Y');
+        $pdf = Pdf::loadView('pdf/hi', compact('nomor', 'lampiran', 'penerima1', 'penerima2', 'no_permohonan', 'tgl_permohonan', 'hari', 'tanggal', 'pukul', 'tempat', 'tgl'))->setPaper('a4');
+
+        $pdfname = 'SK_' . $profile->nama_perusahaan . '-hi' . now()->timestamp . '.pdf';
+        $pdfPath = $profile->id . '/perselisihan_hi/sk/' . $pdfname;
+        Storage::put($pdfPath, $pdf->output());
+        $sk = $data->pengecekan_detail;
+        $sk->sk = $pdfname;
+        $sk->save();
+
+        toastr()->success('Draft Berhasil Dibuat!');
+        return redirect('/permohonan-penyelesaian-hi/' . $id);
     }
 
     public function pencatatan_hi_terima(Request $request, $id_hi)

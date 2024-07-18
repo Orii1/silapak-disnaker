@@ -599,7 +599,7 @@ class MediatorController extends Controller
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_pkb->pkb_perusahaan;
             $nomor = $data->pengecekan_detail->id_detail_status;
-            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
+            $pdf = pdf::loadView('pdf.pkb', compact('profile', 'nomor'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-pkb' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/pkb/sk/' . $pdfname;
@@ -799,18 +799,11 @@ class MediatorController extends Controller
         $hasil = $data->hasil_pengecekan;
 
         if ($hasil == "Dokumen Valid") {
-            $profile = $data->pengecekan_detail->detail_pkwt->pkwt_perusahaan;
-            $nomor = $data->pengecekan_detail->id_detail_status;
-            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
-
-            $pdfname = 'SK_' . $profile->nama_perusahaan . '-pkwt' . now()->timestamp . '.pdf';
-            $pdfPath = $profile->id . '/pkwt/sk/' . $pdfname;
-            Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
-            $sk->sk = $pdfname;
             $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
-            return redirect('/mediator/permohonan-pendaftaran-pkwt')->with('pdfPath', $pdfPath);
+            toastr()->success('Hasil Pemeriksaan telah di rekam!');
+            return redirect('/mediator/permohonan-pendaftaran-pkwt');
         } else {
             $hasil = $data->pengecekan_detail;
             $hasil->id_status = '4';
@@ -1008,18 +1001,10 @@ class MediatorController extends Controller
         $hasil = $data->hasil_pengecekan;
 
         if ($hasil == "Dokumen Valid") {
-            $profile = $data->pengecekan_detail->detail_spsb->spsb_perusahaan;
-            $nomor = $data->pengecekan_detail->id_detail_status;
-            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
-
-            $pdfname = 'SK_' . $profile->nama_perusahaan . '-spsb' . now()->timestamp . '.pdf';
-            $pdfPath = $profile->id . '/spsb/sk/' . $pdfname;
-            Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
-            $sk->sk = $pdfname;
             $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
-            return redirect('/mediator/permohonan-pencatatan-spsb')->with('pdfPath', $pdfPath);
+            return redirect('/mediator/permohonan-pencatatan-spsb');
         } else {
             $hasil = $data->pengecekan_detail;
             $hasil->id_status = '4';
@@ -1213,7 +1198,8 @@ class MediatorController extends Controller
         if ($hasil == "Dokumen Valid") {
             $profile = $data->pengecekan_detail->detail_lks->lks_perusahaan;
             $nomor = $data->pengecekan_detail->id_detail_status;
-            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
+            $tgl = $data->pengecekan_detail->detail_lks->updated_at->locale('id')->isoFormat('DD MMMM Y');
+            $pdf = pdf::loadView('pdf.lks', compact('profile', 'nomor', 'tgl'))->setPaper('a4');
 
             $pdfname = 'SK_' . $profile->nama_perusahaan . '-lks' . now()->timestamp . '.pdf';
             $pdfPath = $profile->id . '/lks/sk/' . $pdfname;
@@ -1415,18 +1401,10 @@ class MediatorController extends Controller
         $hasil = $data->hasil_pengecekan;
 
         if ($hasil == "Dokumen Valid") {
-            $profile = $data->pengecekan_detail->detail_hi->hi_perusahaan;
-            $nomor = $data->pengecekan_detail->id_detail_status;
-            $pdf = pdf::loadView('pdf.pp', compact('profile', 'nomor'))->setPaper('a4');
-
-            $pdfname = 'SK_' . $profile->nama_perusahaan . '-hi' . now()->timestamp . '.pdf';
-            $pdfPath = $profile->id . '/perselisihan_hi/sk/' . $pdfname;
-            Storage::put($pdfPath, $pdf->output());
             $sk = $data->pengecekan_detail;
-            $sk->sk = $pdfname;
             $sk->keterangan = 'SK sedang dalam proses penandatanganan';
             $sk->save();
-            return redirect('/mediator/permohonan-pencatatan-hi')->with('pdfPath', $pdfPath);
+            return redirect('/mediator/permohonan-pencatatan-hi');
         } else {
             $hasil = $data->pengecekan_detail;
             $hasil->id_status = '4';
@@ -1434,7 +1412,6 @@ class MediatorController extends Controller
             $hasil->save();
             return redirect('/mediator/permohonan-pencatatan-hi');
         }
-
     }
     // PHK
     public function pelaporan_phk()

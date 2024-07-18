@@ -14,7 +14,7 @@
             <p>KEPUTUSAN KEPALA DINAS</p>
             <p>KOPERASI USAHA MIKRO DAN TENAGA KERJA KOTA BANJARARU</p>
             <p>NOMOR : 500.15.12.1/{{$nomor}}/DISKOP,UM & NAKER/2024</p>
-            <p>TENTANG PENGESAHAN PERATURAN PERUSAHAAN</p>
+            <p>TENTANG PENDAFTARAN PERJANJIAN KERJA BERSAMA</p>
             <p>{{$profile->nama_perusahaan}}</p>
             <p>KEPALA DINAS KOPERASI, USAHA MIKRO DAN TENAGA KERJA KOTA BANJARBARU,</p>
         </div>
@@ -25,8 +25,8 @@
             <td style="width: 15%; vertical-align: top;">Menimbang :</td>
             <td style="width: 100%; text-align:justify; vertical-align: top;">
                 <ol type="a" style="margin:0;">
-                    <li style="margin-bottom:20px;">bahwa Peraturan Perusahaan {{$profile->nama_perusahaan}} telah diadakan koreksi dan telah memenuhi syarat untuk mendapatkan Pengesahan sebagaimana dimaksud dengan Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan;</li>
-                    <li style="margin-bottom:20px;">bahwa berdasarkan pertimbangan sebagaimana dimaksud huruf a, perlu menetapkan Keputusan Kepala Dinas Koperasi Usaha Mikro dan Tenaga Kerja Kota Banjarbaru tentang Pengesahan Peraturan Perusahaan  {{$profile->nama_perusahaan}};</li>
+                    <li style="margin-bottom:20px;">bahwa  Perjanjian Kerja Bersama {{$profile->nama_perusahaan}} telah diadakan  koreksi dan telah memenuhi syarat untuk mendapatkan Tanda Bukti Pendaftaran sebagaimana dimaksud dengan Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan;</li>
+                    <li style="margin-bottom:20px;">bahwa berdasarkan pertimbangan sebagaimana dimaksud huruf a, perlu menetapkan Keputusan Kepala Dinas Koperasi Usaha Mikro dan Tenaga Kerja Kota Banjarbaru tentang Pendaftaran Perjanjian Kerja Bersama {{$profile->nama_perusahaan}};</li>
                 </ol>
             </td>
         </tr>
@@ -36,7 +36,7 @@
                 <ol style="margin:0;">
                     <li style="margin-bottom:20px;">Undang – Undang  Nomor  9  Tahun  1999  tentang  Pembentukan Kotamadya Daerah Tingkat II Banjarbaru (Lembaran Negara Republik Indonesia Tahun 1999 Nomor 43, Tambahan Lembaran Negara Republik Indonesia Nomor 3822);</li>
                     <li style="margin-bottom:20px;">Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan (Lembaran Negara Republik Indonesia Tahun 2003 Nomor 39, Tambahan Lembaran Negara Republik Indonesia Nomor 4279) sebagaimana telah diubah beberapa kali terakhir dengan Undang-Undang Nomor 6 Tahun 2023 tentang Penetapan Peraturan Pemerintah Pengganti Undang-Undang Nomor 2 Tahun 2022 tentang Cipta Kerja Menjadi Undang-Undang (Lembaran Negara Republik Indonesia Tahun 2022 Nomor 238,Tambahan Lembaran Negara Republik Indonesia Nomor 6841);</li>
-                    <li style="margin-bottom:20px;">Undang-Undang Nomor 12 Tahun 2011 tentang Pembentukan Peraturan PerUndang-Undangan (Lembaran Negara Republik Indonesia Tahun 2011 Nomor 82, Tambahan Lembaran Negara Republik Indonesia        Nomor 5234) sebagaimana telah diubah beberapa kali terakhir dengan Undang-Undang Nomor 13 Tahun 2022 tentang Perubahan Kedua Atas Undang-Undang Nomor 12 Tahun 2011 tentang Pembentukan Peraturan PerUndang-Undangan (Lembaran Negara Republik Indonesia Tahun 2022 Nomor 143,Tambahan Lembaran Negara Republik Indonesia Nomor 6801);</li>
+                    <li style="margin-bottom:20px;">Undang-Undang Nomor 12 Tahun 2011 tentang Pembentukan Peraturan PerUndang-Undangan (Lembaran Negara Republik Indonesia Tahun 2011 Nomor 82, Tambahan Lembaran Negara Republik Indonesia Nomor 5234) sebagaimana telah diubah beberapa kali terakhir dengan Undang-Undang Nomor 13 Tahun 2022 tentang Perubahan Kedua Atas Undang-Undang Nomor 12 Tahun 2011 tentang Pembentukan Peraturan PerUndang-Undangan (Lembaran Negara Republik Indonesia Tahun 2022 Nomor 143,Tambahan Lembaran Negara Republik Indonesia Nomor 6801);</li>
                     <li style="margin-bottom:20px;">Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 244, Tambahan Lembaran Negara Republik Indonesia Nomor 5587) sebagaimana telah diubah beberapa kali terakhir dengan Undang-Undang Nomor 6 Tahun 2023 tentang Penetapan Peraturan Pemerintah Pengganti Undang-Undang Nomor 2 Tahun 2022 tentang Cipta Kerja Menjadi Undang-Undang (Lembaran Negara Republik Indonesia Tahun 2022 Nomor 238,Tambahan Lembaran Negara Republik Indonesia Nomor 6841);</li>
                 </ol>
             </td>
@@ -55,7 +55,7 @@
         <tr>
             <td style="width: 20%; vertical-align: top;">Memperhatikan :</td>
             <td style="width: 30%; text-align:justify; vertical-align: top;">
-                Surat  Permohonan dari Pimpinan Perusahaan {{$profile->nama_perusahaan}} Perihal Permohonan Pengesahan Peraturan Perusahaan.
+                Surat  Permohonan dari Pimpinan Perusahaan {{$profile->nama_perusahaan}} Perihal Pendaftaran Perjanjian Kerja Bersama.
             </td>
         </tr>
         <tr>
@@ -67,13 +67,13 @@
         <tr>
             <td style="width: 20%; vertical-align: top;">KESATU :</td>
             <td style="width: 30%; text-align:justify; vertical-align: top;">
-                Keputusan Kepala Dinas Koperasi, Usaha Mikro dan Tenaga Kerja Kota Banjarbaru tentang Pengesahan Peraturan Perusahaan {{$profile->nama_perusahaan}}
+                Keputusan Kepala Dinas Koperasi, Usaha Mikro dan Tenaga Kerja Kota Banjarbaru tentang Pendaftaran Perjanjian Kerja Bersama {{$profile->nama_perusahaan}}
             </td>
         </tr>
         <tr>
             <td style="width: 20%; vertical-align: top;">KEDUA :</td>
             <td style="width: 30%; text-align:justify; vertical-align: top;">
-                Mengesahkan Peraturan Perusahaan dari :
+                Menerima Pendaftaran Perjanjian Kerja Bersama dari :
                 <table>
                     <tr>
                         <td>Nama Perusahaan</td>
@@ -116,7 +116,7 @@
 
     <p style="text-align:right; padding-top:40px;">Ditetapkan di Banjarbaru</p>
     <p style="text-align:right;">KEPALA DINAS</p>
-    <p style="text-align:right; padding-top:100px; margin:0;">NIP.</p>
+    <p style="text-align:right; padding-top:100px; margin:0;">(....................)</p>
 
 </body>
 </html>

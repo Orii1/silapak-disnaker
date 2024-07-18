@@ -279,25 +279,55 @@ class KabidController extends Controller
     public function filterByMonth_pp(Request $request)
     {
         $month = $request->input('month');
-
-        if ($month) {
+        $year = $request->input('year');
+        if ($month && $year) {
+            // Filter data berdasarkan bulan dan tahun yang dipilih
+            $filteredRecords = Pengesahanpp::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('pp_perusahaan', 'pp_status')
+                ->get();
+        } elseif ($month) {
             // Filter data berdasarkan bulan yang dipilih
-            $filteredRecords = Pengesahanpp::whereMonth('updated_at', $month)->with('pp_perusahaan', 'pp_status')->get();
+            $filteredRecords = Pengesahanpp::whereMonth('updated_at', $month)
+                ->with('pp_perusahaan', 'pp_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data berdasarkan tahun yang dipilih
+            $filteredRecords = Pengesahanpp::whereYear('updated_at', $year)
+                ->with('pp_perusahaan', 'pp_status')
+                ->get();
         } else {
-            // Jika tidak ada bulan yang dipilih, ambil semua data
+            // Jika tidak ada bulan atau tahun yang dipilih, ambil semua data
             $filteredRecords = Pengesahanpp::with('pp_perusahaan', 'pp_status')->get();
         }
 
         return view('partials.filtered-records-pp', compact('filteredRecords'));
     }
 
+
     public function generatePDF_pp(Request $request)
     {
-        $month = $request->input('month');
+        $month = $request->query('month');
+        $year = $request->query('year');
 
-        if ($month) {
-            $filteredRecords = Pengesahanpp::whereMonth('updated_at', $month)->with('pp_perusahaan', 'pp_status')->get();
+        if ($month && $year) {
+            // Filter data based on both month and year
+            $filteredRecords = Pengesahanpp::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('pp_perusahaan', 'pp_status')
+                ->get();
+        } elseif ($month) {
+            // Filter data based on month only
+            $filteredRecords = Pengesahanpp::whereMonth('updated_at', $month)
+                ->with('pp_perusahaan', 'pp_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data based on year only
+            $filteredRecords = Pengesahanpp::whereYear('updated_at', $year)
+                ->with('pp_perusahaan', 'pp_status')
+                ->get();
         } else {
+            // If no month or year is selected, retrieve all data
             $filteredRecords = Pengesahanpp::with('pp_perusahaan', 'pp_status')->get();
         }
 
@@ -311,12 +341,25 @@ class KabidController extends Controller
     public function filterByMonth_pkb(Request $request)
     {
         $month = $request->input('month');
-
-        if ($month) {
+        $year = $request->input('year');
+        if ($month && $year) {
+            // Filter data berdasarkan bulan dan tahun yang dipilih
+            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('pkb_perusahaan', 'pkb_status')
+                ->get();
+        } elseif ($month) {
             // Filter data berdasarkan bulan yang dipilih
-            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)->with('pkb_perusahaan', 'pkb_status')->get();
+            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)
+                ->with('pkb_perusahaan', 'pkb_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data berdasarkan tahun yang dipilih
+            $filteredRecords = Pendaftaranpkb::whereYear('updated_at', $year)
+                ->with('pkb_perusahaan', 'pkb_status')
+                ->get();
         } else {
-            // Jika tidak ada bulan yang dipilih, ambil semua data
+            // Jika tidak ada bulan atau tahun yang dipilih, ambil semua data
             $filteredRecords = Pendaftaranpkb::with('pkb_perusahaan', 'pkb_status')->get();
         }
 
@@ -325,11 +368,27 @@ class KabidController extends Controller
 
     public function generatePDF_pkb(Request $request)
     {
-        $month = $request->input('month');
+        $month = $request->query('month');
+        $year = $request->query('year');
 
-        if ($month) {
-            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)->with('pkb_perusahaan', 'pkb_status')->get();
+        if ($month && $year) {
+            // Filter data based on both month and year
+            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('pkb_perusahaan', 'pkb_status')
+                ->get();
+        } elseif ($month) {
+            // Filter data based on month only
+            $filteredRecords = Pendaftaranpkb::whereMonth('updated_at', $month)
+                ->with('pkb_perusahaan', 'pkb_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data based on year only
+            $filteredRecords = Pendaftaranpkb::whereYear('updated_at', $year)
+                ->with('pkb_perusahaan', 'pkb_status')
+                ->get();
         } else {
+            // If no month or year is selected, retrieve all data
             $filteredRecords = Pendaftaranpkb::with('pkb_perusahaan', 'pkb_status')->get();
         }
 
@@ -343,11 +402,25 @@ class KabidController extends Controller
     public function filterByMonth_pkwt(Request $request)
     {
         $month = $request->input('month');
-        if ($month) {
+        $year = $request->input('year');
+        if ($month && $year) {
+            // Filter data berdasarkan bulan dan tahun yang dipilih
+            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('pkwt_perusahaan', 'pkwt_status')
+                ->get();
+        } elseif ($month) {
             // Filter data berdasarkan bulan yang dipilih
-            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)->with('pkwt_perusahaan', 'pkwt_status')->get();
+            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)
+                ->with('pkwt_perusahaan', 'pkwt_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data berdasarkan tahun yang dipilih
+            $filteredRecords = Pendaftaranpkwt::whereYear('updated_at', $year)
+                ->with('pkwt_perusahaan', 'pkwt_status')
+                ->get();
         } else {
-            // Jika tidak ada bulan yang dipilih, ambil semua data
+            // Jika tidak ada bulan atau tahun yang dipilih, ambil semua data
             $filteredRecords = Pendaftaranpkwt::with('pkwt_perusahaan', 'pkwt_status')->get();
         }
 
@@ -356,11 +429,27 @@ class KabidController extends Controller
 
     public function generatePDF_pkwt(Request $request)
     {
-        $month = $request->input('month');
+        $month = $request->query('month');
+        $year = $request->query('year');
 
-        if ($month) {
-            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)->with('pkwt_perusahaan', 'pkwt_status')->get();
+        if ($month && $year) {
+            // Filter data based on both month and year
+            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('pkwt_perusahaan', 'pkwt_status')
+                ->get();
+        } elseif ($month) {
+            // Filter data based on month only
+            $filteredRecords = Pendaftaranpkwt::whereMonth('updated_at', $month)
+                ->with('pkwt_perusahaan', 'pkwt_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data based on year only
+            $filteredRecords = Pendaftaranpkwt::whereYear('updated_at', $year)
+                ->with('pkwt_perusahaan', 'pkwt_status')
+                ->get();
         } else {
+            // If no month or year is selected, retrieve all data
             $filteredRecords = Pendaftaranpkwt::with('pkwt_perusahaan', 'pkwt_status')->get();
         }
 
@@ -374,11 +463,25 @@ class KabidController extends Controller
     public function filterByMonth_spsb(Request $request)
     {
         $month = $request->input('month');
-        if ($month) {
+        $year = $request->input('year');
+        if ($month && $year) {
+            // Filter data berdasarkan bulan dan tahun yang dipilih
+            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('spsb_perusahaan', 'spsb_status')
+                ->get();
+        } elseif ($month) {
             // Filter data berdasarkan bulan yang dipilih
-            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)->with('spsb_perusahaan', 'spsb_status')->get();
+            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)
+                ->with('spsb_perusahaan', 'spsb_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data berdasarkan tahun yang dipilih
+            $filteredRecords = Pencatatanspsb::whereYear('updated_at', $year)
+                ->with('spsb_perusahaan', 'spsb_status')
+                ->get();
         } else {
-            // Jika tidak ada bulan yang dipilih, ambil semua data
+            // Jika tidak ada bulan atau tahun yang dipilih, ambil semua data
             $filteredRecords = Pencatatanspsb::with('spsb_perusahaan', 'spsb_status')->get();
         }
 
@@ -387,11 +490,27 @@ class KabidController extends Controller
 
     public function generatePDF_spsb(Request $request)
     {
-        $month = $request->input('month');
+        $month = $request->query('month');
+        $year = $request->query('year');
 
-        if ($month) {
-            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)->with('spsb_perusahaan', 'spsb_status')->get();
+        if ($month && $year) {
+            // Filter data based on both month and year
+            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('spsb_perusahaan', 'spsb_status')
+                ->get();
+        } elseif ($month) {
+            // Filter data based on month only
+            $filteredRecords = Pencatatanspsb::whereMonth('updated_at', $month)
+                ->with('spsb_perusahaan', 'spsb_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data based on year only
+            $filteredRecords = Pencatatanspsb::whereYear('updated_at', $year)
+                ->with('spsb_perusahaan', 'spsb_status')
+                ->get();
         } else {
+            // If no month or year is selected, retrieve all data
             $filteredRecords = Pencatatanspsb::with('spsb_perusahaan', 'spsb_status')->get();
         }
 
@@ -405,11 +524,25 @@ class KabidController extends Controller
     public function filterByMonth_lks(Request $request)
     {
         $month = $request->input('month');
-        if ($month) {
+        $year = $request->input('year');
+        if ($month && $year) {
+            // Filter data berdasarkan bulan dan tahun yang dipilih
+            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('lks_perusahaan', 'lks_status')
+                ->get();
+        } elseif ($month) {
             // Filter data berdasarkan bulan yang dipilih
-            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)->with('lks_perusahaan', 'lks_status')->get();
+            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)
+                ->with('lks_perusahaan', 'lks_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data berdasarkan tahun yang dipilih
+            $filteredRecords = Pendaftaranlks::whereYear('updated_at', $year)
+                ->with('lks_perusahaan', 'lks_status')
+                ->get();
         } else {
-            // Jika tidak ada bulan yang dipilih, ambil semua data
+            // Jika tidak ada bulan atau tahun yang dipilih, ambil semua data
             $filteredRecords = Pendaftaranlks::with('lks_perusahaan', 'lks_status')->get();
         }
 
@@ -418,11 +551,27 @@ class KabidController extends Controller
 
     public function generatePDF_lks(Request $request)
     {
-        $month = $request->input('month');
+        $month = $request->query('month');
+        $year = $request->query('year');
 
-        if ($month) {
-            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)->with('lks_perusahaan', 'lks_status')->get();
+        if ($month && $year) {
+            // Filter data based on both month and year
+            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('lks_perusahaan', 'lks_status')
+                ->get();
+        } elseif ($month) {
+            // Filter data based on month only
+            $filteredRecords = Pendaftaranlks::whereMonth('updated_at', $month)
+                ->with('lks_perusahaan', 'lks_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data based on year only
+            $filteredRecords = Pendaftaranlks::whereYear('updated_at', $year)
+                ->with('lks_perusahaan', 'lks_status')
+                ->get();
         } else {
+            // If no month or year is selected, retrieve all data
             $filteredRecords = Pendaftaranlks::with('lks_perusahaan', 'lks_status')->get();
         }
 
@@ -436,11 +585,25 @@ class KabidController extends Controller
     public function filterByMonth_hi(Request $request)
     {
         $month = $request->input('month');
-        if ($month) {
+        $year = $request->input('year');
+        if ($month && $year) {
+            // Filter data berdasarkan bulan dan tahun yang dipilih
+            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('hi_perusahaan', 'hi_status')
+                ->get();
+        } elseif ($month) {
             // Filter data berdasarkan bulan yang dipilih
-            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)->with('hi_perusahaan', 'hi_status')->get();
+            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)
+                ->with('hi_perusahaan', 'hi_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data berdasarkan tahun yang dipilih
+            $filteredRecords = Pencatatanperselihan::whereYear('updated_at', $year)
+                ->with('hi_perusahaan', 'hi_status')
+                ->get();
         } else {
-            // Jika tidak ada bulan yang dipilih, ambil semua data
+            // Jika tidak ada bulan atau tahun yang dipilih, ambil semua data
             $filteredRecords = Pencatatanperselihan::with('hi_perusahaan', 'hi_status')->get();
         }
 
@@ -449,11 +612,27 @@ class KabidController extends Controller
 
     public function generatePDF_hi(Request $request)
     {
-        $month = $request->input('month');
+        $month = $request->query('month');
+        $year = $request->query('year');
 
-        if ($month) {
-            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)->with('hi_perusahaan', 'hi_status')->get();
+        if ($month && $year) {
+            // Filter data based on both month and year
+            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('hi_perusahaan', 'hi_status')
+                ->get();
+        } elseif ($month) {
+            // Filter data based on month only
+            $filteredRecords = Pencatatanperselihan::whereMonth('updated_at', $month)
+                ->with('hi_perusahaan', 'hi_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data based on year only
+            $filteredRecords = Pencatatanperselihan::whereYear('updated_at', $year)
+                ->with('hi_perusahaan', 'hi_status')
+                ->get();
         } else {
+            // If no month or year is selected, retrieve all data
             $filteredRecords = Pencatatanperselihan::with('hi_perusahaan', 'hi_status')->get();
         }
 
@@ -467,11 +646,25 @@ class KabidController extends Controller
     public function filterByMonth_phk(Request $request)
     {
         $month = $request->input('month');
-        if ($month) {
+        $year = $request->input('year');
+        if ($month && $year) {
+            // Filter data berdasarkan bulan dan tahun yang dipilih
+            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('phk_perusahaan', 'phk_status')
+                ->get();
+        } elseif ($month) {
             // Filter data berdasarkan bulan yang dipilih
-            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)->with('phk_perusahaan', 'phk_status')->get();
+            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)
+                ->with('phk_perusahaan', 'phk_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data berdasarkan tahun yang dipilih
+            $filteredRecords = Pelaporanphk::whereYear('updated_at', $year)
+                ->with('phk_perusahaan', 'phk_status')
+                ->get();
         } else {
-            // Jika tidak ada bulan yang dipilih, ambil semua data
+            // Jika tidak ada bulan atau tahun yang dipilih, ambil semua data
             $filteredRecords = Pelaporanphk::with('phk_perusahaan', 'phk_status')->get();
         }
 
@@ -480,11 +673,27 @@ class KabidController extends Controller
 
     public function generatePDF_phk(Request $request)
     {
-        $month = $request->input('month');
+        $month = $request->query('month');
+        $year = $request->query('year');
 
-        if ($month) {
-            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)->with('phk_perusahaan', 'phk_status')->get();
+        if ($month && $year) {
+            // Filter data based on both month and year
+            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)
+                ->whereYear('updated_at', $year)
+                ->with('phk_perusahaan', 'phk_status')
+                ->get();
+        } elseif ($month) {
+            // Filter data based on month only
+            $filteredRecords = Pelaporanphk::whereMonth('updated_at', $month)
+                ->with('phk_perusahaan', 'phk_status')
+                ->get();
+        } elseif ($year) {
+            // Filter data based on year only
+            $filteredRecords = Pelaporanphk::whereYear('updated_at', $year)
+                ->with('phk_perusahaan', 'phk_status')
+                ->get();
         } else {
+            // If no month or year is selected, retrieve all data
             $filteredRecords = Pelaporanphk::with('phk_perusahaan', 'phk_status')->get();
         }
 

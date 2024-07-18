@@ -1267,6 +1267,7 @@ class AdminController extends Controller
         return view('/admin/pencatatan-spsb/konfirmasi', compact(
             'data',
             'mediator',
+            'aktif_not',
             'konfir_pp',
             'konfir_pkb',
             'konfir_pkwt',
